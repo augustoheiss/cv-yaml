@@ -19,7 +19,7 @@ work:
   - name: "Secretaria Municipal de Educação de São Paulo" 
     position: "Professor de Matemática - Ensino Fundamental II e Médio" 
     startDate: "2019-01-01" 
-    summary: "Aulas e reforço de Matemática para mais de 20 turmas do 6º ao 9º ano, com foco em resolução de problemas e raciocínio lógico." [cite: 25]
+    summary: "Aulas e reforço de Matemática para mais de 20 turmas do 6º ao 9º ano, com foco em resolução de problemas e raciocínio lógico."
     highlights:
       - "Produção e adaptação de materiais conforme necessidade dos alunos." 
       - "Experiência em diferentes contextos escolares e redes de ensino." 
@@ -71,4 +71,5 @@ languages:
   - language: "Inglês" 
     fluency: "Avançado" 
   - language: "Espanhol" 
+
     fluency: "Intermediário" 
