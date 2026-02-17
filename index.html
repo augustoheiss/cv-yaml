@@ -8,61 +8,133 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     
     <style>
+        /* Mágica do PDF: Hack da Tabela Fantasma */
         @media print {
-            body { 
-                -webkit-print-color-adjust: exact; 
-                print-color-adjust: exact; 
-                background-color: white !important;
+            html, body { 
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important; 
+                background-color: #0f172a !important; /* Fundo infinito */
+                margin: 0 !important;
+                padding: 0 !important;
+                height: 100% !important;
             }
+
             @page { 
                 size: A4; 
-                margin: 0; 
+                margin: 0 !important; /* Zero borda branca da impressora */
             }
-            .shadow-2xl { box-shadow: none !important; }
+            
+            /* Ativa o cabeçalho/rodapé fantasma da tabela apenas na impressão */
+            .print-header { display: table-header-group !important; }
+            .print-footer { display: table-footer-group !important; }
+
+            /* Evita corte no meio de caixas */
+            .evitar-quebra {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Esconde elementos indesejados */
+            ::-webkit-scrollbar { display: none; }
+            .print\:hidden { display: none !important; }
+            
+            /* Reset de fundo para a impressão */
+            .print\:bg-transparent { background-color: transparent !important; }
         }
+        
+        /* Estilo da Tela (Navegador) */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-gray-200 text-gray-800 font-sans p-4 md:p-10">
+
+<body class="bg-slate-900 text-slate-300 font-sans p-4 md:p-8">
 
     <div class="max-w-4xl mx-auto flex justify-end mb-4 print:hidden">
-        <button onclick="window.print()" class="bg-slate-800 text-white font-bold px-4 py-2 rounded shadow hover:bg-slate-700 transition flex items-center gap-2">
-            <span>📄</span> Exportar para PDF
+        <button onclick="window.print()" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded shadow hover:bg-emerald-500 transition flex items-center gap-2">
+            <span>🖨️</span> Gerar PDF Terminal
         </button>
     </div>
 
-    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg flex flex-col md:flex-row min-h-[1050px]">
+    <div class="max-w-4xl mx-auto bg-slate-800 shadow-2xl rounded-lg print:bg-transparent print:shadow-none print:max-w-full print:rounded-none">
         
-        <div class="bg-slate-800 text-white w-full md:w-1/3 p-8">
-            <h1 id="nome" class="text-3xl font-bold mb-2 leading-tight">Carregando...</h1>
-            <p id="label" class="text-slate-400 text-sm font-semibold mb-8"></p>
-            <p class="text-xs text-slate-500 mb-8 border border-slate-600 rounded px-2 py-1 inline-block">PcD</p>
+        <table class="w-full border-collapse">
+            
+            <thead class="hidden print-header">
+                <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
+            </thead>
+            
+            <tbody class="print:table-row-group">
+                <tr>
+                    <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none">
+                        
+                        <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
+                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                <div>
+                                    <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_ Carregando...</h1>
+                                    <div class="flex items-center gap-3">
+                                        <p id="label" class="text-emerald-400 font-mono text-sm"></p>
+                                        <span class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-600">PcD</span>
+                                    </div>
+                                </div>
+                                <div class="text-right text-sm font-mono space-y-1">
+                                    <p id="email" class="text-slate-400"></p>
+                                    <p id="telefone" class="text-slate-400"></p>
+                                    <a id="linkedin" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
+                                    <a id="github" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
+                                </div>
+                            </div>
+                            <p id="resumo" class="mt-6 text-slate-300 leading-relaxed max-w-3xl"></p>
+                        </header>
 
-            <h2 class="text-lg font-bold border-b border-slate-600 pb-2 mb-4">Contato</h2>
-            <ul class="text-sm space-y-4 mb-8">
-                <li class="flex items-center gap-2">
-                    <span>📧</span> <span id="email" class="break-all"></span>
-                </li>
-                <li class="flex items-center gap-2">
-                    <span>📱</span> <span id="telefone"></span>
-                </li>
-                <li class="flex items-center gap-2">
-                    <span>🌐</span> <a id="linkedin" href="#" target="_blank" class="hover:text-blue-400 break-all"></a>
-                </li>
-            </ul>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                            
+                            <div class="md:col-span-2 space-y-10">
+                                <section>
+                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Projetos Recentes</h2>
+                                    <div id="projetos-container" class="space-y-6"></div>
+                                </section>
+
+                                <section>
+                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Experiência</h2>
+                                    <div id="experiencia-container" class="space-y-6"></div>
+                                </section>
+                                
+                                <section>
+                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Formação Acadêmica</h2>
+                                    <div id="formacao-container" class="space-y-4"></div>
+                                </section>
+                            </div>
+
+                            <div class="space-y-8">
+                                <section class="evitar-quebra">
+                                    <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Competências</h2>
+                                    <div id="skills-container" class="space-y-4"></div>
+                                </section>
+
+                                <section class="evitar-quebra">
+                                    <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Idiomas</h2>
+                                    <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
+                                </section>
+
+                                <section class="evitar-quebra">
+                                    <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Desenvolvimento</h2>
+                                    <ul id="interesses-container" class="space-y-3 text-sm text-slate-400 list-disc list-inside"></ul>
+                                </section>
+                            </div>
+
+                        </div>
+                        </td>
+                </tr>
+            </tbody>
+
+            <tfoot class="hidden print-footer">
+                <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
+            </tfoot>
+
+        </table>
         </div>
-
-        <div class="w-full md:w-2/3 p-8">
-            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-4">Objetivo</h2>
-            <p id="resumo" class="text-gray-600 mb-8 leading-relaxed">Carregando dados do YAML...</p>
-
-            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-4">Projetos Pessoais</h2>
-            <div id="projetos-container" class="mb-8 space-y-4"></div>
-
-            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-4">Experiência Profissional</h2>
-            <div id="experiencia-container" class="mb-8 space-y-4"></div>
-        </div>
-
-    </div>
 
     <script>
         fetch('cv.yaml')
@@ -79,32 +151,84 @@
                 linkedinEl.innerText = dados.basics.url.replace('https://www.', '');
                 linkedinEl.href = dados.basics.url;
 
+                if(dados.basics.profiles && dados.basics.profiles.length > 0) {
+                    const githubData = dados.basics.profiles.find(p => p.network === 'GitHub');
+                    if(githubData) {
+                        const githubEl = document.getElementById('github');
+                        githubEl.innerText = githubData.url.replace('https://', '');
+                        githubEl.href = githubData.url;
+                    }
+                }
+
                 document.getElementById('resumo').innerText = dados.basics.summary;
 
                 const projetosContainer = document.getElementById('projetos-container');
                 dados.projects.forEach(projeto => {
-                    const div = document.createElement('div');
-                    div.innerHTML = `
-                        <h3 class="text-xl font-bold text-slate-700">${projeto.name}</h3>
-                        <p class="text-gray-600 mt-1 leading-relaxed">${projeto.description}</p>
+                    let bullets = projeto.highlights ? projeto.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
+                    let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block">[Ver Projeto]</a>` : '';
+                    
+                    projetosContainer.innerHTML += `
+                        <div class="evitar-quebra bg-slate-800/50 p-4 rounded border border-slate-700 hover:border-emerald-500/50 transition">
+                            <h3 class="text-lg font-bold text-emerald-400">${projeto.name}</h3>
+                            <p class="text-sm text-slate-400 mt-2 mb-2">${projeto.description}</p>
+                            <ul class="text-sm text-slate-300 list-disc space-y-1">${bullets}</ul>
+                            ${urlLink}
+                        </div>
                     `;
-                    projetosContainer.appendChild(div);
                 });
 
                 const expContainer = document.getElementById('experiencia-container');
                 dados.work.forEach(trabalho => {
-                    const div = document.createElement('div');
-                    div.innerHTML = `
-                        <h3 class="text-xl font-bold text-slate-700">${trabalho.position}</h3>
-                        <p class="text-sm font-semibold text-slate-500">${trabalho.name} | Desde ${trabalho.startDate.substring(0,4)}</p>
-                        <p class="text-gray-600 mt-2 leading-relaxed">${trabalho.summary}</p>
+                    expContainer.innerHTML += `
+                        <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
+                            <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
+                            <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | Desde ${trabalho.startDate.substring(0,4)}</p>
+                            <p class="text-sm text-slate-400 leading-relaxed">${trabalho.summary}</p>
+                        </div>
                     `;
-                    expContainer.appendChild(div);
                 });
+
+                const formacaoContainer = document.getElementById('formacao-container');
+                dados.education.forEach(edu => {
+                    formacaoContainer.innerHTML += `
+                        <div class="evitar-quebra mb-4">
+                            <h3 class="font-bold text-white">${edu.area} <span class="text-slate-500 font-normal">(${edu.studyType})</span></h3>
+                            <p class="text-sm text-emerald-400">${edu.institution}</p>
+                            <p class="text-xs text-slate-500">Conclusão: ${edu.endDate.substring(0,4)}</p>
+                        </div>
+                    `;
+                });
+
+                const skillsContainer = document.getElementById('skills-container');
+                dados.skills.forEach(skill => {
+                    let tags = skill.keywords.map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded m-0.5">${k}</span>`).join('');
+                    skillsContainer.innerHTML += `
+                        <div class="evitar-quebra mb-3">
+                            <h4 class="text-sm font-semibold text-emerald-400 mb-1">${skill.name}</h4>
+                            <div class="flex flex-wrap">${tags}</div>
+                        </div>
+                    `;
+                });
+
+                const idiomasContainer = document.getElementById('idiomas-container');
+                dados.languages.forEach(idioma => {
+                    idiomasContainer.innerHTML += `
+                        <li class="flex justify-between items-center">
+                            <span class="text-slate-300">${idioma.language}</span>
+                            <span class="text-emerald-500 text-xs bg-emerald-500/10 px-2 py-1 rounded">${idioma.fluency}</span>
+                        </li>
+                    `;
+                });
+
+                const intContainer = document.getElementById('interesses-container');
+                dados.interests[0].keywords.forEach(interesse => {
+                    intContainer.innerHTML += `<li>${interesse}</li>`;
+                });
+
             })
             .catch(error => {
-                console.error("Erro ao carregar o YAML: ", error);
-                document.getElementById('resumo').innerText = "Erro ao processar o arquivo cv.yaml. Verifique a formatação.";
+                console.error("Erro", error);
+                document.getElementById('resumo').innerText = "Erro ao carregar cv.yaml";
             });
     </script>
 </body>
