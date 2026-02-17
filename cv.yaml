@@ -1,0 +1,74 @@
+basics:
+  name: "Augusto Leonardo Farias Heiss" 
+  label: "Desenvolvedor Python | Estudante de IA | Professor de Matemática" 
+  email: "augustoheiss@gmail.com" 
+  phone: "+55 11 98135-5495" 
+  url: "https://www.linkedin.com/in/augustoheiss" 
+  summary: "Estudante de Tecnologia em Inteligência Artificial em transição para TI. Autodidata em Python, com experiência em transformar rotinas reais em regras claras, padronização e organização de dados. Objetivo: Estágio remunerado em Inteligência Artificial / Ciência de Dados / Python." 
+  location:
+    city: "Ferraz de Vasconcelos" 
+    region: "São Paulo" 
+    postalCode: "08533-120" 
+    countryCode: "BR"
+  profiles:
+    - network: "GitHub"
+      username: "augustoheiss"
+      url: "https://github.com/augustoheiss" 
+
+work:
+  - name: "Secretaria Municipal de Educação de São Paulo" 
+    position: "Professor de Matemática - Ensino Fundamental II e Médio" 
+    startDate: "2019-01-01" 
+    summary: "Aulas e reforço de Matemática para mais de 20 turmas do 6º ao 9º ano, com foco em resolução de problemas e raciocínio lógico." [cite: 25]
+    highlights:
+      - "Produção e adaptação de materiais conforme necessidade dos alunos." 
+      - "Experiência em diferentes contextos escolares e redes de ensino." 
+
+education:
+  - institution: "Universidade Nove de Julho (UNINOVE)" 
+    area: "Tecnologia em Inteligência Artificial" 
+    studyType: "Tecnólogo"
+    endDate: "2027-12-31" 
+  - institution: "Universidade Cidade de São Paulo (UNICID)" 
+    area: "Matemática"
+    studyType: "Licenciatura" 
+    endDate: "2012-12-31" 
+  - institution: "SENAI Roberto Simonsen" 
+    area: "Eletroeletrônica" 
+    studyType: "Técnico" 
+    endDate: "2011-12-31" 
+  - institution: "SENAI Roberto Simonsen" 
+    area: "Eletricista de Manutenção" 
+    studyType: "Aprendizagem Industrial" 
+    endDate: "2009-12-31" 
+
+projects:
+  - name: "Organização Territorial" 
+    description: "Aplicação em Python para otimizar a gestão de mais de 60 territórios cobertos presencialmente, reduzindo tempo e melhorando a visualização." 
+    highlights:
+      - "Estruturação de regras de distribuição e histórico para evitar repetições indevidas." 
+      - "Organização de dados voltada a rotina real com foco em clareza, consistência e rastreabilidade." 
+  - name: "LogicDefense"
+    description: "Desenvolvimento de um jogo Web focado em sistemas vetoriais e lógicos na Godot Engine."
+    url: "https://augustoheiss.github.io/LogicDefense/"
+
+skills:
+  - name: "Python" 
+    keywords:
+      - "Lógica" 
+      - "Automações" 
+      - "Organização de dados" 
+      - "Scripts" 
+  - name: "Banco de Dados & Ferramentas"
+    keywords:
+      - "SQLite" 
+      - "Git" 
+      - "GitHub" 
+      - "VS Code" 
+      - "PyCharm" 
+
+languages:
+  - language: "Inglês" 
+    fluency: "Avançado" 
+  - language: "Espanhol" 
+    fluency: "Intermediário" 
