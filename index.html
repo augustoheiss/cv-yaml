@@ -1,235 +1,320 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo yaml</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-    
-    <style>
-        /* Mágica do PDF: Hack da Tabela Fantasma */
-        @media print {
-            html, body { 
-                -webkit-print-color-adjust: exact !important; 
-                print-color-adjust: exact !important; 
-                background-color: #0f172a !important; /* Fundo infinito */
-                margin: 0 !important;
-                padding: 0 !important;
-                height: 100% !important;
-            }
-
-            @page { 
-                size: A4; 
-                margin: 0 !important; /* Zero borda branca da impressora */
-            }
-            
-            /* Ativa o cabeçalho/rodapé fantasma da tabela apenas na impressão */
-            .print-header { display: table-header-group !important; }
-            .print-footer { display: table-footer-group !important; }
-
-            /* Evita corte no meio de caixas */
-            .evitar-quebra {
-                break-inside: avoid !important;
-                page-break-inside: avoid !important;
-            }
-
-            /* Esconde elementos indesejados */
-            ::-webkit-scrollbar { display: none; }
-            .print\:hidden { display: none !important; }
-            
-            /* Reset de fundo para a impressão */
-            .print\:bg-transparent { background-color: transparent !important; }
-        }
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currículo yaml</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
         
-        /* Estilo da Tela (Navegador) */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1e293b; }
-        ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
-    </style>
-</head>
-
-<body class="bg-slate-900 text-slate-300 font-sans p-4 md:p-8">
-
-    <div class="max-w-4xl mx-auto flex justify-end mb-4 print:hidden">
-        <button onclick="window.print()" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded shadow hover:bg-emerald-500 transition flex items-center gap-2">
-            <span>🖨️</span> Gerar PDF Terminal
-        </button>
-    </div>
-
-    <div class="max-w-4xl mx-auto bg-slate-800 shadow-2xl rounded-lg print:bg-transparent print:shadow-none print:max-w-full print:rounded-none">
-        
-        <table class="w-full border-collapse">
-            
-            <thead class="hidden print-header">
-                <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
-            </thead>
-            
-            <tbody class="print:table-row-group">
-                <tr>
-                    <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none">
-                        
-                        <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
-                            <div class="flex flex-col md:flex-row print:flex-row justify-between items-start md:items-center print:items-center gap-4">
-                                <div>
-                                    <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_ Carregando...</h1>
-                                    <div class="flex items-center gap-3">
-                                        <p id="label" class="text-emerald-400 font-mono text-sm"></p>
-                                        <span class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-600">PcD</span>
-                                    </div>
-                                </div>
-                                <div class="text-left md:text-right print:text-right text-sm font-mono space-y-1">
-                                    <p id="email" class="text-slate-400"></p>
-                                    <p id="telefone" class="text-slate-400"></p>
-                                    <a id="linkedin" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
-                                    <a id="github" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
-                                </div>
-                            </div>
-                            <p id="resumo" class="mt-6 text-slate-300 leading-relaxed max-w-3xl"></p>
-                        </header>
-
-                        <div class="flex flex-col md:flex-row print:flex-row gap-10 w-full">
-                            
-                            <div class="w-full md:w-2/3 print:w-2/3 space-y-10">
-                                <section>
-                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Projetos Recentes</h2>
-                                    <div id="projetos-container" class="space-y-6"></div>
-                                </section>
-
-                                <section>
-                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Experiência</h2>
-                                    <div id="experiencia-container" class="space-y-6"></div>
-                                </section>
-                                
-                                <section>
-                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Formação Acadêmica</h2>
-                                    <div id="formacao-container" class="space-y-4"></div>
-                                </section>
-                            </div>
-
-                            <div class="w-full md:w-1/3 print:w-1/3 space-y-8">
-                                <section class="evitar-quebra">
-                                    <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Competências</h2>
-                                    <div id="skills-container" class="space-y-4"></div>
-                                </section>
-
-                                <section class="evitar-quebra">
-                                    <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Idiomas</h2>
-                                    <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
-                                </section>
-
-                                <section class="evitar-quebra">
-                                    <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Desenvolvimento</h2>
-                                    <ul id="interesses-container" class="space-y-3 text-sm text-slate-400 list-disc list-inside"></ul>
-                                </section>
-                            </div>
-
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-
-            <tfoot class="hidden print-footer">
-                <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
-            </tfoot>
-
-        </table>
-    </div>
-
-    <script>
-        fetch('cv.yaml')
-            .then(response => response.text())
-            .then(yamlText => {
-                const dados = jsyaml.load(yamlText);
-
-                document.getElementById('nome').innerText = dados.basics.name;
-                document.getElementById('label').innerText = dados.basics.label;
-                document.getElementById('email').innerText = dados.basics.email;
-                document.getElementById('telefone').innerText = dados.basics.phone;
-                
-                const linkedinEl = document.getElementById('linkedin');
-                linkedinEl.innerText = dados.basics.url.replace('https://www.', '');
-                linkedinEl.href = dados.basics.url;
-
-                if(dados.basics.profiles && dados.basics.profiles.length > 0) {
-                    const githubData = dados.basics.profiles.find(p => p.network === 'GitHub');
-                    if(githubData) {
-                        const githubEl = document.getElementById('github');
-                        githubEl.innerText = githubData.url.replace('https://', '');
-                        githubEl.href = githubData.url;
-                    }
+        <style>
+            /* Mágica do PDF: Hack da Tabela Fantasma (MANTIDO INTACTO!) */
+            @media print {
+                html, body { 
+                    -webkit-print-color-adjust: exact !important; 
+                    print-color-adjust: exact !important; 
+                    background-color: #0f172a !important; /* Fundo infinito */
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    height: 100% !important;
                 }
 
-                document.getElementById('resumo').innerText = dados.basics.summary;
+                @page { 
+                    size: A4; 
+                    margin: 0 !important; /* Zero borda branca da impressora */
+                }
+                
+                /* Ativa o cabeçalho/rodapé fantasma da tabela apenas na impressão */
+                .print-header { display: table-header-group !important; }
+                .print-footer { display: table-footer-group !important; }
 
-                const projetosContainer = document.getElementById('projetos-container');
-                dados.projects.forEach(projeto => {
-                    let bullets = projeto.highlights ? projeto.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
-                    let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block">[Ver Projeto]</a>` : '';
+                /* Evita corte no meio de caixas */
+                .evitar-quebra {
+                    break-inside: avoid !important;
+                    page-break-inside: avoid !important;
+                }
+
+                /* Esconde elementos indesejados */
+                ::-webkit-scrollbar { display: none; }
+                .print\:hidden { display: none !important; }
+                
+                /* Reset de fundo para a impressão */
+                .print\:bg-transparent { background-color: transparent !important; }
+            }
+            
+            /* ======== MÁGICA DO PDF WHITEMODE ======== */
+            /* Essas regras SÓ entram em ação se o botão WhiteMode for clicado */
+            /* ======== MÁGICA DO PDF WHITEMODE ======== */
+            @media print {
+                /* Força o branco tanto no html quanto no body para matar o fundo infinito escuro */
+                html.print-light-mode,
+                body.print-light-mode {
+                    background-color: #ffffff !important;
+                }
+
+                body.print-light-mode .bg-slate-800 {
+                    background-color: #ffffff !important;
+                }
+                
+                /* ... (o resto das regras do WhiteMode continua igualzinho) ... */
+                /* Textos base e Subtítulos */
+                body.print-light-mode,
+                body.print-light-mode .text-slate-300,
+                body.print-light-mode .text-slate-400 {
+                    color: #334155 !important; /* Cinza escuro para o texto base */
+                }
+
+                body.print-light-mode h1, 
+                body.print-light-mode h2, 
+                body.print-light-mode h3 {
+                    color: #0f172a !important; /* Quase preto para os títulos e subtítulos */
+                }
+
+                /* Adaptação do Verde Esmeralda para o fundo branco */
+                body.print-light-mode .text-emerald-400,
+                body.print-light-mode .text-emerald-500 {
+                    color: #059669 !important; /* Verde um pouco mais forte para dar contraste */
+                }
+
+                /* Bordas e separadores */
+                body.print-light-mode .border-slate-700 {
+                    border-color: #cbd5e1 !important; /* Cinza claro nas bordas */
+                }
+
+                /* Caixas de Projetos */
+                body.print-light-mode .bg-slate-800\/50 {
+                    background-color: #f8fafc !important; 
+                    border-color: #e2e8f0 !important;
+                }
+
+                /* Soft Skills (Caixinhas Pintadas) e Label PcD */
+                body.print-light-mode .bg-slate-700 {
+                    background-color: #f1f5f9 !important; /* Fundo cinza bem claro */
+                    color: #475569 !important; /* Texto escuro */
+                    border: 1px solid #cbd5e1 !important;
+                }
+
+                /* Fluência dos Idiomas */
+                body.print-light-mode .bg-emerald-500\/10 {
+                    background-color: #d1fae5 !important;
+                    color: #047857 !important;
+                }
+
+                /* Datas de conclusão e textos mais claros */
+                body.print-light-mode .text-slate-500 {
+                    color: #64748b !important;
+                }
+            }
+            /* ======================================== */
+
+            /* Estilo da Tela (Navegador) */
+            ::-webkit-scrollbar { width: 8px; }
+            ::-webkit-scrollbar-track { background: #1e293b; }
+            ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+        </style>
+    </head>
+
+    <body class="bg-slate-900 text-slate-300 font-sans p-4 md:p-8">
+
+        <div class="max-w-4xl mx-auto flex justify-end gap-3 mb-4 print:hidden">
+            <button onclick="window.print()" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded shadow hover:bg-emerald-500 transition flex items-center gap-2">
+                <span>🖨️</span> Gerar PDF Terminal
+            </button>
+            <button onclick="imprimirClaro()" class="bg-slate-200 text-slate-800 font-bold px-4 py-2 rounded shadow border border-slate-300 hover:bg-slate-300 transition flex items-center gap-2">
+                <span>📄</span> Gerar PDF WhiteMode
+            </button>
+        </div>
+
+        <div class="max-w-4xl mx-auto bg-slate-800 shadow-2xl rounded-lg print:bg-transparent print:shadow-none print:max-w-full print:rounded-none">
+            
+            <table class="w-full border-collapse">
+                
+                <thead class="hidden print-header">
+                    <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
+                </thead>
+                
+                <tbody class="print:table-row-group">
+                    <tr>
+                        <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none">
+                            
+                            <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
+                                <div class="flex flex-col md:flex-row print:flex-row justify-between items-start md:items-center print:items-center gap-4">
+                                    <div>
+                                        <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_ Carregando...</h1>
+                                        <div class="flex items-center gap-3">
+                                            <p id="label" class="text-emerald-400 font-mono text-sm"></p>
+                                            <span class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-600">PcD</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-left md:text-right print:text-right text-sm font-mono space-y-1">
+                                        <p id="email" class="text-slate-400"></p>
+                                        <p id="telefone" class="text-slate-400"></p>
+                                        <a id="linkedin" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
+                                        <a id="github" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
+                                    </div>
+                                </div>
+                                <p id="resumo" class="mt-6 text-slate-300 leading-relaxed max-w-3xl"></p>
+                            </header>
+
+                            <div class="flex flex-col md:flex-row print:flex-row gap-10 w-full">
+                                
+                                <div class="w-full md:w-2/3 print:w-2/3 space-y-10">
+                                    <section>
+                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Projetos Recentes</h2>
+                                        <div id="projetos-container" class="space-y-6"></div>
+                                    </section>
+
+                                    <section>
+                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Experiência</h2>
+                                        <div id="experiencia-container" class="space-y-6"></div>
+                                    </section>
+                                    
+                                    <section>
+                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Formação Acadêmica</h2>
+                                        <div id="formacao-container" class="space-y-4"></div>
+                                    </section>
+                                </div>
+
+                                <div class="w-full md:w-1/3 print:w-1/3 space-y-8">
+                                    <section class="evitar-quebra">
+                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Competências</h2>
+                                        <div id="skills-container" class="space-y-4"></div>
+                                    </section>
+
+                                    <section class="evitar-quebra">
+                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Idiomas</h2>
+                                        <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
+                                    </section>
+
+                                    <section class="evitar-quebra">
+                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Desenvolvimento</h2>
+                                        <ul id="interesses-container" class="space-y-3 text-sm text-slate-400 list-disc list-inside"></ul>
+                                    </section>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tfoot class="hidden print-footer">
+                    <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
+                </tfoot>
+
+            </table>
+        </div>
+
+        <script>
+            // FUNÇÃO DO WHITEMODE ADICIONADA AQUI
+            function imprimirClaro() {
+                // Adiciona a classe no <html> e no <body>
+                document.documentElement.classList.add('print-light-mode');
+                document.body.classList.add('print-light-mode');
+                
+                // Aciona a impressora
+                window.print();
+                
+                // Tira a classe logo em seguida para a tela voltar ao normal
+                setTimeout(() => {
+                    document.documentElement.classList.remove('print-light-mode');
+                    document.body.classList.remove('print-light-mode');
+                }, 500);
+            }
+
+            // SEU SCRIPT DE CARREGAMENTO DO YAML INTACTO
+            fetch('cv.yaml')
+                .then(response => response.text())
+                .then(yamlText => {
+                    const dados = jsyaml.load(yamlText);
+
+                    document.getElementById('nome').innerText = dados.basics.name;
+                    document.getElementById('label').innerText = dados.basics.label;
+                    document.getElementById('email').innerText = dados.basics.email;
+                    document.getElementById('telefone').innerText = dados.basics.phone;
                     
-                    projetosContainer.innerHTML += `
-                        <div class="evitar-quebra bg-slate-800/50 p-4 rounded border border-slate-700 hover:border-emerald-500/50 transition">
-                            <h3 class="text-lg font-bold text-emerald-400">${projeto.name}</h3>
-                            <p class="text-sm text-slate-400 mt-2 mb-2">${projeto.description}</p>
-                            <ul class="text-sm text-slate-300 list-disc space-y-1">${bullets}</ul>
-                            ${urlLink}
-                        </div>
-                    `;
-                });
+                    const linkedinEl = document.getElementById('linkedin');
+                    linkedinEl.innerText = dados.basics.url.replace('https://www.', '');
+                    linkedinEl.href = dados.basics.url;
 
-                const expContainer = document.getElementById('experiencia-container');
-                dados.work.forEach(trabalho => {
-                    expContainer.innerHTML += `
-                        <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
-                            <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
-                            <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | Desde ${trabalho.startDate.substring(0,4)}</p>
-                            <p class="text-sm text-slate-400 leading-relaxed">${trabalho.summary}</p>
-                        </div>
-                    `;
-                });
+                    if(dados.basics.profiles && dados.basics.profiles.length > 0) {
+                        const githubData = dados.basics.profiles.find(p => p.network === 'GitHub');
+                        if(githubData) {
+                            const githubEl = document.getElementById('github');
+                            githubEl.innerText = githubData.url.replace('https://', '');
+                            githubEl.href = githubData.url;
+                        }
+                    }
 
-                const formacaoContainer = document.getElementById('formacao-container');
-                dados.education.forEach(edu => {
-                    formacaoContainer.innerHTML += `
-                        <div class="evitar-quebra mb-4">
-                            <h3 class="font-bold text-white">${edu.area} <span class="text-slate-500 font-normal">(${edu.studyType})</span></h3>
-                            <p class="text-sm text-emerald-400">${edu.institution}</p>
-                            <p class="text-xs text-slate-500">Conclusão: ${edu.endDate.substring(0,4)}</p>
-                        </div>
-                    `;
-                });
+                    document.getElementById('resumo').innerText = dados.basics.summary;
 
-                const skillsContainer = document.getElementById('skills-container');
-                dados.skills.forEach(skill => {
-                    let tags = skill.keywords.map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded m-0.5">${k}</span>`).join('');
-                    skillsContainer.innerHTML += `
-                        <div class="evitar-quebra mb-3">
-                            <h4 class="text-sm font-semibold text-emerald-400 mb-1">${skill.name}</h4>
-                            <div class="flex flex-wrap">${tags}</div>
-                        </div>
-                    `;
-                });
+                    const projetosContainer = document.getElementById('projetos-container');
+                    dados.projects.forEach(projeto => {
+                        let bullets = projeto.highlights ? projeto.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
+                        let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block">[Ver Projeto]</a>` : '';
+                        
+                        projetosContainer.innerHTML += `
+                            <div class="evitar-quebra bg-slate-800/50 p-4 rounded border border-slate-700 hover:border-emerald-500/50 transition">
+                                <h3 class="text-lg font-bold text-emerald-400">${projeto.name}</h3>
+                                <p class="text-sm text-slate-400 mt-2 mb-2">${projeto.description}</p>
+                                <ul class="text-sm text-slate-300 list-disc space-y-1">${bullets}</ul>
+                                ${urlLink}
+                            </div>
+                        `;
+                    });
 
-                const idiomasContainer = document.getElementById('idiomas-container');
-                dados.languages.forEach(idioma => {
-                    idiomasContainer.innerHTML += `
-                        <li class="flex justify-between items-center">
-                            <span class="text-slate-300">${idioma.language}</span>
-                            <span class="text-emerald-500 text-xs bg-emerald-500/10 px-2 py-1 rounded">${idioma.fluency}</span>
-                        </li>
-                    `;
-                });
+                    const expContainer = document.getElementById('experiencia-container');
+                    dados.work.forEach(trabalho => {
+                        expContainer.innerHTML += `
+                            <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
+                                <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
+                                <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | Desde ${trabalho.startDate.substring(0,4)}</p>
+                                <p class="text-sm text-slate-400 leading-relaxed">${trabalho.summary}</p>
+                            </div>
+                        `;
+                    });
 
-                const intContainer = document.getElementById('interesses-container');
-                dados.interests[0].keywords.forEach(interesse => {
-                    intContainer.innerHTML += `<li>${interesse}</li>`;
-                });
+                    const formacaoContainer = document.getElementById('formacao-container');
+                    dados.education.forEach(edu => {
+                        formacaoContainer.innerHTML += `
+                            <div class="evitar-quebra mb-4">
+                                <h3 class="font-bold text-white">${edu.area} <span class="text-slate-500 font-normal">(${edu.studyType})</span></h3>
+                                <p class="text-sm text-emerald-400">${edu.institution}</p>
+                                <p class="text-xs text-slate-500">Conclusão: ${edu.endDate.substring(0,4)}</p>
+                            </div>
+                        `;
+                    });
 
-            })
-            .catch(error => {
-                console.error("Erro", error);
-                document.getElementById('resumo').innerText = "Erro ao carregar cv.yaml";
-            });
-    </script>
-</body>
-</html>
+                    const skillsContainer = document.getElementById('skills-container');
+                    dados.skills.forEach(skill => {
+                        let tags = skill.keywords.map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded m-0.5">${k}</span>`).join('');
+                        skillsContainer.innerHTML += `
+                            <div class="evitar-quebra mb-3">
+                                <h4 class="text-sm font-semibold text-emerald-400 mb-1">${skill.name}</h4>
+                                <div class="flex flex-wrap">${tags}</div>
+                            </div>
+                        `;
+                    });
+
+                    const idiomasContainer = document.getElementById('idiomas-container');
+                    dados.languages.forEach(idioma => {
+                        idiomasContainer.innerHTML += `
+                            <li class="flex justify-between items-center">
+                                <span class="text-slate-300">${idioma.language}</span>
+                                <span class="text-emerald-500 text-xs bg-emerald-500/10 px-2 py-1 rounded">${idioma.fluency}</span>
+                            </li>
+                        `;
+                    });
+
+                    const intContainer = document.getElementById('interesses-container');
+                    dados.interests[0].keywords.forEach(interesse => {
+                        intContainer.innerHTML += `<li>${interesse}</li>`;
+                    });
+
+                })
+                .catch(error => {
+                    console.error("Erro", error);
+                    document.getElementById('resumo').innerText = "Erro ao carregar cv.yaml";
+                });
+        </script>
+    </body>
+    </html>
