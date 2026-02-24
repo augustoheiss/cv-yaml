@@ -1,0 +1,719 @@
+/* =============================================================
+   themes.css  —  Temas de Impressão para CV YAML
+   =============================================================
+   Uso: Adicione uma das classes abaixo no <body>:
+     .tema-executivo    — Documento jurídico/corporativo
+     .tema-criativo     — Agência criativa / design moderno
+     .tema-minimalista  — Clean, espaço em branco extremo
+
+   Estratégia: seletores descendentes de alta especificidade
+   (body.tema-X .classe-tailwind) sobrescrevem Tailwind CDN
+   sem depender de !important na tela.
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Courier+Prime:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ■  TEMA EXECUTIVO
+      Merriweather · Preto / Cinza Chumbo / Branco
+      Layout denso, linhas finas, documento corporativo
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+body.tema-executivo {
+    background-color: #c8c8c8;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e1e1e;
+    letter-spacing: 0.01em;
+}
+
+/* Card principal */
+body.tema-executivo .bg-slate-800 {
+    background-color: #ffffff;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px #9ca3af, 2px 2px 10px rgba(0,0,0,0.12);
+}
+
+body.tema-executivo .shadow-2xl {
+    box-shadow: 0 0 0 1px #9ca3af, 2px 2px 10px rgba(0,0,0,0.12);
+}
+
+body.tema-executivo .rounded-lg {
+    border-radius: 0;
+}
+
+/* Separador do cabeçalho */
+body.tema-executivo header.border-b-2 {
+    border-bottom-width: 2px;
+    border-bottom-color: #111827;
+}
+
+body.tema-executivo .border-emerald-500 {
+    border-color: #111827;
+}
+
+/* ── Tipografia ── */
+
+body.tema-executivo h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: #050505;
+}
+
+body.tema-executivo h2 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #111827;
+    border-bottom-color: #374151;
+}
+
+body.tema-executivo h3 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    color: #111827;
+}
+
+body.tema-executivo h4 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1f2937;
+}
+
+/* ── Overrides de utilitários de cor Tailwind ── */
+
+body.tema-executivo .text-white          { color: #111827; }
+body.tema-executivo .text-slate-300      { color: #1f2937; }
+body.tema-executivo .text-slate-400      { color: #4b5563; }
+body.tema-executivo .text-slate-500      { color: #6b7280; }
+body.tema-executivo .text-emerald-400,
+body.tema-executivo .text-emerald-500    { color: #374151; }
+
+/* Símbolo "#" nos títulos h2 → itálico discreto */
+body.tema-executivo h2 span.text-emerald-500 {
+    color: #9ca3af;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Título dos projetos (h3.text-emerald-400) */
+body.tema-executivo h3.text-emerald-400 { color: #111827; }
+
+/* Fonte mono → Courier Prime */
+body.tema-executivo .font-mono {
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0;
+}
+
+/* ── Bordas ── */
+
+body.tema-executivo .border-slate-700   { border-color: #d1d5db; }
+body.tema-executivo .border-slate-600   { border-color: #9ca3af; }
+
+/* Decoração de link */
+body.tema-executivo .decoration-emerald-500\/30 {
+    text-decoration-color: rgba(107,114,128,0.4);
+}
+
+/* ── Blocos de conteúdo ── */
+
+/* Cards de projetos */
+body.tema-executivo .bg-slate-800\/50 {
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
+    border-radius: 0;
+}
+
+body.tema-executivo .rounded { border-radius: 0; }
+
+/* Timeline de experiência */
+body.tema-executivo .border-l-2 {
+    border-left-width: 1px;
+    border-left-color: #374151;
+}
+
+/* Tags de skill */
+body.tema-executivo .bg-slate-700 {
+    background-color: transparent;
+    color: #374151;
+    border: 1px solid #9ca3af;
+    border-radius: 0;
+}
+
+/* Tags de fluência de idioma */
+body.tema-executivo .bg-emerald-500\/10 {
+    background-color: transparent;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 0;
+}
+
+/* Links */
+body.tema-executivo a.text-emerald-500,
+body.tema-executivo a.block.text-emerald-500 {
+    color: #374151;
+    text-decoration-color: #9ca3af;
+}
+
+body.tema-executivo .hover\:border-emerald-500\/50:hover { border-color: #9ca3af; }
+
+/* ── @media print — EXECUTIVO ── */
+@media print {
+    html:has(body.tema-executivo),
+    body.tema-executivo {
+        background-color: #ffffff !important;
+        font-size: 11pt !important;
+    }
+
+    body.tema-executivo .bg-slate-800 {
+        background-color: #ffffff !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    body.tema-executivo .text-white,
+    body.tema-executivo h1,
+    body.tema-executivo h3        { color: #000000 !important; }
+    body.tema-executivo h2        { color: #111827 !important; }
+    body.tema-executivo h4        { color: #1f2937 !important; }
+
+    body.tema-executivo h2 span.text-emerald-500 { color: #9ca3af !important; }
+
+    body.tema-executivo .text-slate-300              { color: #1f2937 !important; }
+    body.tema-executivo .text-slate-400,
+    body.tema-executivo .text-emerald-400,
+    body.tema-executivo .text-emerald-500            { color: #4b5563 !important; }
+    body.tema-executivo .text-slate-500              { color: #6b7280 !important; }
+
+    body.tema-executivo header.border-b-2            { border-bottom-color: #000000 !important; }
+    body.tema-executivo .border-slate-700            { border-color: #d1d5db !important; }
+
+    body.tema-executivo .bg-slate-800\/50 {
+        background-color: #f9fafb !important;
+        border-color: #e5e7eb !important;
+    }
+
+    body.tema-executivo .bg-slate-700 {
+        background-color: transparent !important;
+        border: 1px solid #9ca3af !important;
+        color: #374151 !important;
+    }
+
+    body.tema-executivo .bg-emerald-500\/10 {
+        background-color: transparent !important;
+        border: 1px solid #d1d5db !important;
+        color: #374151 !important;
+    }
+
+    body.tema-executivo a.text-emerald-500           { color: #374151 !important; }
+
+    body.tema-executivo .border-l-2 {
+        border-left-width: 1px !important;
+        border-left-color: #374151 !important;
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ■  TEMA CRIATIVO
+      Poppins · Azul Royal + Laranja · Sidebar escura
+      Bordas arredondadas, sombra suave, design de agência
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+body.tema-criativo {
+    background: linear-gradient(145deg, #eff6ff 0%, #eef2ff 100%);
+    font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: #1e293b;
+}
+
+/* Card principal */
+body.tema-criativo .bg-slate-800 {
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+    box-shadow:
+        0 25px 60px -10px rgba(37, 99, 235, 0.18),
+        0 8px 20px -5px rgba(37, 99, 235, 0.08);
+    border: none;
+    overflow: hidden;
+}
+
+body.tema-criativo .shadow-2xl {
+    box-shadow: 0 25px 60px -10px rgba(37, 99, 235, 0.18);
+}
+
+body.tema-criativo .rounded-lg { border-radius: 1.25rem; }
+
+/* Separador do cabeçalho */
+body.tema-criativo header.border-b-2 {
+    border-bottom-width: 3px;
+    border-bottom-color: #2563eb;
+}
+
+body.tema-criativo .border-emerald-500 { border-color: #2563eb; }
+
+/* ── Tipografia ── */
+
+body.tema-criativo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: #1e3a8a;
+}
+
+body.tema-criativo h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1e3a8a;
+    border-bottom-color: #bfdbfe;
+}
+
+body.tema-criativo h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: #1e293b;
+}
+
+body.tema-criativo h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+}
+
+/* ── Overrides de utilitários de cor Tailwind ── */
+
+body.tema-criativo .text-white          { color: #1e3a8a; }
+body.tema-criativo .text-slate-300      { color: #1e293b; }
+body.tema-criativo .text-slate-400      { color: #475569; }
+body.tema-criativo .text-slate-500      { color: #64748b; }
+body.tema-criativo .text-emerald-400    { color: #f97316; }
+body.tema-criativo .text-emerald-500    { color: #2563eb; }
+
+/* Símbolo "#" nos h2 → laranja */
+body.tema-criativo h2 span.text-emerald-500 { color: #f97316; }
+
+/* Título dos projetos → laranja */
+body.tema-criativo h3.text-emerald-400 { color: #f97316; }
+
+/* Empresa/data em experiência → azul */
+body.tema-criativo p.font-mono.text-emerald-500 { color: #2563eb; }
+
+/* Fonte mono → Poppins regular */
+body.tema-criativo .font-mono {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+/* ── Bordas ── */
+
+body.tema-criativo .border-slate-700    { border-color: #bfdbfe; }
+body.tema-criativo .border-slate-600    { border-color: #dbeafe; }
+
+body.tema-criativo .decoration-emerald-500\/30 {
+    text-decoration-color: rgba(37, 99, 235, 0.3);
+}
+
+/* ── Blocos de conteúdo ── */
+
+/* Cards de projetos */
+body.tema-criativo .bg-slate-800\/50 {
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+    border-radius: 0.75rem;
+}
+
+body.tema-criativo .rounded { border-radius: 0.75rem; }
+
+/* Timeline de experiência */
+body.tema-criativo .border-l-2 {
+    border-left-width: 3px;
+    border-left-color: #2563eb;
+}
+
+/* Tags de skill (coluna principal) */
+body.tema-criativo .bg-slate-700 {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+    border-radius: 0.375rem;
+}
+
+/* Tags de fluência de idioma */
+body.tema-criativo .bg-emerald-500\/10 {
+    background-color: rgba(249, 115, 22, 0.12);
+    color: #c2410c;
+    border-radius: 0.375rem;
+}
+
+/* Links */
+body.tema-criativo a.text-emerald-500,
+body.tema-criativo a.block.text-emerald-500 {
+    color: #2563eb;
+    text-decoration-color: rgba(37, 99, 235, 0.3);
+}
+
+body.tema-criativo .hover\:border-emerald-500\/50:hover { border-color: #2563eb; }
+
+/* ── SIDEBAR com fundo azul escuro (efeito two-column visual) ── */
+/*
+   Alvo: <div class="w-full md:w-1/3 print:w-1/3 space-y-8">
+   Seletor: .md\:w-1\/3 (barra escapada para CSS)
+*/
+body.tema-criativo .md\:w-1\/3 {
+    background-color: #1e3a8a;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    color: #e0e7ff;
+}
+
+body.tema-criativo .md\:w-1\/3 h2 {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+}
+
+body.tema-criativo .md\:w-1\/3 h2 span.text-emerald-500 { color: #fb923c; }
+body.tema-criativo .md\:w-1\/3 h4                       { color: #fb923c; }
+
+body.tema-criativo .md\:w-1\/3 .text-emerald-400,
+body.tema-criativo .md\:w-1\/3 .text-emerald-500        { color: #fb923c; }
+
+body.tema-criativo .md\:w-1\/3 .text-white              { color: #ffffff; }
+body.tema-criativo .md\:w-1\/3 .text-slate-300          { color: #bfdbfe; }
+body.tema-criativo .md\:w-1\/3 .text-slate-400          { color: #93c5fd; }
+body.tema-criativo .md\:w-1\/3 .text-slate-500          { color: #60a5fa; }
+
+body.tema-criativo .md\:w-1\/3 .border-slate-700        { border-color: rgba(255,255,255,0.15); }
+
+/* Tags de skill na sidebar */
+body.tema-criativo .md\:w-1\/3 .bg-slate-700 {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #dbeafe;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.375rem;
+}
+
+/* Tags de idioma na sidebar */
+body.tema-criativo .md\:w-1\/3 .bg-emerald-500\/10 {
+    background-color: rgba(251, 146, 60, 0.2);
+    color: #fed7aa;
+    border-radius: 0.375rem;
+}
+
+body.tema-criativo .md\:w-1\/3 a { color: #93c5fd; }
+
+/* ── @media print — CRIATIVO ── */
+@media print {
+    html:has(body.tema-criativo),
+    body.tema-criativo {
+        background: #ffffff !important;
+        font-size: 12pt !important;
+    }
+
+    body.tema-criativo .bg-slate-800 {
+        background-color: #ffffff !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+    }
+
+    body.tema-criativo .text-white,
+    body.tema-criativo h1        { color: #1e3a8a !important; }
+    body.tema-criativo h2        { color: #1e3a8a !important; }
+    body.tema-criativo h3        { color: #1e293b !important; }
+
+    body.tema-criativo h2 span.text-emerald-500 { color: #f97316 !important; }
+    body.tema-criativo h3.text-emerald-400      { color: #f97316 !important; }
+
+    body.tema-criativo .text-slate-300          { color: #1e293b !important; }
+    body.tema-criativo .text-slate-400          { color: #475569 !important; }
+    body.tema-criativo .text-emerald-400        { color: #f97316 !important; }
+    body.tema-criativo .text-emerald-500        { color: #2563eb !important; }
+    body.tema-criativo .text-slate-500          { color: #64748b !important; }
+
+    body.tema-criativo header.border-b-2        { border-bottom-color: #2563eb !important; }
+    body.tema-criativo .border-slate-700        { border-color: #bfdbfe !important; }
+    body.tema-criativo .border-l-2             { border-left-color: #2563eb !important; }
+
+    body.tema-criativo .bg-slate-800\/50 {
+        background-color: #eff6ff !important;
+        border-color: #bfdbfe !important;
+    }
+
+    /* Sidebar — mantém fundo azul na impressão (print-color-adjust: exact já habilitado no HTML) */
+    body.tema-criativo .md\:w-1\/3 {
+        background-color: #1e3a8a !important;
+        border-radius: 0.5rem !important;
+    }
+
+    body.tema-criativo .md\:w-1\/3 h2,
+    body.tema-criativo .md\:w-1\/3 .text-white     { color: #ffffff !important; }
+    body.tema-criativo .md\:w-1\/3 h4             { color: #fb923c !important; }
+    body.tema-criativo .md\:w-1\/3 .text-slate-300 { color: #bfdbfe !important; }
+    body.tema-criativo .md\:w-1\/3 .text-slate-400 { color: #93c5fd !important; }
+
+    body.tema-criativo .md\:w-1\/3 .text-emerald-400,
+    body.tema-criativo .md\:w-1\/3 .text-emerald-500 { color: #fb923c !important; }
+
+    body.tema-criativo .md\:w-1\/3 .bg-slate-700 {
+        background-color: rgba(255,255,255,0.12) !important;
+        color: #dbeafe !important;
+        border-color: rgba(255,255,255,0.2) !important;
+    }
+
+    body.tema-criativo .md\:w-1\/3 .bg-emerald-500\/10 {
+        background-color: rgba(251,146,60,0.2) !important;
+        color: #fed7aa !important;
+    }
+
+    body.tema-criativo .bg-slate-700 {
+        background-color: #dbeafe !important;
+        color: #1e3a8a !important;
+    }
+
+    body.tema-criativo a.text-emerald-500        { color: #2563eb !important; }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ■  TEMA MINIMALISTA
+      Inter / System UI · Branco puro · Sem bordas visíveis
+      Hierarquia feita exclusivamente por tamanho e cor de fonte
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+body.tema-minimalista {
+    background-color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #0f172a;
+}
+
+/* Card principal — funde-se com a página */
+body.tema-minimalista .bg-slate-800 {
+    background-color: #ffffff;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+}
+
+body.tema-minimalista .shadow-2xl { box-shadow: none; }
+body.tema-minimalista .rounded-lg { border-radius: 0; }
+
+/* Separador do cabeçalho — linha cinza 1px */
+body.tema-minimalista header.border-b-2 {
+    border-bottom-width: 1px;
+    border-bottom-color: #e2e8f0;
+}
+
+body.tema-minimalista .border-emerald-500 { border-color: #e2e8f0; }
+
+/* ── Tipografia (hierarquia por tamanho/cor, sem ornamentos) ── */
+
+body.tema-minimalista h1 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1.05;
+    color: #0f172a;
+}
+
+/* H2 — micro-caption discreta em cinza suave */
+body.tema-minimalista h2 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #94a3b8;
+    border-bottom: none;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Remove a borda inferior Tailwind dos h2 de sidebar */
+body.tema-minimalista h2.border-b { border-bottom: none; }
+
+body.tema-minimalista h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #0f172a;
+}
+
+body.tema-minimalista h4 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* ── Overrides de utilitários de cor Tailwind ── */
+
+body.tema-minimalista .text-white           { color: #0f172a; }
+body.tema-minimalista .text-slate-300       { color: #334155; }
+body.tema-minimalista .text-slate-400       { color: #64748b; }
+body.tema-minimalista .text-slate-500       { color: #94a3b8; }
+body.tema-minimalista .text-emerald-400,
+body.tema-minimalista .text-emerald-500     { color: #64748b; }
+
+/* Símbolo "#" nos h2 → removido completamente */
+body.tema-minimalista h2 span.text-emerald-500 { display: none; }
+
+/* Título dos projetos */
+body.tema-minimalista h3.text-emerald-400  { color: #0f172a; }
+
+/* Mono → herda a fonte do tema, sem weight especial */
+body.tema-minimalista .font-mono {
+    font-family: inherit;
+    font-size: 0.76rem;
+    letter-spacing: 0.02em;
+}
+
+/* ── Bordas ── */
+
+body.tema-minimalista .border-slate-700    { border-color: #f1f5f9; }
+body.tema-minimalista .border-slate-600    { border-color: #e2e8f0; }
+
+body.tema-minimalista .decoration-emerald-500\/30 {
+    text-decoration-color: rgba(148, 163, 184, 0.3);
+}
+
+/* ── Blocos de conteúdo ── */
+
+/* Cards de projetos — sem card, apenas separador sutil */
+body.tema-minimalista .bg-slate-800\/50 {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #f1f5f9;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body.tema-minimalista .rounded { border-radius: 0; }
+
+/* Hover nos cards — sem efeito visual */
+body.tema-minimalista .hover\:border-emerald-500\/50:hover { border-color: transparent; }
+
+/* Timeline de experiência — sem linha lateral colorida */
+body.tema-minimalista .border-l-2 {
+    border-left: none;
+    padding-left: 0;
+}
+
+/* Tags de skill — contorno mínimo 1px */
+body.tema-minimalista .bg-slate-700 {
+    background-color: transparent;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 2px;
+}
+
+/* Tags de fluência de idioma — apenas texto cinza */
+body.tema-minimalista .bg-emerald-500\/10 {
+    background-color: transparent;
+    color: #94a3b8;
+    border: none;
+    padding: 0;
+    font-size: 0.72rem;
+}
+
+/* PcD badge — contorno fino */
+body.tema-minimalista span.bg-slate-700.border.border-slate-600 {
+    background-color: transparent;
+    color: #94a3b8;
+    border: 1px solid #e2e8f0;
+    border-radius: 2px;
+}
+
+/* Links */
+body.tema-minimalista a.text-emerald-500,
+body.tema-minimalista a.block.text-emerald-500 {
+    color: #64748b;
+    text-decoration: none;
+}
+
+/* ── @media print — MINIMALISTA ── */
+@media print {
+    html:has(body.tema-minimalista),
+    body.tema-minimalista {
+        background-color: #ffffff !important;
+        font-size: 11pt !important;
+    }
+
+    body.tema-minimalista .bg-slate-800 {
+        background-color: #ffffff !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    body.tema-minimalista .text-white,
+    body.tema-minimalista h1,
+    body.tema-minimalista h3             { color: #0f172a !important; }
+    body.tema-minimalista h2             { color: #94a3b8 !important; }
+    body.tema-minimalista h4             { color: #94a3b8 !important; }
+
+    body.tema-minimalista h2 span.text-emerald-500 { display: none !important; }
+
+    body.tema-minimalista .text-slate-300               { color: #334155 !important; }
+    body.tema-minimalista .text-slate-400,
+    body.tema-minimalista .text-emerald-400,
+    body.tema-minimalista .text-emerald-500             { color: #64748b !important; }
+    body.tema-minimalista .text-slate-500               { color: #94a3b8 !important; }
+
+    body.tema-minimalista header.border-b-2             { border-bottom-color: #e2e8f0 !important; }
+    body.tema-minimalista .border-slate-700             { border-color: #f1f5f9 !important; }
+
+    body.tema-minimalista .bg-slate-800\/50 {
+        background-color: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+    }
+
+    body.tema-minimalista .bg-slate-700 {
+        background-color: transparent !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #475569 !important;
+    }
+
+    body.tema-minimalista .bg-emerald-500\/10 {
+        background-color: transparent !important;
+        border: none !important;
+        color: #94a3b8 !important;
+    }
+
+    body.tema-minimalista .border-l-2 {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+
+    body.tema-minimalista a.text-emerald-500 { color: #64748b !important; }
+}

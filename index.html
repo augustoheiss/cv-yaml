@@ -6,6 +6,7 @@
         <title>Currículo yaml</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+        <link rel="stylesheet" href="themes.css">
         
         <style>
             /* Mágica do PDF: Hack da Tabela Fantasma (MANTIDO INTACTO!) */
@@ -45,66 +46,69 @@
             /* ======== MÁGICA DO PDF WHITEMODE ======== */
             /* Essas regras SÓ entram em ação se o botão WhiteMode for clicado */
             /* ======== MÁGICA DO PDF WHITEMODE ======== */
-            @media print {
-                /* Força o branco tanto no html quanto no body para matar o fundo infinito escuro */
-                html.print-light-mode,
-                body.print-light-mode {
-                    background-color: #ffffff !important;
-                }
+            
+            /* ======== TEMA WHITE (Agora visível na tela e na impressão) ======== */
 
-                body.print-light-mode .bg-slate-800 {
-                    background-color: #ffffff !important;
-                }
-                
-                /* ... (o resto das regras do WhiteMode continua igualzinho) ... */
-                /* Textos base e Subtítulos */
-                body.print-light-mode,
-                body.print-light-mode .text-slate-300,
-                body.print-light-mode .text-slate-400 {
-                    color: #334155 !important; /* Cinza escuro para o texto base */
-                }
-
-                body.print-light-mode h1, 
-                body.print-light-mode h2, 
-                body.print-light-mode h3 {
-                    color: #0f172a !important; /* Quase preto para os títulos e subtítulos */
-                }
-
-                /* Adaptação do Verde Esmeralda para o fundo branco */
-                body.print-light-mode .text-emerald-400,
-                body.print-light-mode .text-emerald-500 {
-                    color: #059669 !important; /* Verde um pouco mais forte para dar contraste */
-                }
-
-                /* Bordas e separadores */
-                body.print-light-mode .border-slate-700 {
-                    border-color: #cbd5e1 !important; /* Cinza claro nas bordas */
-                }
-
-                /* Caixas de Projetos */
-                body.print-light-mode .bg-slate-800\/50 {
-                    background-color: #f8fafc !important; 
-                    border-color: #e2e8f0 !important;
-                }
-
-                /* Soft Skills (Caixinhas Pintadas) e Label PcD */
-                body.print-light-mode .bg-slate-700 {
-                    background-color: #f1f5f9 !important; /* Fundo cinza bem claro */
-                    color: #475569 !important; /* Texto escuro */
-                    border: 1px solid #cbd5e1 !important;
-                }
-
-                /* Fluência dos Idiomas */
-                body.print-light-mode .bg-emerald-500\/10 {
-                    background-color: #d1fae5 !important;
-                    color: #047857 !important;
-                }
-
-                /* Datas de conclusão e textos mais claros */
-                body.print-light-mode .text-slate-500 {
-                    color: #64748b !important;
-                }
+            /* Força o branco tanto no html quanto no body */
+            html.tema-white,
+            body.tema-white {
+                background-color: #ffffff !important;
             }
+
+            body.tema-white .bg-slate-800 {
+            background-color: #ffffff !important;
+            }
+
+            /* Textos base e Subtítulos */
+            body.tema-white,
+            body.tema-white .text-slate-300,
+            body.tema-white .text-slate-400 {
+                color: #334155 !important; /* Cinza escuro para o texto base */
+            }
+
+            body.tema-white h1, 
+            body.tema-white h2, 
+            body.tema-white h3 {
+                color: #0f172a !important; /* Quase preto para os títulos e subtítulos */
+            }
+          
+            /* Adaptação do Verde Esmeralda para o fundo branco */
+          
+            body.tema-white .text-emerald-400,
+            body.tema-white .text-emerald-500 {
+                color: #059669 !important; /* Verde um pouco mais forte para dar contraste */
+                }
+                           
+            /* Bordas e separadores */                      
+            
+            body.tema-white .border-slate-700 {
+                border-color: #cbd5e1 !important; /* Cinza claro nas bordas */
+            }
+
+            /* Caixas de Projetos */
+            body.tema-white .bg-slate-800\/50 {
+                background-color: #f8fafc !important; 
+                border-color: #e2e8f0 !important;
+            }
+
+            /* Soft Skills (Caixinhas Pintadas) e Label PcD */
+            body.tema-white .bg-slate-700 {
+                background-color: #f1f5f9 !important; /* Fundo cinza bem claro */
+                color: #475569 !important; /* Texto escuro */
+                border: 1px solid #cbd5e1 !important;
+            }
+
+            /* Fluência dos Idiomas */
+            body.tema-white .bg-emerald-500\/10 {
+                background-color: #d1fae5 !important;
+                color: #047857 !important;
+            }
+
+            /* Datas de conclusão e textos mais claros */
+            body.tema-white .text-slate-500 {
+                color: #64748b !important;
+            }
+            
             /* ======================================== */
 
             /* Estilo da Tela (Navegador) */
@@ -116,14 +120,40 @@
 
     <body class="bg-slate-900 text-slate-300 font-sans p-4 md:p-8">
 
-        <div class="max-w-4xl mx-auto flex justify-end gap-3 mb-4 print:hidden">
-            <button onclick="window.print()" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded shadow hover:bg-emerald-500 transition flex items-center gap-2">
-                <span>🖨️</span> Gerar PDF Terminal
-            </button>
-            <button onclick="imprimirClaro()" class="bg-slate-200 text-slate-800 font-bold px-4 py-2 rounded shadow border border-slate-300 hover:bg-slate-300 transition flex items-center gap-2">
-                <span>📄</span> Gerar PDF WhiteMode
-            </button>
+        <div class="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-b border-slate-700 p-4 z-50 print:hidden shadow-lg">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+                
+                <div class="flex flex-wrap justify-center gap-2">
+                    <span class="text-slate-400 text-xs font-mono uppercase tracking-wider self-center mr-2">Temas:</span>
+                    
+                    <button onclick="mudarTema('padrao')" class="btn-tema bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-600 px-3 py-1.5 rounded text-sm transition">
+                        >_ Terminal
+                    </button>
+                    
+                    <button onclick="mudarTema('tema-white')" class="btn-tema bg-slate-100 hover:bg-white text-slate-800 border border-slate-300 px-3 py-1.5 rounded text-sm transition">
+                        📄 White
+                    </button>
+                    
+                    <button onclick="mudarTema('tema-executivo')" class="btn-tema bg-[#c8c8c8] hover:bg-[#dcdcdc] text-slate-900 border border-gray-400 px-3 py-1.5 rounded text-sm transition font-serif">
+                        👔 Executivo
+                    </button>
+                    
+                    <button onclick="mudarTema('tema-criativo')" class="btn-tema bg-blue-100 hover:bg-blue-50 text-blue-900 border border-blue-200 px-3 py-1.5 rounded text-sm transition font-sans">
+                        🎨 Criativo
+                    </button>
+        
+                    <button onclick="mudarTema('tema-minimalista')" class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight">
+                        🔹 Minimal
+                    </button>
+                </div>
+        
+                <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2 rounded shadow-lg transform hover:scale-105 transition flex items-center gap-2">
+                    <span>🖨️</span> Imprimir PDF
+                </button>
+            </div>
         </div>
+        
+        <div class="h-24 print:hidden"></div>
 
         <div class="max-w-4xl mx-auto bg-slate-800 shadow-2xl rounded-lg print:bg-transparent print:shadow-none print:max-w-full print:rounded-none">
             
@@ -222,7 +252,15 @@
             }
 
             // SEU SCRIPT DE CARREGAMENTO DO YAML INTACTO
-            fetch('cv.yaml')
+            // O JS olha pra barra de endereços
+            const urlParams = new URLSearchParams(window.location.search);
+            const userFile = urlParams.get('cv'); 
+
+            // Se a URL tiver "?cv=nome", ele busca na pasta users. Se não, busca o seu oficial.
+            const arquivoAlvo = userFile ? `users/${userFile}.yaml` : 'cv.yaml';
+
+            fetch(arquivoAlvo)
+            // ... o resto do código continua igualzinho!
                 .then(response => response.text())
                 .then(yamlText => {
                     const dados = jsyaml.load(yamlText);
@@ -315,6 +353,32 @@
                     console.error("Erro", error);
                     document.getElementById('resumo').innerText = "Erro ao carregar cv.yaml";
                 });
+            
+            // Lista de todos os temas possíveis para facilitar a limpeza
+            const temas = ['tema-white', 'tema-executivo', 'tema-criativo', 'tema-minimalista'];
+
+            function mudarTema(temaSelecionado) {
+                const html = document.documentElement;
+                const body = document.body;
+
+                // 1. Remove todos os temas ativos (limpa a casa)
+                temas.forEach(tema => {
+                    html.classList.remove(tema);
+                    body.classList.remove(tema);
+                });
+
+                // 2. Se não for o padrão, adiciona a classe do novo tema
+                if (temaSelecionado !== 'padrao') {
+                    html.classList.add(temaSelecionado);
+                    body.classList.add(temaSelecionado);
+                }
+
+                // Opcional: Feedback visual no console
+                console.log(`Tema alterado para: ${temaSelecionado}`);
+            }
+
+            // Nota: A função 'imprimirClaro' antiga pode ser removida, 
+            // pois agora o botão "White" faz o preview e o botão "Imprimir" imprime o que estiver na tela.
         </script>
     </body>
     </html>
