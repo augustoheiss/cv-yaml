@@ -14,7 +14,7 @@ Muitas vezes, vemos o nosso currículo como um altar para o nosso ego, um destaq
 
 A verdadeira eficiência não se mede pela acumulação de vitrinas do passado, mas por como atuamos no **segundo atual**. 
 
-Nós, enquanto humanos, somos máquinas biológicas excecionais. Conseguimos processar inúmeros erros por segundo e continuar a funcionar a 100%. Um erro não nos torna inúteis; é apenas uma fração de dado que processamos para gerar uma reação. Da mesma forma, a tecnologia de ponta não deve ser usada para nos aprisionar em processos burocráticos ou para alimentar o ego no mercado de trabalho. Deve ser usada para **esmagar a burocracia do "Papel Antigo"**. 
+Nós, enquanto humanos, somos máquinas biológicas excepcionais. Conseguimos processar inúmeros erros por segundo e continuar a funcionar a 100%. Um erro não nos torna inúteis; é apenas uma fração de dado que processamos para gerar uma reação. Da mesma forma, a tecnologia de ponta não deve ser usada para nos aprisionar em processos burocráticos ou para alimentar o ego no mercado de trabalho. Deve ser usada para **esmagar a burocracia do "Papel Antigo"**. 
 
 Tudo passa. O ser humano é como a relva. Reconhecer isso permite-nos ser adaptáveis na balança do Universo. O objetivo deste projeto é automatizar a criação da vitrine (o currículo) através de IA, para que possamos usar o nosso tempo — o nosso segundo atual — com o que realmente importa: a liberdade de escolha, a geração de ideias e a capacidade de ajudar outras pessoas.
 
@@ -42,7 +42,7 @@ Este projeto utiliza o conceito de **Single Source of Truth** (Fonte Única de V
 
 O ecossistema está dividido em dois repositórios fundamentais:
 
-1. **O Santuário (`cv-yaml`):** O seu repositório pessoal, intocável e blindado. Serve como a sua vitrine oficial.
+1. **Home (`cv-yaml`):** O seu repositório pessoal, intocável e blindado. Serve como a sua vitrine oficial.
 2. **A Fábrica (`assistente-ia-rag-cvs-yaml`):** O motor de processamento aberto a outros utilizadores. Onde o script Python recebe ficheiros brutos, a IA formata os dados, e o *PyGithub* cria automaticamente uma nova página de visualização utilizando os templates deste projeto.
 
 ---
