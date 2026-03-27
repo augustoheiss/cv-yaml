@@ -104,7 +104,7 @@
                 color: #047857 !important;
             }
 
-            /* Datas de conclusão e textos mais claros */
+            /* Datas de Expected e textos mais claros */
             body.tema-white .text-slate-500 {
                 color: #64748b !important;
             }
@@ -190,34 +190,34 @@
                                 
                                 <div class="w-full md:w-2/3 print:w-2/3 space-y-10">
                                     <section>
-                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Projetos Recentes</h2>
+                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Projects</h2>
                                         <div id="projetos-container" class="space-y-6"></div>
                                     </section>
 
                                     <section>
-                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Experiência</h2>
+                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Experience</h2>
                                         <div id="experiencia-container" class="space-y-6"></div>
                                     </section>
                                     
                                     <section>
-                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Formação Acadêmica</h2>
+                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Education</h2>
                                         <div id="formacao-container" class="space-y-4"></div>
                                     </section>
                                 </div>
 
                                 <div class="w-full md:w-1/3 print:w-1/3 space-y-8">
                                     <section class="evitar-quebra">
-                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Competências</h2>
+                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Competencies</h2>
                                         <div id="skills-container" class="space-y-4"></div>
                                     </section>
 
                                     <section class="evitar-quebra">
-                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Idiomas</h2>
+                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Languages</h2>
                                         <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
                                     </section>
 
                                     <section class="evitar-quebra">
-                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Desenvolvimento</h2>
+                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Continuous Optimization</h2>
                                         <ul id="interesses-container" class="space-y-3 text-sm text-slate-400 list-disc list-inside"></ul>
                                     </section>
                                 </div>
@@ -305,7 +305,7 @@
                         expContainer.innerHTML += `
                             <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
                                 <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
-                                <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | Desde ${trabalho.startDate.substring(0,4)}</p>
+                                <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | Since ${trabalho.startDate.substring(0,4)}</p>
                                 <p class="text-sm text-slate-400 leading-relaxed">${trabalho.summary}</p>
                             </div>
                         `;
@@ -317,7 +317,7 @@
                             <div class="evitar-quebra mb-4">
                                 <h3 class="font-bold text-white">${edu.area} <span class="text-slate-500 font-normal">(${edu.studyType})</span></h3>
                                 <p class="text-sm text-emerald-400">${edu.institution}</p>
-                                <p class="text-xs text-slate-500">Conclusão: ${edu.endDate.substring(0,4)}</p>
+                                <p class="text-xs text-slate-500">Expected: ${edu.endDate.substring(0,4)}</p>
                             </div>
                         `;
                     });
