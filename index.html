@@ -1,267 +1,381 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Currículo yaml</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-        <link rel="stylesheet" href="themes.css">
-        
-        <style>
-            /* Mágica do PDF: Hack da Tabela Fantasma (MANTIDO INTACTO!) */
-            @media print {
-                html, body { 
-                    -webkit-print-color-adjust: exact !important; 
-                    print-color-adjust: exact !important; 
-                    background-color: #0f172a !important; /* Fundo infinito */
-                    margin: 0 !important;
-                    padding: 0 !important;
-                    height: 100% !important;
-                }
+<html lang="pt-BR">
 
-                @page { 
-                    size: A4; 
-                    margin: 0 !important; /* Zero borda branca da impressora */
-                }
-                
-                /* Ativa o cabeçalho/rodapé fantasma da tabela apenas na impressão */
-                .print-header { display: table-header-group !important; }
-                .print-footer { display: table-footer-group !important; }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo yaml</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="themes.css">
 
-                /* Evita corte no meio de caixas */
-                .evitar-quebra {
-                    break-inside: avoid !important;
-                    page-break-inside: avoid !important;
-                }
+    <style>
+        /* Mágica do PDF: Hack da Tabela Fantasma (MANTIDO INTACTO!) */
+        @media print {
 
-                /* Esconde elementos indesejados */
-                ::-webkit-scrollbar { display: none; }
-                .print\:hidden { display: none !important; }
-                
-                /* Reset de fundo para a impressão */
-                .print\:bg-transparent { background-color: transparent !important; }
-            }
-            
-            /* ======== MÁGICA DO PDF WHITEMODE ======== */
-            /* Essas regras SÓ entram em ação se o botão WhiteMode for clicado */
-            /* ======== MÁGICA DO PDF WHITEMODE ======== */
-            
-            /* ======== TEMA WHITE (Agora visível na tela e na impressão) ======== */
-
-            /* Força o branco tanto no html quanto no body */
-            html.tema-white,
-            body.tema-white {
-                background-color: #ffffff !important;
+            html,
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #0f172a !important;
+                /* Fundo infinito */
+                margin: 0 !important;
+                padding: 0 !important;
+                height: 100% !important;
             }
 
-            body.tema-white .bg-slate-800 {
+            @page {
+                size: A4;
+                margin: 0 !important;
+                /* Zero borda branca da impressora */
+            }
+
+            /* Ativa o cabeçalho/rodapé fantasma da tabela apenas na impressão */
+            .print-header {
+                display: table-header-group !important;
+            }
+
+            .print-footer {
+                display: table-footer-group !important;
+            }
+
+            /* Evita corte no meio de caixas */
+            .evitar-quebra {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Esconde elementos indesejados */
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
+            .print\:hidden {
+                display: none !important;
+            }
+
+            /* Reset de fundo para a impressão */
+            .print\:bg-transparent {
+                background-color: transparent !important;
+            }
+        }
+
+        /* ======== MÁGICA DO PDF WHITEMODE ======== */
+        /* Essas regras SÓ entram em ação se o botão WhiteMode for clicado */
+        /* ======== MÁGICA DO PDF WHITEMODE ======== */
+
+        /* ======== TEMA WHITE (Agora visível na tela e na impressão) ======== */
+
+        /* Força o branco tanto no html quanto no body */
+        html.tema-white,
+        body.tema-white {
             background-color: #ffffff !important;
-            }
+        }
 
-            /* Textos base e Subtítulos */
-            body.tema-white,
-            body.tema-white .text-slate-300,
-            body.tema-white .text-slate-400 {
-                color: #334155 !important; /* Cinza escuro para o texto base */
-            }
+        body.tema-white .bg-slate-800 {
+            background-color: #ffffff !important;
+        }
 
-            body.tema-white h1, 
-            body.tema-white h2, 
-            body.tema-white h3 {
-                color: #0f172a !important; /* Quase preto para os títulos e subtítulos */
-            }
-          
-            /* Adaptação do Verde Esmeralda para o fundo branco */
-          
-            body.tema-white .text-emerald-400,
-            body.tema-white .text-emerald-500 {
-                color: #059669 !important; /* Verde um pouco mais forte para dar contraste */
-                }
-                           
-            /* Bordas e separadores */                      
-            
-            body.tema-white .border-slate-700 {
-                border-color: #cbd5e1 !important; /* Cinza claro nas bordas */
-            }
+        /* Textos base e Subtítulos */
+        body.tema-white,
+        body.tema-white .text-slate-300,
+        body.tema-white .text-slate-400 {
+            color: #334155 !important;
+            /* Cinza escuro para o texto base */
+        }
 
-            /* Caixas de Projetos */
-            body.tema-white .bg-slate-800\/50 {
-                background-color: #f8fafc !important; 
-                border-color: #e2e8f0 !important;
-            }
+        body.tema-white h1,
+        body.tema-white h2,
+        body.tema-white h3 {
+            color: #0f172a !important;
+            /* Quase preto para os títulos e subtítulos */
+        }
 
-            /* Soft Skills (Caixinhas Pintadas) e Label PcD */
-            body.tema-white .bg-slate-700 {
-                background-color: #f1f5f9 !important; /* Fundo cinza bem claro */
-                color: #475569 !important; /* Texto escuro */
-                border: 1px solid #cbd5e1 !important;
-            }
+        /* Adaptação do Verde Esmeralda para o fundo branco */
 
-            /* Fluência dos Idiomas */
-            body.tema-white .bg-emerald-500\/10 {
-                background-color: #d1fae5 !important;
-                color: #047857 !important;
-            }
+        body.tema-white .text-emerald-400,
+        body.tema-white .text-emerald-500 {
+            color: #059669 !important;
+            /* Verde um pouco mais forte para dar contraste */
+        }
 
-            /* Datas de Expected e textos mais claros */
-            body.tema-white .text-slate-500 {
-                color: #64748b !important;
-            }
-            
-            /* ======================================== */
+        /* Bordas e separadores */
 
-            /* Estilo da Tela (Navegador) */
-            ::-webkit-scrollbar { width: 8px; }
-            ::-webkit-scrollbar-track { background: #1e293b; }
-            ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
-        </style>
-    </head>
+        body.tema-white .border-slate-700 {
+            border-color: #cbd5e1 !important;
+            /* Cinza claro nas bordas */
+        }
 
-    <body class="bg-slate-900 text-slate-300 font-sans p-4 md:p-8">
+        /* Caixas de Projetos */
+        body.tema-white .bg-slate-800\/50 {
+            background-color: #f8fafc !important;
+            border-color: #e2e8f0 !important;
+        }
 
-        <div class="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-b border-slate-700 p-4 z-50 print:hidden shadow-lg">
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-                
-                <div class="flex flex-wrap justify-center gap-2">
-                    <span class="text-slate-400 text-xs font-mono uppercase tracking-wider self-center mr-2">Temas:</span>
-                    
-                    <button onclick="mudarTema('padrao')" class="btn-tema bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-600 px-3 py-1.5 rounded text-sm transition">
-                        >_ Terminal
-                    </button>
-                    
-                    <button onclick="mudarTema('tema-white')" class="btn-tema bg-slate-100 hover:bg-white text-slate-800 border border-slate-300 px-3 py-1.5 rounded text-sm transition">
-                        📄 White
-                    </button>
-                    
-                    <button onclick="mudarTema('tema-executivo')" class="btn-tema bg-[#c8c8c8] hover:bg-[#dcdcdc] text-slate-900 border border-gray-400 px-3 py-1.5 rounded text-sm transition font-serif">
-                        👔 Executivo
-                    </button>
-                    
-                    <button onclick="mudarTema('tema-criativo')" class="btn-tema bg-blue-100 hover:bg-blue-50 text-blue-900 border border-blue-200 px-3 py-1.5 rounded text-sm transition font-sans">
-                        🎨 Criativo
-                    </button>
-        
-                    <button onclick="mudarTema('tema-minimalista')" class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight">
-                        🔹 Minimal
-                    </button>
-                </div>
-        
-                <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2 rounded shadow-lg transform hover:scale-105 transition flex items-center gap-2">
-                    <span>🖨️</span> Imprimir PDF
+        /* Soft Skills (Caixinhas Pintadas) e Label PcD */
+        body.tema-white .bg-slate-700 {
+            background-color: #f1f5f9 !important;
+            /* Fundo cinza bem claro */
+            color: #475569 !important;
+            /* Texto escuro */
+            border: 1px solid #cbd5e1 !important;
+        }
+
+        /* Fluência dos Idiomas */
+        body.tema-white .bg-emerald-500\/10 {
+            background-color: #d1fae5 !important;
+            color: #047857 !important;
+        }
+
+        /* Datas de Expected e textos mais claros */
+        body.tema-white .text-slate-500 {
+            color: #64748b !important;
+        }
+
+        /* ======================================== */
+
+        /* Estilo da Tela (Navegador) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-300 font-sans p-4 md:p-8">
+
+    <div
+        class="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-b border-slate-700 p-4 z-50 print:hidden shadow-lg">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <div class="flex items-center gap-2 border-r border-slate-700 pr-4 mr-2">
+                <button onclick="mudarIdioma('cv-ptbr.yaml', 'pt')"
+                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-2 py-1.5 rounded text-sm transition"
+                    title="Português do Brasil">
+                    🇧🇷 PT
+                </button>
+                <button onclick="mudarIdioma('cv.yaml', 'en')"
+                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-2 py-1.5 rounded text-sm transition"
+                    title="English">
+                    🇺🇸 EN
                 </button>
             </div>
+
+            <span class="text-slate-400 text-xs font-mono uppercase tracking-wider self-center mr-2">Temas:</span>
+
+            <button onclick="mudarTema('padrao')"
+                class="btn-tema bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-600 px-3 py-1.5 rounded text-sm transition">
+                >_ Terminal
+            </button>
+
+            <button onclick="mudarTema('tema-white')"
+                class="btn-tema bg-slate-100 hover:bg-white text-slate-800 border border-slate-300 px-3 py-1.5 rounded text-sm transition">
+                📄 White
+            </button>
+
+            <button onclick="mudarTema('tema-executivo')"
+                class="btn-tema bg-[#c8c8c8] hover:bg-[#dcdcdc] text-slate-900 border border-gray-400 px-3 py-1.5 rounded text-sm transition font-serif">
+                👔 Executivo
+            </button>
+
+            <button onclick="mudarTema('tema-criativo')"
+                class="btn-tema bg-blue-100 hover:bg-blue-50 text-blue-900 border border-blue-200 px-3 py-1.5 rounded text-sm transition font-sans">
+                🎨 Criativo
+            </button>
+
+            <button onclick="mudarTema('tema-minimalista')"
+                class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight">
+                🔹 Minimal
+            </button>
         </div>
-        
-        <div class="h-24 print:hidden"></div>
 
-        <div class="max-w-4xl mx-auto bg-slate-800 shadow-2xl rounded-lg print:bg-transparent print:shadow-none print:max-w-full print:rounded-none">
-            
-            <table class="w-full border-collapse">
-                
-                <thead class="hidden print-header">
-                    <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
-                </thead>
-                
-                <tbody class="print:table-row-group">
-                    <tr>
-                        <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none">
-                            
-                            <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
-                                <div class="flex flex-col md:flex-row print:flex-row justify-between items-start md:items-center print:items-center gap-4">
-                                    <div>
-                                        <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_ Carregando...</h1>
-                                        <div class="flex items-center gap-3">
-                                            <p id="label" class="text-emerald-400 font-mono text-sm"></p>
-                                            <span class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-600">PcD</span>
-                                        </div>
+        <button onclick="window.print()"
+            class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2 rounded shadow-lg transform hover:scale-105 transition flex items-center gap-2">
+            <span>🖨️</span> Imprimir PDF
+        </button>
+    </div>
+    </div>
+
+    <div class="h-24 print:hidden"></div>
+
+    <div
+        class="max-w-4xl mx-auto bg-slate-800 shadow-2xl rounded-lg print:bg-transparent print:shadow-none print:max-w-full print:rounded-none">
+
+        <table class="w-full border-collapse">
+
+            <thead class="hidden print-header">
+                <tr>
+                    <td style="height: 15mm; border: none; padding: 0;"></td>
+                </tr>
+            </thead>
+
+            <tbody class="print:table-row-group">
+                <tr>
+                    <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none">
+
+                        <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
+                            <div
+                                class="flex flex-col md:flex-row print:flex-row justify-between items-start md:items-center print:items-center gap-4">
+                                <div>
+                                    <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_
+                                        Carregando...</h1>
+                                    <div class="flex items-center gap-3">
+                                        <p id="label" class="text-emerald-400 font-mono text-sm"></p>
+                                        <span
+                                            class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-600">PcD</span>
                                     </div>
-                                    <div class="text-left md:text-right print:text-right text-sm font-mono space-y-1">
-                                        <p id="email" class="text-slate-400"></p>
-                                        <p id="telefone" class="text-slate-400"></p>
-                                        <a id="linkedin" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
-                                        <a id="github" href="#" target="_blank" class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
-                                    </div>
                                 </div>
-                                <p id="resumo" class="mt-6 text-slate-300 leading-relaxed max-w-3xl"></p>
-                            </header>
-
-                            <div class="flex flex-col md:flex-row print:flex-row gap-10 w-full">
-                                
-                                <div class="w-full md:w-2/3 print:w-2/3 space-y-10">
-                                    <section>
-                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Projects</h2>
-                                        <div id="projetos-container" class="space-y-6"></div>
-                                    </section>
-
-                                    <section>
-                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Experience</h2>
-                                        <div id="experiencia-container" class="space-y-6"></div>
-                                    </section>
-                                    
-                                    <section>
-                                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">#</span> Education</h2>
-                                        <div id="formacao-container" class="space-y-4"></div>
-                                    </section>
+                                <div class="text-left md:text-right print:text-right text-sm font-mono space-y-1">
+                                    <p id="email" class="text-slate-400"></p>
+                                    <p id="telefone" class="text-slate-400"></p>
+                                    <a id="linkedin" href="#" target="_blank"
+                                        class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
+                                    <a id="github" href="#" target="_blank"
+                                        class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
                                 </div>
-
-                                <div class="w-full md:w-1/3 print:w-1/3 space-y-8">
-                                    <section class="evitar-quebra">
-                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Competencies</h2>
-                                        <div id="skills-container" class="space-y-4"></div>
-                                    </section>
-
-                                    <section class="evitar-quebra">
-                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Languages</h2>
-                                        <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
-                                    </section>
-
-                                    <section class="evitar-quebra">
-                                        <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Continuous Optimization</h2>
-                                        <ul id="interesses-container" class="space-y-3 text-sm text-slate-400 list-disc list-inside"></ul>
-                                    </section>
-                                </div>
-
                             </div>
-                        </td>
-                    </tr>
-                </tbody>
+                            <p id="resumo" class="mt-6 text-slate-300 leading-relaxed max-w-3xl"></p>
+                        </header>
 
-                <tfoot class="hidden print-footer">
-                    <tr><td style="height: 15mm; border: none; padding: 0;"></td></tr>
-                </tfoot>
+                        <div class="flex flex-col md:flex-row print:flex-row gap-10 w-full">
 
-            </table>
-        </div>
+                            <div class="w-full md:w-2/3 print:w-2/3 space-y-10">
+                                <section>
+                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
+                                            class="text-emerald-500">#</span> <span id="lbl-projetos">Projects</span>
+                                    </h2>
+                                    <div id="projetos-container" class="space-y-6"></div>
+                                </section>
 
-        <script>
-            // FUNÇÃO DO WHITEMODE ADICIONADA AQUI
-            function imprimirClaro() {
-                // Adiciona a classe no <html> e no <body>
-                document.documentElement.classList.add('print-light-mode');
-                document.body.classList.add('print-light-mode');
-                
-                // Aciona a impressora
-                window.print();
-                
-                // Tira a classe logo em seguida para a tela voltar ao normal
-                setTimeout(() => {
-                    document.documentElement.classList.remove('print-light-mode');
-                    document.body.classList.remove('print-light-mode');
-                }, 500);
+                                <section>
+                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
+                                            class="text-emerald-500">#</span> <span
+                                            id="lbl-experiencia">Experience</span></h2>
+                                    <div id="experiencia-container" class="space-y-6"></div>
+                                </section>
+
+                                <section>
+                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
+                                            class="text-emerald-500">#</span> <span id="lbl-formacao">Education</span>
+                                    </h2>
+                                    <div id="formacao-container" class="space-y-4"></div>
+                                </section>
+                            </div>
+
+                            <div class="w-full md:w-1/3 print:w-1/3 space-y-8">
+                                <section class="evitar-quebra">
+                                    <h2 id="lbl-competencias"
+                                        class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
+                                        Competencies</h2>
+                                    <div id="skills-container" class="space-y-4"></div>
+                                </section>
+
+                                <section class="evitar-quebra">
+                                    <h2 id="lbl-idiomas"
+                                        class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
+                                        Languages</h2>
+                                    <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
+                                </section>
+
+                                <section class="evitar-quebra">
+                                    <h2 id="lbl-otimizacao"
+                                        class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
+                                        Continuous Optimization</h2>
+                                    <ul id="interesses-container"
+                                        class="space-y-3 text-sm text-slate-400 list-disc list-inside"></ul>
+                                </section>
+                            </div>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tfoot class="hidden print-footer">
+                <tr>
+                    <td style="height: 15mm; border: none; padding: 0;"></td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+
+    <script>
+        // FUNÇÃO DO WHITEMODE ADICIONADA AQUI
+        function imprimirClaro() {
+            // Adiciona a classe no <html> e no <body>
+            document.documentElement.classList.add('print-light-mode');
+            document.body.classList.add('print-light-mode');
+
+            // Aciona a impressora
+            window.print();
+
+            // Tira a classe logo em seguida para a tela voltar ao normal
+            setTimeout(() => {
+                document.documentElement.classList.remove('print-light-mode');
+                document.body.classList.remove('print-light-mode');
+            }, 500);
+        }
+
+        // SEU SCRIPT DE CARREGAMENTO DO YAML INTACTO
+        // O JS olha pra barra de endereços
+        // Descobre qual arquivo carregar inicialmente pela URL
+        // Dicionário de Internacionalização
+        const dicionario = {
+            'pt': {
+                projetos: "Projetos",
+                experiencia: "Experiência",
+                formacao: "Formação Acadêmica",
+                competencias: "Competências",
+                idiomas: "Idiomas",
+                otimizacao: "Otimização Contínua",
+                since: "Desde",
+                expected: "Conclusão:",
+                verProjeto: "[Ver Projeto]"
+            },
+            'en': {
+                projetos: "Projects",
+                experiencia: "Experience",
+                formacao: "Education",
+                competencias: "Competencies",
+                idiomas: "Languages",
+                otimizacao: "Continuous Optimization",
+                since: "Since",
+                expected: "Expected:",
+                verProjeto: "[View Project]"
             }
+        };
 
-            // SEU SCRIPT DE CARREGAMENTO DO YAML INTACTO
-            // O JS olha pra barra de endereços
-            const urlParams = new URLSearchParams(window.location.search);
-            const userFile = urlParams.get('cv'); 
+        const urlParams = new URLSearchParams(window.location.search);
+        const userFile = urlParams.get('cv');
+        const arquivoAlvoInicial = userFile ? `users/${userFile}.yaml` : 'cv.yaml';
+        const idiomaInicial = 'en'; // Idioma padrão
 
-            // Se a URL tiver "?cv=nome", ele busca na pasta users. Se não, busca o seu oficial.
-            const arquivoAlvo = userFile ? `users/${userFile}.yaml` : 'cv.yaml';
+        function carregarCurriculo(arquivoYaml, lang) {
+            // 1. Carrega as palavras do dicionário escolhido
+            const ui = dicionario[lang];
 
-            fetch(arquivoAlvo)
-            // ... o resto do código continua igualzinho!
-                .then(response => response.text())
+            // 2. Atualiza os títulos fixos do HTML
+            document.getElementById('lbl-projetos').innerText = ui.projetos;
+            document.getElementById('lbl-experiencia').innerText = ui.experiencia;
+            document.getElementById('lbl-formacao').innerText = ui.formacao;
+            document.getElementById('lbl-competencias').innerText = ui.competencias;
+            document.getElementById('lbl-idiomas').innerText = ui.idiomas;
+            document.getElementById('lbl-otimizacao').innerText = ui.otimizacao;
+
+            fetch(arquivoYaml)
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro ao carregar o arquivo: " + arquivoYaml);
+                    return response.text();
+                })
                 .then(yamlText => {
                     const dados = jsyaml.load(yamlText);
 
@@ -269,14 +383,14 @@
                     document.getElementById('label').innerText = dados.basics.label;
                     document.getElementById('email').innerText = dados.basics.email;
                     document.getElementById('telefone').innerText = dados.basics.phone;
-                    
+
                     const linkedinEl = document.getElementById('linkedin');
                     linkedinEl.innerText = dados.basics.url.replace('https://www.', '');
                     linkedinEl.href = dados.basics.url;
 
-                    if(dados.basics.profiles && dados.basics.profiles.length > 0) {
+                    if (dados.basics.profiles && dados.basics.profiles.length > 0) {
                         const githubData = dados.basics.profiles.find(p => p.network === 'GitHub');
-                        if(githubData) {
+                        if (githubData) {
                             const githubEl = document.getElementById('github');
                             githubEl.innerText = githubData.url.replace('https://', '');
                             githubEl.href = githubData.url;
@@ -286,10 +400,24 @@
                     document.getElementById('resumo').innerText = dados.basics.summary;
 
                     const projetosContainer = document.getElementById('projetos-container');
+                    const expContainer = document.getElementById('experiencia-container');
+                    const formacaoContainer = document.getElementById('formacao-container');
+                    const skillsContainer = document.getElementById('skills-container');
+                    const idiomasContainer = document.getElementById('idiomas-container');
+                    const intContainer = document.getElementById('interesses-container');
+
+                    projetosContainer.innerHTML = '';
+                    expContainer.innerHTML = '';
+                    formacaoContainer.innerHTML = '';
+                    skillsContainer.innerHTML = '';
+                    idiomasContainer.innerHTML = '';
+                    intContainer.innerHTML = '';
+
                     dados.projects.forEach(projeto => {
                         let bullets = projeto.highlights ? projeto.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
-                        let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block">[Ver Projeto]</a>` : '';
-                        
+                        // USANDO O DICIONÁRIO NO LINK DO PROJETO
+                        let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block">${ui.verProjeto}</a>` : '';
+
                         projetosContainer.innerHTML += `
                             <div class="evitar-quebra bg-slate-800/50 p-4 rounded border border-slate-700 hover:border-emerald-500/50 transition">
                                 <h3 class="text-lg font-bold text-emerald-400">${projeto.name}</h3>
@@ -300,29 +428,28 @@
                         `;
                     });
 
-                    const expContainer = document.getElementById('experiencia-container');
                     dados.work.forEach(trabalho => {
+                        // USANDO O DICIONÁRIO NO "SINCE / DESDE"
                         expContainer.innerHTML += `
                             <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
                                 <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
-                                <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | Since ${trabalho.startDate.substring(0,4)}</p>
+                                <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | ${ui.since} ${trabalho.startDate.substring(0, 4)}</p>
                                 <p class="text-sm text-slate-400 leading-relaxed">${trabalho.summary}</p>
                             </div>
                         `;
                     });
 
-                    const formacaoContainer = document.getElementById('formacao-container');
                     dados.education.forEach(edu => {
+                        // USANDO O DICIONÁRIO NO "EXPECTED / CONCLUSÃO"
                         formacaoContainer.innerHTML += `
                             <div class="evitar-quebra mb-4">
                                 <h3 class="font-bold text-white">${edu.area} <span class="text-slate-500 font-normal">(${edu.studyType})</span></h3>
                                 <p class="text-sm text-emerald-400">${edu.institution}</p>
-                                <p class="text-xs text-slate-500">Expected: ${edu.endDate.substring(0,4)}</p>
+                                <p class="text-xs text-slate-500">${ui.expected} ${edu.endDate.substring(0, 4)}</p>
                             </div>
                         `;
                     });
 
-                    const skillsContainer = document.getElementById('skills-container');
                     dados.skills.forEach(skill => {
                         let tags = skill.keywords.map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded m-0.5">${k}</span>`).join('');
                         skillsContainer.innerHTML += `
@@ -333,7 +460,6 @@
                         `;
                     });
 
-                    const idiomasContainer = document.getElementById('idiomas-container');
                     dados.languages.forEach(idioma => {
                         idiomasContainer.innerHTML += `
                             <li class="flex justify-between items-center">
@@ -343,7 +469,6 @@
                         `;
                     });
 
-                    const intContainer = document.getElementById('interesses-container');
                     dados.interests[0].keywords.forEach(interesse => {
                         intContainer.innerHTML += `<li>${interesse}</li>`;
                     });
@@ -351,34 +476,17 @@
                 })
                 .catch(error => {
                     console.error("Erro", error);
-                    document.getElementById('resumo').innerText = "Erro ao carregar cv.yaml";
+                    document.getElementById('resumo').innerText = "Erro ao carregar o arquivo YAML.";
                 });
-            
-            // Lista de todos os temas possíveis para facilitar a limpeza
-            const temas = ['tema-white', 'tema-executivo', 'tema-criativo', 'tema-minimalista'];
+        }
 
-            function mudarTema(temaSelecionado) {
-                const html = document.documentElement;
-                const body = document.body;
+        // Ativa as funções com dois parâmetros (Arquivo, Língua)
+        carregarCurriculo(arquivoAlvoInicial, idiomaInicial);
 
-                // 1. Remove todos os temas ativos (limpa a casa)
-                temas.forEach(tema => {
-                    html.classList.remove(tema);
-                    body.classList.remove(tema);
-                });
+        function mudarIdioma(nomeDoArquivo, lang) {
+            carregarCurriculo(nomeDoArquivo, lang);
+        }
+    </script>
+</body>
 
-                // 2. Se não for o padrão, adiciona a classe do novo tema
-                if (temaSelecionado !== 'padrao') {
-                    html.classList.add(temaSelecionado);
-                    body.classList.add(temaSelecionado);
-                }
-
-                // Opcional: Feedback visual no console
-                console.log(`Tema alterado para: ${temaSelecionado}`);
-            }
-
-            // Nota: A função 'imprimirClaro' antiga pode ser removida, 
-            // pois agora o botão "White" faz o preview e o botão "Imprimir" imprime o que estiver na tela.
-        </script>
-    </body>
-    </html>
+</html>

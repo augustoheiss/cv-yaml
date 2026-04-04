@@ -1,0 +1,108 @@
+basics:
+  name: "Augusto Leonardo Farias Heiss"
+  label: "Desenvolvedor Python & IA | Especialista em Automação Rápida"
+  email: "augustoheiss@gmail.com"
+  phone: "+55 11 98135-5495"
+  url: "https://www.linkedin.com/in/augustoheiss"
+  summary: "A minha jornada profissional começou a cultivar a lógica matemática na sala de aula. Ao observar o peso da burocracia no potencial humano, adaptei-me rapidamente ao ecossistema tecnológico. Como autodidata em Python e IA, desenvolvo sistemas preditivos e automações complexas (RAG, integrações API, paralelismo) para transformar rotinas estáticas em operações dinâmicas. A minha filosofia é simples: a máquina assume a repetição sem ego, libertando o 'Segundo Atual' para a verdadeira conexão e criatividade humana. Procuro aplicar esta velocidade de aprendizagem num estágio em IA, Ciência de Dados ou Python, entregando resultados estruturados desde o primeiro dia."
+  location:
+    city: "Ferraz de Vasconcelos"
+    region: "São Paulo"
+    postalCode: "08533-120"
+    countryCode: "BR"
+  profiles:
+    - network: "GitHub"
+      username: "augustoheiss"
+      url: "https://github.com/augustoheiss"
+    - network: "Heiss-Lab"
+      username: "AI Laboratory"
+      url: "https://heiss-lab.vercel.app/"
+
+work:
+  - name: "Secretaria Municipal de Educação de São Paulo"
+    position: "Professor de Matemática - Ensino Fundamental II e Médio"
+    startDate: "2019-01-01"
+    summary: "Missão Pedagógica: Liderança e gestão de mais de 20 turmas anuais. Ao invés de apenas transmitir números, implementei abordagens para desenvolver o raciocínio lógico e a resolução de problemas sob pressão, conectando a teoria matemática à realidade prática dos estudantes."
+  - name: "Experiências Anteriores Diversas"
+    position: "Atendimento Premium, Redação e Construção Civil"
+    startDate: "2009-01-01"
+    summary: "Missão Operacional: A adaptação constante a múltiplos ecossistemas forjou uma resiliência excecional e uma visão orientada à resolução de problemas e à clareza na comunicação, competências vitais hoje aplicadas à arquitetura de software."
+
+education:
+  - institution: "Universidade Nove de Julho (UNINOVE)"
+    area: "Tecnologia em Inteligência Artificial"
+    studyType: "Evento de Aquisição de Conhecimento (Tecnólogo)"
+    endDate: "2027-12-31"
+  - institution: "Universidade Cidade de São Paulo (UNICID)"
+    area: "Matemática"
+    studyType: "Evento de Aquisição de Conhecimento (Licenciatura)"
+    endDate: "2012-12-31"
+  - institution: "SENAI Roberto Simonsen (ISO 9001)"
+    area: "Eletroeletrônica / Eletricista de Manutenção"
+    studyType: "Evento de Aquisição de Conhecimento (Técnico)"
+    endDate: "2011-12-31"
+
+projects:
+  - name: "LogicDefense CV RAG Engine (Heiss-Lab)"
+    description: "Arquitetura avançada em FastAPI para geração dinâmica de currículos, separando completamente o conteúdo (YAML) da apresentação visual."
+    highlights:
+      - "Identificou e resolveu problemas de limite de tokens da API do Gemini 2.5 Flash através da implementação de processamento paralelo concorrente (asyncio.gather)."
+      - "Reduziu drasticamente o tempo de resposta do servidor, disparando 4 pedidos simultâneos para forjar múltiplos arquétipos numa única execução."
+    url: "https://heiss-lab.vercel.app/laboratorio/cv-maker"
+
+  - name: "Assistente Escola Modelo (Automação RAG/Playwright)"
+    description: "Sistema de IA criado para libertar o corpo docente da burocracia, utilizando a ética do 'Segundo Atual'."
+    highlights:
+      - "Forjou um 'Escudo RAG', obrigando a IA a consultar apenas documentos oficiais antes de gerar respostas, garantindo transparência técnica e zero alucinações."
+      - "Integrou protocolos 'Human-in-the-loop' para supervisão, com estrutura planeada para acionamento de APIs e execução RPA no Sistema de Gestão Pedagógica."
+    url: "https://assistente-escola-modelo.streamlit.app/"
+
+  - name: "Assistente-Moeda (Dashboard Financeiro Automotivo)"
+    description: "Ferramenta preditiva que transforma dados estáticos em dinâmicos para assegurar a função mecânica do capital."
+    highlights:
+      - "Desenvolveu cálculos para fracionar metas diárias e projetar rendimentos no Tesouro Direto num horizonte de 3 anos."
+      - "Otimizou a alocação de recursos, cobrindo os custos de rodagem de um veículo híbrido através da rentabilidade projetada."
+
+  - name: "Ecossistema de Jogos WebGL (Godot)"
+    description: "Museu vivo de videojogos Web (LogicDefense e LogicAscension) elaborados em cocriação com IA."
+    highlights:
+      - "Demonstrou rapidez de aprendizagem ao aplicar sistemas vetoriais e lógicos operando sob restrições estritas de tempo diretamente no motor Godot."
+
+  - name: "Alavanca Tecnológica para Autônomos"
+    description: "Aceleração de negócios locais através da programação."
+    highlights:
+      - "Desenvolveu e efetuou o deploy (Vercel/GitHub Pages) de múltiplas páginas de alta conversão para profissionais de idiomas, estética, climatização e transporte executivo."
+
+skills:
+  - name: "Módulo Cognitivo: Programação e Arquitetura de Dados"
+    level: "Expert"
+    keywords:
+      - "Python & Automações Avançadas"
+      - "Integração de APIs & FastAPI"
+      - "RAG (Retrieval-Augmented Generation)"
+      - "SQLite & Estruturação de Dados YAML"
+  - name: "Módulo Cognitivo: Ferramentas e Web"
+    level: "Proficient"
+    keywords:
+      - "Git / GitHub / Vercel"
+      - "VS Code / Cursor (Cocriação com IA)"
+      - "RPA & Web Scraping (Base conceptual)"
+      - "Godot Engine"
+  - name: "Módulo Cognitivo: Interface Humana"
+    level: "Expert"
+    keywords:
+      - "Raciocínio Lógico Matemático"
+      - "Resolução Analítica de Problemas"
+      - "Comunicação Clara e Ética Assimétrica"
+
+languages:
+  - language: "Inglês"
+    fluency: "Avançado (Leitura de Documentação Técnica e Prompts)"
+  - language: "Espanhol"
+    fluency: "Intermediário"
+
+interests:
+  - name: "Otimização Contínua"
+    keywords:
+      - "Princípios do 'The Pragmatic Programmer' aplicados ao código."
+      - "Filosofia da Lógica e Estudo contínuo em IA."
