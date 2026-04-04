@@ -156,52 +156,55 @@
         class="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-b border-slate-700 p-4 z-50 print:hidden shadow-lg">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 
-            <div class="flex items-center gap-2 border-r border-slate-700 pr-4 mr-2">
-                <button onclick="mudarIdioma('cv-ptbr.yaml', 'pt')"
-                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-2 py-1.5 rounded text-sm transition"
-                    title="Português do Brasil">
-                    🇧🇷 PT
+            <div class="flex flex-wrap justify-center items-center gap-2">
+
+                <div class="flex items-center gap-2 border-r border-slate-700 pr-4 mr-2">
+                    <button onclick="mudarIdioma('cv-ptbr.yaml', 'pt')"
+                        class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-bold"
+                        title="Português do Brasil">
+                        BR PT
+                    </button>
+                    <button onclick="mudarIdioma('cv.yaml', 'en')"
+                        class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-bold"
+                        title="English">
+                        US EN
+                    </button>
+                </div>
+
+                <span class="text-slate-400 text-xs font-mono uppercase tracking-wider mr-2">Temas:</span>
+
+                <button onclick="mudarTema('padrao')"
+                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-600 px-3 py-1.5 rounded text-sm transition">
+                    >_ Terminal
                 </button>
-                <button onclick="mudarIdioma('cv.yaml', 'en')"
-                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-2 py-1.5 rounded text-sm transition"
-                    title="English">
-                    🇺🇸 EN
+
+                <button onclick="mudarTema('tema-white')"
+                    class="btn-tema bg-slate-100 hover:bg-white text-slate-800 border border-slate-300 px-3 py-1.5 rounded text-sm transition">
+                    📄 White
+                </button>
+
+                <button onclick="mudarTema('tema-executivo')"
+                    class="btn-tema bg-[#c8c8c8] hover:bg-[#dcdcdc] text-slate-900 border border-gray-400 px-3 py-1.5 rounded text-sm transition font-serif">
+                    👔 Executivo
+                </button>
+
+                <button onclick="mudarTema('tema-criativo')"
+                    class="btn-tema bg-blue-100 hover:bg-blue-50 text-blue-900 border border-blue-200 px-3 py-1.5 rounded text-sm transition font-sans">
+                    🎨 Criativo
+                </button>
+
+                <button onclick="mudarTema('tema-minimalista')"
+                    class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight">
+                    🔹 Minimal
                 </button>
             </div>
 
-            <span class="text-slate-400 text-xs font-mono uppercase tracking-wider self-center mr-2">Temas:</span>
-
-            <button onclick="mudarTema('padrao')"
-                class="btn-tema bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-600 px-3 py-1.5 rounded text-sm transition">
-                >_ Terminal
+            <button onclick="window.print()"
+                class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2 rounded shadow-lg transform hover:scale-105 transition flex items-center gap-2">
+                <span>🖨️</span> Imprimir PDF
             </button>
 
-            <button onclick="mudarTema('tema-white')"
-                class="btn-tema bg-slate-100 hover:bg-white text-slate-800 border border-slate-300 px-3 py-1.5 rounded text-sm transition">
-                📄 White
-            </button>
-
-            <button onclick="mudarTema('tema-executivo')"
-                class="btn-tema bg-[#c8c8c8] hover:bg-[#dcdcdc] text-slate-900 border border-gray-400 px-3 py-1.5 rounded text-sm transition font-serif">
-                👔 Executivo
-            </button>
-
-            <button onclick="mudarTema('tema-criativo')"
-                class="btn-tema bg-blue-100 hover:bg-blue-50 text-blue-900 border border-blue-200 px-3 py-1.5 rounded text-sm transition font-sans">
-                🎨 Criativo
-            </button>
-
-            <button onclick="mudarTema('tema-minimalista')"
-                class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight">
-                🔹 Minimal
-            </button>
         </div>
-
-        <button onclick="window.print()"
-            class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2 rounded shadow-lg transform hover:scale-105 transition flex items-center gap-2">
-            <span>🖨️</span> Imprimir PDF
-        </button>
-    </div>
     </div>
 
     <div class="h-24 print:hidden"></div>
@@ -309,25 +312,6 @@
     </div>
 
     <script>
-        // FUNÇÃO DO WHITEMODE ADICIONADA AQUI
-        function imprimirClaro() {
-            // Adiciona a classe no <html> e no <body>
-            document.documentElement.classList.add('print-light-mode');
-            document.body.classList.add('print-light-mode');
-
-            // Aciona a impressora
-            window.print();
-
-            // Tira a classe logo em seguida para a tela voltar ao normal
-            setTimeout(() => {
-                document.documentElement.classList.remove('print-light-mode');
-                document.body.classList.remove('print-light-mode');
-            }, 500);
-        }
-
-        // SEU SCRIPT DE CARREGAMENTO DO YAML INTACTO
-        // O JS olha pra barra de endereços
-        // Descobre qual arquivo carregar inicialmente pela URL
         // Dicionário de Internacionalização
         const dicionario = {
             'pt': {
@@ -357,23 +341,31 @@
         const urlParams = new URLSearchParams(window.location.search);
         const userFile = urlParams.get('cv');
         const arquivoAlvoInicial = userFile ? `users/${userFile}.yaml` : 'cv.yaml';
-        const idiomaInicial = 'en'; // Idioma padrão
+        const idiomaInicial = 'en';
+
+        // Função Blindada para trocar os títulos do HTML
+        function atualizarTitulosHTML(ui) {
+            const ids = {
+                'lbl-projetos': ui.projetos,
+                'lbl-experiencia': ui.experiencia,
+                'lbl-formacao': ui.formacao,
+                'lbl-competencias': ui.competencias,
+                'lbl-idiomas': ui.idiomas,
+                'lbl-otimizacao': ui.otimizacao
+            };
+            for (const [id, texto] of Object.entries(ids)) {
+                const el = document.getElementById(id);
+                if (el) el.innerText = texto; // Só altera se o ID existir na tela (evita crash)
+            }
+        }
 
         function carregarCurriculo(arquivoYaml, lang) {
-            // 1. Carrega as palavras do dicionário escolhido
             const ui = dicionario[lang];
-
-            // 2. Atualiza os títulos fixos do HTML
-            document.getElementById('lbl-projetos').innerText = ui.projetos;
-            document.getElementById('lbl-experiencia').innerText = ui.experiencia;
-            document.getElementById('lbl-formacao').innerText = ui.formacao;
-            document.getElementById('lbl-competencias').innerText = ui.competencias;
-            document.getElementById('lbl-idiomas').innerText = ui.idiomas;
-            document.getElementById('lbl-otimizacao').innerText = ui.otimizacao;
+            atualizarTitulosHTML(ui);
 
             fetch(arquivoYaml)
                 .then(response => {
-                    if (!response.ok) throw new Error("Erro ao carregar o arquivo: " + arquivoYaml);
+                    if (!response.ok) throw new Error("Erro ao carregar: " + arquivoYaml);
                     return response.text();
                 })
                 .then(yamlText => {
@@ -415,7 +407,6 @@
 
                     dados.projects.forEach(projeto => {
                         let bullets = projeto.highlights ? projeto.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
-                        // USANDO O DICIONÁRIO NO LINK DO PROJETO
                         let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block">${ui.verProjeto}</a>` : '';
 
                         projetosContainer.innerHTML += `
@@ -429,7 +420,6 @@
                     });
 
                     dados.work.forEach(trabalho => {
-                        // USANDO O DICIONÁRIO NO "SINCE / DESDE"
                         expContainer.innerHTML += `
                             <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
                                 <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
@@ -440,7 +430,6 @@
                     });
 
                     dados.education.forEach(edu => {
-                        // USANDO O DICIONÁRIO NO "EXPECTED / CONCLUSÃO"
                         formacaoContainer.innerHTML += `
                             <div class="evitar-quebra mb-4">
                                 <h3 class="font-bold text-white">${edu.area} <span class="text-slate-500 font-normal">(${edu.studyType})</span></h3>
@@ -480,11 +469,33 @@
                 });
         }
 
-        // Ativa as funções com dois parâmetros (Arquivo, Língua)
+        // === CONTROLES DA PÁGINA ===
+
+        // 1. Inicia o site
         carregarCurriculo(arquivoAlvoInicial, idiomaInicial);
 
+        // 2. Controla o botão de trocar idioma
         function mudarIdioma(nomeDoArquivo, lang) {
             carregarCurriculo(nomeDoArquivo, lang);
+        }
+
+        // 3. Controla os botões de trocar tema
+        const temas = ['tema-white', 'tema-executivo', 'tema-criativo', 'tema-minimalista'];
+        function mudarTema(temaSelecionado) {
+            const html = document.documentElement;
+            const body = document.body;
+
+            // Limpa todos os temas
+            temas.forEach(tema => {
+                html.classList.remove(tema);
+                body.classList.remove(tema);
+            });
+
+            // Se não for o padrão, adiciona a classe
+            if (temaSelecionado !== 'padrao') {
+                html.classList.add(temaSelecionado);
+                body.classList.add(temaSelecionado);
+            }
         }
     </script>
 </body>
