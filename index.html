@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="themes.css">
 
     <style>
-        /* Mágica do PDF: Hack da Tabela Fantasma (MANTIDO INTACTO!) */
+        /* ======== PRINT: Hack da Tabela Fantasma + Layout Otimizado ======== */
         @media print {
 
             html,
@@ -18,16 +18,15 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 background-color: #0f172a !important;
-                /* Fundo infinito */
                 margin: 0 !important;
                 padding: 0 !important;
                 height: 100% !important;
+                font-size: 10.5pt !important;
             }
 
             @page {
                 size: A4;
                 margin: 0 !important;
-                /* Zero borda branca da impressora */
             }
 
             /* Ativa o cabeçalho/rodapé fantasma da tabela apenas na impressão */
@@ -58,15 +57,73 @@
             .print\:bg-transparent {
                 background-color: transparent !important;
             }
+
+            /* ── Layout de duas colunas compacto para print ── */
+            .cv-two-col {
+                gap: 1.5rem !important;
+            }
+
+            /* Condensar espaçamento interno da página */
+            .cv-content-area {
+                padding: 0 8mm !important;
+            }
+
+            /* Condensar o header */
+            header.border-b-2 {
+                padding-bottom: 0.75rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            /* Condensar gaps das seções */
+            .cv-two-col .space-y-6 > * + * {
+                margin-top: 0.75rem !important;
+            }
+
+            .cv-two-col .space-y-8 > * + * {
+                margin-top: 1rem !important;
+            }
+
+            /* Seções full-width com espaçamento compacto */
+            .cv-full-width {
+                padding: 0 8mm !important;
+            }
+
+            .cv-full-width .space-y-6 > * + * {
+                margin-top: 0.75rem !important;
+            }
+
+            .cv-full-width .space-y-4 > * + * {
+                margin-top: 0.5rem !important;
+            }
+
+            /* Seções de experiência/formação: evitar quebra de cada card */
+            .cv-full-width .evitar-quebra {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Reduzir padding dos cards de projetos para print */
+            .bg-slate-800\/50 {
+                padding: 0.5rem 0.75rem !important;
+            }
+
+            /* Experiência full-width com colunas no print */
+            .cv-exp-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.75rem 1.5rem !important;
+            }
+
+            /* Formação em grid horizontal no print */
+            .cv-edu-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 0.5rem 1rem !important;
+            }
         }
 
-        /* ======== MÁGICA DO PDF WHITEMODE ======== */
-        /* Essas regras SÓ entram em ação se o botão WhiteMode for clicado */
-        /* ======== MÁGICA DO PDF WHITEMODE ======== */
+        /* ======== TEMA WHITE ======== */
 
-        /* ======== TEMA WHITE (Agora visível na tela e na impressão) ======== */
-
-        /* Força o branco tanto no html quanto no body */
         html.tema-white,
         body.tema-white {
             background-color: #ffffff !important;
@@ -76,58 +133,43 @@
             background-color: #ffffff !important;
         }
 
-        /* Textos base e Subtítulos */
         body.tema-white,
         body.tema-white .text-slate-300,
         body.tema-white .text-slate-400 {
             color: #334155 !important;
-            /* Cinza escuro para o texto base */
         }
 
         body.tema-white h1,
         body.tema-white h2,
         body.tema-white h3 {
             color: #0f172a !important;
-            /* Quase preto para os títulos e subtítulos */
         }
-
-        /* Adaptação do Verde Esmeralda para o fundo branco */
 
         body.tema-white .text-emerald-400,
         body.tema-white .text-emerald-500 {
             color: #059669 !important;
-            /* Verde um pouco mais forte para dar contraste */
         }
-
-        /* Bordas e separadores */
 
         body.tema-white .border-slate-700 {
             border-color: #cbd5e1 !important;
-            /* Cinza claro nas bordas */
         }
 
-        /* Caixas de Projetos */
         body.tema-white .bg-slate-800\/50 {
             background-color: #f8fafc !important;
             border-color: #e2e8f0 !important;
         }
 
-        /* Soft Skills (Caixinhas Pintadas) e Label PcD */
         body.tema-white .bg-slate-700 {
             background-color: #f1f5f9 !important;
-            /* Fundo cinza bem claro */
             color: #475569 !important;
-            /* Texto escuro */
             border: 1px solid #cbd5e1 !important;
         }
 
-        /* Fluência dos Idiomas */
         body.tema-white .bg-emerald-500\/10 {
             background-color: #d1fae5 !important;
             color: #047857 !important;
         }
 
-        /* Datas de Expected e textos mais claros */
         body.tema-white .text-slate-500 {
             color: #64748b !important;
         }
@@ -146,6 +188,58 @@
         ::-webkit-scrollbar-thumb {
             background: #10b981;
             border-radius: 4px;
+        }
+
+        /* ── Novo layout: Grid de duas colunas com escopo limitado ── */
+        .cv-two-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .cv-two-col {
+                flex-direction: row;
+                gap: 2.5rem;
+            }
+
+            .cv-col-main {
+                width: 66.666%;
+            }
+
+            .cv-col-sidebar {
+                width: 33.333%;
+            }
+        }
+
+        /* Print forçado para duas colunas */
+        @media print {
+            .cv-two-col {
+                flex-direction: row !important;
+                gap: 1.5rem !important;
+            }
+
+            .cv-col-main {
+                width: 63% !important;
+            }
+
+            .cv-col-sidebar {
+                width: 37% !important;
+            }
+        }
+
+        /* Separador sutil entre a zona two-col e full-width */
+        .cv-section-divider {
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+        }
+
+        @media print {
+            .cv-section-divider {
+                margin-top: 1rem;
+                padding-top: 1rem;
+            }
         }
     </style>
 </head>
@@ -222,8 +316,9 @@
 
             <tbody class="print:table-row-group">
                 <tr>
-                    <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none">
+                    <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none cv-content-area">
 
+                        <!-- ═══ HEADER: Full-Width ═══ -->
                         <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
                             <div
                                 class="flex flex-col md:flex-row print:flex-row justify-between items-start md:items-center print:items-center gap-4">
@@ -248,32 +343,21 @@
                             <p id="resumo" class="mt-6 text-slate-300 leading-relaxed max-w-3xl"></p>
                         </header>
 
-                        <div class="flex flex-col md:flex-row print:flex-row gap-10 w-full">
+                        <!-- ═══ ZONA TWO-COL: Projetos (esquerda) + Sidebar (direita) ═══ -->
+                        <div class="cv-two-col w-full">
 
-                            <div class="w-full md:w-2/3 print:w-2/3 space-y-10">
+                            <!-- Coluna Principal: APENAS Projetos -->
+                            <div class="cv-col-main space-y-6">
                                 <section>
                                     <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
                                             class="text-emerald-500">#</span> <span id="lbl-projetos">Projects</span>
                                     </h2>
                                     <div id="projetos-container" class="space-y-6"></div>
                                 </section>
-
-                                <section>
-                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
-                                            class="text-emerald-500">#</span> <span
-                                            id="lbl-experiencia">Experience</span></h2>
-                                    <div id="experiencia-container" class="space-y-6"></div>
-                                </section>
-
-                                <section>
-                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
-                                            class="text-emerald-500">#</span> <span id="lbl-formacao">Education</span>
-                                    </h2>
-                                    <div id="formacao-container" class="space-y-4"></div>
-                                </section>
                             </div>
 
-                            <div class="w-full md:w-1/3 print:w-1/3 space-y-8">
+                            <!-- Coluna Sidebar: Competências + Idiomas + Otimização -->
+                            <div class="cv-col-sidebar md:w-1/3 print:w-1/3 space-y-8">
                                 <section class="evitar-quebra">
                                     <h2 id="lbl-competencias"
                                         class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
@@ -298,6 +382,26 @@
                             </div>
 
                         </div>
+
+                        <!-- ═══ ZONA FULL-WIDTH: Experiência + Formação ═══ -->
+                        <div class="cv-full-width cv-section-divider">
+
+                            <section class="mb-6">
+                                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
+                                        class="text-emerald-500">#</span> <span
+                                        id="lbl-experiencia">Experience</span></h2>
+                                <div id="experiencia-container" class="space-y-6 cv-exp-grid"></div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
+                                        class="text-emerald-500">#</span> <span id="lbl-formacao">Education</span>
+                                </h2>
+                                <div id="formacao-container" class="space-y-4 cv-edu-grid"></div>
+                            </section>
+
+                        </div>
+
                     </td>
                 </tr>
             </tbody>
