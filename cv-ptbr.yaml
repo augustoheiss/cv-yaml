@@ -3,7 +3,7 @@ basics:
   label: "Desenvolvedor Python & IA"
   email: "augustoheiss@gmail.com"
   phone: "+55 11 98135-5495"
-  url: "https://www.linkedin.com/in/augustoheiss"
+  url: "https://www.heisslab.com.br/"
   summary: "A jornada profissional de Augusto começou cultivando a lógica matemática na sala de aula. Ao observar o peso da burocracia no potencial humano, adaptou-se rapidamente ao ecossistema tecnológico. Como autodidata em Python e IA, desenvolve sistemas preditivos e automações complexas (RAG, integrações de API, paralelismo) para transformar rotinas estáticas em operações dinâmicas. Sua filosofia é clara: a máquina assume a repetição sem ego, libertando o 'Segundo Atual' para a verdadeira conexão e criatividade humana. Busca aplicar essa velocidade de aprendizagem em um estágio em IA, Ciência de Dados ou Python, entregando resultados estruturados com total transparência e verificação desde o primeiro dia."
   location:
     city: "Ferraz de Vasconcelos"
@@ -11,12 +11,15 @@ basics:
     postalCode: "08533-120"
     countryCode: "BR"
   profiles:
+    - network: "LinkedIn"
+      username: "augustoheiss"
+      url: "https://www.linkedin.com/in/augustoheiss"
     - network: "GitHub"
       username: "augustoheiss"
       url: "https://github.com/augustoheiss"
-    - network: "Heiss-Lab"
-      username: "AI Laboratory"
-      url: "https://heiss-lab.vercel.app/"
+    - network: "Heiss-Lab (Oficial)"
+      username: "Portfólio"
+      url: "https://www.heisslab.com.br/"
 
 work:
   - name: "Autônomo"
@@ -52,7 +55,7 @@ projects:
     highlights:
       - "Identificou e resolveu problemas de limite de tokens da API do Gemini 2.5 Flash através da implementação de processamento paralelo concorrente (asyncio.gather)."
       - "Reduziu drasticamente o tempo de resposta do servidor, disparando 4 pedidos simultâneos para forjar múltiplos arquétipos em uma única execução."
-    url: "https://heiss-lab.vercel.app/laboratorio/cv-maker"
+    url: "https://heisslab.com.br/laboratorio/cv-maker"
 
   - name: "Assistente Escola Modelo (Automação RAG/Playwright)"
     description: "Sistema de IA criado para libertar o corpo docente da burocracia, utilizando a ética do 'Segundo Atual'."
