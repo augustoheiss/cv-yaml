@@ -69,11 +69,13 @@ projects:
     highlights:
       - "Desenvolveu cálculos para fracionar metas diárias e projetar rendimentos no Tesouro Direto em um horizonte de 3 anos."
       - "Otimizou a alocação de recursos, cobrindo os custos de rodagem de um veículo híbrido através da rentabilidade projetada."
+    url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
 
   - name: "Ecossistema de Jogos WebGL (Godot)"
     description: "Museu vivo de videogames Web (LogicDefense e LogicAscension) elaborados em cocriação com IA."
     highlights:
       - "Demonstrou rapidez de aprendizado ao aplicar sistemas vetoriais e lógicos operando sob restrições estritas de tempo diretamente no motor Godot."
+    url: "https://www.heisslab.com.br/jogos"
 
   - name: "Alavanca Tecnológica para Autônomos"
     description: "Aceleração de negócios locais através da programação."

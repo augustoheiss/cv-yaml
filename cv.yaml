@@ -69,12 +69,14 @@ projects:
     highlights:
       - "Developed calculations to fractionate daily goals and project returns in Treasury Bonds (Tesouro Direto) over a 3-year horizon."
       - "Optimized resource allocation, covering the running costs of a hybrid vehicle through projected profitability."
+    url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
 
   - name: "WebGL Gaming Ecosystem (Godot)"
     description: "Living museum of Web video games (LogicDefense and LogicAscension) developed in co-creation with AI."
     highlights:
       - "Demonstrated rapid learning by applying vector and logical systems operating under strict time constraints directly in the Godot engine."
-
+    url: "https://www.heisslab.com.br/jogos"
+    
   - name: "Technological Lever for Independent Professionals"
     description: "Acceleration of local businesses through programming."
     highlights:
