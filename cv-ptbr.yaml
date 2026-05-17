@@ -4,25 +4,7 @@ basics:
   email: "augustoheiss@gmail.com"
   phone: "+55 11 98135-5495"
   url: "https://www.linkedin.com/in/augustoheiss"
-  summary: `A jornada profissional de Augusto começou cultivando a lógica matemática na sala de aula. Ao observar o peso da burocracia no potencial humano, adaptou-se rapidamente ao ecossistema tecnológico. Sua filosofia é clara: a máquina assume a repetição sem ego, libertando o 'Segundo Atual' para a verdadeira conexão e criatividade humana.
-
-Como desenvolvedor autodidata, Augusto traduz a complexidade de sistemas preditivos em código limpo e auditável, unindo o desenvolvimento full-stack com práticas rigorosas de IA para transformar rotinas estáticas em operações dinâmicas.
-
-Atualmente, seu foco técnico engloba as seguintes arquiteturas:
-
-Arquitetura RAG (Retrieval-Augmented Generation): Integração de LLMs com dados proprietários para mitigar alucinações da IA, garantindo precisão técnica e transparência.
-
-Engenharia e Preparação de Dados: Estruturação, limpeza e análise utilizando Python, Pandas e NumPy para assegurar a qualidade dos inputs.
-
-Desenvolvimento Full-Stack & APIs: Construção de arquiteturas de alta performance com FastAPI, separando completamente a lógica de negócios da apresentação visual.
-
-Prototipagem Ágil e RPA: Criação rápida de interfaces utilizando Streamlit, combinada com automações de sistemas web via Playwright.
-
-Paralelismo e Otimização: Implementação de processamento paralelo concorrente (asyncio) para contornar limites de tokens e reduzir drasticamente o tempo de resposta de servidores.
-
-Busca aplicar essa velocidade de aprendizagem em posições de Estágio ou Júnior em IA, Ciência de Dados ou Python, entregando resultados estruturados com total transparência e verificação desde o primeiro dia.
-
-⚙️ Stack Tecnológico e Competências Centrais (Hard Skills): Python | Inteligência Artificial (IA) | RAG (Retrieval-Augmented Generation) | FastAPI | React | Streamlit | Integração de APIs REST | Web Scraping | RPA (Robotic Process Automation) | Playwright | Pandas | NumPy | Engenharia de Dados | SQL & SQLite | Processamento Paralelo (Asyncio) | Prompt Engineering | LLMs | Godot Engine & WebGL | Git & GitHub | Vercel | Lógica Matemática | Arquitetura de Software.`
+  summary: `A jornada profissional de Augusto começou cultivando a lógica matemática na sala de aula. Ao observar o peso da burocracia no potencial humano, adaptou-se rapidamente ao ecossistema tecnológico. Sua filosofia é clara: a máquina assume a repetição sem ego, libertando o 'Segundo Atual' para a verdadeira conexão e criatividade humana. Como desenvolvedor autodidata, Augusto traduz a complexidade de sistemas preditivos em código limpo e auditável, unindo o desenvolvimento full-stack com práticas rigorosas de IA para transformar rotinas estáticas em operações dinâmicas. Atualmente, seu foco técnico engloba as seguintes arquiteturas: Arquitetura RAG (Retrieval-Augmented Generation): Integração de LLMs com dados proprietários para mitigar alucinações da IA, garantindo precisão técnica e transparência. Engenharia e Preparação de Dados: Estruturação, limpeza e análise utilizando Python, Pandas e NumPy para assegurar a qualidade dos inputs. Desenvolvimento Full-Stack & APIs: Construção de arquiteturas de alta performance com FastAPI, separando completamente a lógica de negócios da apresentação visual. Prototipagem Ágil e RPA: Criação rápida de interfaces utilizando Streamlit, combinada com automações de sistemas web via Playwright. Paralelismo e Otimização: Implementação de processamento paralelo concorrente (asyncio) para contornar limites de tokens e reduzir drasticamente o tempo de resposta de servidores. Busca aplicar essa velocidade de aprendizagem em posições de Estágio ou Júnior em IA, Ciência de Dados ou Python, entregando resultados estruturados com total transparência e verificação desde o primeiro dia. ⚙️ Stack Tecnológico e Competências Centrais (Hard Skills): Python | Inteligência Artificial (IA) | RAG (Retrieval-Augmented Generation) | FastAPI | React | Streamlit | Integração de APIs REST | Web Scraping | RPA (Robotic Process Automation) | Playwright | Pandas | NumPy | Engenharia de Dados | SQL & SQLite | Processamento Paralelo (Asyncio) | Prompt Engineering | LLMs | Godot Engine & WebGL | Git & GitHub | Vercel | Lógica Matemática | Arquitetura de Software.`
   location:
     city: "Ferraz de Vasconcelos"
     region: "São Paulo"
