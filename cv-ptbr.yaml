@@ -4,7 +4,25 @@ basics:
   email: "augustoheiss@gmail.com"
   phone: "+55 11 98135-5495"
   url: "https://www.linkedin.com/in/augustoheiss"
-  summary: "A jornada profissional de Augusto começou cultivando a lógica matemática na sala de aula. Ao observar o peso da burocracia no potencial humano, adaptou-se rapidamente ao ecossistema tecnológico. Como autodidata em Python e IA, desenvolve sistemas preditivos e automações complexas (RAG, integrações de API, paralelismo) para transformar rotinas estáticas em operações dinâmicas. Sua filosofia é clara: a máquina assume a repetição sem ego, libertando o 'Segundo Atual' para a verdadeira conexão e criatividade humana. Busca aplicar essa velocidade de aprendizagem em um estágio em IA, Ciência de Dados ou Python, entregando resultados estruturados com total transparência e verificação desde o primeiro dia."
+  summary: `A jornada profissional de Augusto começou cultivando a lógica matemática na sala de aula. Ao observar o peso da burocracia no potencial humano, adaptou-se rapidamente ao ecossistema tecnológico. Sua filosofia é clara: a máquina assume a repetição sem ego, libertando o 'Segundo Atual' para a verdadeira conexão e criatividade humana.
+
+Como desenvolvedor autodidata, Augusto traduz a complexidade de sistemas preditivos em código limpo e auditável, unindo o desenvolvimento full-stack com práticas rigorosas de IA para transformar rotinas estáticas em operações dinâmicas.
+
+Atualmente, seu foco técnico engloba as seguintes arquiteturas:
+
+Arquitetura RAG (Retrieval-Augmented Generation): Integração de LLMs com dados proprietários para mitigar alucinações da IA, garantindo precisão técnica e transparência.
+
+Engenharia e Preparação de Dados: Estruturação, limpeza e análise utilizando Python, Pandas e NumPy para assegurar a qualidade dos inputs.
+
+Desenvolvimento Full-Stack & APIs: Construção de arquiteturas de alta performance com FastAPI, separando completamente a lógica de negócios da apresentação visual.
+
+Prototipagem Ágil e RPA: Criação rápida de interfaces utilizando Streamlit, combinada com automações de sistemas web via Playwright.
+
+Paralelismo e Otimização: Implementação de processamento paralelo concorrente (asyncio) para contornar limites de tokens e reduzir drasticamente o tempo de resposta de servidores.
+
+Busca aplicar essa velocidade de aprendizagem em posições de Estágio ou Júnior em IA, Ciência de Dados ou Python, entregando resultados estruturados com total transparência e verificação desde o primeiro dia.
+
+⚙️ Stack Tecnológico e Competências Centrais (Hard Skills): Python | Inteligência Artificial (IA) | RAG (Retrieval-Augmented Generation) | FastAPI | React | Streamlit | Integração de APIs REST | Web Scraping | RPA (Robotic Process Automation) | Playwright | Pandas | NumPy | Engenharia de Dados | SQL & SQLite | Processamento Paralelo (Asyncio) | Prompt Engineering | LLMs | Godot Engine & WebGL | Git & GitHub | Vercel | Lógica Matemática | Arquitetura de Software.`
   location:
     city: "Ferraz de Vasconcelos"
     region: "São Paulo"
@@ -23,15 +41,15 @@ basics:
 
 work:
   - name: "Autônomo"
-    position: "Desenvolvedor Full-Stack e Automação (Freelancer)"
+    position: "Desenvolvedor Full-Stack & Automação | Python, FastAPI, React, Integração de APIs, Arquitetura RAG"
     startDate: "2026-02-01"
     summary: "Atua como alavanca tecnológica para profissionais autônomos e cria sistemas avançados de IA para otimização de rotinas. Lidera o desenvolvimento de múltiplos projetos end-to-end, incluindo plataformas RAG para a área da educação, motores dinâmicos de currículos em FastAPI, dashboards financeiros preditivos e o deploy de páginas de alta conversão."
   - name: "Secretaria Municipal de Educação de São Paulo"
-    position: "Professor de Matemática - Ensino Fundamental II e Médio"
+    position: "Professor de Matemática | Resolução Analítica de Problemas, Raciocínio Lógico, Liderança de Equipes"
     startDate: "2019-01-01"
     summary: "Missão Pedagógica: Liderança e gestão de mais de 20 turmas anuais. Em vez de apenas transmitir números, implementou abordagens para desenvolver o raciocínio lógico e a resolução de problemas sob pressão, conectando a teoria matemática à realidade prática dos estudantes."
   - name: "Experiências Anteriores Diversas"
-    position: "Atendimento Premium, Redação e Construção Civil"
+    position: "Atendimento Premium, Redação e Construção Civil | Resiliência, Adaptabilidade, Resolução de Problemas e Habilidades de Comunicação"
     startDate: "2009-01-01"
     summary: "Missão Operacional: A adaptação constante a múltiplos ecossistemas forjou uma resiliência excepcional e uma visão orientada à resolução de problemas e à clareza na comunicação, competências vitais hoje aplicadas à arquitetura de software."
 
