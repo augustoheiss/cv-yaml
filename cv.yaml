@@ -4,7 +4,21 @@ basics:
   email: "augustoheiss@gmail.com"
   phone: "+55 11 98135-5495"
   url: "https://www.linkedin.com/in/augustoheiss"
-  summary: `Augusto's professional journey began by cultivating mathematical logic in the classroom. Upon observing the burden of bureaucracy on human potential, he quickly adapted to the technological ecosystem. His philosophy is clear: the machine takes on repetition without ego, freeing the 'Current Second' for true human connection and creativity. As a self-taught developer, Augusto translates the complexity of predictive systems into clean, auditable code, uniting full-stack development with rigorous AI practices to transform static routines into dynamic operations. Currently, his technical focus encompasses the following architectures: RAG (Retrieval-Augmented Generation) Architecture: Integrating LLMs with proprietary data to mitigate AI hallucinations, ensuring technical accuracy and transparency. Data Engineering & Preparation: Structuring, cleaning, and analyzing data using Python, Pandas, and NumPy to ensure input quality. Full-Stack & API Development: Building high-performance architectures with FastAPI, completely separating business logic from visual presentation. Agile Prototyping & RPA: Rapid creation of interfaces using Streamlit, combined with web system automations via Playwright. Parallelism & Optimization: Implementing concurrent parallel processing (asyncio) to bypass token limits and drastically reduce server response times. He seeks to apply this rapid learning curve in an AI, Data Science, or Python Internship/Junior position, delivering structured results with total transparency and verification from day one. ⚙️ Tech Stack & Core Competencies (Hard Skills): Python | Artificial Intelligence (AI) | RAG (Retrieval-Augmented Generation) | FastAPI | React | Streamlit | REST API Integration | Web Scraping | RPA (Robotic Process Automation) | Playwright | Pandas | NumPy | Data Engineering | SQL & SQLite | Parallel Processing (Asyncio) | Prompt Engineering | LLMs | Godot Engine & WebGL | Git & GitHub | Vercel | Mathematical Logic | Software Architecture.`
+  summary: |
+    Augusto's professional journey began by cultivating mathematical logic in the classroom. Upon observing the burden of bureaucracy on human potential, he quickly adapted to the technological ecosystem. His philosophy is clear: the machine takes on repetition without ego, freeing the 'Current Second' for true human connection and creativity.
+
+    As a self-taught developer, Augusto translates the complexity of predictive systems into clean, auditable code, uniting full-stack development with rigorous AI practices to transform static routines into dynamic operations.
+
+    Currently, his technical focus encompasses the following architectures:
+
+    * RAG (Retrieval-Augmented Generation) Architecture: Integrating LLMs with proprietary data to mitigate AI hallucinations, ensuring technical accuracy and transparency.
+    * Data Engineering & Preparation: Structuring, cleaning, and analyzing data using Python, Pandas, and NumPy to ensure input quality.
+    * Full-Stack & API Development: Building high-performance architectures with FastAPI, completely separating business logic from visual presentation.
+    * Agile Prototyping & RPA: Rapid creation of interfaces using Streamlit, combined with web system automations via Playwright.
+    * Parallelism & Optimization: Implementing concurrent parallel processing (asyncio) to bypass token limits and drastically reduce server response times.
+
+    ⚙️ Tech Stack & Core Competencies (Hard Skills):
+    Python | Artificial Intelligence (AI) | RAG (Retrieval-Augmented Generation) | FastAPI | React | Streamlit | REST API Integration | Web Scraping | RPA (Robotic Process Automation) | Playwright | Pandas | NumPy | Data Engineering | SQL & SQLite | Parallel Processing (Asyncio) | Prompt Engineering | LLMs | Godot Engine & WebGL | Git & GitHub | Vercel | Mathematical Logic | Software Architecture.
   location:
     city: "Ferraz de Vasconcelos"
     region: "São Paulo"
