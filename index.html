@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="themes.css">
 
     <style>
-        /* ======== PRINT: Hack da Tabela Fantasma + Layout Otimizado ======== */
+        /* ======== PRINT: Hack da Tabela Fantasma + Layout Full-Width ======== */
         @media print {
 
             html,
@@ -21,7 +21,7 @@
                 margin: 0 !important;
                 padding: 0 !important;
                 height: 100% !important;
-                font-size: 10.5pt !important;
+                font-size: 9.5pt !important;
             }
 
             @page {
@@ -29,7 +29,6 @@
                 margin: 0 !important;
             }
 
-            /* Ativa o cabeçalho/rodapé fantasma da tabela apenas na impressão */
             .print-header {
                 display: table-header-group !important;
             }
@@ -38,13 +37,11 @@
                 display: table-footer-group !important;
             }
 
-            /* Evita corte no meio de caixas */
             .evitar-quebra {
                 break-inside: avoid !important;
                 page-break-inside: avoid !important;
             }
 
-            /* Esconde elementos indesejados */
             ::-webkit-scrollbar {
                 display: none;
             }
@@ -53,72 +50,70 @@
                 display: none !important;
             }
 
-            /* Reset de fundo para a impressão */
             .print\:bg-transparent {
                 background-color: transparent !important;
             }
 
-            /* ── Layout de duas colunas compacto para print ── */
-            .cv-two-col {
-                gap: 1.5rem !important;
-            }
-
-            /* Condensar espaçamento interno da página */
+            /* ── Condensar espaçamentos globais para print ── */
             .cv-content-area {
                 padding: 0 8mm !important;
             }
 
-            /* Condensar o header */
             header.border-b-2 {
-                padding-bottom: 0.75rem !important;
-                margin-bottom: 1rem !important;
+                padding-bottom: 0.5rem !important;
+                margin-bottom: 0.75rem !important;
             }
 
-            /* Condensar gaps das seções */
-            .cv-two-col .space-y-6 > * + * {
-                margin-top: 0.75rem !important;
-            }
-
-            .cv-two-col .space-y-8 > * + * {
-                margin-top: 1rem !important;
-            }
-
-            /* Seções full-width com espaçamento compacto */
-            .cv-full-width {
-                padding: 0 8mm !important;
-            }
-
-            .cv-full-width .space-y-6 > * + * {
-                margin-top: 0.75rem !important;
-            }
-
-            .cv-full-width .space-y-4 > * + * {
+            header .mt-6 {
                 margin-top: 0.5rem !important;
             }
 
-            /* Seções de experiência/formação: evitar quebra de cada card */
-            .cv-full-width .evitar-quebra {
-                break-inside: avoid !important;
-                page-break-inside: avoid !important;
+            /* Títulos de seção mais compactos no print */
+            .cv-section-title {
+                margin-bottom: 0.5rem !important;
+                font-size: 1rem !important;
             }
 
-            /* Reduzir padding dos cards de projetos para print */
+            /* Cards de projetos compactos */
             .bg-slate-800\/50 {
-                padding: 0.5rem 0.75rem !important;
+                padding: 0.4rem 0.6rem !important;
             }
 
-            /* Experiência full-width com colunas no print */
+            /* Projetos grid no print */
+            .cv-projects-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.5rem !important;
+            }
+
+            /* Skills/Idiomas/Otimização 3-col no print */
+            .cv-skills-band {
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 0.5rem 1rem !important;
+            }
+
+            /* Experiência 2-col no print */
             .cv-exp-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 0.75rem 1.5rem !important;
+                gap: 0.5rem 1rem !important;
             }
 
-            /* Formação em grid horizontal no print */
+            /* Formação 3-col no print */
             .cv-edu-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr 1fr !important;
-                gap: 0.5rem 1rem !important;
+                gap: 0.4rem 0.75rem !important;
+            }
+
+            /* Seções com margem inferior reduzida */
+            .cv-section {
+                margin-bottom: 0.6rem !important;
+            }
+
+            /* Separador fino no print */
+            .cv-section-divider {
+                margin-top: 0.6rem !important;
+                padding-top: 0.6rem !important;
             }
         }
 
@@ -190,56 +185,41 @@
             border-radius: 4px;
         }
 
-        /* ── Novo layout: Grid de duas colunas com escopo limitado ── */
-        .cv-two-col {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
+        /* ── Layout Full-Width: Grids responsivos ── */
+
+        /* Projetos: 2-col grid */
+        .cv-projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
 
         @media (min-width: 768px) {
-            .cv-two-col {
-                flex-direction: row;
-                gap: 2.5rem;
-            }
-
-            .cv-col-main {
-                width: 66.666%;
-            }
-
-            .cv-col-sidebar {
-                width: 33.333%;
+            .cv-projects-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.25rem;
             }
         }
 
-        /* Print forçado para duas colunas */
-        @media print {
-            .cv-two-col {
-                flex-direction: row !important;
-                gap: 1.5rem !important;
-            }
+        /* Skills band: 3-col grid */
+        .cv-skills-band {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
 
-            .cv-col-main {
-                width: 63% !important;
-            }
-
-            .cv-col-sidebar {
-                width: 37% !important;
+        @media (min-width: 768px) {
+            .cv-skills-band {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1.5rem;
             }
         }
 
-        /* Separador sutil entre a zona two-col e full-width */
+        /* Separador sutil entre seções */
         .cv-section-divider {
             border-top: 1px solid rgba(100, 116, 139, 0.2);
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-        }
-
-        @media print {
-            .cv-section-divider {
-                margin-top: 1rem;
-                padding-top: 1rem;
-            }
         }
     </style>
 </head>
@@ -340,67 +320,64 @@
                                         class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
                                 </div>
                             </div>
-                            <p id="resumo" class="mt-6 text-slate-300 leading-relaxed max-w-3xl"></p>
+                            <p id="resumo" class="mt-6 text-slate-300 leading-relaxed"></p>
                         </header>
 
-                        <!-- ═══ ZONA TWO-COL: Projetos (esquerda) + Sidebar (direita) ═══ -->
-                        <div class="cv-two-col w-full">
+                        <!-- ═══ PROJETOS: 2-Column Grid (Full-Width) ═══ -->
+                        <section class="cv-section mb-8">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-projetos">Projects</span>
+                            </h2>
+                            <div id="projetos-container" class="cv-projects-grid"></div>
+                        </section>
 
-                            <!-- Coluna Principal: APENAS Projetos -->
-                            <div class="cv-col-main space-y-6">
-                                <section>
-                                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
-                                            class="text-emerald-500">#</span> <span id="lbl-projetos">Projects</span>
-                                    </h2>
-                                    <div id="projetos-container" class="space-y-6"></div>
-                                </section>
-                            </div>
+                        <!-- ═══ SKILLS BAND: Competências + Idiomas + Otimização (3-Column Grid) ═══ -->
+                        <section class="cv-section cv-section-divider mb-8">
+                            <div class="cv-skills-band">
 
-                            <!-- Coluna Sidebar: Competências + Idiomas + Otimização -->
-                            <div class="cv-col-sidebar md:w-1/3 print:w-1/3 space-y-8">
-                                <section class="evitar-quebra">
+                                <!-- Col 1: Competências -->
+                                <div class="evitar-quebra">
                                     <h2 id="lbl-competencias"
-                                        class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
+                                        class="cv-section-title text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
                                         Competencies</h2>
-                                    <div id="skills-container" class="space-y-4"></div>
-                                </section>
+                                    <div id="skills-container" class="space-y-3"></div>
+                                </div>
 
-                                <section class="evitar-quebra">
+                                <!-- Col 2: Idiomas -->
+                                <div class="evitar-quebra">
                                     <h2 id="lbl-idiomas"
-                                        class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
+                                        class="cv-section-title text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
                                         Languages</h2>
                                     <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
-                                </section>
+                                </div>
 
-                                <section class="evitar-quebra">
+                                <!-- Col 3: Otimização Contínua -->
+                                <div class="evitar-quebra">
                                     <h2 id="lbl-otimizacao"
-                                        class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
+                                        class="cv-section-title text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
                                         Continuous Optimization</h2>
                                     <ul id="interesses-container"
-                                        class="space-y-3 text-sm text-slate-400 list-disc list-inside"></ul>
-                                </section>
+                                        class="space-y-2 text-sm text-slate-400 list-disc list-inside"></ul>
+                                </div>
+
                             </div>
+                        </section>
 
-                        </div>
+                        <!-- ═══ EXPERIÊNCIA: Full-Width (2-col grid no print) ═══ -->
+                        <section class="cv-section cv-section-divider mb-8">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-experiencia">Experience</span>
+                            </h2>
+                            <div id="experiencia-container" class="space-y-6 cv-exp-grid"></div>
+                        </section>
 
-                        <!-- ═══ ZONA FULL-WIDTH: Experiência + Formação ═══ -->
-                        <div class="cv-full-width cv-section-divider">
-
-                            <section class="mb-6">
-                                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
-                                        class="text-emerald-500">#</span> <span
-                                        id="lbl-experiencia">Experience</span></h2>
-                                <div id="experiencia-container" class="space-y-6 cv-exp-grid"></div>
-                            </section>
-
-                            <section>
-                                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span
-                                        class="text-emerald-500">#</span> <span id="lbl-formacao">Education</span>
-                                </h2>
-                                <div id="formacao-container" class="space-y-4 cv-edu-grid"></div>
-                            </section>
-
-                        </div>
+                        <!-- ═══ FORMAÇÃO: Full-Width (3-col grid no print) ═══ -->
+                        <section class="cv-section cv-section-divider">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-formacao">Education</span>
+                            </h2>
+                            <div id="formacao-container" class="space-y-4 cv-edu-grid"></div>
+                        </section>
 
                     </td>
                 </tr>
