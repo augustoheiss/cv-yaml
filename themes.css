@@ -389,15 +389,12 @@ body.tema-criativo .cv-skills-band {
     color: #e0e7ff;
 }
 
-body.tema-criativo .cv-skills-band h2 {
-    color: #ffffff;
+body.tema-criativo .cv-skills-band h3 {
+    color: #fb923c;
     border-bottom-color: rgba(255, 255, 255, 0.15);
     font-size: 0.75rem;
     letter-spacing: 0.14em;
 }
-
-body.tema-criativo .cv-skills-band h2 span.text-emerald-500 { color: #fb923c; }
-body.tema-criativo .cv-skills-band h4                       { color: #fb923c; }
 
 body.tema-criativo .cv-skills-band .text-emerald-400,
 body.tema-criativo .cv-skills-band .text-emerald-500        { color: #fb923c; }
@@ -470,9 +467,8 @@ body.tema-criativo .cv-skills-band a { color: #93c5fd; }
         border-radius: 0.5rem !important;
     }
 
-    body.tema-criativo .cv-skills-band h2,
+    body.tema-criativo .cv-skills-band h3              { color: #fb923c !important; }
     body.tema-criativo .cv-skills-band .text-white     { color: #ffffff !important; }
-    body.tema-criativo .cv-skills-band h4             { color: #fb923c !important; }
     body.tema-criativo .cv-skills-band .text-slate-300 { color: #bfdbfe !important; }
     body.tema-criativo .cv-skills-band .text-slate-400 { color: #93c5fd !important; }
 

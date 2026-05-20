@@ -85,10 +85,22 @@
                 gap: 0.5rem !important;
             }
 
-            /* Skills/Idiomas/Otimização 3-col no print */
+            /* Skills band masonry no print */
             .cv-skills-band {
-                grid-template-columns: 1fr 1fr 1fr !important;
-                gap: 0.5rem 1rem !important;
+                column-count: 3 !important;
+                column-gap: 1rem !important;
+            }
+
+            .cv-skills-band .skills-card {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 0.4rem !important;
+                padding: 0.3rem 0 !important;
+            }
+
+            .cv-skills-band .skills-card h3 {
+                font-size: 0.8rem !important;
+                margin-bottom: 0.2rem !important;
             }
 
             /* Experiência 2-col no print */
@@ -201,18 +213,31 @@
             }
         }
 
-        /* Skills band: 3-col grid */
+        /* Skills band: CSS columns masonry */
         .cv-skills-band {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            column-count: 1;
+            column-gap: 1.5rem;
         }
 
         @media (min-width: 768px) {
             .cv-skills-band {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 1.5rem;
+                column-count: 3;
             }
+        }
+
+        .cv-skills-band .skills-card {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+
+        .cv-skills-band .skills-card h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #34d399;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         /* Separador sutil entre seções */
@@ -331,36 +356,9 @@
                             <div id="projetos-container" class="cv-projects-grid"></div>
                         </section>
 
-                        <!-- ═══ SKILLS BAND: Competências + Idiomas + Otimização (3-Column Grid) ═══ -->
+                        <!-- ═══ SKILLS BAND: Masonry 3-col (all sub-sections distributed) ═══ -->
                         <section class="cv-section cv-section-divider mb-8">
-                            <div class="cv-skills-band">
-
-                                <!-- Col 1: Competências -->
-                                <div class="evitar-quebra">
-                                    <h2 id="lbl-competencias"
-                                        class="cv-section-title text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
-                                        Competencies</h2>
-                                    <div id="skills-container" class="space-y-3"></div>
-                                </div>
-
-                                <!-- Col 2: Idiomas -->
-                                <div class="evitar-quebra">
-                                    <h2 id="lbl-idiomas"
-                                        class="cv-section-title text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
-                                        Languages</h2>
-                                    <ul id="idiomas-container" class="space-y-2 text-sm"></ul>
-                                </div>
-
-                                <!-- Col 3: Otimização Contínua -->
-                                <div class="evitar-quebra">
-                                    <h2 id="lbl-otimizacao"
-                                        class="cv-section-title text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">
-                                        Continuous Optimization</h2>
-                                    <ul id="interesses-container"
-                                        class="space-y-2 text-sm text-slate-400 list-disc list-inside"></ul>
-                                </div>
-
-                            </div>
+                            <div id="skills-band-container" class="cv-skills-band"></div>
                         </section>
 
                         <!-- ═══ EXPERIÊNCIA: Full-Width (2-col grid no print) ═══ -->
@@ -475,16 +473,10 @@
                     const projetosContainer = document.getElementById('projetos-container');
                     const expContainer = document.getElementById('experiencia-container');
                     const formacaoContainer = document.getElementById('formacao-container');
-                    const skillsContainer = document.getElementById('skills-container');
-                    const idiomasContainer = document.getElementById('idiomas-container');
-                    const intContainer = document.getElementById('interesses-container');
 
                     projetosContainer.innerHTML = '';
                     expContainer.innerHTML = '';
                     formacaoContainer.innerHTML = '';
-                    skillsContainer.innerHTML = '';
-                    idiomasContainer.innerHTML = '';
-                    intContainer.innerHTML = '';
 
                     dados.projects.forEach(projeto => {
                         let bullets = projeto.highlights ? projeto.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
@@ -520,28 +512,43 @@
                         `;
                     });
 
+                    // ── Build Skills Band: all sub-blocks into one masonry container ──
+                    const bandContainer = document.getElementById('skills-band-container');
+                    bandContainer.innerHTML = '';
+
+                    // Render each skill category as an individual card
                     dados.skills.forEach(skill => {
                         let tags = skill.keywords.map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded m-0.5">${k}</span>`).join('');
-                        skillsContainer.innerHTML += `
-                            <div class="evitar-quebra mb-3">
-                                <h4 class="text-sm font-semibold text-emerald-400 mb-1">${skill.name}</h4>
+                        bandContainer.innerHTML += `
+                            <div class="skills-card evitar-quebra">
+                                <h3>${skill.name}</h3>
                                 <div class="flex flex-wrap">${tags}</div>
                             </div>
                         `;
                     });
 
-                    dados.languages.forEach(idioma => {
-                        idiomasContainer.innerHTML += `
-                            <li class="flex justify-between items-center">
-                                <span class="text-slate-300">${idioma.language}</span>
-                                <span class="text-emerald-500 text-xs bg-emerald-500/10 px-2 py-1 rounded">${idioma.fluency}</span>
-                            </li>
-                        `;
-                    });
+                    // Render Languages as a card
+                    let langItems = dados.languages.map(idioma => `
+                        <li class="flex justify-between items-center">
+                            <span class="text-slate-300">${idioma.language}</span>
+                            <span class="text-emerald-500 text-xs bg-emerald-500/10 px-2 py-1 rounded">${idioma.fluency}</span>
+                        </li>
+                    `).join('');
+                    bandContainer.innerHTML += `
+                        <div class="skills-card evitar-quebra">
+                            <h3 id="lbl-idiomas">${ui.idiomas}</h3>
+                            <ul class="space-y-2 text-sm">${langItems}</ul>
+                        </div>
+                    `;
 
-                    dados.interests[0].keywords.forEach(interesse => {
-                        intContainer.innerHTML += `<li>${interesse}</li>`;
-                    });
+                    // Render Continuous Optimization as a card
+                    let optItems = dados.interests[0].keywords.map(i => `<li>${i}</li>`).join('');
+                    bandContainer.innerHTML += `
+                        <div class="skills-card evitar-quebra">
+                            <h3 id="lbl-otimizacao">${ui.otimizacao}</h3>
+                            <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside">${optItems}</ul>
+                        </div>
+                    `;
 
                 })
                 .catch(error => {
