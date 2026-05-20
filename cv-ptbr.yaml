@@ -1,24 +1,13 @@
 basics:
   name: "Augusto Leonardo Farias Heiss"
-  label: "Desenvolvedor Python & IA | Automação (RPA), Engenharia de Dados, FastAPI, RAG, Streamlit | Raciocínio Lógico Matemático"
+  label: "Desenvolvedor Python (Nível Inicial) | IA (RAG), FastAPI & Automação"
   email: "augustoheiss@gmail.com"
   phone: "+55 11 98135-5495"
   url: "https://www.linkedin.com/in/augustoheiss"
   summary: |
-    A jornada profissional de Augusto começou cultivando a lógica matemática na sala de aula. Ao observar o peso da burocracia no potencial humano, adaptou-se rapidamente ao ecossistema tecnológico. Sua filosofia é clara: a máquina assume a repetição sem ego, libertando o 'Segundo Atual' para a verdadeira conexão e criatividade humana. 
-
-    Como desenvolvedor autodidata, Augusto traduz a complexidade de sistemas preditivos em código limpo e auditável, unindo o desenvolvimento full-stack com práticas rigorosas de IA para transformar rotinas estáticas em operações dinâmicas.
-
-    Atualmente, seu foco técnico engloba as seguintes arquiteturas:
-
-    * Arquitetura RAG: Integração de LLMs com dados proprietários para mitigar alucinações da IA, garantindo precisão técnica e transparência.
-    * Engenharia de Dados: Estruturação, limpeza e análise utilizando Python, Pandas e NumPy para assegurar a qualidade dos inputs.
-    * Desenvolvimento Full-Stack & APIs: Construção de arquiteturas de alta performance com FastAPI, separando completamente a lógica de negócios da apresentação visual.
-    * Prototipagem Ágil e RPA: Criação rápida de interfaces utilizando Streamlit, combinada com automações de sistemas web via Playwright.
-    * Paralelismo e Otimização: Implementação de processamento paralelo concorrente (asyncio) para contornar limites de tokens e reduzir drasticamente o tempo de resposta.
-
-    ⚙️ Stack Tecnológico e Competências Centrais (Hard Skills):
-    Python | Inteligência Artificial (IA) | RAG (Retrieval-Augmented Generation) | FastAPI | React | Streamlit | Integração de APIs REST | Web Scraping | RPA (Robotic Process Automation) | Playwright | Pandas | NumPy | Engenharia de Dados | SQL & SQLite | Processamento Paralelo (Asyncio) | Prompt Engineering | LLMs | Godot Engine & WebGL | Git & GitHub | Vercel | Lógica Matemática | Arquitetura de Software.
+    Desenvolvedor Python autodidata em transição de carreira após 7 anos de experiência sólida como Professor de Matemática. Altamente capacitado em traduzir problemas lógicos complexos em código limpo e estruturado. 
+    
+    Meu foco técnico abrange o desenvolvimento backend (FastAPI), integrações de IA (arquitetura RAG) e automação de processos (RPA). Busco minha primeira oportunidade profissional na área de tecnologia (Nível Inicial/Júnior) para aplicar minha forte base analítica e capacidade de aprendizado rápido em desafios reais de negócios, integrando uma equipe de engenharia colaborativa.
   location:
     city: "Ferraz de Vasconcelos"
     region: "São Paulo"
@@ -31,23 +20,23 @@ basics:
     - network: "GitHub"
       username: "augustoheiss"
       url: "https://github.com/augustoheiss"
-    - network: "Heiss-Lab (Oficial)"
-      username: "Portfólio"
+    - network: "Portfolio"
+      username: "Heiss-Lab"
       url: "https://www.heisslab.com.br/"
 
 work:
-  - name: "Autônomo"
-    position: "Desenvolvedor Full-Stack & Automação | Python, FastAPI, React, Integração de APIs, Arquitetura RAG"
+  - name: "Freelance"
+    position: "Desenvolvedor Python & Web"
     startDate: "2026-02-01"
-    summary: "Atua como alavanca tecnológica para profissionais autônomos e cria sistemas avançados de IA para otimização de rotinas. Lidera o desenvolvimento de múltiplos projetos end-to-end, incluindo plataformas RAG para a área da educação, motores dinâmicos de currículos em FastAPI, dashboards financeiros preditivos e o deploy de páginas de alta conversão."
+    summary: "Desenvolvimento de aplicações web personalizadas, APIs e automações com IA para profissionais autônomos. Responsável pelo levantamento de requisitos e codificação de soluções ponta a ponta, incluindo plataformas educacionais baseadas em RAG, geradores dinâmicos de currículos integrados com FastAPI e dashboards de dados."
   - name: "Secretaria Municipal de Educação de São Paulo"
-    position: "Professor de Matemática | Resolução Analítica de Problemas, Raciocínio Lógico, Liderança de Equipes"
+    position: "Professor de Matemática"
     startDate: "2019-01-01"
-    summary: "Missão Pedagógica: Liderança e gestão de mais de 20 turmas anuais. Em vez de apenas transmitir números, implementou abordagens para desenvolver o raciocínio lógico e a resolução de problemas sob pressão, conectando a teoria matemática à realidade prática dos estudantes."
-  - name: "Experiências Anteriores Diversas"
-    position: "Atendimento Premium, Redação e Construção Civil | Resiliência, Adaptabilidade, Resolução de Problemas e Habilidades de Comunicação"
+    summary: "Gestão e liderança de mais de 20 turmas anualmente. Aplicação de forte raciocínio analítico para adaptar métodos de ensino sob pressão. Ampla experiência em decompor conceitos teóricos e lógicos complexos em etapas práticas e de fácil compreensão — uma habilidade altamente transferível para a estruturação de lógica de software e comunicação técnica."
+  - name: "Empresas Diversas"
+    position: "Atendimento ao Cliente & Operações"
     startDate: "2009-01-01"
-    summary: "Missão Operacional: A adaptação constante a múltiplos ecossistemas forjou uma resiliência excepcional e uma visão orientada à resolução de problemas e à clareza na comunicação, competências vitais hoje aplicadas à arquitetura de software."
+    summary: "Desenvolvimento de habilidades de adaptabilidade, resiliência e comunicação clara em ambientes operacionais de ritmo acelerado. Competências essenciais que agora são aplicadas diretamente na resolução colaborativa de problemas e no levantamento ágil de requisitos de clientes."
 
 education:
   - institution: "Universidade Nove de Julho (UNINOVE)"
@@ -59,73 +48,76 @@ education:
     studyType: "Licenciatura"
     endDate: "2012-12-31"
   - institution: "SENAI Roberto Simonsen (ISO 9001)"
-    area: "Eletroeletrônica / Eletricista de Manutenção"
-    studyType: "Cursos Técnico e de Aprendizagem Industrial"
+    area: "Eletrônica / Eletricista de Manutenção"
+    studyType: "Curso Técnico e Aprendizagem Industrial"
     endDate: "2011-12-31"
 
 projects:
-  - name: "LogicDefense CV RAG Engine (Heiss-Lab)"
-    description: "Arquitetura avançada em FastAPI para geração dinâmica de currículos, separando completamente o conteúdo (YAML) da apresentação visual."
+  - name: "LogicDefense CV RAG Engine"
+    description: "API backend baseada em FastAPI para geração dinâmica de currículos, separando estruturalmente os dados em YAML da camada de apresentação visual."
     highlights:
-      - "Identificou e resolveu problemas de limite de tokens da API do Gemini 2.5 Flash através da implementação de processamento paralelo concorrente (asyncio.gather)."
-      - "Reduziu drasticamente o tempo de resposta do servidor, disparando 4 pedidos simultâneos para forjar múltiplos arquétipos em uma única execução."
+      - "Identificação e resolução de gargalos de limite de requisições na API do Gemini 2.5 Flash através da implementação de processamento assíncrono concorrente (asyncio.gather do Python)."
+      - "Redução significativa da latência de resposta do servidor executando múltiplas requisições simultâneas em um único event loop."
     url: "https://heisslab.com.br/laboratorio/cv-maker"
 
-  - name: "Assistente Escola Modelo (Automação RAG/Playwright)"
-    description: "Sistema de IA criado para libertar o corpo docente da burocracia, utilizando a ética do 'Segundo Atual'."
+  - name: "Assistente Escola Modelo (Automação com IA/RPA)"
+    description: "Assistente administrativo com inteligência artificial desenvolvido para automatizar fluxos de trabalho de dados pedagógicos."
     highlights:
-      - "Forjou um 'Escudo RAG', obrigando a IA a consultar apenas documentos oficiais antes de gerar respostas, garantindo total transparência e verificação, além de zero alucinações."
-      - "Integrou protocolos 'Human-in-the-loop' para supervisão, com estrutura planejada para acionamento de APIs e execução RPA no Sistema de Gestão Pedagógica."
+      - "Implementação de arquitetura RAG com guardrails estritos de prompt, restringindo o contexto da LLM a documentos oficiais para mitigar alucinações de forma eficaz."
+      - "Integração do Playwright para Automação de Processos Robóticos (RPA), automatizando a inserção de dados diretamente no Sistema de Gestão Escolar com protocolos de verificação 'Human-in-the-loop'."
     url: "https://assistente-escola-modelo.streamlit.app/"
 
-  - name: "Assistente-Moeda (Dashboard Financeiro Automotivo)"
-    description: "Ferramenta preditiva que transforma dados estáticos em dinâmicos para assegurar a função mecânica do capital."
+  - name: "Assistente-Moeda (Dashboard Financeiro)"
+    description: "Dashboard de dados preditivos para acompanhamento de retornos financeiros e otimização de recursos."
     highlights:
-      - "Desenvolveu cálculos para fracionar metas diárias e projetar rendimentos no Tesouro Direto em um horizonte de 3 anos."
-      - "Otimizou a alocação de recursos, cobrindo os custos de rodagem de um veículo híbrido através da rentabilidade projetada."
+      - "Desenvolvimento de scripts em Python utilizando Pandas para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos."
+      - "Criação de visualizações de dados para balancear dinamicamente os custos operacionais de um veículo híbrido contra a rentabilidade projetada."
     url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
 
-  - name: "Ecossistema de Jogos WebGL (Godot)"
-    description: "Museu vivo de videogames Web (LogicDefense e LogicAscension) elaborados em cocriação com IA."
+  - name: "WebGL Interactive Logic Games"
+    description: "Aplicações web interativas baseadas em lógica com foco na resolução de problemas algorítmicos."
     highlights:
-      - "Demonstrou rapidez de aprendizado ao aplicar sistemas vetoriais e lógicos operando sob restrições estritas de tempo diretamente no motor Godot."
+      - "Desenvolvimento de aplicações interativas para navegador utilizando a Godot Engine, aplicando matemática vetorial, gerenciamento de estado e lógica algorítmica sob restrições estritas."
     url: "https://www.heisslab.com.br/jogos"
 
-  - name: "Alavanca Tecnológica para Autônomos"
-    description: "Aceleração de negócios locais através da programação."
-    highlights:
-      - "Desenvolveu e efetuou o deploy (Vercel/GitHub Pages) de múltiplas páginas de alta conversão para profissionais de idiomas, estética, climatização e transporte executivo."
-
 skills:
-  - name: "Programação e Arquitetura de Dados"
-    level: "Expert"
+  - name: "Backend & Dados"
+    level: "Intermediário"
     keywords:
-      - "Python & Automações Avançadas"
-      - "Integração de APIs & FastAPI"
-      - "RAG (Retrieval-Augmented Generation)"
-      - "SQLite & Estruturação YAML"
-  - name: "Ferramentas e Ecossistema Web"
-    level: "Proficient"
+      - "Python"
+      - "FastAPI & APIs REST"
+      - "Asyncio (Processamento Concorrente)"
+      - "Pandas & NumPy"
+      - "SQL & SQLite"
+  - name: "IA & Automação"
+    level: "Intermediário"
     keywords:
-      - "Git / GitHub / Vercel"
-      - "VS Code / Cursor (Cocriação com IA)"
-      - "RPA & Web Scraping (Base conceptual)"
-      - "Godot Engine"
-  - name: "Soft Skills e Interface Humana"
-    level: "Expert"
+      - "Arquiteturas RAG"
+      - "Integração de LLMs & Engenharia de Prompt"
+      - "Playwright (RPA & Web Scraping)"
+  - name: "Frontend & Ferramentas"
+    level: "Conhecimento Prático"
+    keywords:
+      - "Streamlit"
+      - "React (Básico)"
+      - "Git & GitHub"
+      - "Deploy na Vercel"
+  - name: "Competências Essenciais"
+    level: "Avançado"
     keywords:
       - "Raciocínio Lógico Matemático"
       - "Resolução Analítica de Problemas"
-      - "Comunicação Clara e Ética Assimétrica"
+      - "Comunicação Técnica Clara"
 
 languages:
   - language: "Inglês"
-    fluency: "Avançado (Leitura de Documentação Técnica e Prompts)"
+    fluency: "Avançado (Leitura e Escrita de Documentação Técnica)"
   - language: "Espanhol"
     fluency: "Intermediário"
 
 interests:
-  - name: "Otimização Contínua"
+  - name: "Desenvolvimento Profissional"
     keywords:
-      - "Princípios do 'The Pragmatic Programmer' aplicados ao código"
-      - "Filosofia da Lógica e estudo contínuo em Inteligência Artificial"
+      - "Boas Práticas de Engenharia de Software (Clean Code)"
+      - "Estruturas de Dados & Algoritmos"
+      - "Arquitetura de Sistemas & Design de APIs"
