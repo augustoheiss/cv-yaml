@@ -70,7 +70,7 @@ projects:
   - name: "Assistente-Moeda (Financial Dashboard)"
     description: "Predictive data dashboard for financial return tracking and resource optimization."
     highlights:
-      - "Developed Python scripts utilizing Pandas to calculate daily yield goals and project Treasury Bond returns over a 3-year horizon."
+      - "Developed scripts to calculate daily yield goals and project Treasury Bond returns over a 3-year horizon."
       - "Created data visualizations to balance hybrid vehicle operational costs against projected profitability dynamically."
     url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
 

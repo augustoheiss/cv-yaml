@@ -70,7 +70,7 @@ projects:
   - name: "Assistente-Moeda (Dashboard Financeiro)"
     description: "Dashboard de dados preditivos para acompanhamento de retornos financeiros e otimização de recursos."
     highlights:
-      - "Desenvolvimento de scripts em Python utilizando Pandas para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos."
+      - "Desenvolvimento de scripts para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos."
       - "Criação de visualizações de dados para balancear dinamicamente os custos operacionais de um veículo híbrido contra a rentabilidade projetada."
     url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
 
