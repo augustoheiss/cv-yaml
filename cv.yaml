@@ -25,6 +25,10 @@ basics:
       url: "https://www.heisslab.com.br/"
 
 work:
+  - name: "IBM"
+    position: "Software Engineering Intern"
+    startDate: "2026-07-06"
+    summary: "Currently part of the IBM development ecosystem, focusing on aligning my background in logical reasoning and Python backend development with IBM's enterprise solutions. Engaged in continuous technical onboarding, actively studying Hybrid Cloud architectures, Agile methodologies, and AI governance frameworks to rapidly transition hands-on experience with RAG and automation into scalable, secure contributions."
   - name: "Freelance"
     position: "Python & Web Developer"
     startDate: "2026-02-01"

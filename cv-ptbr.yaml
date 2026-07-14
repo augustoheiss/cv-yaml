@@ -25,6 +25,10 @@ basics:
       url: "https://www.heisslab.com.br/"
 
 work:
+  - name: "IBM"
+    position: "Estagiário em Engenharia de Software"
+    startDate: "2026-07-06"
+    summary: "Atuando no ecossistema de desenvolvimento da IBM, com foco em imersão nas práticas de Engenharia de Software e integração de soluções tecnológicas. Aprofundamento nas arquiteturas de Nuvem Híbrida e no ecossistema de Inteligência Artificial para negócios, alinhando fundamentos técnicos de Python, automação de APIs e IA com as rigorosas diretrizes de governança e segurança corporativa."
   - name: "Freelance"
     position: "Desenvolvedor Python & Web"
     startDate: "2026-02-01"
