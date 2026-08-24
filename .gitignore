@@ -1,2 +1,5 @@
-\backend
+﻿\backend
 \.gemini
+.gemini/
+.agents/
+.cursor/
