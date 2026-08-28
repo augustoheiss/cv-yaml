@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Augusto Leonardo Farias Heiss — CV Maker 2.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+      --primary: #1e3a8a;
+      --title: #0f172a;
+      --sub: #334155;
+      --accent: #0284c7;
+      --border: #e2e8f0;
+      --bg-badge: #f1f5f9;
+      --font: 'Merriweather', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      color: #1e293b;
+      background: #f8fafc;
+      line-height: 1.5;
+      font-size: 10pt;
+      padding: 2rem 1rem;
+    }
+
+    .toolbar {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 999;
+      background: rgba(15, 23, 42, 0.85);
+      padding: 0.5rem 0.75rem;
+      border-radius: 9999px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .toolbar button {
+      background: #0284c7;
+      color: #fff;
+      border: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--sub);
+    }
+
+    .contacts {
+      font-size: 0.78rem;
+      color: #64748b;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .summary {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      text-align: justify;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 0.3rem;
+      margin: 1.25rem 0 0.75rem 0;
+      break-after: avoid;
+    }
+
+    .card { margin-bottom: 0.75rem; }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--title);
+      font-size: 0.92rem;
+    }
+
+    .item-date {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .item-sub {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .item-desc {
+      font-size: 0.84rem;
+      color: #475569;
+      margin-top: 0.2rem;
+    }
+
+    .bullets {
+      margin: 0.3rem 0 0 1.2rem;
+      font-size: 0.82rem;
+      color: #334155;
+    }
+
+    .bullets li { margin-bottom: 0.2rem; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .project-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      border-radius: 6px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .skill-group {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 0.6rem;
+      border-radius: 6px;
+    }
+
+    .skill-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--title);
+      margin-bottom: 0.4rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      background: var(--bg-badge);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--sub);
+    }
+
+    .avoid-break {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── @media print ── */
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+        font-size: 9.2pt !important;
+      }
+      .toolbar { display: none !important; }
+      .container {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 8mm 12mm 8mm 12mm !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1 class="name">Augusto Leonardo Farias Heiss</h1>
+        <div class="label">Desenvolvedor Python (Nível Inicial) | IA (RAG), FastAPI &amp; Automação</div>
+      </div>
+      <div class="contacts">
+        <div>✉ augustoheiss@gmail.com</div>
+        <div>📞 +55 11 98135-5495</div>
+        <div>📍 Ferraz de Vasconcelos - São Paulo</div>
+        <div>🌐 <a href="https://www.linkedin.com/in/augustoheiss">https://www.linkedin.com/in/augustoheiss</a></div>
+      </div>
+    </header>
+
+    <div class="summary">Desenvolvedor Python autodidata em transição de carreira após 7 anos de experiência sólida como Professor de Matemática. Altamente capacitado em traduzir problemas lógicos complexos em código limpo e estruturado. <br><br>Meu foco técnico abrange o desenvolvimento backend (FastAPI), integrações de IA (arquitetura RAG) e automação de processos (RPA). Busco minha primeira oportunidade profissional na área de tecnologia (Nível Inicial/Júnior) para aplicar minha forte base analítica e capacidade de aprendizado rápido em desafios reais de negócios, integrando uma equipe de engenharia colaborativa.<br></div>
+
+    <section><h2 class="section-title">💼 Experiência Profissional</h2>
+        <div class="card avoid-break">
+            <div class="item-header">
+                <span class="item-title">Estagiário em Engenharia de Software</span>
+                <span class="item-date">2026-07-06 — Presente</span>
+            </div>
+            <div class="item-sub">IBM</div>
+            <p class="item-desc">Atuando no ecossistema de desenvolvimento da IBM, com foco em imersão nas práticas de Engenharia de Software e integração de soluções tecnológicas. Aprofundamento nas arquiteturas de Nuvem Híbrida e no ecossistema de Inteligência Artificial para negócios, alinhando fundamentos técnicos de Python, automação de APIs e IA com as rigorosas diretrizes de governança e segurança corporativa.</p>
+            
+        </div>
+        
+        <div class="card avoid-break">
+            <div class="item-header">
+                <span class="item-title">Desenvolvedor Python &amp; Web</span>
+                <span class="item-date">2026-02-01 — Presente</span>
+            </div>
+            <div class="item-sub">Freelance</div>
+            <p class="item-desc">Desenvolvimento de aplicações web personalizadas, APIs e automações com IA para profissionais autônomos. Responsável pelo levantamento de requisitos e codificação de soluções ponta a ponta, incluindo plataformas educacionais baseadas em RAG, geradores dinâmicos de currículos integrados com FastAPI e dashboards de dados.</p>
+            
+        </div>
+        
+        <div class="card avoid-break">
+            <div class="item-header">
+                <span class="item-title">Professor de Matemática</span>
+                <span class="item-date">2019-01-01 — Presente</span>
+            </div>
+            <div class="item-sub">Secretaria Municipal de Educação de São Paulo</div>
+            <p class="item-desc">Gestão e liderança de mais de 20 turmas anualmente. Aplicação de forte raciocínio analítico para adaptar métodos de ensino sob pressão. Ampla experiência em decompor conceitos teóricos e lógicos complexos em etapas práticas e de fácil compreensão — uma habilidade altamente transferível para a estruturação de lógica de software e comunicação técnica.</p>
+            
+        </div>
+        
+        <div class="card avoid-break">
+            <div class="item-header">
+                <span class="item-title">Atendimento ao Cliente &amp; Operações</span>
+                <span class="item-date">2009-01-01 — Presente</span>
+            </div>
+            <div class="item-sub">Empresas Diversas</div>
+            <p class="item-desc">Desenvolvimento de habilidades de adaptabilidade, resiliência e comunicação clara em ambientes operacionais de ritmo acelerado. Competências essenciais que agora são aplicadas diretamente na resolução colaborativa de problemas e no levantamento ágil de requisitos de clientes.</p>
+            
+        </div>
+        </section>
+
+    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid">
+        <div class="project-card avoid-break">
+            <div class="item-header">
+                <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
+            </div>
+            <p class="item-desc">API backend baseada em FastAPI para geração dinâmica de currículos, separando estruturalmente os dados em YAML da camada de apresentação visual.</p>
+            <ul class="bullets"><li>Identificação e resolução de gargalos de limite de requisições na API do Gemini 2.5 Flash através da implementação de processamento assíncrono concorrente (asyncio.gather do Python).</li><li>Redução significativa da latência de resposta do servidor executando múltiplas requisições simultâneas em um único event loop.</li></ul>
+            
+        </div>
+        
+        <div class="project-card avoid-break">
+            <div class="item-header">
+                <span class="item-title"><a href="https://assistente-escola-modelo.streamlit.app/" target="_blank">Assistente Escola Modelo (Automação com IA/RPA) ↗</a></span>
+            </div>
+            <p class="item-desc">Assistente administrativo com inteligência artificial desenvolvido para automatizar fluxos de trabalho de dados pedagógicos.</p>
+            <ul class="bullets"><li>Implementação de arquitetura RAG com guardrails estritos de prompt, restringindo o contexto da LLM a documentos oficiais para mitigar alucinações de forma eficaz.</li><li>Integração do Playwright para Automação de Processos Robóticos (RPA), automatizando a inserção de dados diretamente no Sistema de Gestão Escolar com protocolos de verificação &#x27;Human-in-the-loop&#x27;.</li></ul>
+            
+        </div>
+        
+        <div class="project-card avoid-break">
+            <div class="item-header">
+                <span class="item-title"><a href="https://www.heisslab.com.br/laboratorio/assistente-moeda" target="_blank">Assistente-Moeda (Dashboard Financeiro) ↗</a></span>
+            </div>
+            <p class="item-desc">Dashboard de dados preditivos para acompanhamento de retornos financeiros e otimização de recursos.</p>
+            <ul class="bullets"><li>Desenvolvimento de scripts para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos.</li><li>Criação de visualizações de dados para balancear dinamicamente os custos operacionais de um veículo híbrido contra a rentabilidade projetada.</li></ul>
+            
+        </div>
+        
+        <div class="project-card avoid-break">
+            <div class="item-header">
+                <span class="item-title"><a href="https://www.heisslab.com.br/jogos" target="_blank">WebGL Interactive Logic Games ↗</a></span>
+            </div>
+            <p class="item-desc">Aplicações web interativas baseadas em lógica com foco na resolução de problemas algorítmicos.</p>
+            <ul class="bullets"><li>Desenvolvimento de aplicações interativas para navegador utilizando a Godot Engine, aplicando matemática vetorial, gerenciamento de estado e lógica algorítmica sob restrições estritas.</li></ul>
+            
+        </div>
+        </div></section>
+
+    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid">
+        <div class="skill-group avoid-break">
+            <div class="skill-title">Backend &amp; Dados <small>(Intermediário)</small></div>
+            <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI &amp; APIs REST</span><span class='badge'>Asyncio (Processamento Concorrente)</span><span class='badge'>Pandas &amp; NumPy</span><span class='badge'>SQL &amp; SQLite</span></div>
+        </div>
+        
+        <div class="skill-group avoid-break">
+            <div class="skill-title">IA &amp; Automação <small>(Intermediário)</small></div>
+            <div class="tags"><span class='badge'>Arquiteturas RAG</span><span class='badge'>Integração de LLMs &amp; Engenharia de Prompt</span><span class='badge'>Playwright (RPA &amp; Web Scraping)</span></div>
+        </div>
+        
+        <div class="skill-group avoid-break">
+            <div class="skill-title">Frontend &amp; Ferramentas <small>(Conhecimento Prático)</small></div>
+            <div class="tags"><span class='badge'>Streamlit</span><span class='badge'>React (Básico)</span><span class='badge'>Git &amp; GitHub</span><span class='badge'>Deploy na Vercel</span></div>
+        </div>
+        
+        <div class="skill-group avoid-break">
+            <div class="skill-title">Competências Essenciais <small>(Avançado)</small></div>
+            <div class="tags"><span class='badge'>Raciocínio Lógico Matemático</span><span class='badge'>Resolução Analítica de Problemas</span><span class='badge'>Comunicação Técnica Clara</span></div>
+        </div>
+        </div></section>
+
+    <section><h2 class="section-title">🎓 Formação Acadêmica</h2>
+        <div class="card avoid-break">
+            <div class="item-header">
+                <span class="item-title">Inteligência Artificial (Tecnólogo)</span>
+                <span class="item-date">2027-12-31</span>
+            </div>
+            <div class="item-sub">Universidade Nove de Julho (UNINOVE)</div>
+        </div>
+        
+        <div class="card avoid-break">
+            <div class="item-header">
+                <span class="item-title">Matemática (Licenciatura)</span>
+                <span class="item-date">2012-12-31</span>
+            </div>
+            <div class="item-sub">Universidade Cidade de São Paulo (UNICID)</div>
+        </div>
+        
+        <div class="card avoid-break">
+            <div class="item-header">
+                <span class="item-title">Eletrônica / Eletricista de Manutenção (Curso Técnico e Aprendizagem Industrial)</span>
+                <span class="item-date">2011-12-31</span>
+            </div>
+            <div class="item-sub">SENAI Roberto Simonsen (ISO 9001)</div>
+        </div>
+        </section>
+
+    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="tags"><span class='badge'>🌐 Inglês: Avançado (Leitura e Escrita de Documentação Técnica)</span><span class='badge'>🌐 Espanhol: Intermediário</span></div></section>
+
+    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class='avoid-break'><strong>Desenvolvimento Profissional:</strong> <span class='badge'>Boas Práticas de Engenharia de Software (Clean Code)</span><span class='badge'>Estruturas de Dados &amp; Algoritmos</span><span class='badge'>Arquitetura de Sistemas &amp; Design de APIs</span></div></section>
+  </div>
+
+</body>
+</html>
