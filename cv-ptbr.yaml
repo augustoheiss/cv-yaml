@@ -1,13 +1,13 @@
 basics:
   name: "Augusto Leonardo Farias Heiss"
-  label: "Desenvolvedor Python (Nível Inicial) | IA (RAG), FastAPI & Automação"
+  label: "Desenvolvedor Python & Engenheiro de Software | IA (RAG), FastAPI & Automação"
   email: "augustoheiss@gmail.com"
   phone: "+55 11 98135-5495"
   url: "https://www.linkedin.com/in/augustoheiss"
   summary: |
-    Desenvolvedor Python autodidata em transição de carreira após 7 anos de experiência sólida como Professor de Matemática. Altamente capacitado em traduzir problemas lógicos complexos em código limpo e estruturado. 
-    
-    Meu foco técnico abrange o desenvolvimento backend (FastAPI), integrações de IA (arquitetura RAG) e automação de processos (RPA). Busco minha primeira oportunidade profissional na área de tecnologia (Nível Inicial/Júnior) para aplicar minha forte base analítica e capacidade de aprendizado rápido em desafios reais de negócios, integrando uma equipe de engenharia colaborativa.
+    Desenvolvedor Python autodidata em transição de carreira após 7 anos de experiência sólida como Professor de Matemática. Altamente capacitado em traduzir problemas lógicos complexos em código limpo, estruturado e escalável.
+
+    Meu foco técnico abrange o desenvolvimento backend (FastAPI), integrações de Inteligência Artificial (arquiteturas RAG) e automação de processos (RPA com Playwright). Atualmente atuando no ecossistema de desenvolvimento da IBM (Estágio em Engenharia de Software) com imersão em Nuvem Híbrida e IA para negócios, aplicando forte base analítica, governança corporativa e aprendizado acelerado em desafios reais de engenharia.
   location:
     city: "Ferraz de Vasconcelos"
     region: "São Paulo"
@@ -26,35 +26,82 @@ basics:
 
 work:
   - name: "IBM"
-    position: "Estagiário em Engenharia de Software"
+    position: "Software Engineering Intern"
     startDate: "2026-07-06"
-    summary: "Atuando no ecossistema de desenvolvimento da IBM, com foco em imersão nas práticas de Engenharia de Software e integração de soluções tecnológicas. Aprofundamento nas arquiteturas de Nuvem Híbrida e no ecossistema de Inteligência Artificial para negócios, alinhando fundamentos técnicos de Python, automação de APIs e IA com as rigorosas diretrizes de governança e segurança corporativa."
-  - name: "Freelance"
+    summary: "Atuação no ecossistema de desenvolvimento da IBM, com foco em imersão nas práticas de Engenharia de Software, integração de soluções tecnológicas e colaboração em times multidisciplinares sob metodologias ágeis em um ambiente corporativo global."
+    highlights:
+      - "Aprofundamento prático em arquiteturas de Nuvem Híbrida e no ecossistema de Inteligência Artificial corporativa, alinhando fundamentos de Python e APIs com rigorosas diretrizes de governança e segurança."
+      - "Desenvolvimento contínuo de lógicas de automação, consumo de APIs e estruturação de dados para aceleração de processos de engenharia."
+      - "Participação em treinamentos avançados de Indústria (Energy, Environment & Utilities) e consolidação de competências de crescimento (IBM Growth Behaviors)."
+
+  - name: "Freelance / Heiss-Lab"
     position: "Desenvolvedor Python & Web"
     startDate: "2026-02-01"
-    summary: "Desenvolvimento de aplicações web personalizadas, APIs e automações com IA para profissionais autônomos. Responsável pelo levantamento de requisitos e codificação de soluções ponta a ponta, incluindo plataformas educacionais baseadas em RAG, geradores dinâmicos de currículos integrados com FastAPI e dashboards de dados."
+    summary: "Desenvolvimento de aplicações web personalizadas, APIs e automações com IA para profissionais autônomos. Responsável pelo levantamento de requisitos e codificação de soluções ponta a ponta."
+    highlights:
+      - "Engenharia de plataformas educacionais baseadas em RAG e geradores dinâmicos de currículos integrados com FastAPI e processamento assíncrono."
+      - "Criação de dashboards de dados preditivos para acompanhamento financeiro e otimização de recursos."
+      - "Deploy e sustentação de páginas e APIs stateless em plataformas em nuvem (Vercel, Render, GitHub Pages)."
+
   - name: "Secretaria Municipal de Educação de São Paulo"
     position: "Professor de Matemática"
-    startDate: "2019-01-01"
-    summary: "Gestão e liderança de mais de 20 turmas anualmente. Aplicação de forte raciocínio analítico para adaptar métodos de ensino sob pressão. Ampla experiência em decompor conceitos teóricos e lógicos complexos em etapas práticas e de fácil compreensão — uma habilidade altamente transferível para a estruturação de lógica de software e comunicação técnica."
-  - name: "Empresas Diversas"
+    startDate: "2019-08-01"
+    endDate: "2026-07-01"
+    summary: "Gestão e liderança pedagógica de mais de 20 turmas anualmente. Aplicação de forte raciocínio analítico para adaptar métodos de ensino sob alta demanda e pressão."
+    highlights:
+      - "Ampla experiência em decompor conceitos teóricos e lógicos complexos em etapas práticas e de fácil compreensão — habilidade transferida diretamente para estruturação de lógica de software e comunicação técnica."
+      - "Desenvolvimento de metodologias ativas de resolução de problemas algorítmicos e raciocínio quantitativo para centenas de estudantes."
+
+  - name: "Empresas Anteriores Diversas"
     position: "Atendimento ao Cliente & Operações"
     startDate: "2009-01-01"
-    summary: "Desenvolvimento de habilidades de adaptabilidade, resiliência e comunicação clara em ambientes operacionais de ritmo acelerado. Competências essenciais que agora são aplicadas diretamente na resolução colaborativa de problemas e no levantamento ágil de requisitos de clientes."
+    endDate: "2018-12-31"
+    summary: "Desenvolvimento de competências essenciais de adaptabilidade, resiliência e comunicação clara em ambientes operacionais de ritmo acelerado."
+    highlights:
+      - "Resolução colaborativa de problemas e levantamento ágil de requisitos de clientes sob cenários críticos de atendimento."
 
 education:
   - institution: "Universidade Nove de Julho (UNINOVE)"
     area: "Inteligência Artificial"
     studyType: "Tecnólogo"
+    startDate: "2025-01-01"
     endDate: "2027-12-31"
   - institution: "Universidade Cidade de São Paulo (UNICID)"
     area: "Matemática"
     studyType: "Licenciatura"
+    startDate: "2010-01-01"
     endDate: "2012-12-31"
   - institution: "SENAI Roberto Simonsen (ISO 9001)"
     area: "Eletrônica / Eletricista de Manutenção"
     studyType: "Curso Técnico e Aprendizagem Industrial"
+    startDate: "2010-01-01"
     endDate: "2011-12-31"
+
+certificates:
+  - name: "Claude Certified Associate - Foundations"
+    issuer: "Anthropic"
+    date: "2026-08"
+    url: "https://www.linkedin.com/in/augustoheiss"
+  - name: "Energy, Environment and Utilities Industry Jumpstart"
+    issuer: "IBM"
+    date: "2026-07"
+    url: "https://www.linkedin.com/in/augustoheiss"
+  - name: "IBM Growth Behaviors"
+    issuer: "IBM"
+    date: "2026-07"
+    url: "https://www.linkedin.com/in/augustoheiss"
+  - name: "EF SET English Certificate 61/100 (C1 Advanced)"
+    issuer: "EF SET"
+    date: "2025-05"
+    url: "https://www.linkedin.com/in/augustoheiss"
+  - name: "Fundamentos de Linguagem Python para Análise de Dados e Data Science - Intermediário"
+    issuer: "Data Science Academy (Credencial: 6462a77c2c9340d87a071e3a)"
+    date: "2024-03"
+    url: "https://www.linkedin.com/in/augustoheiss"
+  - name: "Python: Avance na Orientação a Objetos e Consuma APIs"
+    issuer: "Alura"
+    date: "2024-03"
+    url: "https://www.linkedin.com/in/augustoheiss"
 
 projects:
   - name: "LogicDefense CV RAG Engine"
@@ -62,6 +109,13 @@ projects:
     highlights:
       - "Identificação e resolução de gargalos de limite de requisições na API do Gemini 2.5 Flash através da implementação de processamento assíncrono concorrente (asyncio.gather do Python)."
       - "Redução significativa da latência de resposta do servidor executando múltiplas requisições simultâneas em um único event loop."
+    keywords:
+      - "Python"
+      - "FastAPI"
+      - "Gemini 2.5 Flash"
+      - "asyncio"
+      - "YAML"
+      - "Render"
     url: "https://heisslab.com.br/laboratorio/cv-maker"
 
   - name: "Assistente Escola Modelo (Automação com IA/RPA)"
@@ -69,59 +123,114 @@ projects:
     highlights:
       - "Implementação de arquitetura RAG com guardrails estritos de prompt, restringindo o contexto da LLM a documentos oficiais para mitigar alucinações de forma eficaz."
       - "Integração do Playwright para Automação de Processos Robóticos (RPA), automatizando a inserção de dados diretamente no Sistema de Gestão Escolar com protocolos de verificação 'Human-in-the-loop'."
+    keywords:
+      - "Python"
+      - "RAG"
+      - "Playwright"
+      - "RPA"
+      - "Streamlit"
+      - "Engenharia de Prompt"
     url: "https://assistente-escola-modelo.streamlit.app/"
 
-  - name: "Assistente-Moeda (Dashboard Financeiro)"
-    description: "Dashboard de dados preditivos para acompanhamento de retornos financeiros e otimização de recursos."
+  - name: "Assistente-Moeda (Dashboard Financeiro & Local-First)"
+    description: "Dashboard de dados preditivos para acompanhamento de retornos financeiros e otimização de recursos com arquitetura stateless."
     highlights:
       - "Desenvolvimento de scripts para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos."
       - "Criação de visualizações de dados para balancear dinamicamente os custos operacionais de um veículo híbrido contra a rentabilidade projetada."
+    keywords:
+      - "Python"
+      - "APIs REST"
+      - "Pandas"
+      - "Turso SQLite"
+      - "Finanças"
     url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
+
+  - name: "Alavanca Tecnológica para Autônomos"
+    description: "Aceleração de negócios locais através do desenvolvimento e deploy de páginas estruturadas para alta conversão."
+    highlights:
+      - "Desenvolvimento e deploy de landing pages de alta performance para profissionais autônomos (idiomas, estética, climatização e transporte executivo)."
+    keywords:
+      - "Vercel"
+      - "GitHub Pages"
+      - "Lógica de Conversão"
+      - "SEO"
+    url: "https://www.heisslab.com.br/"
 
   - name: "WebGL Interactive Logic Games"
     description: "Aplicações web interativas baseadas em lógica com foco na resolução de problemas algorítmicos."
     highlights:
       - "Desenvolvimento de aplicações interativas para navegador utilizando a Godot Engine, aplicando matemática vetorial, gerenciamento de estado e lógica algorítmica sob restrições estritas."
+    keywords:
+      - "Godot Engine"
+      - "WebGL"
+      - "Matemática Vetorial"
+      - "Algoritmos"
     url: "https://www.heisslab.com.br/jogos"
+
+publications:
+  - name: "O Foguete e as Penas: O Manifesto da Garagem"
+    publisher: "LinkedIn Pulse"
+    releaseDate: "2026-08-10"
+    url: "https://www.linkedin.com/in/augustoheiss"
+    summary: "Artigo sobre desenvolvimento ágil, engenharia de software pragmática e aprendizado contínuo na era da inteligência artificial."
+
+  - name: "Seu Dinheiro, Seus Dados: A Revolução Silenciosa do Local-First"
+    publisher: "LinkedIn Pulse"
+    releaseDate: "2026-05-31"
+    url: "https://www.linkedin.com/in/augustoheiss"
+    summary: "Análise da soberania de dados do usuário, arquiteturas stateless em memória e privacidade em sistemas financeiros modernos."
+
+  - name: "O Fim do Monopólio da Interface: Como os Agentes de IA Estão Redefinindo o Software"
+    publisher: "LinkedIn Pulse"
+    releaseDate: "2026-05-12"
+    url: "https://www.linkedin.com/in/augustoheiss"
+    summary: "Discussão sobre o futuro das interfaces gráficas e a emergência de agentes autônomos consumindo APIs programáticas sem necessidade de UI."
 
 skills:
   - name: "Backend & Dados"
-    level: "Intermediário"
+    level: "Avançado"
     keywords:
       - "Python"
       - "FastAPI & APIs REST"
       - "Asyncio (Processamento Concorrente)"
-      - "Pandas & NumPy"
       - "SQL & SQLite"
-  - name: "IA & Automação"
-    level: "Intermediário"
+      - "Pandas & NumPy"
+      - "Arquitetura Stateless"
+  - name: "IA, RAG & Automação"
+    level: "Avançado"
     keywords:
       - "Arquiteturas RAG"
-      - "Integração de LLMs & Engenharia de Prompt"
+      - "Anthropic Claude & Gemini"
+      - "Engenharia de Prompt & Guardrails"
       - "Playwright (RPA & Web Scraping)"
-  - name: "Frontend & Ferramentas"
-    level: "Conhecimento Prático"
+      - "LLMs"
+  - name: "Cloud, DevOps & Ferramentas"
+    level: "Intermediário"
     keywords:
-      - "Streamlit"
-      - "React (Básico)"
       - "Git & GitHub"
-      - "Deploy na Vercel"
-  - name: "Competências Essenciais"
-    level: "Avançado"
+      - "Deploy (Render / Vercel)"
+      - "React & TypeScript (Básico)"
+      - "Streamlit"
+      - "Godot & WebGL"
+  - name: "Competências Centrais & Liderança"
+    level: "Especialista"
     keywords:
       - "Raciocínio Lógico Matemático"
       - "Resolução Analítica de Problemas"
       - "Comunicação Técnica Clara"
+      - "Governança & Práticas Ágeis"
 
 languages:
   - language: "Inglês"
-    fluency: "Avançado (Leitura e Escrita de Documentação Técnica)"
+    fluency: "C1 Advanced (EF SET 61/100 — Fluência na Leitura, Escrita e Comunicação Técnica)"
   - language: "Espanhol"
     fluency: "Intermediário"
+  - language: "Português"
+    fluency: "Nativo"
 
 interests:
-  - name: "Desenvolvimento Profissional"
+  - name: "Engenharia de Software & IA"
     keywords:
-      - "Boas Práticas de Engenharia de Software (Clean Code)"
-      - "Estruturas de Dados & Algoritmos"
+      - "Boas Práticas de Engenharia (Clean Code)"
       - "Arquitetura de Sistemas & Design de APIs"
+      - "Modelos de Agentes Autônomos"
