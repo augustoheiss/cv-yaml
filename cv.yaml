@@ -1,127 +1,80 @@
 basics:
-  name: "Augusto Leonardo Farias Heiss"
-  label: "Entry-Level Python Developer | AI (RAG), FastAPI & Automation"
-  email: "augustoheiss@gmail.com"
-  phone: "+55 11 98135-5495"
-  url: "https://www.linkedin.com/in/augustoheiss"
+  name: "Alexandre Silva"
+  label: "Senior Software Engineer & AI Solutions Architect | FastAPI & RAG"
+  email: "alexandre.silva.dev@example.com"
+  phone: "+1 (555) 019-2834"
+  url: "https://github.com/exemplo-dev"
   summary: |
-    Self-taught Python Developer transitioning into Software Engineering after 7 years of solid experience as a Mathematics Teacher. Highly skilled at translating complex logical problems into clean, structured code. 
+    Software Engineer with strong analytical background focused on modern microservice architectures, applied artificial intelligence (RAG), and asynchronous Python pipelines (FastAPI).
     
-    My technical focus encompasses backend development (FastAPI), AI integrations (RAG architecture), and process automation (RPA). Actively seeking my first professional tech role (Entry-Level/Junior) to apply my strong analytical foundation and fast learning capabilities to real-world business challenges within a collaborative engineering team.
+    Experienced in designing and delivering scalable digital products, integrating Large Language Models (LLMs), and enterprise data governance.
   location:
-    city: "Ferraz de Vasconcelos"
-    region: "São Paulo"
-    postalCode: "08533-120"
-    countryCode: "BR"
+    city: "San Francisco"
+    region: "CA"
+    postalCode: "94107"
+    countryCode: "US"
   profiles:
     - network: "LinkedIn"
-      username: "augustoheiss"
-      url: "https://www.linkedin.com/in/augustoheiss"
+      username: "alexandresilva-dev"
+      url: "https://linkedin.com/in/alexandresilva-dev"
     - network: "GitHub"
-      username: "augustoheiss"
-      url: "https://github.com/augustoheiss"
-    - network: "Portfolio"
-      username: "Heiss-Lab"
-      url: "https://www.heisslab.com.br/"
+      username: "alexandresilva-dev"
+      url: "https://github.com/alexandresilva-dev"
 
 work:
-  - name: "IBM"
-    position: "Software Engineering Intern"
-    startDate: "2026-07-06"
-    summary: "Currently part of the IBM development ecosystem, focusing on aligning my background in logical reasoning and Python backend development with IBM's enterprise solutions. Engaged in continuous technical onboarding, actively studying Hybrid Cloud architectures, Agile methodologies, and AI governance frameworks to rapidly transition hands-on experience with RAG and automation into scalable, secure contributions."
-  - name: "Freelance"
-    position: "Python & Web Developer"
-    startDate: "2026-02-01"
-    summary: "Developing custom web applications, APIs, and AI automations for independent professionals. Responsible for requirements gathering and coding end-to-end solutions, including RAG-based educational platforms, dynamic resume generators built with FastAPI, and data dashboards."
-  - name: "São Paulo Municipal Department of Education"
-    position: "Mathematics Teacher"
-    startDate: "2019-01-01"
-    summary: "Managed and led over 20 classes annually. Applied strong analytical problem-solving skills to adapt teaching methods under pressure. Highly experienced in breaking down complex theoretical and logical concepts into practical, easy-to-understand steps—a heavily transferable skill for structuring software logic and technical communication."
-  - name: "Various Companies"
-    position: "Customer Service & Operations"
-    startDate: "2009-01-01"
-    summary: "Developed adaptability, resilience, and clear communication skills in fast-paced operational environments. These core competencies are now directly applied to collaborative problem-solving and agile client requirement gathering."
+  - name: "Tech Enterprise Corp"
+    position: "Senior Software Engineer"
+    startDate: "2024-01-15"
+    summary: "Technical leadership in FastAPI microservices development and autonomous AI agent integration."
+    highlights:
+      - "Architected asynchronous pipelines with Redis and Celery reducing response latency by 45%."
+      - "Implemented RAG automation workflows with vector embeddings ensuring 98% factual precision."
+  - name: "DataFlow Solutions"
+    position: "Python Backend Developer"
+    startDate: "2021-03-01"
+    endDate: "2023-12-31"
+    summary: "High-performance RESTful API engineering and data ingestion pipelines."
+    highlights:
+      - "Optimized SQL queries and PostgreSQL database schemas reducing query latency by 30%."
 
 education:
-  - institution: "Universidade Nove de Julho (UNINOVE)"
-    area: "Artificial Intelligence"
-    studyType: "Associate's Degree (Tecnólogo)"
-    endDate: "2027-12-31"
-  - institution: "Universidade Cidade de São Paulo (UNICID)"
-    area: "Mathematics"
-    studyType: "Bachelor's Degree in Education (Licenciatura)"
-    endDate: "2012-12-31"
-  - institution: "SENAI Roberto Simonsen (ISO 9001)"
-    area: "Electronics / Maintenance Electrician"
-    studyType: "Technical Certification"
-    endDate: "2011-12-31"
+  - institution: "University of California, Berkeley"
+    area: "Computer Science"
+    studyType: "Bachelor of Science"
+    endDate: "2020-12-31"
 
 projects:
-  - name: "LogicDefense CV RAG Engine"
-    description: "FastAPI-based backend API for dynamic resume generation, structurally separating YAML data from the presentation layer."
+  - name: "AI Document Knowledge Engine"
+    description: "Semantic search and intelligent technical document summarization platform with RAG."
     highlights:
-      - "Identified and resolved Gemini 2.5 Flash API rate limit bottlenecks by implementing concurrent asynchronous processing (Python's asyncio.gather)."
-      - "Significantly reduced server response latency by executing multiple simultaneous requests within a single event loop."
-    url: "https://heisslab.com.br/laboratorio/cv-maker"
-
-  - name: "Assistente Escola Modelo (AI/RPA Automation)"
-    description: "AI-powered administrative assistant built to automate pedagogical data workflows."
-    highlights:
-      - "Implemented a RAG architecture with strict prompt guardrails, restricting the LLM context to official documents to effectively mitigate hallucinations."
-      - "Integrated Playwright for Robotic Process Automation (RPA), automating data entry directly into the school's Management System with 'Human-in-the-loop' verification protocols."
-    url: "https://assistente-escola-modelo.streamlit.app/"
-
-  - name: "Assistente-Moeda (Financial Dashboard)"
-    description: "Predictive data dashboard for financial return tracking and resource optimization."
-    highlights:
-      - "Developed scripts to calculate daily yield goals and project Treasury Bond returns over a 3-year horizon."
-      - "Created data visualizations to balance hybrid vehicle operational costs against projected profitability dynamically."
-    url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
-
-  - name: "WebGL Interactive Logic Games"
-    description: "Logic-based web applications focusing on algorithmic problem solving."
-    highlights:
-      - "Developed interactive browser applications using the Godot Engine, applying vector mathematics, state management, and algorithmic logic under strict constraints."
-    url: "https://www.heisslab.com.br/jogos"
+      - "High-throughput concurrent processing in Python supporting thousands of queries daily."
+    url: "https://github.com/exemplo-dev/ai-knowledge-engine"
 
 skills:
-  - name: "Backend & Data"
-    level: "Intermediate"
-    keywords:
-      - "Python"
-      - "FastAPI & REST APIs"
-      - "Asyncio (Concurrent Processing)"
-      - "Pandas & NumPy"
-      - "SQL & SQLite"
-  - name: "AI & Automation"
-    level: "Intermediate"
-    keywords:
-      - "RAG Architectures"
-      - "LLMs Integration & Prompting"
-      - "Playwright (RPA & Web Scraping)"
-  - name: "Frontend & Tools"
-    level: "Familiar"
-    keywords:
-      - "Streamlit"
-      - "React (Basics)"
-      - "Git & GitHub"
-      - "Vercel Deployment"
-  - name: "Core Competencies"
+  - name: "Backend & Cloud"
     level: "Advanced"
     keywords:
-      - "Mathematical Logical Reasoning"
-      - "Analytical Problem Solving"
-      - "Clear Technical Communication"
+      - "Python"
+      - "FastAPI"
+      - "Docker & Kubernetes"
+      - "PostgreSQL"
+      - "Redis"
+  - name: "Artificial Intelligence"
+    level: "Advanced"
+    keywords:
+      - "RAG Architectures"
+      - "LangChain & LlamaIndex"
+      - "Prompt Engineering"
+      - "Vector Embeddings"
+  - name: "Core Competencies"
+    level: "Expert"
+    keywords:
+      - "Microservices Architecture"
+      - "Clean Architecture"
+      - "Technical Leadership"
 
 languages:
   - language: "English"
-    fluency: "Advanced (Technical Documentation Reading & Writing)"
-  - language: "Spanish"
-    fluency: "Intermediate"
-
-interests:
-  - name: "Professional Development"
-    keywords:
-      - "Software Engineering Best Practices (Clean Code)"
-      - "Data Structures & Algorithms"
-      - "System Architecture & API Design"
+    fluency: "Fluent / Professional"
+  - language: "Portuguese"
+    fluency: "Native"

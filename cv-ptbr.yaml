@@ -1,127 +1,80 @@
 basics:
-  name: "Augusto Leonardo Farias Heiss"
-  label: "Desenvolvedor Python (Nível Inicial) | IA (RAG), FastAPI & Automação"
-  email: "augustoheiss@gmail.com"
-  phone: "+55 11 98135-5495"
-  url: "https://www.linkedin.com/in/augustoheiss"
+  name: "Alexandre Silva"
+  label: "Desenvolvedor Python & Arquiteto de Soluções IA | FastAPI & RAG"
+  email: "alexandre.silva.dev@exemplo.com"
+  phone: "+55 11 99999-8888"
+  url: "https://github.com/exemplo-dev"
   summary: |
-    Desenvolvedor Python autodidata em transição de carreira após 7 anos de experiência sólida como Professor de Matemática. Altamente capacitado em traduzir problemas lógicos complexos em código limpo e estruturado. 
+    Engenheiro de Software com sólida formação analítica e foco em arquiteturas modernas de microsserviços, inteligência artificial aplicada (RAG) e pipelines assíncronos em Python (FastAPI).
     
-    Meu foco técnico abrange o desenvolvimento backend (FastAPI), integrações de IA (arquitetura RAG) e automação de processos (RPA). Busco minha primeira oportunidade profissional na área de tecnologia (Nível Inicial/Júnior) para aplicar minha forte base analítica e capacidade de aprendizado rápido em desafios reais de negócios, integrando uma equipe de engenharia colaborativa.
+    Experiência na concepção e entrega de produtos digitais escaláveis, integração de Large Language Models (LLMs) e governança de dados corporativos.
   location:
-    city: "Ferraz de Vasconcelos"
-    region: "São Paulo"
-    postalCode: "08533-120"
+    city: "São Paulo"
+    region: "SP"
+    postalCode: "01000-000"
     countryCode: "BR"
   profiles:
     - network: "LinkedIn"
-      username: "augustoheiss"
-      url: "https://www.linkedin.com/in/augustoheiss"
+      username: "alexandresilva-dev"
+      url: "https://linkedin.com/in/alexandresilva-dev"
     - network: "GitHub"
-      username: "augustoheiss"
-      url: "https://github.com/augustoheiss"
-    - network: "Portfolio"
-      username: "Heiss-Lab"
-      url: "https://www.heisslab.com.br/"
+      username: "alexandresilva-dev"
+      url: "https://github.com/alexandresilva-dev"
 
 work:
-  - name: "IBM"
-    position: "Estagiário em Engenharia de Software"
-    startDate: "2026-07-06"
-    summary: "Atuando no ecossistema de desenvolvimento da IBM, com foco em imersão nas práticas de Engenharia de Software e integração de soluções tecnológicas. Aprofundamento nas arquiteturas de Nuvem Híbrida e no ecossistema de Inteligência Artificial para negócios, alinhando fundamentos técnicos de Python, automação de APIs e IA com as rigorosas diretrizes de governança e segurança corporativa."
-  - name: "Freelance"
-    position: "Desenvolvedor Python & Web"
-    startDate: "2026-02-01"
-    summary: "Desenvolvimento de aplicações web personalizadas, APIs e automações com IA para profissionais autônomos. Responsável pelo levantamento de requisitos e codificação de soluções ponta a ponta, incluindo plataformas educacionais baseadas em RAG, geradores dinâmicos de currículos integrados com FastAPI e dashboards de dados."
-  - name: "Secretaria Municipal de Educação de São Paulo"
-    position: "Professor de Matemática"
-    startDate: "2019-01-01"
-    summary: "Gestão e liderança de mais de 20 turmas anualmente. Aplicação de forte raciocínio analítico para adaptar métodos de ensino sob pressão. Ampla experiência em decompor conceitos teóricos e lógicos complexos em etapas práticas e de fácil compreensão — uma habilidade altamente transferível para a estruturação de lógica de software e comunicação técnica."
-  - name: "Empresas Diversas"
-    position: "Atendimento ao Cliente & Operações"
-    startDate: "2009-01-01"
-    summary: "Desenvolvimento de habilidades de adaptabilidade, resiliência e comunicação clara em ambientes operacionais de ritmo acelerado. Competências essenciais que agora são aplicadas diretamente na resolução colaborativa de problemas e no levantamento ágil de requisitos de clientes."
+  - name: "Tech Enterprise Corp"
+    position: "Engenheiro de Software Sênior"
+    startDate: "2024-01-15"
+    summary: "Liderança técnica no desenvolvimento de microsserviços em FastAPI e integração de agentes autônomos de IA."
+    highlights:
+      - "Arquitetei pipelines assíncronos com Redis e Celery reduzindo o tempo de resposta em 45%."
+      - "Implementei fluxos de automação RAG com embeddings vetoriais garantindo 98% de precisão nas respostas."
+  - name: "DataFlow Solutions"
+    position: "Desenvolvedor Backend Python"
+    startDate: "2021-03-01"
+    endDate: "2023-12-31"
+    summary: "Construção de APIs RESTful de alta performance e pipelines de ingestão de dados."
+    highlights:
+      - "Otimizei consultas SQL e estruturas de banco de dados PostgreSQL reduzindo o tempo de consulta em 30%."
 
 education:
-  - institution: "Universidade Nove de Julho (UNINOVE)"
-    area: "Inteligência Artificial"
-    studyType: "Tecnólogo"
-    endDate: "2027-12-31"
-  - institution: "Universidade Cidade de São Paulo (UNICID)"
-    area: "Matemática"
-    studyType: "Licenciatura"
-    endDate: "2012-12-31"
-  - institution: "SENAI Roberto Simonsen (ISO 9001)"
-    area: "Eletrônica / Eletricista de Manutenção"
-    studyType: "Curso Técnico e Aprendizagem Industrial"
-    endDate: "2011-12-31"
+  - institution: "Universidade de São Paulo (USP)"
+    area: "Ciência da Computação"
+    studyType: "Bacharelado"
+    endDate: "2020-12-31"
 
 projects:
-  - name: "LogicDefense CV RAG Engine"
-    description: "API backend baseada em FastAPI para geração dinâmica de currículos, separando estruturalmente os dados em YAML da camada de apresentação visual."
+  - name: "AI Document Knowledge Engine"
+    description: "Plataforma de busca semântica e sumarização inteligente de documentos técnicos com RAG."
     highlights:
-      - "Identificação e resolução de gargalos de limite de requisições na API do Gemini 2.5 Flash através da implementação de processamento assíncrono concorrente (asyncio.gather do Python)."
-      - "Redução significativa da latência de resposta do servidor executando múltiplas requisições simultâneas em um único event loop."
-    url: "https://heisslab.com.br/laboratorio/cv-maker"
-
-  - name: "Assistente Escola Modelo (Automação com IA/RPA)"
-    description: "Assistente administrativo com inteligência artificial desenvolvido para automatizar fluxos de trabalho de dados pedagógicos."
-    highlights:
-      - "Implementação de arquitetura RAG com guardrails estritos de prompt, restringindo o contexto da LLM a documentos oficiais para mitigar alucinações de forma eficaz."
-      - "Integração do Playwright para Automação de Processos Robóticos (RPA), automatizando a inserção de dados diretamente no Sistema de Gestão Escolar com protocolos de verificação 'Human-in-the-loop'."
-    url: "https://assistente-escola-modelo.streamlit.app/"
-
-  - name: "Assistente-Moeda (Dashboard Financeiro)"
-    description: "Dashboard de dados preditivos para acompanhamento de retornos financeiros e otimização de recursos."
-    highlights:
-      - "Desenvolvimento de scripts para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos."
-      - "Criação de visualizações de dados para balancear dinamicamente os custos operacionais de um veículo híbrido contra a rentabilidade projetada."
-    url: "https://www.heisslab.com.br/laboratorio/assistente-moeda"
-
-  - name: "WebGL Interactive Logic Games"
-    description: "Aplicações web interativas baseadas em lógica com foco na resolução de problemas algorítmicos."
-    highlights:
-      - "Desenvolvimento de aplicações interativas para navegador utilizando a Godot Engine, aplicando matemática vetorial, gerenciamento de estado e lógica algorítmica sob restrições estritas."
-    url: "https://www.heisslab.com.br/jogos"
+      - "Processamento concorrente em Python com suporte a milhares de consultas diárias."
+    url: "https://github.com/exemplo-dev/ai-knowledge-engine"
 
 skills:
-  - name: "Backend & Dados"
-    level: "Intermediário"
-    keywords:
-      - "Python"
-      - "FastAPI & APIs REST"
-      - "Asyncio (Processamento Concorrente)"
-      - "Pandas & NumPy"
-      - "SQL & SQLite"
-  - name: "IA & Automação"
-    level: "Intermediário"
-    keywords:
-      - "Arquiteturas RAG"
-      - "Integração de LLMs & Engenharia de Prompt"
-      - "Playwright (RPA & Web Scraping)"
-  - name: "Frontend & Ferramentas"
-    level: "Conhecimento Prático"
-    keywords:
-      - "Streamlit"
-      - "React (Básico)"
-      - "Git & GitHub"
-      - "Deploy na Vercel"
-  - name: "Competências Essenciais"
+  - name: "Backend & Cloud"
     level: "Avançado"
     keywords:
-      - "Raciocínio Lógico Matemático"
-      - "Resolução Analítica de Problemas"
-      - "Comunicação Técnica Clara"
+      - "Python"
+      - "FastAPI"
+      - "Docker & Kubernetes"
+      - "PostgreSQL"
+      - "Redis"
+  - name: "Inteligência Artificial"
+    level: "Avançado"
+    keywords:
+      - "Arquiteturas RAG"
+      - "LangChain & LlamaIndex"
+      - "Engenharia de Prompt"
+      - "Embeddings Vetoriais"
+  - name: "Competências Estratégicas"
+    level: "Especialista"
+    keywords:
+      - "Arquitetura de Microsserviços"
+      - "Clean Architecture"
+      - "Liderança Técnica"
 
 languages:
+  - language: "Português"
+    fluency: "Nativo"
   - language: "Inglês"
-    fluency: "Avançado (Leitura e Escrita de Documentação Técnica)"
-  - language: "Espanhol"
-    fluency: "Intermediário"
-
-interests:
-  - name: "Desenvolvimento Profissional"
-    keywords:
-      - "Boas Práticas de Engenharia de Software (Clean Code)"
-      - "Estruturas de Dados & Algoritmos"
-      - "Arquitetura de Sistemas & Design de APIs"
+    fluency: "Fluente (Profissional)"
