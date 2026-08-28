@@ -289,12 +289,21 @@
         margin: 6mm 8mm 6mm 8mm !important;
       }
     }
+
+    .toolbar button.btn-sec {
+      background: #334155;
+    }
+    .toolbar button.btn-sec:hover {
+      background: #475569;
+    }
   </style>
 </head>
 <body>
 
   <div class="toolbar">
     <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <button onclick="downloadYaml()" class="btn-sec">📥 Download YAML</button>
+    <button id="copy-btn" onclick="copyYaml()" class="btn-sec">📋 Copy YAML</button>
   </div>
 
   <div class="container">
@@ -537,5 +546,287 @@
         </div></section>
   </div>
 
+  <script id="raw-yaml-data" type="text/yaml">
+basics:
+  name: &quot;Augusto Leonardo Farias Heiss&quot;
+  label: &quot;Python Developer &amp; Software Engineer | AI (RAG), FastAPI &amp; Automation&quot;
+  email: &quot;augustoheiss@gmail.com&quot;
+  phone: &quot;+55 11 98135-5495&quot;
+  url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+  summary: |
+    Self-taught Python developer and software engineer transitioning into technology backed by 7 years of solid experience as a Mathematics Educator. Highly adept at decomposing complex logical and algorithmic challenges into clean, structured, and scalable code.
+
+    Core technical focus spans backend engineering (FastAPI), Artificial Intelligence integrations (RAG architectures), and intelligent process automation (RPA with Playwright). Currently operating within the IBM software development ecosystem (Software Engineering Intern) with hands-on immersion in Hybrid Cloud and Enterprise AI, applying strong analytical foundations, corporate governance, and rapid learning velocity to real-world engineering challenges.
+  location:
+    city: &quot;Ferraz de Vasconcelos&quot;
+    region: &quot;São Paulo&quot;
+    postalCode: &quot;08533-120&quot;
+    countryCode: &quot;BR&quot;
+  profiles:
+    - network: &quot;LinkedIn&quot;
+      username: &quot;augustoheiss&quot;
+      url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+    - network: &quot;GitHub&quot;
+      username: &quot;augustoheiss&quot;
+      url: &quot;https://github.com/augustoheiss&quot;
+    - network: &quot;Portfolio&quot;
+      username: &quot;Heiss-Lab&quot;
+      url: &quot;https://www.heisslab.com.br/&quot;
+
+work:
+  - name: &quot;IBM&quot;
+    position: &quot;Software Engineering Intern&quot;
+    startDate: &quot;2026-07-06&quot;
+    summary: &quot;Operating within the IBM software development ecosystem, focusing on software engineering best practices, enterprise technology integration, and cross-functional agile collaboration in a global corporate environment.&quot;
+    highlights:
+      - &quot;Hands-on immersion in Hybrid Cloud architectures and Enterprise AI ecosystems, aligning Python automation and API consumption with strict corporate governance and security standards.&quot;
+      - &quot;Continuous engineering of automation workflows, API integration layers, and data structuring to accelerate internal development processes.&quot;
+      - &quot;Completed specialized industry enablement (Energy, Environment &amp; Utilities Jumpstart) and consolidated strategic core competencies (IBM Growth Behaviors).&quot;
+
+  - name: &quot;Freelance / Heiss-Lab&quot;
+    position: &quot;Python &amp; Web Developer&quot;
+    startDate: &quot;2026-02-01&quot;
+    summary: &quot;Engineering custom web applications, APIs, and AI-driven automation solutions for independent businesses and professionals. Managing end-to-end SDLC from requirements discovery to production deployment.&quot;
+    highlights:
+      - &quot;Architected RAG-based educational assistants and high-throughput dynamic resume engines utilizing FastAPI and asynchronous concurrency.&quot;
+      - &quot;Built predictive financial dashboards for asset growth tracking and operational cost optimization.&quot;
+      - &quot;Configured zero-maintenance deployments for stateless web apps and APIs on cloud platforms (Vercel, Render, GitHub Pages).&quot;
+
+  - name: &quot;São Paulo Municipal Department of Education&quot;
+    position: &quot;Mathematics Educator&quot;
+    startDate: &quot;2019-08-01&quot;
+    endDate: &quot;2026-07-01&quot;
+    summary: &quot;Managed and instructed over 20 classes annually. Applied high-level analytical reasoning and pedagogical methodologies to adapt instruction under demanding environments.&quot;
+    highlights:
+      - &quot;Decomposed abstract mathematical concepts and complex logic into structured, practical steps — a core skill directly transferred to software architecture, data modeling, and technical communication.&quot;
+      - &quot;Designed problem-solving frameworks and quantitative reasoning tracks for hundreds of students.&quot;
+
+  - name: &quot;Diverse Previous Companies&quot;
+    position: &quot;Customer Support &amp; Operations Specialist&quot;
+    startDate: &quot;2009-01-01&quot;
+    endDate: &quot;2018-12-31&quot;
+    summary: &quot;Developed core professional resilience, operational adaptability, and clear stakeholder communication in fast-paced operational environments.&quot;
+    highlights:
+      - &quot;Delivered collaborative problem resolution and agile client requirements gathering under critical support scenarios.&quot;
+
+education:
+  - institution: &quot;Nove de Julho University (UNINOVE)&quot;
+    area: &quot;Artificial Intelligence&quot;
+    studyType: &quot;Associate&#x27;s Degree (Technologist)&quot;
+    startDate: &quot;2025-01-01&quot;
+    endDate: &quot;2027-12-31&quot;
+  - institution: &quot;City of São Paulo University (UNICID)&quot;
+    area: &quot;Mathematics&quot;
+    studyType: &quot;Bachelor of Education (Licentiate)&quot;
+    startDate: &quot;2010-01-01&quot;
+    endDate: &quot;2012-12-31&quot;
+  - institution: &quot;SENAI Roberto Simonsen (ISO 9001)&quot;
+    area: &quot;Industrial Electrical Maintenance &amp; Electronics&quot;
+    studyType: &quot;Vocational &amp; Industrial Apprenticeship&quot;
+    startDate: &quot;2010-01-01&quot;
+    endDate: &quot;2011-12-31&quot;
+
+certificates:
+  - name: &quot;Claude Certified Associate — Foundations&quot;
+    issuer: &quot;Anthropic&quot;
+    date: &quot;2026-08&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+  - name: &quot;Energy, Environment and Utilities Industry Jumpstart&quot;
+    issuer: &quot;IBM&quot;
+    date: &quot;2026-07&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+  - name: &quot;IBM Growth Behaviors&quot;
+    issuer: &quot;IBM&quot;
+    date: &quot;2026-07&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+  - name: &quot;EF SET English Certificate 61/100 (C1 Advanced)&quot;
+    issuer: &quot;EF SET&quot;
+    date: &quot;2025-05&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+  - name: &quot;Python for Data Analysis and Data Science — Intermediate&quot;
+    issuer: &quot;Data Science Academy (Credential: 6462a77c2c9340d87a071e3a)&quot;
+    date: &quot;2024-03&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+  - name: &quot;Python: Object-Oriented Programming and API Consumption&quot;
+    issuer: &quot;Alura&quot;
+    date: &quot;2024-03&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+
+projects:
+  - name: &quot;LogicDefense CV RAG Engine&quot;
+    description: &quot;FastAPI backend engine for dynamic, stateless resume generation, structurally decoupling data schemas from visual presentation.&quot;
+    highlights:
+      - &quot;Resolved API rate-limiting bottlenecks on Gemini 2.5 Flash by engineering asynchronous concurrent dispatching (Python asyncio.gather).&quot;
+      - &quot;Drastically reduced server response latency by executing parallel multi-archetype generative pipelines in a single event loop.&quot;
+    keywords:
+      - &quot;Python&quot;
+      - &quot;FastAPI&quot;
+      - &quot;Gemini 2.5 Flash&quot;
+      - &quot;asyncio&quot;
+      - &quot;YAML&quot;
+      - &quot;Render&quot;
+    url: &quot;https://heisslab.com.br/laboratorio/cv-maker&quot;
+
+  - name: &quot;Assistente Escola Modelo (AI &amp; RPA Automation)&quot;
+    description: &quot;Administrative AI assistant designed to automate pedagogical workflows and data entry.&quot;
+    highlights:
+      - &quot;Implemented RAG architecture with strict prompt guardrails, constraining LLM context to official regulatory documents to eliminate hallucinations.&quot;
+      - &quot;Integrated Playwright for Robotic Process Automation (RPA), automating direct data entry into the School Management System with human-in-the-loop verification.&quot;
+    keywords:
+      - &quot;Python&quot;
+      - &quot;RAG&quot;
+      - &quot;Playwright&quot;
+      - &quot;RPA&quot;
+      - &quot;Streamlit&quot;
+      - &quot;Prompt Engineering&quot;
+    url: &quot;https://assistente-escola-modelo.streamlit.app/&quot;
+
+  - name: &quot;Assistente-Moeda (Financial Dashboard &amp; Local-First Analytics)&quot;
+    description: &quot;Predictive data analytics dashboard for financial return tracking and resource optimization with a stateless, local-first architecture.&quot;
+    highlights:
+      - &quot;Engineered scripts calculating daily yield targets and 3-year government bond growth projections.&quot;
+      - &quot;Constructed data visualizations dynamically balancing hybrid vehicle operational costs against net profitability.&quot;
+    keywords:
+      - &quot;Python&quot;
+      - &quot;REST APIs&quot;
+      - &quot;Pandas&quot;
+      - &quot;Turso SQLite&quot;
+      - &quot;Fintech&quot;
+    url: &quot;https://www.heisslab.com.br/laboratorio/assistente-moeda&quot;
+
+  - name: &quot;Digital Leverage for Independent Professionals&quot;
+    description: &quot;Local business acceleration via rapid engineering and deployment of high-conversion web assets.&quot;
+    highlights:
+      - &quot;Developed and deployed high-performance landing pages for service professionals (languages, aesthetics, HVAC, and executive transport).&quot;
+    keywords:
+      - &quot;Vercel&quot;
+      - &quot;GitHub Pages&quot;
+      - &quot;Conversion Logic&quot;
+      - &quot;SEO&quot;
+    url: &quot;https://www.heisslab.com.br/&quot;
+
+  - name: &quot;WebGL Interactive Logic Games&quot;
+    description: &quot;Interactive browser-based logic applications focusing on algorithmic problem-solving.&quot;
+    highlights:
+      - &quot;Developed interactive WebGL browser games using Godot Engine, applying vector mathematics, state machines, and algorithmic constraints.&quot;
+    keywords:
+      - &quot;Godot Engine&quot;
+      - &quot;WebGL&quot;
+      - &quot;Vector Math&quot;
+      - &quot;Algorithms&quot;
+    url: &quot;https://www.heisslab.com.br/jogos&quot;
+
+publications:
+  - name: &quot;The Rocket and the Feathers: The Garage Manifesto&quot;
+    publisher: &quot;LinkedIn Pulse&quot;
+    releaseDate: &quot;2026-08-10&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+    summary: &quot;Article discussing agile development, pragmatic software engineering, and continuous learning in the era of artificial intelligence.&quot;
+
+  - name: &quot;Your Money, Your Data: The Silent Local-First Revolution&quot;
+    publisher: &quot;LinkedIn Pulse&quot;
+    releaseDate: &quot;2026-05-31&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+    summary: &quot;Analysis on user data sovereignty, in-memory stateless architectures, and privacy in modern financial systems.&quot;
+
+  - name: &quot;The End of Interface Monopoly: How AI Agents are Redefining Software&quot;
+    publisher: &quot;LinkedIn Pulse&quot;
+    releaseDate: &quot;2026-05-12&quot;
+    url: &quot;https://www.linkedin.com/in/augustoheiss&quot;
+    summary: &quot;Exploring the future of graphical user interfaces and the emergence of autonomous AI agents interacting via zero-UI programmatic APIs.&quot;
+
+skills:
+  - name: &quot;Backend &amp; Data Architecture&quot;
+    level: &quot;Advanced&quot;
+    keywords:
+      - &quot;Python&quot;
+      - &quot;FastAPI &amp; REST APIs&quot;
+      - &quot;Asyncio (Concurrent Processing)&quot;
+      - &quot;SQL &amp; SQLite&quot;
+      - &quot;Pandas &amp; NumPy&quot;
+      - &quot;Stateless Systems&quot;
+  - name: &quot;AI, RAG &amp; Automation&quot;
+    level: &quot;Advanced&quot;
+    keywords:
+      - &quot;RAG Architectures&quot;
+      - &quot;Anthropic Claude &amp; Gemini&quot;
+      - &quot;Prompt Engineering &amp; Guardrails&quot;
+      - &quot;Playwright (RPA &amp; Scraping)&quot;
+      - &quot;LLMs&quot;
+  - name: &quot;Cloud, DevOps &amp; Tools&quot;
+    level: &quot;Intermediate&quot;
+    keywords:
+      - &quot;Git &amp; GitHub&quot;
+      - &quot;Cloud Deployments (Render / Vercel)&quot;
+      - &quot;React &amp; TypeScript (Foundations)&quot;
+      - &quot;Streamlit&quot;
+      - &quot;Godot &amp; WebGL&quot;
+  - name: &quot;Core Engineering &amp; Leadership&quot;
+    level: &quot;Expert&quot;
+    keywords:
+      - &quot;Mathematical Logic &amp; Reasoning&quot;
+      - &quot;Analytical Problem Solving&quot;
+      - &quot;Clear Technical Communication&quot;
+      - &quot;Corporate Governance &amp; Agile&quot;
+
+languages:
+  - language: &quot;English&quot;
+    fluency: &quot;C1 Advanced (EF SET 61/100 — Full professional proficiency in technical reading, writing, and communication)&quot;
+  - language: &quot;Spanish&quot;
+    fluency: &quot;Intermediate&quot;
+  - language: &quot;Portuguese&quot;
+    fluency: &quot;Native&quot;
+
+interests:
+  - name: &quot;Software Engineering &amp; AI Research&quot;
+    keywords:
+      - &quot;Clean Code &amp; Software Best Practices&quot;
+      - &quot;Distributed System Architecture &amp; API Design&quot;
+      - &quot;Autonomous Multi-Agent Frameworks&quot;
+
+  </script>
+
+  <script>
+    function downloadYaml() {
+      const el = document.getElementById('raw-yaml-data');
+      if (!el) return;
+      const content = el.textContent.trim();
+      const blob = new Blob([content], { type: 'text/yaml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'curriculo.yaml';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function copyYaml() {
+      const el = document.getElementById('raw-yaml-data');
+      if (!el) return;
+      const content = el.textContent.trim();
+      navigator.clipboard.writeText(content).then(() => {
+        const btn = document.getElementById('copy-btn');
+        if (btn) {
+          const original = btn.innerText;
+          btn.innerText = '✅ Copied!';
+          setTimeout(() => { btn.innerText = original; }, 2000);
+        }
+      }).catch(() => {
+        // Fallback se permissao do clipboard falhar
+        const textarea = document.createElement('textarea');
+        textarea.value = content;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        const btn = document.getElementById('copy-btn');
+        if (btn) {
+          const original = btn.innerText;
+          btn.innerText = '✅ Copied!';
+          setTimeout(() => { btn.innerText = original; }, 2000);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
