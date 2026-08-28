@@ -165,17 +165,67 @@
       border-radius: 6px;
     }
 
-    .skills-grid {
+    .skills-grid,
+    .education-grid,
+    .certs-grid,
+    .interests-grid,
+    .languages-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
 
-    .skill-group {
+    .skill-group,
+    .geo-card,
+    .interest-card {
       background: #f8fafc;
       border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
       padding: 0.6rem;
       border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .geo-card {
+      border-left: 3px solid var(--accent);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .geo-icon {
+      font-size: 0.85rem;
+    }
+
+    .lang-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 3px solid #10b981;
+      padding: 0.5rem 0.65rem;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .issuer-pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.1rem 0.4rem;
+      background: var(--bg-badge);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--sub);
+      margin-top: 0.25rem;
+      width: fit-content;
     }
 
     .skill-title {
@@ -221,7 +271,7 @@
       body {
         background: #ffffff !important;
         padding: 0 !important;
-        font-size: 9.2pt !important;
+        font-size: 9pt !important;
       }
       .toolbar { display: none !important; }
       .container {
@@ -375,81 +425,63 @@
         </div>
         </div></section>
 
-    <section><h2 class="section-title">🎓 Formação Acadêmica</h2>
-        <div class="card avoid-break">
-            <div class="item-header">
-                <span class="item-title">Inteligência Artificial (Tecnólogo)</span>
-                <span class="item-date">2025-01-01 — 2027-12-31</span>
-            </div>
-            <div class="item-sub">Universidade Nove de Julho (UNINOVE)</div>
+    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid">
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Inteligência Artificial (Tecnólogo)</div>
+            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">Universidade Nove de Julho (UNINOVE)</div>
         </div>
         
-        <div class="card avoid-break">
-            <div class="item-header">
-                <span class="item-title">Matemática (Licenciatura)</span>
-                <span class="item-date">2010-01-01 — 2012-12-31</span>
-            </div>
-            <div class="item-sub">Universidade Cidade de São Paulo (UNICID)</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2012-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Matemática (Licenciatura)</div>
+            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">Universidade Cidade de São Paulo (UNICID)</div>
         </div>
         
-        <div class="card avoid-break">
-            <div class="item-header">
-                <span class="item-title">Eletrônica / Eletricista de Manutenção (Curso Técnico e Aprendizagem Industrial)</span>
-                <span class="item-date">2010-01-01 — 2011-12-31</span>
-            </div>
-            <div class="item-sub">SENAI Roberto Simonsen (ISO 9001)</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2011-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Eletrônica / Eletricista de Manutenção (Curso Técnico e Aprendizagem Industrial)</div>
+            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">SENAI Roberto Simonsen (ISO 9001)</div>
         </div>
-        </section>
+        </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2>
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate - Foundations ↗</a></span>
-                <span class="item-date">2026-08</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">Anthropic</div>
+    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid">
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-08</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate - Foundations ↗</a></div>
+            <div class="issuer-pill">Anthropic</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Energy, Environment and Utilities Industry Jumpstart ↗</a></span>
-                <span class="item-date">2026-07</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">IBM</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-07</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Energy, Environment and Utilities Industry Jumpstart ↗</a></div>
+            <div class="issuer-pill">IBM</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">IBM Growth Behaviors ↗</a></span>
-                <span class="item-date">2026-07</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">IBM</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-07</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">IBM Growth Behaviors ↗</a></div>
+            <div class="issuer-pill">IBM</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">EF SET English Certificate 61/100 (C1 Advanced) ↗</a></span>
-                <span class="item-date">2025-05</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">EF SET</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2025-05</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">EF SET English Certificate 61/100 (C1 Advanced) ↗</a></div>
+            <div class="issuer-pill">EF SET</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Fundamentos de Linguagem Python para Análise de Dados e Data Science - Intermediário ↗</a></span>
-                <span class="item-date">2024-03</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">Data Science Academy (Credencial: 6462a77c2c9340d87a071e3a)</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2024-03</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Fundamentos de Linguagem Python para Análise de Dados e Data Science - Intermediário ↗</a></div>
+            <div class="issuer-pill">Data Science Academy (Credencial: 6462a77c2c9340d87a071e3a)</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Python: Avance na Orientação a Objetos e Consuma APIs ↗</a></span>
-                <span class="item-date">2024-03</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">Alura</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2024-03</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Python: Avance na Orientação a Objetos e Consuma APIs ↗</a></div>
+            <div class="issuer-pill">Alura</div>
         </div>
-        </section>
+        </div></section>
 
     <section class="avoid-break"><h2 class="section-title">✍️ Artigos & Publicações</h2>
         <div class="card avoid-break" style="margin-bottom: 0.5rem;">
@@ -480,9 +512,29 @@
         </div>
         </section>
 
-    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="tags"><span class='badge'>🌐 Inglês: C1 Advanced (EF SET 61/100 — Fluência na Leitura, Escrita e Comunicação Técnica)</span><span class='badge'>🌐 Espanhol: Intermediário</span><span class='badge'>🌐 Português: Nativo</span></div></section>
+    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid">
+        <div class="lang-card avoid-break">
+            <span>◆ <strong>Inglês</strong></span>
+            <span style="font-size: 0.76rem; color: #64748b;">C1 Advanced (EF SET 61/100 — Fluência na Leitura, Escrita e Comunicação Técnica)</span>
+        </div>
+        
+        <div class="lang-card avoid-break">
+            <span>◆ <strong>Espanhol</strong></span>
+            <span style="font-size: 0.76rem; color: #64748b;">Intermediário</span>
+        </div>
+        
+        <div class="lang-card avoid-break">
+            <span>◆ <strong>Português</strong></span>
+            <span style="font-size: 0.76rem; color: #64748b;">Nativo</span>
+        </div>
+        </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class='avoid-break' style='margin-bottom: 0.3rem;'><strong>Engenharia de Software &amp; IA:</strong> <span class='badge'>Boas Práticas de Engenharia (Clean Code)</span><span class='badge'>Arquitetura de Sistemas &amp; Design de APIs</span><span class='badge'>Modelos de Agentes Autônomos</span></div></section>
+    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid">
+        <div class="interest-card avoid-break">
+            <div style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem;">◈ Engenharia de Software &amp; IA</div>
+            <div class="tags"><span class='badge'>Boas Práticas de Engenharia (Clean Code)</span><span class='badge'>Arquitetura de Sistemas &amp; Design de APIs</span><span class='badge'>Modelos de Agentes Autônomos</span></div>
+        </div>
+        </div></section>
   </div>
 
 </body>

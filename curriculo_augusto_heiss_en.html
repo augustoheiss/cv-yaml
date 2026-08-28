@@ -165,17 +165,67 @@
       border-radius: 6px;
     }
 
-    .skills-grid {
+    .skills-grid,
+    .education-grid,
+    .certs-grid,
+    .interests-grid,
+    .languages-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
 
-    .skill-group {
+    .skill-group,
+    .geo-card,
+    .interest-card {
       background: #f8fafc;
       border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
       padding: 0.6rem;
       border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .geo-card {
+      border-left: 3px solid var(--accent);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .geo-icon {
+      font-size: 0.85rem;
+    }
+
+    .lang-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 3px solid #10b981;
+      padding: 0.5rem 0.65rem;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .issuer-pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.1rem 0.4rem;
+      background: var(--bg-badge);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--sub);
+      margin-top: 0.25rem;
+      width: fit-content;
     }
 
     .skill-title {
@@ -221,7 +271,7 @@
       body {
         background: #ffffff !important;
         padding: 0 !important;
-        font-size: 9.2pt !important;
+        font-size: 9pt !important;
       }
       .toolbar { display: none !important; }
       .container {
@@ -375,81 +425,63 @@
         </div>
         </div></section>
 
-    <section><h2 class="section-title">🎓 Education & Academic Background</h2>
-        <div class="card avoid-break">
-            <div class="item-header">
-                <span class="item-title">Artificial Intelligence (Associate&#x27;s Degree (Technologist))</span>
-                <span class="item-date">2025-01-01 — 2027-12-31</span>
-            </div>
-            <div class="item-sub">Nove de Julho University (UNINOVE)</div>
+    <section class="avoid-break"><h2 class="section-title">🎓 Education & Academic Background</h2><div class="education-grid">
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Artificial Intelligence (Associate&#x27;s Degree (Technologist))</div>
+            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">Nove de Julho University (UNINOVE)</div>
         </div>
         
-        <div class="card avoid-break">
-            <div class="item-header">
-                <span class="item-title">Mathematics (Bachelor of Education (Licentiate))</span>
-                <span class="item-date">2010-01-01 — 2012-12-31</span>
-            </div>
-            <div class="item-sub">City of São Paulo University (UNICID)</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2012-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Mathematics (Bachelor of Education (Licentiate))</div>
+            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">City of São Paulo University (UNICID)</div>
         </div>
         
-        <div class="card avoid-break">
-            <div class="item-header">
-                <span class="item-title">Industrial Electrical Maintenance &amp; Electronics (Vocational &amp; Industrial Apprenticeship)</span>
-                <span class="item-date">2010-01-01 — 2011-12-31</span>
-            </div>
-            <div class="item-sub">SENAI Roberto Simonsen (ISO 9001)</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2011-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Industrial Electrical Maintenance &amp; Electronics (Vocational &amp; Industrial Apprenticeship)</div>
+            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">SENAI Roberto Simonsen (ISO 9001)</div>
         </div>
-        </section>
+        </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">📜 Licenses & Certifications</h2>
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate — Foundations ↗</a></span>
-                <span class="item-date">2026-08</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">Anthropic</div>
+    <section class="avoid-break"><h2 class="section-title">📜 Licenses & Certifications</h2><div class="certs-grid">
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-08</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate — Foundations ↗</a></div>
+            <div class="issuer-pill">Anthropic</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Energy, Environment and Utilities Industry Jumpstart ↗</a></span>
-                <span class="item-date">2026-07</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">IBM</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-07</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Energy, Environment and Utilities Industry Jumpstart ↗</a></div>
+            <div class="issuer-pill">IBM</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">IBM Growth Behaviors ↗</a></span>
-                <span class="item-date">2026-07</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">IBM</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-07</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">IBM Growth Behaviors ↗</a></div>
+            <div class="issuer-pill">IBM</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">EF SET English Certificate 61/100 (C1 Advanced) ↗</a></span>
-                <span class="item-date">2025-05</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">EF SET</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2025-05</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">EF SET English Certificate 61/100 (C1 Advanced) ↗</a></div>
+            <div class="issuer-pill">EF SET</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Python for Data Analysis and Data Science — Intermediate ↗</a></span>
-                <span class="item-date">2024-03</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">Data Science Academy (Credential: 6462a77c2c9340d87a071e3a)</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2024-03</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Python for Data Analysis and Data Science — Intermediate ↗</a></div>
+            <div class="issuer-pill">Data Science Academy (Credential: 6462a77c2c9340d87a071e3a)</div>
         </div>
         
-        <div class="card avoid-break" style="margin-bottom: 0.4rem;">
-            <div class="item-header" style="font-size: 0.88rem;">
-                <span class="item-title"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Python: Object-Oriented Programming and API Consumption ↗</a></span>
-                <span class="item-date">2024-03</span>
-            </div>
-            <div class="item-sub" style="margin-bottom: 0;">Alura</div>
+        <div class="geo-card avoid-break">
+            <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2024-03</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Python: Object-Oriented Programming and API Consumption ↗</a></div>
+            <div class="issuer-pill">Alura</div>
         </div>
-        </section>
+        </div></section>
 
     <section class="avoid-break"><h2 class="section-title">✍️ Articles & Publications</h2>
         <div class="card avoid-break" style="margin-bottom: 0.5rem;">
@@ -480,9 +512,29 @@
         </div>
         </section>
 
-    <section class="avoid-break"><h2 class="section-title">🌐 Languages</h2><div class="tags"><span class='badge'>🌐 English: C1 Advanced (EF SET 61/100 — Full professional proficiency in technical reading, writing, and communication)</span><span class='badge'>🌐 Spanish: Intermediate</span><span class='badge'>🌐 Portuguese: Native</span></div></section>
+    <section class="avoid-break"><h2 class="section-title">🌐 Languages</h2><div class="languages-grid">
+        <div class="lang-card avoid-break">
+            <span>◆ <strong>English</strong></span>
+            <span style="font-size: 0.76rem; color: #64748b;">C1 Advanced (EF SET 61/100 — Full professional proficiency in technical reading, writing, and communication)</span>
+        </div>
+        
+        <div class="lang-card avoid-break">
+            <span>◆ <strong>Spanish</strong></span>
+            <span style="font-size: 0.76rem; color: #64748b;">Intermediate</span>
+        </div>
+        
+        <div class="lang-card avoid-break">
+            <span>◆ <strong>Portuguese</strong></span>
+            <span style="font-size: 0.76rem; color: #64748b;">Native</span>
+        </div>
+        </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎯 Technical Research & Interests</h2><div class='avoid-break' style='margin-bottom: 0.3rem;'><strong>Software Engineering &amp; AI Research:</strong> <span class='badge'>Clean Code &amp; Software Best Practices</span><span class='badge'>Distributed System Architecture &amp; API Design</span><span class='badge'>Autonomous Multi-Agent Frameworks</span></div></section>
+    <section class="avoid-break"><h2 class="section-title">🎯 Technical Research & Interests</h2><div class="interests-grid">
+        <div class="interest-card avoid-break">
+            <div style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem;">◈ Software Engineering &amp; AI Research</div>
+            <div class="tags"><span class='badge'>Clean Code &amp; Software Best Practices</span><span class='badge'>Distributed System Architecture &amp; API Design</span><span class='badge'>Autonomous Multi-Agent Frameworks</span></div>
+        </div>
+        </div></section>
   </div>
 
 </body>
