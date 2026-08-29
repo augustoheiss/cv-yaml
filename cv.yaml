@@ -26,6 +26,7 @@ work:
     position: Software Engineering Intern
     url: https://www.ibm.com
     startDate: '2026-07-06'
+    endDate: null
     summary: Technical contributor within IBM's global Software Engineering ecosystem, building and integrating enterprise Hybrid Cloud and AI solutions under rigorous governance, compliance, and agile frameworks.
     highlights:
       - Architected and validated integrations with Python and enterprise APIs, enforcing strict information security and governance policies across Hybrid Cloud environments.
@@ -36,6 +37,7 @@ work:
     position: Backend Software Engineer & AI Solutions Architect
     url: https://www.heisslab.com.br/
     startDate: '2026-02-01'
+    endDate: null
     summary: End-to-end technical leadership and architecture of scalable APIs, intelligent RAG automation platforms, and high-impact analytical dashboards for independent businesses.
     highlights:
       - Built high-performance asynchronous APIs with FastAPI and Python, slashing end-to-end latency by decoupling structured data payloads from the presentation layer.

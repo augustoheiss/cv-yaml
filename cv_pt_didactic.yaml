@@ -5,14 +5,14 @@ basics:
   email: augustoheiss@gmail.com
   phone: +55 11 98135-5495
   url: https://www.linkedin.com/in/augustoheiss
-  summary: Engenheiro de Software com sólida base analítica originada na Matemática
-    e especialização em Inteligência Artificial, com destacada habilidade em decompor
-    problemas lógicos de alta complexidade em arquiteturas de software modulares,
-    autodocumentáveis e de fácil manutenção. Combina alta velocidade de aprendizado
-    para absorção de novas stacks com rigor de engenharia backend em Python (FastAPI,
-    Asyncio) e orquestração de sistemas de IA corporativa (RAG com guardrails estruturados).
-    Atua no ecossistema de Nuvem Híbrida e IA da IBM, promovendo clareza técnica,
-    disseminação de boas práticas e construção de soluções escaláveis e resilientes.
+  summary: Engenheiro de Software com sólida bagagem em Matemática e capacidade comprovada
+    de traduzir problemas lógicos de alta complexidade em código limpo, autodocumentável
+    e de fácil manutenção. Combina 7 anos de experiência em docência lógica com padrões
+    modernos de engenharia de software para absorver e aplicar novas tecnologias em
+    tempo recorde. Especialista na construção de microsserviços assíncronos resilientes
+    com FastAPI, arquiteturas corporativas de IA (RAG) com guardrails determinísticos
+    e automações com Playwright, atuando no ecossistema de Nuvem Híbrida da IBM com
+    foco em excelência técnica, mentoria e aceleração de entregas.
   location:
     city: Ferraz de Vasconcelos
     region: São Paulo
@@ -35,48 +35,53 @@ work:
   startDate: '2026-07-06'
   endDate: null
   summary: Atuação técnica no ecossistema global de Engenharia de Software da IBM,
-    desenvolvendo e integrando soluções corporativas para Nuvem Híbrida e IA sob rigorosos
-    frameworks de governança, conformidade e metodologias ágeis.
+    desenvolvendo soluções corporativas para Nuvem Híbrida e IA com rápida absorção
+    de padrões corporativos e foco em documentação e governança.
   highlights:
-  - Projetou e validou integrações modulares em Python com APIs corporativas, assegurando
-    100% de conformidade com padrões de governança e segurança de dados em Nuvem Híbrida.
-  - Automatizou rotinas de estruturação e consumo de dados complexos, acelerando o
-    tempo de processamento em pipelines de engenharia através da eliminação de intervenções
+  - Projetou e validou integrações modulares em Python consumindo APIs corporativas,
+    elevando a conformidade com políticas de segurança da informação em ambientes
+    de Nuvem Híbrida.
+  - Automatizou rotinas de estruturação e consumo de fluxos de dados complexos, acelerando
+    o tempo de execução de pipelines de engenharia através da eliminação de intervenções
     manuais.
-  - Articulou e traduziu requisitos funcionais de negócios do setor de Energy, Environment
-    & Utilities em especificações técnicas escaláveis utilizando os princípios de
-    IBM Growth Behaviors.
+  - Articulou requisitos técnicos complexos do setor de Energy, Environment & Utilities
+    traduzindo-os em especificações arquiteturais escaláveis via frameworks IBM Growth
+    Behaviors.
 - name: Freelance / Heiss-Lab
   position: Engenheiro de Software Backend & Soluções de IA
   url: https://www.heisslab.com.br/
   startDate: '2026-02-01'
   endDate: null
-  summary: Liderança técnica e arquitetura ponta a ponta de APIs escaláveis, plataformas
-    de automação inteligente com RAG e dashboards analíticos de alto impacto.
+  summary: Liderança técnica e arquitetura de microsserviços escaláveis, motores RAG
+    e automação de processos inteligentes sob padrões estritos de código limpo e arquiteturas
+    desacopladas.
   highlights:
-  - Desenvolveu microsserviços e APIs assíncronas com FastAPI e Asyncio, otimizando
-    o throughput e reduzindo a latência através do desacoplamento de esquemas de dados
-    estruturados.
-  - Implementou pipelines de automação inteligente integrando RPA (Playwright) e guardrails
-    rígidos para LLMs, eliminando erros operacionais sob arquitetura Human-in-the-Loop
+  - Desenvolveu APIs de alta performance com FastAPI e concorrência assíncrona (Asyncio),
+    reduzindo a latência de ponta a ponta ao desacoplar esquemas de dados da camada
+    de visualização.
+  - Implementou sistemas de automação de processos ponta a ponta com guardrails rigorosos
+    de LLMs e RPA (Playwright), mitigando falhas operacionais sob fluxo Human-in-the-Loop
     auditável.
-  - Orquestrou infraestruturas de deploy contínuo em nuvem stateless (Render, Vercel),
-    garantindo 99.9% de disponibilidade operacional e documentação técnica padronizada.
+  - Estruturou arquitetura de deploy contínuo em ambientes cloud stateless (Render,
+    Vercel), assegurando 99.9% de disponibilidade operacional e documentação técnica
+    clara.
 - name: Secretaria Municipal de Educação de São Paulo
   position: Liderança Pedagógica & Especialista em Lógica Matemática
   url: ''
   startDate: '2019-08-01'
   endDate: '2026-07-01'
-  summary: Gestão e mentoria analítica aplicada a mais de 20 turmas anuais, capacitando
-    centenas de estudantes em pensamento algorítmico, decomposição estruturada de
-    problemas e comunicação técnica.
+  summary: Liderança técnica e educacional aplicada a mais de 20 turmas anuais, com
+    foco em decomposição algorítmica de problemas, mentoria analítica e comunicação
+    estruturada sob alta demanda.
   highlights:
-  - Estruturou metodologias didáticas e planos de aprendizagem acelerada em lógica
-    computacional e raciocínio quantitativo, capacitando mais de 600 estudantes anualmente.
-  - Decompôs teoremas e modelos lógicos complexos em componentes instrucionais modulares,
-    técnica transposta diretamente para arquitetura de código limpo e padrões de refatoração.
-  - Liderou reuniões de governança pedagógica e alinhamento de métricas educacionais,
-    transformando indicadores analíticos em planos de ação executáveis e reproduzíveis.
+  - Estruturou metodologias didáticas ativas para resolução de problemas algorítmicos
+    e raciocínio quantitativo, acelerando o desenvolvimento lógico de centenas de
+    alunos anualmente.
+  - Decompôs estruturas conceituais abstratas e teoremas complexos em módulos lógicos
+    sequenciais, aplicando esses mesmos fundamentos à modularização de software e
+    refatoração de código limpo.
+  - Conduziu diagnósticos de desempenho e governança educacional orientada a dados,
+    convertendo cenários de alta complexidade em planos de ação claros e executáveis.
 - name: Empresas Anteriores Diversas
   position: Especialista em Operações & Atendimento ao Cliente
   url: ''
@@ -85,9 +90,8 @@ work:
   summary: Execução operacional e resolução de problemas sob cenários de alta criticidade
     e ritmo acelerado.
   highlights:
-  - Mitigou incidentes operacionais de alta criticidade através de comunicação interpessoal
-    clara e mapeamento estruturado de requisitos de usuários sob forte pressão de
-    prazos.
+  - Mitigou incidentes operacionais críticos e mapeou requisitos técnicos de usuários
+    sob pressão, elevando os índices de resolução de chamados de suporte.
 education:
 - institution: Universidade Nove de Julho (UNINOVE)
   area: Inteligência Artificial
@@ -106,31 +110,31 @@ education:
   endDate: '2011-12-31'
 projects:
 - name: LogicDefense CV RAG Engine
-  description: API corporativa de geração dinâmica de documentos estruturados baseada
-    em FastAPI, arquitetura RAG e modelos generativos.
+  description: API corporativa para geração dinâmica de documentos estruturados baseada
+    em FastAPI, arquitetura RAG e modelos generativos concorrentes.
   highlights:
-  - Otimizou o throughput do sistema mitigando gargalos de rate-limit do Gemini 2.5
-    Flash através de orquestração concorrente com asyncio.gather em event loop único.
-  - Reduziu substancialmente o tempo de resposta da aplicação ao desacoplar a camada
-    de dados em esquemas YAML padronizados da camada de renderização visual.
+  - Otimizou o throughput do sistema eliminando gargalos de rate-limit da API do Gemini
+    3.7 Flash via orquestração assíncrona concorrente com asyncio.gather em event
+    loop único.
+  - Reduziu drasticamente a latência de processamento desacoplando dados em esquemas
+    YAML tipados e padronizados da camada de renderização.
   keywords:
   - Python
   - FastAPI
   - Asyncio
-  - Gemini 2.5 Flash
+  - Gemini 3.7 Flash
   - RAG
-  - Clean Architecture
+  - Clean Code
   - Render
   url: https://heisslab.com.br/laboratorio/cv-maker
 - name: Assistente Escola Modelo (Enterprise RAG & RPA)
   description: Solução de automação inteligente para processos administrativos e pedagógicos
     com IA generativa e orquestração de navegadores.
   highlights:
-  - Implementou pipeline RAG com guardrails determinísticos de contexto, mitigando
-    alucinações de LLMs e assegurando confiabilidade factual em conformidade com fontes
-    institucionais.
-  - Automatizou o fluxo de inserção de registros em sistemas legados utilizando Playwright
-    sob arquitetura Human-in-the-Loop, garantindo auditabilidade completa.
+  - Implementou pipeline RAG com guardrails determinísticos de contexto restrito a
+    repositórios oficiais, mitigando alucinações de LLMs em ambiente corporativo.
+  - Automatizou o fluxo de inserção de dados em sistemas legados via Playwright (RPA)
+    sob arquitetura Human-in-the-Loop, assegurando auditabilidade total e conformidade.
   keywords:
   - Python
   - RAG
@@ -144,54 +148,52 @@ projects:
   description: Plataforma analítica e preditiva financeira baseada em arquitetura
     stateless com persistência distribuída.
   highlights:
-  - Desenvolveu algoritmos determinísticos em Python e Pandas para simulação e projeção
-    de fluxos financeiros plurianuais do Tesouro Direto.
-  - Estruturou arquitetura Local-First com Turso SQLite e consumo eficiente de APIs
-    REST, garantindo soberania de dados do usuário e latência mínima de consulta.
+  - Projetou algoritmos determinísticos para simulação de curvas de rendimento e projeção
+    do Tesouro Direto com alta precisão matemática.
+  - Estruturou arquitetura Local-First com Turso SQLite e Pandas, garantindo soberania
+    de dados do usuário e baixo consumo de banda em APIs REST.
   keywords:
   - Python
   - APIs REST
   - Pandas
   - Turso SQLite
   - Local-First
-  - Modelagem Analítica
+  - Modelagem Financeira
   url: https://www.heisslab.com.br/laboratorio/assistente-moeda
 - name: WebGL Interactive Logic Engines
   description: Motores de aplicações web interativas para execução de problemas algorítmicos
     e lógica vetorial sob restrições de baixa latência.
   highlights:
-  - Projetou simuladores computacionais didáticos em Godot Engine e WebGL, aplicando
-    gestão estrita de estado e matemática vetorial para renderização em tempo real.
+  - Desenvolveu lógicas computacionais interativas utilizando Godot Engine e WebGL,
+    aplicando controle rigoroso de estado e matemática vetorial aplicada.
   keywords:
   - Godot Engine
   - WebGL
   - Matemática Vetorial
   - Otimização de Performance
-  - Lógica Algorítmica
   url: https://www.heisslab.com.br/jogos
 skills:
-- name: Arquitetura Backend & Engenharia Python
+- name: Arquitetura Backend & APIs
   level: Avançado
   keywords:
   - Python
   - FastAPI
   - APIs RESTful
   - Asyncio & Concorrência
-  - Clean Code
-  - Programação Orientada a Objetos (POO)
+  - Arquitetura Stateless
+  - Orientação a Objetos (OOP)
   - Design Patterns
-  - Modularização e Refatoração
-- name: Engenharia de IA & Automação Inteligente
+  - Clean Code
+- name: Engenharia de IA & Automação
   level: Avançado
   keywords:
   - Arquiteturas RAG
   - Anthropic Claude
   - Google Gemini
-  - Guardrails de Prompt
+  - Engenharia de Prompt & Guardrails
+  - Playwright (RPA)
   - Mitigação de Alucinações
-  - Playwright (RPA & Web Scraping)
-  - Human-in-the-Loop
-- name: Bancos de Dados & Análise de Dados
+- name: Bancos de Dados & Análise Estruturada
   level: Avançado
   keywords:
   - SQL
@@ -199,9 +201,9 @@ skills:
   - Turso DB
   - Pandas
   - NumPy
-  - Arquiteturas Local-First
-  - Estruturas de Dados Lógicas
-- name: Governança, Nuvem & Metodologias Técnicas
+  - Local-First Architectures
+  - Estruturas de Dados
+- name: Cloud, Governança & Metodologias
   level: Intermediário
   keywords:
   - Git & GitHub
@@ -211,7 +213,7 @@ skills:
   - Streamlit
   - Metodologias Ágeis
   - IBM Growth Behaviors
-  - Comunicação Técnica & Didática
+  - Comunicação Técnica & Mentoria
 languages:
 - language: Inglês
   fluency: C1 Advanced (EF SET 61/100 — Fluência Executiva e Comunicação Técnica)
@@ -220,15 +222,14 @@ languages:
 - language: Português
   fluency: Nativo
 interests:
-- name: Engenharia de Software e Mentoria Técnica
+- name: Engenharia de Software Corporativa
   keywords:
-  - Clean Code & Autodocumentação
-  - Refatoração e Modularização
-  - Aceleração de Onboarding Técnico
-  - Microsserviços Assíncronos
-- name: Inteligência Artificial e Lógica Computacional
+  - Arquitetura de Microsserviços
+  - Sistemas Concorrentes de Alta Vazão
+  - Clean Code & Refatoração
+  - Didática e Documentação de Software
+- name: Inteligência Artificial & Agentes Autônomos
   keywords:
-  - Governança e Guardrails em LLMs
-  - Sistemas RAG Avançados
-  - Arquiteturas Local-First
-  - Raciocínio Algorítmico Aplicado
+  - Orquestração de Agentes Corporativos
+  - Governança de LLMs
+  - Local-First & Soberania de Dados
