@@ -109,13 +109,13 @@ projects:
   - name: LogicDefense CV RAG Engine
     description: Enterprise dynamic structured document generation API powered by FastAPI, RAG architecture, and generative LLMs.
     highlights:
-      - Optimized system throughput by eliminating Gemini 2.5 Flash API rate-limit bottlenecks through concurrent asynchronous execution via asyncio.gather in a single event loop.
+      - Optimized system throughput by eliminating Gemini 3.7 Flash (High Thinking) API rate-limit bottlenecks through concurrent asynchronous execution via asyncio.gather in a single event loop.
       - Drastically reduced response latency by decoupling standardized YAML schemas from the visual presentation layer.
     keywords:
       - Python
       - FastAPI
       - Asyncio
-      - Gemini 2.5 Flash
+      - Gemini 3.7 Flash
       - RAG
       - Backend Architecture
       - Render
