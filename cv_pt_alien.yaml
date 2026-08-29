@@ -1,0 +1,231 @@
+basics:
+  name: Augusto Leonardo Farias Heiss
+  label: 'Classificação Biológica: Espécime Homo Sapiens Logic-Processor (Dev Pythonus
+    Avançado)'
+  email: augustoheiss@gmail.com
+  phone: +55 11 98135-5495
+  url: https://www.linkedin.com/in/augustoheiss
+  summary: 'REGISTRO DE CAMPO CONFIDENCIAL #8492: Observamos este espécime de carbono
+    realizando uma façanha notável no quadrante solar terrestre: converte infusões
+    quentes de cafeína e estresse metabólico em instruções de bytecode Python estruturado.
+    O indivíduo demonstra habilidade incomum em orquestrar mentes sintéticas (LLMs)
+    e arquitetar barreiras de dados (RAG) para impedir que a infraestrutura computacional
+    primitiva do Planeta Terra entre em colapso entrópico precoce, aliando 7 ciclos
+    solares de adestramento em lógica matemática pura à engenharia de microsserviços
+    assíncronos de alta resiliência.'
+  location:
+    city: Ferraz de Vasconcelos
+    region: São Paulo
+    postalCode: 08533-120
+    countryCode: BR
+  profiles:
+  - network: LinkedIn
+    username: augustoheiss
+    url: https://www.linkedin.com/in/augustoheiss
+  - network: GitHub
+    username: augustoheiss
+    url: https://github.com/augustoheiss
+  - network: Portfolio
+    username: Heiss-Lab
+    url: https://www.heisslab.com.br/
+work:
+- name: IBM
+  position: Engenheiro de Software & Domador de Nuvem Híbrida (Intern de Missão)
+  url: https://www.ibm.com
+  startDate: '2026-07-06'
+  endDate: null
+  summary: 'LOG DE MISSÃO #01: O espécime foi infiltrado com sucesso no monólito ancestral
+    conhecido na Terra como ''IBM'', atuando na contenção, integração e governança
+    de inteligências artificiais com matrizes corporativas de Nuvem Híbrida.'
+  highlights:
+  - Projetou e blindou conexões neuronais via Python e APIs enterprise, assegurando
+    100% de conformidade com os protocolos de segurança e governança de Nuvem Híbrida.
+  - Automatizou fluxos de dados de alta entropia para o setor planetário de Energy,
+    Environment & Utilities, erradicando intervenções manuais de humanoides através
+    de pipelines determinísticos.
+  - Alinhou diretrizes de arquitetura escalável aos padrões corporativos globais (IBM
+    Growth Behaviors), estabelecendo pontes entre código puro e a estabilidade dos
+    sistemas terrestres.
+- name: Freelance / Heiss-Lab
+  position: Comandante de Backend Assíncrono & Arquiteturas Sintéticas
+  url: https://www.heisslab.com.br/
+  startDate: '2026-02-01'
+  endDate: null
+  summary: 'LOG DE MISSÃO #02: Estabeleceu base laboratorial independente para sintetizar
+    microsserviços autônomos, domar fluxos RAG e fornecer telemetria de alta precisão
+    a entidades de negócios terrestres.'
+  highlights:
+  - Desenvolveu microsserviços de alta velocidade com FastAPI e processamento assíncrono,
+    reduzindo drasticamente a latência de transferência de dados ao desacoplar payloads
+    estruturados da camada visual.
+  - Subjugou mentes sintéticas (LLMs) aplicando guardrails herméticos e robôs de automação
+    (Playwright), erradicando alucinações cognitivas sob governança Human-in-the-Loop.
+  - Orquestrou a propulsão de contêineres e deploy contínuo em constelações serverless
+    (Render, Vercel), assegurando estabilidade orbital de 99.9% de uptime para nós
+    estratégicos.
+- name: Secretaria Municipal de Educação de São Paulo
+  position: Instrutor Chefe de Lógica Algorítmica em Jovens Terrestres
+  url: ''
+  startDate: '2019-08-01'
+  endDate: '2026-07-01'
+  summary: 'LOG DE MISSÃO #03: Submeteu centenas de espécimes juvenis por ciclo ao
+    aprendizado forçado de abstrações lógicas e raciocínio matemático, preparando
+    mentes de carbono para a era dos autômatos.'
+  highlights:
+  - Estruturou matrizes de treinamento em pensamento algorítmico e decomposição quantitativa,
+    acelerando a capacidade de processamento neural de mais de 20 turmas terrestres
+    por ciclo solar.
+  - Decompôs teoremas abstratos de alta entropia em blocos lógicos digeríveis, transferindo
+    diretamente tal disciplina analítica para modularização de microsserviços e Clean
+    Code.
+  - Gerenciou e mitigou gargalos operacionais em escala governamental através da análise
+    sistemática de telemetria educacional e planos determinísticos de ação.
+- name: Empresas Anteriores Diversas
+  position: Agente de Contenção de Crises e Resolução de Entropia Humana
+  url: ''
+  startDate: '2009-01-01'
+  endDate: '2018-12-31'
+  summary: 'LOG DE MISSÃO #04: Operou na linha de frente lidando com espécimes terrestres
+    em estado de pane operacional e desordem comunicacional sob alta criticidade.'
+  highlights:
+  - Neutralizou incidentes operacionais críticos e traduziu dialetos caóticos de usuários
+    em requisitos estruturados de resolução com elevados índices de estabilização
+    sob estresse atmosférico.
+education:
+- institution: Universidade Nove de Julho (UNINOVE)
+  area: Inteligência Artificial
+  studyType: Graduação Tecnológica
+  startDate: '2025-01-01'
+  endDate: '2027-12-31'
+- institution: Universidade Cidade de São Paulo (UNICID)
+  area: Matemática
+  studyType: Licenciatura Plena
+  startDate: '2010-01-01'
+  endDate: '2012-12-31'
+- institution: SENAI Roberto Simonsen
+  area: Eletrônica & Eletricista de Manutenção Industrial (ISO 9001)
+  studyType: Curso Técnico / Aprendizagem Industrial
+  startDate: '2010-01-01'
+  endDate: '2011-12-31'
+projects:
+- name: LogicDefense CV RAG Engine
+  description: Reator de síntese de documentos determinísticos em tempo real via FastAPI,
+    RAG e processamento concorrente de modelos sintéticos.
+  highlights:
+  - Otimizou a vazão operacional neutralizando estrangulamentos de rate-limit do Gemini
+    2.5 Flash via concorrência assíncrona com asyncio.gather em event loop unificado.
+  - Mitigou a latência de ponta a ponta desacoplando dados em esquemas YAML padronizados
+    da camada de renderização molecular visual.
+  keywords:
+  - Python
+  - FastAPI
+  - Asyncio
+  - Gemini 2.5 Flash
+  - RAG
+  - Arquitetura Backend
+  - Render
+  url: https://heisslab.com.br/laboratorio/cv-maker
+- name: Assistente Escola Modelo (Enterprise RAG & RPA)
+  description: Engenho de automação burocrática planetária com IA generativa e drones
+    de navegação de navegador.
+  highlights:
+  - Implementou barreira contextual (RAG) com guardrails implacáveis de prompt, impedindo
+    devaneios cognitivos das LLMs em repositórios institucionais.
+  - Automatizou o fluxo de inserção de registros em sistemas legados via Playwright
+    (RPA) sob arquitetura Human-in-the-Loop, assegurando rastreabilidade total e auditabilidade.
+  keywords:
+  - Python
+  - RAG
+  - Playwright
+  - RPA
+  - Streamlit
+  - Prompt Engineering
+  - Governança de IA
+  url: https://assistente-escola-modelo.streamlit.app/
+- name: Assistente-Moeda (Dashboard Financeiro Local-First)
+  description: Sonda analítica e preditiva de acúmulo de créditos terrestres baseada
+    em arquitetura Local-First.
+  highlights:
+  - Projetou matrizes determinísticas para simular flutuações e projeções de rendimento
+    do Tesouro Direto em horizontes multianuais com precisão cirúrgica.
+  - Estruturou arquitetura Local-First com Turso SQLite e Pandas, garantindo soberania
+    total sobre os artefatos de dados e latência de consulta quase nula.
+  keywords:
+  - Python
+  - APIs REST
+  - Pandas
+  - Turso SQLite
+  - Local-First
+  - Modelagem Financeira
+  url: https://www.heisslab.com.br/laboratorio/assistente-moeda
+- name: WebGL Interactive Logic Engines
+  description: Simuladores de dinâmica vetorial e algoritmos interativos executados
+    diretamente na camada WebGL.
+  highlights:
+  - Desenvolveu motores de lógica interativa com Godot Engine e WebGL sob restrições
+    severas de clock de processamento e latência de renderização.
+  keywords:
+  - Godot Engine
+  - WebGL
+  - Matemática Vetorial
+  - Otimização de Performance
+  url: https://www.heisslab.com.br/jogos
+skills:
+- name: Ferramentas de Manipulação de Elétrons & Backend
+  level: Avançado
+  keywords:
+  - Python
+  - FastAPI
+  - APIs RESTful
+  - Asyncio & Concorrência
+  - Arquitetura Stateless
+  - Orientação a Objetos (OOP)
+  - Design Patterns
+- name: Subjugação de Mentes Sintéticas & Automação
+  level: Avançado
+  keywords:
+  - Arquiteturas RAG
+  - Anthropic Claude
+  - Google Gemini
+  - Engenharia de Prompt & Guardrails
+  - Playwright (RPA & Scraping)
+  - Mitigação de Alucinações
+- name: Cápsulas de Dados Gravitacionais & Resiliência
+  level: Avançado
+  keywords:
+  - SQL
+  - SQLite
+  - Turso DB
+  - Pandas
+  - NumPy
+  - Local-First Architectures
+  - Estruturas de Dados
+- name: Governança Orbital, Nuvem Híbrida & Práticas Ágeis
+  level: Intermediário
+  keywords:
+  - Git & GitHub
+  - Nuvem Híbrida
+  - Render
+  - Vercel
+  - Streamlit
+  - Metodologias Ágeis
+  - IBM Growth Behaviors
+  - Clean Code
+languages:
+- language: Inglês
+  fluency: C1 Advanced (EF SET 61/100 — Fluência Executiva para Diálogo Interplanetário)
+- language: Espanhol
+  fluency: Intermediário
+- language: Português
+  fluency: Nativo (Dialeto Local Terrestre)
+interests:
+- name: Engenharia de Software Corporativa Intergaláctica
+  keywords:
+  - Arquitetura de Microsserviços
+  - Sistemas Concorrentes de Alta Vazão
+  - Clean Code & Refatoração Antientrópica
+- name: Controle de Autômatos & Inteligência de Máquinas
+  keywords:
+  - Orquestração de Agentes Corporativos
+  - Governança e Confinamento de LLMs
+  - Soberania Local-First
