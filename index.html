@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo yaml</title>
+    <title>Currículo YAML — Augusto Heiss</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="stylesheet" href="themes.css">
@@ -17,16 +17,16 @@
             body {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
-                background-color: #0f172a !important;
+                background-color: #ffffff !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                height: 100% !important;
-                font-size: 9.5pt !important;
+                font-size: 9.6pt !important;
+                line-height: 1.5 !important;
             }
 
             @page {
-                size: A4;
-                margin: 0 !important;
+                size: A4 portrait;
+                margin: 6mm 8mm 6mm 8mm !important;
             }
 
             .print-header {
@@ -54,78 +54,44 @@
                 background-color: transparent !important;
             }
 
-            /* ── Condensar espaçamentos globais para print ── */
             .cv-content-area {
-                padding: 0 8mm !important;
+                padding: 0 !important;
             }
 
             header.border-b-2 {
-                padding-bottom: 0.5rem !important;
-                margin-bottom: 0.75rem !important;
+                padding-bottom: 0.4rem !important;
+                margin-bottom: 0.65rem !important;
             }
 
-            header .mt-6 {
-                margin-top: 0.5rem !important;
-            }
-
-            /* Títulos de seção mais compactos no print */
             .cv-section-title {
-                margin-bottom: 0.5rem !important;
-                font-size: 1rem !important;
+                margin-top: 0.75rem !important;
+                margin-bottom: 0.4rem !important;
+                font-size: 0.95rem !important;
+                padding-bottom: 0.2rem !important;
             }
 
-            /* Cards de projetos compactos */
-            .bg-slate-800\/50 {
-                padding: 0.4rem 0.6rem !important;
-            }
-
-            /* Projetos grid no print */
             .cv-projects-grid {
                 grid-template-columns: 1fr 1fr !important;
                 gap: 0.5rem !important;
             }
 
-            /* Skills band masonry no print */
-            .cv-skills-band {
-                column-count: 3 !important;
-                column-gap: 1rem !important;
-            }
-
-            .cv-skills-band .skills-card {
-                break-inside: avoid !important;
-                page-break-inside: avoid !important;
-                margin-bottom: 0.4rem !important;
-                padding: 0.3rem 0 !important;
-            }
-
-            .cv-skills-band .skills-card h3 {
-                font-size: 0.8rem !important;
-                margin-bottom: 0.2rem !important;
-            }
-
-            /* Experiência 2-col no print */
-            .cv-exp-grid {
+            .cv-skills-grid,
+            .cv-edu-grid,
+            .cv-certs-grid,
+            .cv-interests-grid,
+            .cv-languages-grid {
                 display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
-                gap: 0.5rem 1rem !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 0.5rem !important;
             }
 
-            /* Formação 3-col no print */
-            .cv-edu-grid {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr 1fr !important;
-                gap: 0.4rem 0.75rem !important;
-            }
-
-            /* Seções com margem inferior reduzida */
             .cv-section {
-                margin-bottom: 0.6rem !important;
+                margin-bottom: 0.65rem !important;
             }
 
-            /* Separador fino no print */
             .cv-section-divider {
-                margin-top: 0.6rem !important;
-                padding-top: 0.6rem !important;
+                margin-top: 0.65rem !important;
+                padding-top: 0.65rem !important;
             }
         }
 
@@ -134,10 +100,13 @@
         html.tema-white,
         body.tema-white {
             background-color: #ffffff !important;
+            font-family: 'Inter', system-ui, sans-serif !important;
         }
 
         body.tema-white .bg-slate-800 {
             background-color: #ffffff !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+            border: 1px solid #e2e8f0 !important;
         }
 
         body.tema-white,
@@ -146,7 +115,10 @@
             color: #334155 !important;
         }
 
-        body.tema-white h1,
+        body.tema-white h1 {
+            color: #0f172a !important;
+        }
+
         body.tema-white h2,
         body.tema-white h3 {
             color: #0f172a !important;
@@ -157,28 +129,62 @@
             color: #059669 !important;
         }
 
+        body.tema-white header.border-b-2 {
+            border-bottom-color: #059669 !important;
+        }
+
         body.tema-white .border-slate-700 {
             border-color: #cbd5e1 !important;
         }
 
-        body.tema-white .bg-slate-800\/50 {
-            background-color: #f8fafc !important;
-            border-color: #e2e8f0 !important;
+        body.tema-white .bg-slate-800\/50,
+        body.tema-white .cv-card-item {
+            background-color: #ffffff !important;
+            border: 1px solid #cbd5e1 !important;
+            border-left: 3px solid #059669 !important;
         }
 
         body.tema-white .bg-slate-700 {
             background-color: #f1f5f9 !important;
-            color: #475569 !important;
+            color: #334155 !important;
             border: 1px solid #cbd5e1 !important;
         }
 
         body.tema-white .bg-emerald-500\/10 {
-            background-color: #d1fae5 !important;
+            background-color: #ecfdf5 !important;
             color: #047857 !important;
+            border: 1px solid #a7f3d0 !important;
         }
 
         body.tema-white .text-slate-500 {
             color: #64748b !important;
+        }
+
+        /* Print White */
+        @media print {
+            body.tema-white {
+                background-color: #ffffff !important;
+                color: #334155 !important;
+            }
+            body.tema-white .bg-slate-800 {
+                background-color: #ffffff !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            body.tema-white h1 { color: #0f172a !important; }
+            body.tema-white h2 { color: #059669 !important; border-bottom-color: #cbd5e1 !important; }
+            body.tema-white .text-emerald-500 { color: #059669 !important; }
+            body.tema-white .bg-slate-800\/50,
+            body.tema-white .cv-card-item {
+                background-color: #ffffff !important;
+                border: 1px solid #cbd5e1 !important;
+                border-left: 3px solid #059669 !important;
+            }
+            body.tema-white .bg-slate-700 {
+                background-color: #f1f5f9 !important;
+                color: #334155 !important;
+                border: 1px solid #cbd5e1 !important;
+            }
         }
 
         /* ======================================== */
@@ -197,9 +203,7 @@
             border-radius: 4px;
         }
 
-        /* ── Layout Full-Width: Grids responsivos ── */
-
-        /* Projetos: 2-col grid */
+        /* ── Grids responsivos ── */
         .cv-projects-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -213,31 +217,24 @@
             }
         }
 
-        /* Skills band: CSS columns masonry */
-        .cv-skills-band {
-            column-count: 1;
-            column-gap: 1.5rem;
+        .cv-skills-grid,
+        .cv-edu-grid,
+        .cv-certs-grid,
+        .cv-interests-grid,
+        .cv-languages-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
         }
 
         @media (min-width: 768px) {
-            .cv-skills-band {
-                column-count: 3;
+            .cv-skills-grid,
+            .cv-edu-grid,
+            .cv-certs-grid,
+            .cv-interests-grid,
+            .cv-languages-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-        }
-
-        .cv-skills-band .skills-card {
-            break-inside: avoid;
-            page-break-inside: avoid;
-            margin-bottom: 1rem;
-        }
-
-        .cv-skills-band .skills-card h3 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #34d399;
-            margin-bottom: 0.4rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         /* Separador sutil entre seções */
@@ -251,6 +248,7 @@
 
 <body class="bg-slate-900 text-slate-300 font-sans p-4 md:p-8">
 
+    <!-- Barra de Ferramentas Superior -->
     <div
         class="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-b border-slate-700 p-4 z-50 print:hidden shadow-lg">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
@@ -259,41 +257,43 @@
 
                 <div class="flex items-center gap-2 border-r border-slate-700 pr-4 mr-2">
                     <button onclick="mudarIdioma('cv-ptbr.yaml', 'pt')"
-                        class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-bold"
+                        id="btn-lang-pt"
+                        class="btn-tema bg-emerald-700 text-white border border-emerald-500 px-3 py-1.5 rounded text-sm transition font-bold"
                         title="Português do Brasil">
                         BR PT
                     </button>
-                    <button onclick="mudarIdioma('cv.yaml', 'en')"
+                    <button onclick="mudarIdioma('cv-en.yaml', 'en')"
+                        id="btn-lang-en"
                         class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-bold"
                         title="English">
                         US EN
                     </button>
                 </div>
 
-                <span class="text-slate-400 text-xs font-mono uppercase tracking-wider mr-2">Temas:</span>
+                <span class="text-slate-400 text-xs font-mono uppercase tracking-wider mr-2">Modelos:</span>
 
                 <button onclick="mudarTema('padrao')"
-                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-600 px-3 py-1.5 rounded text-sm transition">
+                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-mono">
                     >_ Terminal
                 </button>
 
                 <button onclick="mudarTema('tema-white')"
-                    class="btn-tema bg-slate-100 hover:bg-white text-slate-800 border border-slate-300 px-3 py-1.5 rounded text-sm transition">
+                    class="btn-tema bg-slate-100 hover:bg-white text-slate-800 border border-slate-300 px-3 py-1.5 rounded text-sm transition font-sans">
                     📄 White
                 </button>
 
                 <button onclick="mudarTema('tema-executivo')"
-                    class="btn-tema bg-[#c8c8c8] hover:bg-[#dcdcdc] text-slate-900 border border-gray-400 px-3 py-1.5 rounded text-sm transition font-serif">
+                    class="btn-tema bg-[#c8c8c8] hover:bg-[#dcdcdc] text-slate-900 border border-gray-400 px-3 py-1.5 rounded text-sm transition font-serif font-bold">
                     👔 Executivo
                 </button>
 
                 <button onclick="mudarTema('tema-criativo')"
-                    class="btn-tema bg-blue-100 hover:bg-blue-50 text-blue-900 border border-blue-200 px-3 py-1.5 rounded text-sm transition font-sans">
+                    class="btn-tema bg-blue-100 hover:bg-blue-50 text-blue-900 border border-blue-200 px-3 py-1.5 rounded text-sm transition font-sans font-bold">
                     🎨 Criativo
                 </button>
 
                 <button onclick="mudarTema('tema-minimalista')"
-                    class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight">
+                    class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight font-bold">
                     🔹 Minimal
                 </button>
             </div>
@@ -315,15 +315,15 @@
 
             <thead class="hidden print-header">
                 <tr>
-                    <td style="height: 15mm; border: none; padding: 0;"></td>
+                    <td style="height: 6mm; border: none; padding: 0;"></td>
                 </tr>
             </thead>
 
             <tbody class="print:table-row-group">
                 <tr>
-                    <td class="p-8 md:p-12 print:p-0 print:px-[10mm] align-top border-none cv-content-area">
+                    <td class="p-8 md:p-12 print:p-0 align-top border-none cv-content-area">
 
-                        <!-- ═══ HEADER: Full-Width ═══ -->
+                        <!-- ═══ HEADER ═══ -->
                         <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
                             <div
                                 class="flex flex-col md:flex-row print:flex-row justify-between items-start md:items-center print:items-center gap-4">
@@ -331,50 +331,86 @@
                                     <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_
                                         Carregando...</h1>
                                     <div class="flex items-center gap-3">
-                                        <p id="label" class="text-emerald-400 font-mono text-sm"></p>
-                                        <span
-                                            class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-600">PcD</span>
+                                        <p id="label" class="text-emerald-400 font-mono text-sm font-semibold"></p>
                                     </div>
                                 </div>
                                 <div class="text-left md:text-right print:text-right text-sm font-mono space-y-1">
                                     <p id="email" class="text-slate-400"></p>
                                     <p id="telefone" class="text-slate-400"></p>
+                                    <p id="localizacao" class="text-slate-400"></p>
                                     <a id="linkedin" href="#" target="_blank"
                                         class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
                                     <a id="github" href="#" target="_blank"
                                         class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
+                                    <a id="portfolio" href="#" target="_blank"
+                                        class="block text-emerald-500 hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-2"></a>
                                 </div>
                             </div>
-                            <p id="resumo" class="mt-6 text-slate-300 leading-relaxed"></p>
+                            <p id="resumo" class="mt-6 text-slate-300 leading-relaxed text-justify"></p>
                         </header>
 
-                        <!-- ═══ PROJETOS: 2-Column Grid (Full-Width) ═══ -->
+                        <!-- ═══ EXPERIÊNCIA PROFISSIONAL ═══ -->
                         <section class="cv-section mb-8">
                             <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                                <span class="text-emerald-500">#</span> <span id="lbl-projetos">Projects</span>
+                                <span class="text-emerald-500">#</span> <span id="lbl-experiencia">Experiência Profissional</span>
+                            </h2>
+                            <div id="experiencia-container" class="space-y-6"></div>
+                        </section>
+
+                        <!-- ═══ PROJETOS EM DESTAQUE ═══ -->
+                        <section class="cv-section cv-section-divider mb-8">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-projetos">Projetos em Destaque</span>
                             </h2>
                             <div id="projetos-container" class="cv-projects-grid"></div>
                         </section>
 
-                        <!-- ═══ SKILLS BAND: Masonry 3-col (all sub-sections distributed) ═══ -->
-                        <section class="cv-section cv-section-divider mb-8">
-                            <div id="skills-band-container" class="cv-skills-band"></div>
-                        </section>
-
-                        <!-- ═══ EXPERIÊNCIA: Full-Width (2-col grid no print) ═══ -->
+                        <!-- ═══ COMPETÊNCIAS & HABILIDADES ═══ -->
                         <section class="cv-section cv-section-divider mb-8">
                             <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                                <span class="text-emerald-500">#</span> <span id="lbl-experiencia">Experience</span>
+                                <span class="text-emerald-500">#</span> <span id="lbl-competencias">Competências & Habilidades Técnicas</span>
                             </h2>
-                            <div id="experiencia-container" class="space-y-6 cv-exp-grid"></div>
+                            <div id="skills-container" class="cv-skills-grid"></div>
                         </section>
 
-                        <!-- ═══ FORMAÇÃO: Full-Width (3-col grid no print) ═══ -->
+                        <!-- ═══ FORMAÇÃO ACADÊMICA ═══ -->
+                        <section class="cv-section cv-section-divider mb-8">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-formacao">Formação Acadêmica</span>
+                            </h2>
+                            <div id="formacao-container" class="cv-edu-grid"></div>
+                        </section>
+
+                        <!-- ═══ CERTIFICAÇÕES & LICENÇAS ═══ -->
+                        <section id="sec-certificados" class="cv-section cv-section-divider mb-8">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-certificados">Certificações & Licenças</span>
+                            </h2>
+                            <div id="certificados-container" class="cv-certs-grid"></div>
+                        </section>
+
+                        <!-- ═══ PUBLICAÇÕES & ARTIGOS ═══ -->
+                        <section id="sec-publicacoes" class="cv-section cv-section-divider mb-8">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-publicacoes">Artigos & Publicações</span>
+                            </h2>
+                            <div id="publicacoes-container" class="space-y-4"></div>
+                        </section>
+
+                        <!-- ═══ IDIOMAS ═══ -->
+                        <section class="cv-section cv-section-divider mb-8">
+                            <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-emerald-500">#</span> <span id="lbl-idiomas">Idiomas</span>
+                            </h2>
+                            <div id="idiomas-container" class="cv-languages-grid"></div>
+                        </section>
+
+                        <!-- ═══ INTERESSES & PESQUISAS ═══ -->
                         <section class="cv-section cv-section-divider">
                             <h2 class="cv-section-title text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                                <span class="text-emerald-500">#</span> <span id="lbl-formacao">Education</span>
+                                <span class="text-emerald-500">#</span> <span id="lbl-interesses">Interesses & Pesquisa</span>
                             </h2>
-                            <div id="formacao-container" class="space-y-4 cv-edu-grid"></div>
+                            <div id="interesses-container" class="cv-interests-grid"></div>
                         </section>
 
                     </td>
@@ -383,7 +419,7 @@
 
             <tfoot class="hidden print-footer">
                 <tr>
-                    <td style="height: 15mm; border: none; padding: 0;"></td>
+                    <td style="height: 6mm; border: none; padding: 0;"></td>
                 </tr>
             </tfoot>
 
@@ -391,7 +427,7 @@
 
         <!-- Web Footer (Hidden on Print) -->
         <footer class="mt-12 py-6 text-center text-xs text-slate-500 border-t border-slate-800 print:hidden flex flex-col items-center gap-2">
-            <p>© 2026 CV-YAML. Engine de Currículos Estruturados.</p>
+            <p>© 2026 CV-YAML. Engine de Currículos Estruturados — Augusto Heiss.</p>
             <button onclick="document.getElementById('modal-legal-cv').classList.remove('hidden')" class="text-emerald-500 hover:text-emerald-400 underline underline-offset-2 transition-colors">
                 Termos de Uso e Privacidade (LGPD)
             </button>
@@ -429,53 +465,80 @@
         // Dicionário de Internacionalização
         const dicionario = {
             'pt': {
-                projetos: "Projetos",
-                experiencia: "Experiência",
+                experiencia: "Experiência Profissional",
+                projetos: "Projetos em Destaque",
+                competencias: "Competências & Habilidades Técnicas",
                 formacao: "Formação Acadêmica",
-                competencias: "Competências",
+                certificados: "Licenças & Certificações",
+                publicacoes: "Artigos & Publicações",
                 idiomas: "Idiomas",
-                otimizacao: "Otimização Contínua",
-                since: "Desde",
-                expected: "Conclusão:",
-                verProjeto: "[Ver Projeto]"
+                interesses: "Interesses & Pesquisa",
+                present: "Presente",
+                in_progress: "Em andamento",
+                verProjeto: "[Ver Projeto ↗]",
+                verCert: "[Credencial ↗]",
+                verPub: "[Ler Artigo ↗]"
             },
             'en': {
-                projetos: "Projects",
-                experiencia: "Experience",
-                formacao: "Education",
-                competencias: "Competencies",
+                experiencia: "Professional Experience",
+                projetos: "Featured Projects & Systems",
+                competencias: "Core Competencies & Technical Skills",
+                formacao: "Education & Academic Background",
+                certificados: "Licenses & Certifications",
+                publicacoes: "Articles & Publications",
                 idiomas: "Languages",
-                otimizacao: "Continuous Optimization",
-                since: "Since",
-                expected: "Expected:",
-                verProjeto: "[View Project]"
+                interesses: "Technical Research & Interests",
+                present: "Present",
+                in_progress: "In Progress",
+                verProjeto: "[View Project ↗]",
+                verCert: "[Credential ↗]",
+                verPub: "[Read Article ↗]"
             }
         };
 
         const urlParams = new URLSearchParams(window.location.search);
         const userFile = urlParams.get('cv');
-        const arquivoAlvoInicial = userFile ? `users/${userFile}.yaml` : 'cv.yaml';
-        const idiomaInicial = 'en';
+        const arquivoAlvoInicial = userFile ? `users/${userFile}.yaml` : 'cv-ptbr.yaml';
+        const idiomaInicial = 'pt';
 
-        // Função Blindada para trocar os títulos do HTML
         function atualizarTitulosHTML(ui) {
             const ids = {
-                'lbl-projetos': ui.projetos,
                 'lbl-experiencia': ui.experiencia,
-                'lbl-formacao': ui.formacao,
+                'lbl-projetos': ui.projetos,
                 'lbl-competencias': ui.competencias,
+                'lbl-formacao': ui.formacao,
+                'lbl-certificados': ui.certificados,
+                'lbl-publicacoes': ui.publicacoes,
                 'lbl-idiomas': ui.idiomas,
-                'lbl-otimizacao': ui.otimizacao
+                'lbl-interesses': ui.interesses
             };
             for (const [id, texto] of Object.entries(ids)) {
                 const el = document.getElementById(id);
-                if (el) el.innerText = texto; // Só altera se o ID existir na tela (evita crash)
+                if (el) el.innerText = texto;
             }
         }
 
+        function formatarData(dataStr, ui, isEnd = false) {
+            if (!dataStr || String(dataStr).trim().toLowerCase() === 'null' || String(dataStr).trim() === '') {
+                return isEnd ? ui.present : '';
+            }
+            return String(dataStr).trim();
+        }
+
         function carregarCurriculo(arquivoYaml, lang) {
-            const ui = dicionario[lang];
+            const ui = dicionario[lang] || dicionario['pt'];
             atualizarTitulosHTML(ui);
+
+            // Atualiza botões de idioma
+            const btnPt = document.getElementById('btn-lang-pt');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (lang === 'pt') {
+                if (btnPt) { btnPt.className = 'btn-tema bg-emerald-700 text-white border border-emerald-500 px-3 py-1.5 rounded text-sm transition font-bold'; }
+                if (btnEn) { btnEn.className = 'btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-bold'; }
+            } else {
+                if (btnEn) { btnEn.className = 'btn-tema bg-emerald-700 text-white border border-emerald-500 px-3 py-1.5 rounded text-sm transition font-bold'; }
+                if (btnPt) { btnPt.className = 'btn-tema bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-bold'; }
+            }
 
             fetch(arquivoYaml)
                 .then(response => {
@@ -483,107 +546,202 @@
                     return response.text();
                 })
                 .then(yamlText => {
-                    const dados = jsyaml.load(yamlText);
+                    const dados = jsyaml.load(yamlText) || {};
+                    const basics = dados.basics || {};
 
-                    document.getElementById('nome').innerText = dados.basics.name;
-                    document.getElementById('label').innerText = dados.basics.label;
-                    document.getElementById('email').innerText = dados.basics.email;
-                    document.getElementById('telefone').innerText = dados.basics.phone;
+                    document.getElementById('nome').innerText = basics.name || '';
+                    document.getElementById('label').innerText = basics.label || '';
+                    document.getElementById('email').innerText = basics.email ? `✉ ${basics.email}` : '';
+                    document.getElementById('telefone').innerText = basics.phone ? `📞 ${basics.phone}` : '';
+
+                    const loc = basics.location || {};
+                    const locStr = loc.city && loc.region ? `📍 ${loc.city} - ${loc.region}` : (loc.city || loc.region || '');
+                    document.getElementById('localizacao').innerText = locStr;
 
                     const linkedinEl = document.getElementById('linkedin');
-                    linkedinEl.innerText = dados.basics.url.replace('https://www.', '');
-                    linkedinEl.href = dados.basics.url;
+                    if (basics.url) {
+                        linkedinEl.innerText = `🔗 ${basics.url.replace('https://www.', '').replace('https://', '')}`;
+                        linkedinEl.href = basics.url;
+                        linkedinEl.style.display = 'block';
+                    } else {
+                        linkedinEl.style.display = 'none';
+                    }
 
-                    if (dados.basics.profiles && dados.basics.profiles.length > 0) {
-                        const githubData = dados.basics.profiles.find(p => p.network === 'GitHub');
-                        if (githubData) {
-                            const githubEl = document.getElementById('github');
-                            githubEl.innerText = githubData.url.replace('https://', '');
-                            githubEl.href = githubData.url;
+                    const githubEl = document.getElementById('github');
+                    const portfolioEl = document.getElementById('portfolio');
+                    if (basics.profiles && basics.profiles.length > 0) {
+                        const gh = basics.profiles.find(p => p.network === 'GitHub');
+                        if (gh && gh.url) {
+                            githubEl.innerText = `🐙 github.com/${gh.username || ''}`;
+                            githubEl.href = gh.url;
+                            githubEl.style.display = 'block';
+                        } else {
+                            githubEl.style.display = 'none';
+                        }
+
+                        const pf = basics.profiles.find(p => p.network === 'Portfolio');
+                        if (pf && pf.url) {
+                            portfolioEl.innerText = `🌐 ${pf.url.replace('https://www.', '').replace('https://', '')}`;
+                            portfolioEl.href = pf.url;
+                            portfolioEl.style.display = 'block';
+                        } else {
+                            portfolioEl.style.display = 'none';
                         }
                     }
 
-                    document.getElementById('resumo').innerText = dados.basics.summary;
+                    document.getElementById('resumo').innerText = basics.summary || '';
 
-                    const projetosContainer = document.getElementById('projetos-container');
+                    // 1. Experiência
                     const expContainer = document.getElementById('experiencia-container');
-                    const formacaoContainer = document.getElementById('formacao-container');
-
-                    projetosContainer.innerHTML = '';
                     expContainer.innerHTML = '';
-                    formacaoContainer.innerHTML = '';
+                    (dados.work || []).forEach(trabalho => {
+                        const start = formatarData(trabalho.startDate, ui, false);
+                        const end = formatarData(trabalho.endDate, ui, true);
+                        const dataStr = start ? `${start} — ${end}` : end;
+                        let bullets = trabalho.highlights ? trabalho.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
 
-                    dados.projects.forEach(projeto => {
+                        expContainer.innerHTML += `
+                            <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
+                                <div class="flex justify-between items-baseline flex-wrap gap-1 mb-1">
+                                    <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
+                                    <span class="text-xs font-mono text-slate-400 font-semibold">${dataStr}</span>
+                                </div>
+                                <p class="text-xs font-mono text-emerald-500 mb-2 font-semibold">
+                                    ${trabalho.url ? `<a href="${trabalho.url}" target="_blank" class="hover:underline">${trabalho.name} ↗</a>` : trabalho.name}
+                                </p>
+                                ${trabalho.summary ? `<p class="text-sm text-slate-400 leading-relaxed mb-2">${trabalho.summary}</p>` : ''}
+                                ${bullets ? `<ul class="text-sm text-slate-300 list-disc space-y-1.5 mb-2">${bullets}</ul>` : ''}
+                            </div>
+                        `;
+                    });
+
+                    // 2. Projetos
+                    const projetosContainer = document.getElementById('projetos-container');
+                    projetosContainer.innerHTML = '';
+                    (dados.projects || []).forEach(projeto => {
                         let bullets = projeto.highlights ? projeto.highlights.map(h => `<li class="ml-4">${h}</li>`).join('') : '';
-                        let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block">${ui.verProjeto}</a>` : '';
+                        let tags = (projeto.keywords || []).map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded m-0.5">${k}</span>`).join('');
+                        let urlLink = projeto.url ? `<a href="${projeto.url}" target="_blank" class="text-emerald-500 text-sm hover:underline mt-2 inline-block font-semibold">${ui.verProjeto}</a>` : '';
 
                         projetosContainer.innerHTML += `
-                            <div class="evitar-quebra bg-slate-800/50 p-4 rounded border border-slate-700 hover:border-emerald-500/50 transition">
+                            <div class="evitar-quebra bg-slate-800/50 p-4 rounded border border-slate-700 hover:border-emerald-500/50 transition cv-card-item">
                                 <h3 class="text-lg font-bold text-emerald-400">${projeto.name}</h3>
-                                <p class="text-sm text-slate-400 mt-2 mb-2">${projeto.description}</p>
-                                <ul class="text-sm text-slate-300 list-disc space-y-1">${bullets}</ul>
+                                <p class="text-sm text-slate-400 mt-2 mb-2">${projeto.description || ''}</p>
+                                ${bullets ? `<ul class="text-sm text-slate-300 list-disc space-y-1 mb-2">${bullets}</ul>` : ''}
+                                ${tags ? `<div class="flex flex-wrap mt-2 mb-1">${tags}</div>` : ''}
                                 ${urlLink}
                             </div>
                         `;
                     });
 
-                    dados.work.forEach(trabalho => {
-                        expContainer.innerHTML += `
-                            <div class="evitar-quebra border-l-2 border-slate-700 pl-4 pb-2">
-                                <h3 class="text-lg font-bold text-white">${trabalho.position}</h3>
-                                <p class="text-xs font-mono text-emerald-500 mb-2">${trabalho.name} | ${ui.since} ${trabalho.startDate.substring(0, 4)}</p>
-                                <p class="text-sm text-slate-400 leading-relaxed">${trabalho.summary}</p>
-                            </div>
-                        `;
-                    });
-
-                    dados.education.forEach(edu => {
-                        formacaoContainer.innerHTML += `
-                            <div class="evitar-quebra mb-4">
-                                <h3 class="font-bold text-white">${edu.area} <span class="text-slate-500 font-normal">(${edu.studyType})</span></h3>
-                                <p class="text-sm text-emerald-400">${edu.institution}</p>
-                                <p class="text-xs text-slate-500">${ui.expected} ${edu.endDate.substring(0, 4)}</p>
-                            </div>
-                        `;
-                    });
-
-                    // ── Build Skills Band: all sub-blocks into one masonry container ──
-                    const bandContainer = document.getElementById('skills-band-container');
-                    bandContainer.innerHTML = '';
-
-                    // Render each skill category as an individual card
-                    dados.skills.forEach(skill => {
-                        let tags = skill.keywords.map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded m-0.5">${k}</span>`).join('');
-                        bandContainer.innerHTML += `
-                            <div class="skills-card evitar-quebra">
-                                <h3>${skill.name}</h3>
+                    // 3. Competências
+                    const skillsContainer = document.getElementById('skills-container');
+                    skillsContainer.innerHTML = '';
+                    (dados.skills || []).forEach(skill => {
+                        let tags = (skill.keywords || []).map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded m-0.5">${k}</span>`).join('');
+                        skillsContainer.innerHTML += `
+                            <div class="evitar-quebra bg-slate-800/50 p-3.5 rounded border border-slate-700 cv-card-item">
+                                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-2">⚡ ${skill.name}</h3>
                                 <div class="flex flex-wrap">${tags}</div>
                             </div>
                         `;
                     });
 
-                    // Render Languages as a card
-                    let langItems = dados.languages.map(idioma => `
-                        <li class="flex justify-between items-center">
-                            <span class="text-slate-300">${idioma.language}</span>
-                            <span class="text-emerald-500 text-xs bg-emerald-500/10 px-2 py-1 rounded">${idioma.fluency}</span>
-                        </li>
-                    `).join('');
-                    bandContainer.innerHTML += `
-                        <div class="skills-card evitar-quebra">
-                            <h3 id="lbl-idiomas">${ui.idiomas}</h3>
-                            <ul class="space-y-2 text-sm">${langItems}</ul>
-                        </div>
-                    `;
+                    // 4. Formação Acadêmica
+                    const formacaoContainer = document.getElementById('formacao-container');
+                    formacaoContainer.innerHTML = '';
+                    (dados.education || []).forEach(edu => {
+                        const start = formatarData(edu.startDate, ui, false);
+                        const end = formatarData(edu.endDate, ui, true);
+                        const dataStr = start ? `${start} — ${end}` : end;
 
-                    // Render Continuous Optimization as a card
-                    let optItems = dados.interests[0].keywords.map(i => `<li>${i}</li>`).join('');
-                    bandContainer.innerHTML += `
-                        <div class="skills-card evitar-quebra">
-                            <h3 id="lbl-otimizacao">${ui.otimizacao}</h3>
-                            <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside">${optItems}</ul>
-                        </div>
-                    `;
+                        formacaoContainer.innerHTML += `
+                            <div class="evitar-quebra bg-slate-800/50 p-3.5 rounded border border-slate-700 cv-card-item">
+                                <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1">
+                                    <span>🎓</span>
+                                    <span>${dataStr}</span>
+                                </div>
+                                <h3 class="font-bold text-white text-sm mb-1">${edu.area}</h3>
+                                <p class="text-xs text-emerald-400 font-semibold">${edu.institution}</p>
+                                <p class="text-xs text-slate-500 mt-1">${edu.studyType}</p>
+                            </div>
+                        `;
+                    });
+
+                    // 5. Certificações
+                    const certsContainer = document.getElementById('certificados-container');
+                    const secCerts = document.getElementById('sec-certificados');
+                    if (dados.certificates && dados.certificates.length > 0) {
+                        secCerts.style.display = 'block';
+                        certsContainer.innerHTML = '';
+                        dados.certificates.forEach(cert => {
+                            certsContainer.innerHTML += `
+                                <div class="evitar-quebra bg-slate-800/50 p-3.5 rounded border border-slate-700 cv-card-item flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1">
+                                            <span>🎖️</span>
+                                            <span>${cert.date || ''}</span>
+                                        </div>
+                                        <h3 class="font-bold text-white text-sm mb-1">
+                                            ${cert.url ? `<a href="${cert.url}" target="_blank" class="hover:underline">${cert.name} ↗</a>` : cert.name}
+                                        </h3>
+                                    </div>
+                                    <span class="inline-block bg-slate-700 text-emerald-400 text-xs px-2 py-0.5 rounded border border-slate-600 mt-2 font-semibold w-fit">${cert.issuer}</span>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        secCerts.style.display = 'none';
+                    }
+
+                    // 6. Publicações
+                    const pubContainer = document.getElementById('publicacoes-container');
+                    const secPub = document.getElementById('sec-publicacoes');
+                    if (dados.publications && dados.publications.length > 0) {
+                        secPub.style.display = 'block';
+                        pubContainer.innerHTML = '';
+                        dados.publications.forEach(pub => {
+                            pubContainer.innerHTML += `
+                                <div class="evitar-quebra bg-slate-800/50 p-3.5 rounded border border-slate-700 cv-card-item">
+                                    <div class="flex justify-between items-baseline flex-wrap gap-1 mb-1">
+                                        <h3 class="text-sm font-bold text-white">
+                                            ${pub.url ? `<a href="${pub.url}" target="_blank" class="hover:underline text-emerald-400">${pub.name} ↗</a>` : pub.name}
+                                        </h3>
+                                        <span class="text-xs font-mono text-slate-400">${pub.releaseDate || ''}</span>
+                                    </div>
+                                    <p class="text-xs font-semibold text-slate-400 mb-1">${pub.publisher}</p>
+                                    ${pub.summary ? `<p class="text-xs text-slate-300 leading-relaxed">${pub.summary}</p>` : ''}
+                                </div>
+                            `;
+                        });
+                    } else {
+                        secPub.style.display = 'none';
+                    }
+
+                    // 7. Idiomas
+                    const langContainer = document.getElementById('idiomas-container');
+                    langContainer.innerHTML = '';
+                    (dados.languages || []).forEach(idioma => {
+                        langContainer.innerHTML += `
+                            <div class="evitar-quebra bg-slate-800/50 p-3 rounded border border-slate-700 cv-card-item flex justify-between items-center">
+                                <span class="font-bold text-white text-sm">${idioma.language}</span>
+                                <span class="text-emerald-400 text-xs bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-semibold">${idioma.fluency}</span>
+                            </div>
+                        `;
+                    });
+
+                    // 8. Interesses
+                    const intContainer = document.getElementById('interesses-container');
+                    intContainer.innerHTML = '';
+                    (dados.interests || []).forEach(it => {
+                        let tags = (it.keywords || []).map(k => `<span class="inline-block bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded m-0.5">${k}</span>`).join('');
+                        intContainer.innerHTML += `
+                            <div class="evitar-quebra bg-slate-800/50 p-3 rounded border border-slate-700 cv-card-item">
+                                <h3 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">◈ ${it.name}</h3>
+                                <div class="flex flex-wrap">${tags}</div>
+                            </div>
+                        `;
+                    });
 
                 })
                 .catch(error => {
@@ -594,7 +752,7 @@
 
         // === CONTROLES DA PÁGINA ===
 
-        // 1. Inicia o site
+        // 1. Inicia o site com o arquivo em Português
         carregarCurriculo(arquivoAlvoInicial, idiomaInicial);
 
         // 2. Controla o botão de trocar idioma
@@ -608,13 +766,11 @@
             const html = document.documentElement;
             const body = document.body;
 
-            // Limpa todos os temas
             temas.forEach(tema => {
                 html.classList.remove(tema);
                 body.classList.remove(tema);
             });
 
-            // Se não for o padrão, adiciona a classe
             if (temaSelecionado !== 'padrao') {
                 html.classList.add(temaSelecionado);
                 body.classList.add(temaSelecionado);
