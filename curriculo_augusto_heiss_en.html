@@ -1,51 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Augusto Leonardo Farias Heiss — CV Maker 2.0</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap');
-
-    :root {
-      --primary: #1e3a8a;
-      --title: #0f172a;
-      --sub: #334155;
-      --accent: #0284c7;
-      --border: #e2e8f0;
-      --bg-badge: #f1f5f9;
-      --font: 'Merriweather', Georgia, serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@300;400;700&family=Poppins:wght@400;600;700;800&display=swap');
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: var(--font);
+      background: #0f172a;
       color: #1e293b;
-      background: #f8fafc;
-      line-height: 1.5;
+      line-height: 1.55;
       font-size: 10pt;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
+      transition: background 0.2s ease;
     }
 
+    /* ── Floating Toolbar ── */
     .toolbar {
       position: fixed;
       top: 1rem;
       right: 1rem;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.45rem;
       z-index: 999;
-      background: rgba(15, 23, 42, 0.85);
-      padding: 0.5rem 0.75rem;
+      background: rgba(15, 23, 42, 0.92);
+      padding: 0.45rem 0.75rem;
       border-radius: 9999px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.1);
+      align-items: center;
+    }
+
+    .toolbar select {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      padding: 0.35rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
     }
 
     .toolbar button {
       background: #0284c7;
       color: #fff;
       border: none;
-      padding: 0.4rem 0.9rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 9999px;
       font-size: 0.8rem;
       font-weight: 600;
@@ -53,15 +59,26 @@
       display: flex;
       align-items: center;
       gap: 0.3rem;
+      transition: all 0.2s ease;
+    }
+    .toolbar button:hover { background: #0369a1; transform: translateY(-1px); }
+
+    .toolbar button.btn-sec {
+      background: #334155;
+    }
+    .toolbar button.btn-sec:hover {
+      background: #475569;
     }
 
+    /* ── Base Container ── */
     .container {
       max-width: 860px;
       margin: 0 auto;
       background: #ffffff;
       padding: 2.5rem 3rem;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
     }
 
     .header {
@@ -69,22 +86,20 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 1.5rem;
-      border-bottom: 2px solid var(--border);
       padding-bottom: 1.25rem;
       margin-bottom: 1.25rem;
     }
 
     .name {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--primary);
+      font-size: 1.85rem;
+      font-weight: 800;
       margin-bottom: 0.25rem;
+      line-height: 1.2;
     }
 
     .label {
       font-size: 0.95rem;
       font-weight: 600;
-      color: var(--sub);
     }
 
     .contacts {
@@ -98,8 +113,7 @@
 
     .summary {
       font-size: 0.88rem;
-      color: #334155;
-      line-height: 1.55;
+      line-height: 1.58;
       margin-bottom: 1.25rem;
       text-align: justify;
     }
@@ -107,10 +121,8 @@
     .section-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--primary);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border-bottom: 1.5px solid var(--border);
       padding-bottom: 0.3rem;
       margin: 1.25rem 0 0.75rem 0;
       break-after: avoid;
@@ -121,7 +133,6 @@
       display: flex;
       justify-content: space-between;
       font-weight: 700;
-      color: var(--title);
       font-size: 0.92rem;
     }
 
@@ -134,7 +145,6 @@
     .item-sub {
       font-size: 0.82rem;
       font-weight: 600;
-      color: var(--accent);
       margin-bottom: 0.2rem;
     }
 
@@ -159,8 +169,6 @@
     }
 
     .project-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
       padding: 0.75rem;
       border-radius: 6px;
     }
@@ -178,18 +186,11 @@
     .skill-group,
     .geo-card,
     .interest-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--primary);
       padding: 0.6rem;
       border-radius: 6px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-
-    .geo-card {
-      border-left: 3px solid var(--accent);
     }
 
     .card-top {
@@ -204,9 +205,6 @@
     }
 
     .lang-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-left: 3px solid #10b981;
       padding: 0.5rem 0.65rem;
       border-radius: 6px;
       display: flex;
@@ -220,10 +218,7 @@
       font-size: 0.7rem;
       font-weight: 600;
       padding: 0.1rem 0.4rem;
-      background: var(--bg-badge);
-      border: 1px solid var(--border);
       border-radius: 4px;
-      color: var(--sub);
       margin-top: 0.25rem;
       width: fit-content;
     }
@@ -231,7 +226,6 @@
     .skill-title {
       font-size: 0.82rem;
       font-weight: 700;
-      color: var(--title);
       margin-bottom: 0.4rem;
     }
 
@@ -246,10 +240,7 @@
       font-size: 0.7rem;
       font-weight: 600;
       padding: 0.15rem 0.45rem;
-      background: var(--bg-badge);
-      border: 1px solid var(--border);
       border-radius: 4px;
-      color: var(--sub);
     }
 
     .avoid-break {
@@ -258,7 +249,6 @@
     }
 
     a, .cv-link {
-      color: var(--accent);
       text-decoration: none;
       font-weight: 500;
     }
@@ -266,12 +256,205 @@
       text-decoration: underline;
     }
 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  1. TEMA EXECUTIVO (theme-executive)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-executive {
+      font-family: 'Merriweather', Georgia, serif;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    .theme-executive .header { border-bottom: 2px solid #111827; }
+    .theme-executive .name { color: #050505; }
+    .theme-executive .label { color: #374151; }
+    .theme-executive .section-title { color: #111827; border-bottom: 1.5px solid #374151; }
+    .theme-executive .item-title { color: #111827; }
+    .theme-executive .item-sub { color: #1f2937; }
+    .theme-executive a, .theme-executive .cv-link { color: #1f2937; text-decoration: underline; }
+    .theme-executive .project-card,
+    .theme-executive .skill-group,
+    .theme-executive .geo-card,
+    .theme-executive .interest-card,
+    .theme-executive .lang-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-left: 3px solid #111827;
+      border-radius: 0;
+    }
+    .theme-executive .badge,
+    .theme-executive .issuer-pill {
+      background: transparent;
+      color: #374151;
+      border: 1px solid #9ca3af;
+      border-radius: 0;
+      font-family: 'Courier Prime', monospace;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  2. TEMA CRIATIVO (theme-creative)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-creative {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+    }
+    .theme-creative .header { border-bottom: 3px solid #2563eb; }
+    .theme-creative .name { color: #1e3a8a; font-weight: 800; }
+    .theme-creative .label { color: #f97316; font-weight: 600; }
+    .theme-creative .section-title { color: #1e3a8a; border-bottom: 2px solid #bfdbfe; }
+    .theme-creative .item-title { color: #1e1b4b; }
+    .theme-creative .item-sub { color: #2563eb; }
+    .theme-creative a, .theme-creative .cv-link { color: #2563eb; }
+    .theme-creative .project-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+    }
+    .theme-creative .skill-group,
+    .theme-creative .geo-card,
+    .theme-creative .lang-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 3px solid #2563eb;
+      border-radius: 8px;
+    }
+    .theme-creative .interest-card {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-left: 3px solid #9333ea;
+      border-radius: 8px;
+    }
+    .theme-creative .badge {
+      background: #dbeafe;
+      color: #1e3a8a;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+    }
+    .theme-creative .issuer-pill {
+      background: #ffedd5;
+      color: #c2410c;
+      border: 1px solid #fed7aa;
+      border-radius: 4px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  3. TEMA MINIMALISTA (theme-minimalist)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-minimalist {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+    }
+    .theme-minimalist .header { border-bottom: 1px solid #e2e8f0; }
+    .theme-minimalist .name { color: #0f172a; font-weight: 800; letter-spacing: -0.04em; }
+    .theme-minimalist .label { color: #64748b; font-weight: 500; }
+    .theme-minimalist .section-title { color: #475569; border-bottom: 1px solid #e2e8f0; letter-spacing: 0.1em; }
+    .theme-minimalist .item-title { color: #0f172a; }
+    .theme-minimalist .item-sub { color: #334155; }
+    .theme-minimalist a, .theme-minimalist .cv-link { color: #475569; }
+    .theme-minimalist .project-card,
+    .theme-minimalist .skill-group,
+    .theme-minimalist .geo-card,
+    .theme-minimalist .interest-card,
+    .theme-minimalist .lang-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 2px solid #64748b;
+      border-radius: 4px;
+    }
+    .theme-minimalist .badge,
+    .theme-minimalist .issuer-pill {
+      background: transparent;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  4. TEMA WHITE (theme-white)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-white {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #334155;
+      background: #ffffff;
+    }
+    .theme-white .header { border-bottom: 2.5px solid #059669; }
+    .theme-white .name { color: #0f172a; font-weight: 800; }
+    .theme-white .label { color: #059669; font-weight: 600; }
+    .theme-white .section-title { color: #059669; border-bottom: 1.5px solid #cbd5e1; }
+    .theme-white .item-title { color: #0f172a; }
+    .theme-white .item-sub { color: #059669; }
+    .theme-white a, .theme-white .cv-link { color: #059669; }
+    .theme-white .project-card,
+    .theme-white .skill-group,
+    .theme-white .geo-card,
+    .theme-white .interest-card,
+    .theme-white .lang-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #059669;
+      border-radius: 6px;
+    }
+    .theme-white .badge {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+    }
+    .theme-white .issuer-pill {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      border-radius: 4px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  5. TEMA TERMINAL (theme-terminal)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-terminal {
+      font-family: 'Courier Prime', 'Fira Code', monospace, 'Inter', sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+    }
+    .theme-terminal .header { border-bottom: 2.5px solid #10b981; }
+    .theme-terminal .name { color: #000000; font-weight: 800; font-family: 'Courier Prime', monospace; }
+    .theme-terminal .label { color: #059669; font-family: 'Courier Prime', monospace; font-weight: 700; }
+    .theme-terminal .section-title { color: #059669; border-bottom: 1.5px solid #10b981; font-family: 'Courier Prime', monospace; }
+    .theme-terminal .item-title { color: #000000; font-family: 'Courier Prime', monospace; }
+    .theme-terminal .item-sub { color: #059669; font-family: 'Courier Prime', monospace; }
+    .theme-terminal a, .theme-terminal .cv-link { color: #059669; }
+    .theme-terminal .project-card,
+    .theme-terminal .skill-group,
+    .theme-terminal .geo-card,
+    .theme-terminal .interest-card,
+    .theme-terminal .lang-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #10b981;
+      border-radius: 4px;
+    }
+    .theme-terminal .badge,
+    .theme-terminal .issuer-pill {
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #94a3b8;
+      border-radius: 3px;
+      font-family: 'Courier Prime', monospace;
+    }
+
     /* ── @media print ── */
     @media print {
+      *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
       body {
         background: #ffffff !important;
         padding: 0 !important;
-        font-size: 9pt !important;
+        margin: 0 !important;
+        font-size: 9.6pt !important;
       }
       .toolbar { display: none !important; }
       .container {
@@ -280,33 +463,29 @@
         padding: 0 !important;
         max-width: 100% !important;
       }
-      a, .cv-link {
-        color: #0284c7 !important;
-        text-decoration: none !important;
-      }
       @page {
         size: A4 portrait;
         margin: 6mm 8mm 6mm 8mm !important;
       }
-    }
-
-    .toolbar button.btn-sec {
-      background: #334155;
-    }
-    .toolbar button.btn-sec:hover {
-      background: #475569;
     }
   </style>
 </head>
 <body>
 
   <div class="toolbar">
+    <select id="theme-switcher" onchange="switchTheme(this.value)" title="Theme:">
+      <option value="executive">👔 Executive</option>
+      <option value="creative">🎨 Creative</option>
+      <option value="minimalist">🔹 Minimalist</option>
+      <option value="white">📄 White</option>
+      <option value="terminal">>_ Terminal</option>
+    </select>
     <button onclick="window.print()">🖨️ Print / Save as PDF</button>
     <button onclick="downloadYaml()" class="btn-sec">📥 Download YAML</button>
     <button id="copy-btn" onclick="copyYaml()" class="btn-sec">📋 Copy YAML</button>
   </div>
 
-  <div class="container">
+  <div id="cv-container" class="container theme-executive">
     <header class="header">
       <div>
         <h1 class="name">Augusto Leonardo Farias Heiss</h1>
@@ -331,7 +510,7 @@
             </div>
             <div class="item-sub">IBM</div>
             <p class="item-desc">Operating within the IBM software development ecosystem, focusing on software engineering best practices, enterprise technology integration, and cross-functional agile collaboration in a global corporate environment.</p>
-            <ul class='bullets'><li>Hands-on immersion in Hybrid Cloud architectures and Enterprise AI ecosystems, aligning Python automation and API consumption with strict corporate governance and security standards.</li><li>Continuous engineering of automation workflows, API integration layers, and data structuring to accelerate internal development processes.</li><li>Completed specialized industry enablement (Energy, Environment &amp; Utilities Jumpstart) and consolidated strategic core competencies (IBM Growth Behaviors).</li></ul>
+            <ul class="bullets"><li>Hands-on immersion in Hybrid Cloud architectures and Enterprise AI ecosystems, aligning Python automation and API consumption with strict corporate governance and security standards.</li><li>Continuous engineering of automation workflows, API integration layers, and data structuring to accelerate internal development processes.</li><li>Completed specialized industry enablement (Energy, Environment &amp; Utilities Jumpstart) and consolidated strategic core competencies (IBM Growth Behaviors).</li></ul>
         </div>
         
         <div class="card avoid-break">
@@ -341,7 +520,7 @@
             </div>
             <div class="item-sub">Freelance / Heiss-Lab</div>
             <p class="item-desc">Engineering custom web applications, APIs, and AI-driven automation solutions for independent businesses and professionals. Managing end-to-end SDLC from requirements discovery to production deployment.</p>
-            <ul class='bullets'><li>Architected RAG-based educational assistants and high-throughput dynamic resume engines utilizing FastAPI and asynchronous concurrency.</li><li>Built predictive financial dashboards for asset growth tracking and operational cost optimization.</li><li>Configured zero-maintenance deployments for stateless web apps and APIs on cloud platforms (Vercel, Render, GitHub Pages).</li></ul>
+            <ul class="bullets"><li>Architected RAG-based educational assistants and high-throughput dynamic resume engines utilizing FastAPI and asynchronous concurrency.</li><li>Built predictive financial dashboards for asset growth tracking and operational cost optimization.</li><li>Configured zero-maintenance deployments for stateless web apps and APIs on cloud platforms (Vercel, Render, GitHub Pages).</li></ul>
         </div>
         
         <div class="card avoid-break">
@@ -351,7 +530,7 @@
             </div>
             <div class="item-sub">São Paulo Municipal Department of Education</div>
             <p class="item-desc">Managed and instructed over 20 classes annually. Applied high-level analytical reasoning and pedagogical methodologies to adapt instruction under demanding environments.</p>
-            <ul class='bullets'><li>Decomposed abstract mathematical concepts and complex logic into structured, practical steps — a core skill directly transferred to software architecture, data modeling, and technical communication.</li><li>Designed problem-solving frameworks and quantitative reasoning tracks for hundreds of students.</li></ul>
+            <ul class="bullets"><li>Decomposed abstract mathematical concepts and complex logic into structured, practical steps — a core skill directly transferred to software architecture, data modeling, and technical communication.</li><li>Designed problem-solving frameworks and quantitative reasoning tracks for hundreds of students.</li></ul>
         </div>
         
         <div class="card avoid-break">
@@ -361,7 +540,7 @@
             </div>
             <div class="item-sub">Diverse Previous Companies</div>
             <p class="item-desc">Developed core professional resilience, operational adaptability, and clear stakeholder communication in fast-paced operational environments.</p>
-            <ul class='bullets'><li>Delivered collaborative problem resolution and agile client requirements gathering under critical support scenarios.</li></ul>
+            <ul class="bullets"><li>Delivered collaborative problem resolution and agile client requirements gathering under critical support scenarios.</li></ul>
         </div>
         </section>
 
@@ -371,7 +550,7 @@
                 <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
             </div>
             <p class="item-desc">FastAPI backend engine for dynamic, stateless resume generation, structurally decoupling data schemas from visual presentation.</p>
-            <ul class="bullets"><li>Resolved API rate-limiting bottlenecks on Gemini 2.5 Flash by engineering asynchronous concurrent dispatching (Python asyncio.gather).</li><li>Drastically reduced server response latency by executing parallel multi-archetype generative pipelines in a single event loop.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Resolved API rate-limiting bottlenecks on Gemini 2.5 Flash by engineering asynchronous concurrent dispatching (Python asyncio.gather).</li><li>Drastically reduced server response latency by executing parallel multi-archetype generative pipelines in a single event loop.</li></ul>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI</span><span class='badge'>Gemini 2.5 Flash</span><span class='badge'>asyncio</span><span class='badge'>YAML</span><span class='badge'>Render</span></div>
         </div>
         
@@ -380,7 +559,7 @@
                 <span class="item-title"><a href="https://assistente-escola-modelo.streamlit.app/" target="_blank">Assistente Escola Modelo (AI &amp; RPA Automation) ↗</a></span>
             </div>
             <p class="item-desc">Administrative AI assistant designed to automate pedagogical workflows and data entry.</p>
-            <ul class="bullets"><li>Implemented RAG architecture with strict prompt guardrails, constraining LLM context to official regulatory documents to eliminate hallucinations.</li><li>Integrated Playwright for Robotic Process Automation (RPA), automating direct data entry into the School Management System with human-in-the-loop verification.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Implemented RAG architecture with strict prompt guardrails, constraining LLM context to official regulatory documents to eliminate hallucinations.</li><li>Integrated Playwright for Robotic Process Automation (RPA), automating direct data entry into the School Management System with human-in-the-loop verification.</li></ul>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>RAG</span><span class='badge'>Playwright</span><span class='badge'>RPA</span><span class='badge'>Streamlit</span><span class='badge'>Prompt Engineering</span></div>
         </div>
         
@@ -389,7 +568,7 @@
                 <span class="item-title"><a href="https://www.heisslab.com.br/laboratorio/assistente-moeda" target="_blank">Assistente-Moeda (Financial Dashboard &amp; Local-First Analytics) ↗</a></span>
             </div>
             <p class="item-desc">Predictive data analytics dashboard for financial return tracking and resource optimization with a stateless, local-first architecture.</p>
-            <ul class="bullets"><li>Engineered scripts calculating daily yield targets and 3-year government bond growth projections.</li><li>Constructed data visualizations dynamically balancing hybrid vehicle operational costs against net profitability.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Engineered scripts calculating daily yield targets and 3-year government bond growth projections.</li><li>Constructed data visualizations dynamically balancing hybrid vehicle operational costs against net profitability.</li></ul>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>REST APIs</span><span class='badge'>Pandas</span><span class='badge'>Turso SQLite</span><span class='badge'>Fintech</span></div>
         </div>
         
@@ -398,7 +577,7 @@
                 <span class="item-title"><a href="https://www.heisslab.com.br/" target="_blank">Digital Leverage for Independent Professionals ↗</a></span>
             </div>
             <p class="item-desc">Local business acceleration via rapid engineering and deployment of high-conversion web assets.</p>
-            <ul class="bullets"><li>Developed and deployed high-performance landing pages for service professionals (languages, aesthetics, HVAC, and executive transport).</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Developed and deployed high-performance landing pages for service professionals (languages, aesthetics, HVAC, and executive transport).</li></ul>
             <div class="tags"><span class='badge'>Vercel</span><span class='badge'>GitHub Pages</span><span class='badge'>Conversion Logic</span><span class='badge'>SEO</span></div>
         </div>
         
@@ -407,50 +586,53 @@
                 <span class="item-title"><a href="https://www.heisslab.com.br/jogos" target="_blank">WebGL Interactive Logic Games ↗</a></span>
             </div>
             <p class="item-desc">Interactive browser-based logic applications focusing on algorithmic problem-solving.</p>
-            <ul class="bullets"><li>Developed interactive WebGL browser games using Godot Engine, applying vector mathematics, state machines, and algorithmic constraints.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Developed interactive WebGL browser games using Godot Engine, applying vector mathematics, state machines, and algorithmic constraints.</li></ul>
             <div class="tags"><span class='badge'>Godot Engine</span><span class='badge'>WebGL</span><span class='badge'>Vector Math</span><span class='badge'>Algorithms</span></div>
         </div>
         </div></section>
 
     <section class="avoid-break"><h2 class="section-title">⚡ Core Competencies & Technical Skills</h2><div class="skills-grid">
         <div class="skill-group avoid-break">
-            <div class="skill-title">Backend &amp; Data Architecture <small>(Advanced)</small></div>
+            <div class="skill-title">⚡ Backend &amp; Data Architecture</div>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI &amp; REST APIs</span><span class='badge'>Asyncio (Concurrent Processing)</span><span class='badge'>SQL &amp; SQLite</span><span class='badge'>Pandas &amp; NumPy</span><span class='badge'>Stateless Systems</span></div>
         </div>
         
         <div class="skill-group avoid-break">
-            <div class="skill-title">AI, RAG &amp; Automation <small>(Advanced)</small></div>
+            <div class="skill-title">⚡ AI, RAG &amp; Automation</div>
             <div class="tags"><span class='badge'>RAG Architectures</span><span class='badge'>Anthropic Claude &amp; Gemini</span><span class='badge'>Prompt Engineering &amp; Guardrails</span><span class='badge'>Playwright (RPA &amp; Scraping)</span><span class='badge'>LLMs</span></div>
         </div>
         
         <div class="skill-group avoid-break">
-            <div class="skill-title">Cloud, DevOps &amp; Tools <small>(Intermediate)</small></div>
+            <div class="skill-title">⚡ Cloud, DevOps &amp; Tools</div>
             <div class="tags"><span class='badge'>Git &amp; GitHub</span><span class='badge'>Cloud Deployments (Render / Vercel)</span><span class='badge'>React &amp; TypeScript (Foundations)</span><span class='badge'>Streamlit</span><span class='badge'>Godot &amp; WebGL</span></div>
         </div>
         
         <div class="skill-group avoid-break">
-            <div class="skill-title">Core Engineering &amp; Leadership <small>(Expert)</small></div>
+            <div class="skill-title">⚡ Core Engineering &amp; Leadership</div>
             <div class="tags"><span class='badge'>Mathematical Logic &amp; Reasoning</span><span class='badge'>Analytical Problem Solving</span><span class='badge'>Clear Technical Communication</span><span class='badge'>Corporate Governance &amp; Agile</span></div>
         </div>
         </div></section>
 
     <section class="avoid-break"><h2 class="section-title">🎓 Education & Academic Background</h2><div class="education-grid">
         <div class="geo-card avoid-break">
-            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
-            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Artificial Intelligence (Associate&#x27;s Degree (Technologist))</div>
-            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">Nove de Julho University (UNINOVE)</div>
+            <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Artificial Intelligence</div>
+            <div class="item-sub" style="font-size: 0.8rem;">Nove de Julho University (UNINOVE) • Associate&#x27;s Degree (Technologist)</div>
+            
         </div>
         
         <div class="geo-card avoid-break">
-            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2012-12-31</span></div>
-            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Mathematics (Bachelor of Education (Licentiate))</div>
-            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">City of São Paulo University (UNICID)</div>
+            <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2010-01-01 — 2012-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Mathematics</div>
+            <div class="item-sub" style="font-size: 0.8rem;">City of São Paulo University (UNICID) • Bachelor of Education (Licentiate)</div>
+            
         </div>
         
         <div class="geo-card avoid-break">
-            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2011-12-31</span></div>
-            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Industrial Electrical Maintenance &amp; Electronics (Vocational &amp; Industrial Apprenticeship)</div>
-            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">SENAI Roberto Simonsen (ISO 9001)</div>
+            <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2010-01-01 — 2011-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Industrial Electrical Maintenance &amp; Electronics</div>
+            <div class="item-sub" style="font-size: 0.8rem;">SENAI Roberto Simonsen (ISO 9001) • Vocational &amp; Industrial Apprenticeship</div>
+            
         </div>
         </div></section>
 
@@ -523,18 +705,18 @@
 
     <section class="avoid-break"><h2 class="section-title">🌐 Languages</h2><div class="languages-grid">
         <div class="lang-card avoid-break">
-            <span>◆ <strong>English</strong></span>
-            <span style="font-size: 0.76rem; color: #64748b;">C1 Advanced (EF SET 61/100 — Full professional proficiency in technical reading, writing, and communication)</span>
+            <span style="font-weight: 600;">English</span>
+            <span class="badge">C1 Advanced (EF SET 61/100 — Full professional proficiency in technical reading, writing, and communication)</span>
         </div>
         
         <div class="lang-card avoid-break">
-            <span>◆ <strong>Spanish</strong></span>
-            <span style="font-size: 0.76rem; color: #64748b;">Intermediate</span>
+            <span style="font-weight: 600;">Spanish</span>
+            <span class="badge">Intermediate</span>
         </div>
         
         <div class="lang-card avoid-break">
-            <span>◆ <strong>Portuguese</strong></span>
-            <span style="font-size: 0.76rem; color: #64748b;">Native</span>
+            <span style="font-weight: 600;">Portuguese</span>
+            <span class="badge">Native</span>
         </div>
         </div></section>
 
@@ -787,6 +969,24 @@ interests:
   </script>
 
   <script>
+    function switchTheme(newTheme) {
+      const container = document.getElementById('cv-container');
+      if (container) {
+        container.className = 'container theme-' + newTheme;
+      }
+      localStorage.setItem('cv_standalone_theme', newTheme);
+    }
+
+    // Auto-carregar o tema selecionado
+    (function() {
+      const initialTheme = 'executive';
+      const sel = document.getElementById('theme-switcher');
+      if (sel) {
+        sel.value = initialTheme;
+      }
+      switchTheme(initialTheme);
+    })();
+
     function downloadYaml() {
       const el = document.getElementById('raw-yaml-data');
       if (!el) return;
@@ -812,7 +1012,6 @@ interests:
           setTimeout(() => { btn.innerText = original; }, 2000);
         }
       }).catch(() => {
-        // Fallback se permissao do clipboard falhar
         const textarea = document.createElement('textarea');
         textarea.value = content;
         document.body.appendChild(textarea);

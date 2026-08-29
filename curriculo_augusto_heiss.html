@@ -1,51 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <title>Augusto Leonardo Farias Heiss — CV Maker 2.0</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap');
-
-    :root {
-      --primary: #1e3a8a;
-      --title: #0f172a;
-      --sub: #334155;
-      --accent: #0284c7;
-      --border: #e2e8f0;
-      --bg-badge: #f1f5f9;
-      --font: 'Merriweather', Georgia, serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@300;400;700&family=Poppins:wght@400;600;700;800&display=swap');
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: var(--font);
+      background: #0f172a;
       color: #1e293b;
-      background: #f8fafc;
-      line-height: 1.5;
+      line-height: 1.55;
       font-size: 10pt;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
+      transition: background 0.2s ease;
     }
 
+    /* ── Floating Toolbar ── */
     .toolbar {
       position: fixed;
       top: 1rem;
       right: 1rem;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.45rem;
       z-index: 999;
-      background: rgba(15, 23, 42, 0.85);
-      padding: 0.5rem 0.75rem;
+      background: rgba(15, 23, 42, 0.92);
+      padding: 0.45rem 0.75rem;
       border-radius: 9999px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.1);
+      align-items: center;
+    }
+
+    .toolbar select {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      padding: 0.35rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
     }
 
     .toolbar button {
       background: #0284c7;
       color: #fff;
       border: none;
-      padding: 0.4rem 0.9rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 9999px;
       font-size: 0.8rem;
       font-weight: 600;
@@ -53,15 +59,26 @@
       display: flex;
       align-items: center;
       gap: 0.3rem;
+      transition: all 0.2s ease;
+    }
+    .toolbar button:hover { background: #0369a1; transform: translateY(-1px); }
+
+    .toolbar button.btn-sec {
+      background: #334155;
+    }
+    .toolbar button.btn-sec:hover {
+      background: #475569;
     }
 
+    /* ── Base Container ── */
     .container {
       max-width: 860px;
       margin: 0 auto;
       background: #ffffff;
       padding: 2.5rem 3rem;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
     }
 
     .header {
@@ -69,22 +86,20 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 1.5rem;
-      border-bottom: 2px solid var(--border);
       padding-bottom: 1.25rem;
       margin-bottom: 1.25rem;
     }
 
     .name {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--primary);
+      font-size: 1.85rem;
+      font-weight: 800;
       margin-bottom: 0.25rem;
+      line-height: 1.2;
     }
 
     .label {
       font-size: 0.95rem;
       font-weight: 600;
-      color: var(--sub);
     }
 
     .contacts {
@@ -98,8 +113,7 @@
 
     .summary {
       font-size: 0.88rem;
-      color: #334155;
-      line-height: 1.55;
+      line-height: 1.58;
       margin-bottom: 1.25rem;
       text-align: justify;
     }
@@ -107,10 +121,8 @@
     .section-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--primary);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border-bottom: 1.5px solid var(--border);
       padding-bottom: 0.3rem;
       margin: 1.25rem 0 0.75rem 0;
       break-after: avoid;
@@ -121,7 +133,6 @@
       display: flex;
       justify-content: space-between;
       font-weight: 700;
-      color: var(--title);
       font-size: 0.92rem;
     }
 
@@ -134,7 +145,6 @@
     .item-sub {
       font-size: 0.82rem;
       font-weight: 600;
-      color: var(--accent);
       margin-bottom: 0.2rem;
     }
 
@@ -159,8 +169,6 @@
     }
 
     .project-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
       padding: 0.75rem;
       border-radius: 6px;
     }
@@ -178,18 +186,11 @@
     .skill-group,
     .geo-card,
     .interest-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--primary);
       padding: 0.6rem;
       border-radius: 6px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-
-    .geo-card {
-      border-left: 3px solid var(--accent);
     }
 
     .card-top {
@@ -204,9 +205,6 @@
     }
 
     .lang-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-left: 3px solid #10b981;
       padding: 0.5rem 0.65rem;
       border-radius: 6px;
       display: flex;
@@ -220,10 +218,7 @@
       font-size: 0.7rem;
       font-weight: 600;
       padding: 0.1rem 0.4rem;
-      background: var(--bg-badge);
-      border: 1px solid var(--border);
       border-radius: 4px;
-      color: var(--sub);
       margin-top: 0.25rem;
       width: fit-content;
     }
@@ -231,7 +226,6 @@
     .skill-title {
       font-size: 0.82rem;
       font-weight: 700;
-      color: var(--title);
       margin-bottom: 0.4rem;
     }
 
@@ -246,10 +240,7 @@
       font-size: 0.7rem;
       font-weight: 600;
       padding: 0.15rem 0.45rem;
-      background: var(--bg-badge);
-      border: 1px solid var(--border);
       border-radius: 4px;
-      color: var(--sub);
     }
 
     .avoid-break {
@@ -258,7 +249,6 @@
     }
 
     a, .cv-link {
-      color: var(--accent);
       text-decoration: none;
       font-weight: 500;
     }
@@ -266,12 +256,205 @@
       text-decoration: underline;
     }
 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  1. TEMA EXECUTIVO (theme-executive)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-executive {
+      font-family: 'Merriweather', Georgia, serif;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    .theme-executive .header { border-bottom: 2px solid #111827; }
+    .theme-executive .name { color: #050505; }
+    .theme-executive .label { color: #374151; }
+    .theme-executive .section-title { color: #111827; border-bottom: 1.5px solid #374151; }
+    .theme-executive .item-title { color: #111827; }
+    .theme-executive .item-sub { color: #1f2937; }
+    .theme-executive a, .theme-executive .cv-link { color: #1f2937; text-decoration: underline; }
+    .theme-executive .project-card,
+    .theme-executive .skill-group,
+    .theme-executive .geo-card,
+    .theme-executive .interest-card,
+    .theme-executive .lang-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-left: 3px solid #111827;
+      border-radius: 0;
+    }
+    .theme-executive .badge,
+    .theme-executive .issuer-pill {
+      background: transparent;
+      color: #374151;
+      border: 1px solid #9ca3af;
+      border-radius: 0;
+      font-family: 'Courier Prime', monospace;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  2. TEMA CRIATIVO (theme-creative)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-creative {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+    }
+    .theme-creative .header { border-bottom: 3px solid #2563eb; }
+    .theme-creative .name { color: #1e3a8a; font-weight: 800; }
+    .theme-creative .label { color: #f97316; font-weight: 600; }
+    .theme-creative .section-title { color: #1e3a8a; border-bottom: 2px solid #bfdbfe; }
+    .theme-creative .item-title { color: #1e1b4b; }
+    .theme-creative .item-sub { color: #2563eb; }
+    .theme-creative a, .theme-creative .cv-link { color: #2563eb; }
+    .theme-creative .project-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+    }
+    .theme-creative .skill-group,
+    .theme-creative .geo-card,
+    .theme-creative .lang-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 3px solid #2563eb;
+      border-radius: 8px;
+    }
+    .theme-creative .interest-card {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-left: 3px solid #9333ea;
+      border-radius: 8px;
+    }
+    .theme-creative .badge {
+      background: #dbeafe;
+      color: #1e3a8a;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+    }
+    .theme-creative .issuer-pill {
+      background: #ffedd5;
+      color: #c2410c;
+      border: 1px solid #fed7aa;
+      border-radius: 4px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  3. TEMA MINIMALISTA (theme-minimalist)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-minimalist {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+    }
+    .theme-minimalist .header { border-bottom: 1px solid #e2e8f0; }
+    .theme-minimalist .name { color: #0f172a; font-weight: 800; letter-spacing: -0.04em; }
+    .theme-minimalist .label { color: #64748b; font-weight: 500; }
+    .theme-minimalist .section-title { color: #475569; border-bottom: 1px solid #e2e8f0; letter-spacing: 0.1em; }
+    .theme-minimalist .item-title { color: #0f172a; }
+    .theme-minimalist .item-sub { color: #334155; }
+    .theme-minimalist a, .theme-minimalist .cv-link { color: #475569; }
+    .theme-minimalist .project-card,
+    .theme-minimalist .skill-group,
+    .theme-minimalist .geo-card,
+    .theme-minimalist .interest-card,
+    .theme-minimalist .lang-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 2px solid #64748b;
+      border-radius: 4px;
+    }
+    .theme-minimalist .badge,
+    .theme-minimalist .issuer-pill {
+      background: transparent;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  4. TEMA WHITE (theme-white)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-white {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #334155;
+      background: #ffffff;
+    }
+    .theme-white .header { border-bottom: 2.5px solid #059669; }
+    .theme-white .name { color: #0f172a; font-weight: 800; }
+    .theme-white .label { color: #059669; font-weight: 600; }
+    .theme-white .section-title { color: #059669; border-bottom: 1.5px solid #cbd5e1; }
+    .theme-white .item-title { color: #0f172a; }
+    .theme-white .item-sub { color: #059669; }
+    .theme-white a, .theme-white .cv-link { color: #059669; }
+    .theme-white .project-card,
+    .theme-white .skill-group,
+    .theme-white .geo-card,
+    .theme-white .interest-card,
+    .theme-white .lang-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #059669;
+      border-radius: 6px;
+    }
+    .theme-white .badge {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+    }
+    .theme-white .issuer-pill {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      border-radius: 4px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ■  5. TEMA TERMINAL (theme-terminal)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .theme-terminal {
+      font-family: 'Courier Prime', 'Fira Code', monospace, 'Inter', sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+    }
+    .theme-terminal .header { border-bottom: 2.5px solid #10b981; }
+    .theme-terminal .name { color: #000000; font-weight: 800; font-family: 'Courier Prime', monospace; }
+    .theme-terminal .label { color: #059669; font-family: 'Courier Prime', monospace; font-weight: 700; }
+    .theme-terminal .section-title { color: #059669; border-bottom: 1.5px solid #10b981; font-family: 'Courier Prime', monospace; }
+    .theme-terminal .item-title { color: #000000; font-family: 'Courier Prime', monospace; }
+    .theme-terminal .item-sub { color: #059669; font-family: 'Courier Prime', monospace; }
+    .theme-terminal a, .theme-terminal .cv-link { color: #059669; }
+    .theme-terminal .project-card,
+    .theme-terminal .skill-group,
+    .theme-terminal .geo-card,
+    .theme-terminal .interest-card,
+    .theme-terminal .lang-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #10b981;
+      border-radius: 4px;
+    }
+    .theme-terminal .badge,
+    .theme-terminal .issuer-pill {
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #94a3b8;
+      border-radius: 3px;
+      font-family: 'Courier Prime', monospace;
+    }
+
     /* ── @media print ── */
     @media print {
+      *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
       body {
         background: #ffffff !important;
         padding: 0 !important;
-        font-size: 9pt !important;
+        margin: 0 !important;
+        font-size: 9.6pt !important;
       }
       .toolbar { display: none !important; }
       .container {
@@ -280,33 +463,29 @@
         padding: 0 !important;
         max-width: 100% !important;
       }
-      a, .cv-link {
-        color: #0284c7 !important;
-        text-decoration: none !important;
-      }
       @page {
         size: A4 portrait;
         margin: 6mm 8mm 6mm 8mm !important;
       }
-    }
-
-    .toolbar button.btn-sec {
-      background: #334155;
-    }
-    .toolbar button.btn-sec:hover {
-      background: #475569;
     }
   </style>
 </head>
 <body>
 
   <div class="toolbar">
+    <select id="theme-switcher" onchange="switchTheme(this.value)" title="Modelo:">
+      <option value="executive">👔 Executivo</option>
+      <option value="creative">🎨 Criativo</option>
+      <option value="minimalist">🔹 Minimalista</option>
+      <option value="white">📄 White</option>
+      <option value="terminal">>_ Terminal</option>
+    </select>
     <button onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
     <button onclick="downloadYaml()" class="btn-sec">📥 Baixar YAML</button>
     <button id="copy-btn" onclick="copyYaml()" class="btn-sec">📋 Copiar YAML</button>
   </div>
 
-  <div class="container">
+  <div id="cv-container" class="container theme-executive">
     <header class="header">
       <div>
         <h1 class="name">Augusto Leonardo Farias Heiss</h1>
@@ -331,7 +510,7 @@
             </div>
             <div class="item-sub">IBM</div>
             <p class="item-desc">Atuação no ecossistema de desenvolvimento da IBM, com foco em imersão nas práticas de Engenharia de Software, integração de soluções tecnológicas e colaboração em times multidisciplinares sob metodologias ágeis em um ambiente corporativo global.</p>
-            <ul class='bullets'><li>Aprofundamento prático em arquiteturas de Nuvem Híbrida e no ecossistema de Inteligência Artificial corporativa, alinhando fundamentos de Python e APIs com rigorosas diretrizes de governança e segurança.</li><li>Desenvolvimento contínuo de lógicas de automação, consumo de APIs e estruturação de dados para aceleração de processos de engenharia.</li><li>Participação em treinamentos avançados de Indústria (Energy, Environment &amp; Utilities) e consolidação de competências de crescimento (IBM Growth Behaviors).</li></ul>
+            <ul class="bullets"><li>Aprofundamento prático em arquiteturas de Nuvem Híbrida e no ecossistema de Inteligência Artificial corporativa, alinhando fundamentos de Python e APIs com rigorosas diretrizes de governança e segurança.</li><li>Desenvolvimento contínuo de lógicas de automação, consumo de APIs e estruturação de dados para aceleração de processos de engenharia.</li><li>Participação em treinamentos avançados de Indústria (Energy, Environment &amp; Utilities) e consolidação de competências de crescimento (IBM Growth Behaviors).</li></ul>
         </div>
         
         <div class="card avoid-break">
@@ -341,7 +520,7 @@
             </div>
             <div class="item-sub">Freelance / Heiss-Lab</div>
             <p class="item-desc">Desenvolvimento de aplicações web personalizadas, APIs e automações com IA para profissionais autônomos. Responsável pelo levantamento de requisitos e codificação de soluções ponta a ponta.</p>
-            <ul class='bullets'><li>Engenharia de plataformas educacionais baseadas em RAG e geradores dinâmicos de currículos integrados com FastAPI e processamento assíncrono.</li><li>Criação de dashboards de dados preditivos para acompanhamento financeiro e otimização de recursos.</li><li>Deploy e sustentação de páginas e APIs stateless em plataformas em nuvem (Vercel, Render, GitHub Pages).</li></ul>
+            <ul class="bullets"><li>Engenharia de plataformas educacionais baseadas em RAG e geradores dinâmicos de currículos integrados com FastAPI e processamento assíncrono.</li><li>Criação de dashboards de dados preditivos para acompanhamento financeiro e otimização de recursos.</li><li>Deploy e sustentação de páginas e APIs stateless em plataformas em nuvem (Vercel, Render, GitHub Pages).</li></ul>
         </div>
         
         <div class="card avoid-break">
@@ -351,7 +530,7 @@
             </div>
             <div class="item-sub">Secretaria Municipal de Educação de São Paulo</div>
             <p class="item-desc">Gestão e liderança pedagógica de mais de 20 turmas anualmente. Aplicação de forte raciocínio analítico para adaptar métodos de ensino sob alta demanda e pressão.</p>
-            <ul class='bullets'><li>Ampla experiência em decompor conceitos teóricos e lógicos complexos em etapas práticas e de fácil compreensão — habilidade transferida diretamente para estruturação de lógica de software e comunicação técnica.</li><li>Desenvolvimento de metodologias ativas de resolução de problemas algorítmicos e raciocínio quantitativo para centenas de estudantes.</li></ul>
+            <ul class="bullets"><li>Ampla experiência em decompor conceitos teóricos e lógicos complexos em etapas práticas e de fácil compreensão — habilidade transferida diretamente para estruturação de lógica de software e comunicação técnica.</li><li>Desenvolvimento de metodologias ativas de resolução de problemas algorítmicos e raciocínio quantitativo para centenas de estudantes.</li></ul>
         </div>
         
         <div class="card avoid-break">
@@ -361,7 +540,7 @@
             </div>
             <div class="item-sub">Empresas Anteriores Diversas</div>
             <p class="item-desc">Desenvolvimento de competências essenciais de adaptabilidade, resiliência e comunicação clara em ambientes operacionais de ritmo acelerado.</p>
-            <ul class='bullets'><li>Resolução colaborativa de problemas e levantamento ágil de requisitos de clientes sob cenários críticos de atendimento.</li></ul>
+            <ul class="bullets"><li>Resolução colaborativa de problemas e levantamento ágil de requisitos de clientes sob cenários críticos de atendimento.</li></ul>
         </div>
         </section>
 
@@ -371,7 +550,7 @@
                 <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
             </div>
             <p class="item-desc">API backend baseada em FastAPI para geração dinâmica de currículos, separando estruturalmente os dados em YAML da camada de apresentação visual.</p>
-            <ul class="bullets"><li>Identificação e resolução de gargalos de limite de requisições na API do Gemini 2.5 Flash através da implementação de processamento assíncrono concorrente (asyncio.gather do Python).</li><li>Redução significativa da latência de resposta do servidor executando múltiplas requisições simultâneas em um único event loop.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Identificação e resolução de gargalos de limite de requisições na API do Gemini 2.5 Flash através da implementação de processamento assíncrono concorrente (asyncio.gather do Python).</li><li>Redução significativa da latência de resposta do servidor executando múltiplas requisições simultâneas em um único event loop.</li></ul>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI</span><span class='badge'>Gemini 2.5 Flash</span><span class='badge'>asyncio</span><span class='badge'>YAML</span><span class='badge'>Render</span></div>
         </div>
         
@@ -380,7 +559,7 @@
                 <span class="item-title"><a href="https://assistente-escola-modelo.streamlit.app/" target="_blank">Assistente Escola Modelo (Automação com IA/RPA) ↗</a></span>
             </div>
             <p class="item-desc">Assistente administrativo com inteligência artificial desenvolvido para automatizar fluxos de trabalho de dados pedagógicos.</p>
-            <ul class="bullets"><li>Implementação de arquitetura RAG com guardrails estritos de prompt, restringindo o contexto da LLM a documentos oficiais para mitigar alucinações de forma eficaz.</li><li>Integração do Playwright para Automação de Processos Robóticos (RPA), automatizando a inserção de dados diretamente no Sistema de Gestão Escolar com protocolos de verificação &#x27;Human-in-the-loop&#x27;.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Implementação de arquitetura RAG com guardrails estritos de prompt, restringindo o contexto da LLM a documentos oficiais para mitigar alucinações de forma eficaz.</li><li>Integração do Playwright para Automação de Processos Robóticos (RPA), automatizando a inserção de dados diretamente no Sistema de Gestão Escolar com protocolos de verificação &#x27;Human-in-the-loop&#x27;.</li></ul>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>RAG</span><span class='badge'>Playwright</span><span class='badge'>RPA</span><span class='badge'>Streamlit</span><span class='badge'>Engenharia de Prompt</span></div>
         </div>
         
@@ -389,7 +568,7 @@
                 <span class="item-title"><a href="https://www.heisslab.com.br/laboratorio/assistente-moeda" target="_blank">Assistente-Moeda (Dashboard Financeiro &amp; Local-First) ↗</a></span>
             </div>
             <p class="item-desc">Dashboard de dados preditivos para acompanhamento de retornos financeiros e otimização de recursos com arquitetura stateless.</p>
-            <ul class="bullets"><li>Desenvolvimento de scripts para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos.</li><li>Criação de visualizações de dados para balancear dinamicamente os custos operacionais de um veículo híbrido contra a rentabilidade projetada.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Desenvolvimento de scripts para calcular metas de rendimento diário e projetar retornos do Tesouro Direto em um horizonte de 3 anos.</li><li>Criação de visualizações de dados para balancear dinamicamente os custos operacionais de um veículo híbrido contra a rentabilidade projetada.</li></ul>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>APIs REST</span><span class='badge'>Pandas</span><span class='badge'>Turso SQLite</span><span class='badge'>Finanças</span></div>
         </div>
         
@@ -398,7 +577,7 @@
                 <span class="item-title"><a href="https://www.heisslab.com.br/" target="_blank">Alavanca Tecnológica para Autônomos ↗</a></span>
             </div>
             <p class="item-desc">Aceleração de negócios locais através do desenvolvimento e deploy de páginas estruturadas para alta conversão.</p>
-            <ul class="bullets"><li>Desenvolvimento e deploy de landing pages de alta performance para profissionais autônomos (idiomas, estética, climatização e transporte executivo).</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Desenvolvimento e deploy de landing pages de alta performance para profissionais autônomos (idiomas, estética, climatização e transporte executivo).</li></ul>
             <div class="tags"><span class='badge'>Vercel</span><span class='badge'>GitHub Pages</span><span class='badge'>Lógica de Conversão</span><span class='badge'>SEO</span></div>
         </div>
         
@@ -407,50 +586,53 @@
                 <span class="item-title"><a href="https://www.heisslab.com.br/jogos" target="_blank">WebGL Interactive Logic Games ↗</a></span>
             </div>
             <p class="item-desc">Aplicações web interativas baseadas em lógica com foco na resolução de problemas algorítmicos.</p>
-            <ul class="bullets"><li>Desenvolvimento de aplicações interativas para navegador utilizando a Godot Engine, aplicando matemática vetorial, gerenciamento de estado e lógica algorítmica sob restrições estritas.</li></ul>
+            <ul class="bullets" style="margin-bottom: 0.4rem;"><li>Desenvolvimento de aplicações interativas para navegador utilizando a Godot Engine, aplicando matemática vetorial, gerenciamento de estado e lógica algorítmica sob restrições estritas.</li></ul>
             <div class="tags"><span class='badge'>Godot Engine</span><span class='badge'>WebGL</span><span class='badge'>Matemática Vetorial</span><span class='badge'>Algoritmos</span></div>
         </div>
         </div></section>
 
     <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid">
         <div class="skill-group avoid-break">
-            <div class="skill-title">Backend &amp; Dados <small>(Avançado)</small></div>
+            <div class="skill-title">⚡ Backend &amp; Dados</div>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI &amp; APIs REST</span><span class='badge'>Asyncio (Processamento Concorrente)</span><span class='badge'>SQL &amp; SQLite</span><span class='badge'>Pandas &amp; NumPy</span><span class='badge'>Arquitetura Stateless</span></div>
         </div>
         
         <div class="skill-group avoid-break">
-            <div class="skill-title">IA, RAG &amp; Automação <small>(Avançado)</small></div>
+            <div class="skill-title">⚡ IA, RAG &amp; Automação</div>
             <div class="tags"><span class='badge'>Arquiteturas RAG</span><span class='badge'>Anthropic Claude &amp; Gemini</span><span class='badge'>Engenharia de Prompt &amp; Guardrails</span><span class='badge'>Playwright (RPA &amp; Web Scraping)</span><span class='badge'>LLMs</span></div>
         </div>
         
         <div class="skill-group avoid-break">
-            <div class="skill-title">Cloud, DevOps &amp; Ferramentas <small>(Intermediário)</small></div>
+            <div class="skill-title">⚡ Cloud, DevOps &amp; Ferramentas</div>
             <div class="tags"><span class='badge'>Git &amp; GitHub</span><span class='badge'>Deploy (Render / Vercel)</span><span class='badge'>React &amp; TypeScript (Básico)</span><span class='badge'>Streamlit</span><span class='badge'>Godot &amp; WebGL</span></div>
         </div>
         
         <div class="skill-group avoid-break">
-            <div class="skill-title">Competências Centrais &amp; Liderança <small>(Especialista)</small></div>
+            <div class="skill-title">⚡ Competências Centrais &amp; Liderança</div>
             <div class="tags"><span class='badge'>Raciocínio Lógico Matemático</span><span class='badge'>Resolução Analítica de Problemas</span><span class='badge'>Comunicação Técnica Clara</span><span class='badge'>Governança &amp; Práticas Ágeis</span></div>
         </div>
         </div></section>
 
     <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid">
         <div class="geo-card avoid-break">
-            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
-            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Inteligência Artificial (Tecnólogo)</div>
-            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">Universidade Nove de Julho (UNINOVE)</div>
+            <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Inteligência Artificial</div>
+            <div class="item-sub" style="font-size: 0.8rem;">Universidade Nove de Julho (UNINOVE) • Tecnólogo</div>
+            
         </div>
         
         <div class="geo-card avoid-break">
-            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2012-12-31</span></div>
-            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Matemática (Licenciatura)</div>
-            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">Universidade Cidade de São Paulo (UNICID)</div>
+            <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2010-01-01 — 2012-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Matemática</div>
+            <div class="item-sub" style="font-size: 0.8rem;">Universidade Cidade de São Paulo (UNICID) • Licenciatura</div>
+            
         </div>
         
         <div class="geo-card avoid-break">
-            <div class="card-top"><span class="geo-icon">🏛️</span><span class="item-date">2010-01-01 — 2011-12-31</span></div>
-            <div class="item-title" style="font-weight: 700; font-size: 0.88rem;">Eletrônica / Eletricista de Manutenção (Curso Técnico e Aprendizagem Industrial)</div>
-            <div class="item-sub" style="font-size: 0.8rem; color: #475569;">SENAI Roberto Simonsen (ISO 9001)</div>
+            <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2010-01-01 — 2011-12-31</span></div>
+            <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Eletrônica / Eletricista de Manutenção</div>
+            <div class="item-sub" style="font-size: 0.8rem;">SENAI Roberto Simonsen (ISO 9001) • Curso Técnico e Aprendizagem Industrial</div>
+            
         </div>
         </div></section>
 
@@ -523,18 +705,18 @@
 
     <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid">
         <div class="lang-card avoid-break">
-            <span>◆ <strong>Inglês</strong></span>
-            <span style="font-size: 0.76rem; color: #64748b;">C1 Advanced (EF SET 61/100 — Fluência na Leitura, Escrita e Comunicação Técnica)</span>
+            <span style="font-weight: 600;">Inglês</span>
+            <span class="badge">C1 Advanced (EF SET 61/100 — Fluência na Leitura, Escrita e Comunicação Técnica)</span>
         </div>
         
         <div class="lang-card avoid-break">
-            <span>◆ <strong>Espanhol</strong></span>
-            <span style="font-size: 0.76rem; color: #64748b;">Intermediário</span>
+            <span style="font-weight: 600;">Espanhol</span>
+            <span class="badge">Intermediário</span>
         </div>
         
         <div class="lang-card avoid-break">
-            <span>◆ <strong>Português</strong></span>
-            <span style="font-size: 0.76rem; color: #64748b;">Nativo</span>
+            <span style="font-weight: 600;">Português</span>
+            <span class="badge">Nativo</span>
         </div>
         </div></section>
 
@@ -786,6 +968,24 @@ interests:
   </script>
 
   <script>
+    function switchTheme(newTheme) {
+      const container = document.getElementById('cv-container');
+      if (container) {
+        container.className = 'container theme-' + newTheme;
+      }
+      localStorage.setItem('cv_standalone_theme', newTheme);
+    }
+
+    // Auto-carregar o tema selecionado
+    (function() {
+      const initialTheme = 'executive';
+      const sel = document.getElementById('theme-switcher');
+      if (sel) {
+        sel.value = initialTheme;
+      }
+      switchTheme(initialTheme);
+    })();
+
     function downloadYaml() {
       const el = document.getElementById('raw-yaml-data');
       if (!el) return;
@@ -811,7 +1011,6 @@ interests:
           setTimeout(() => { btn.innerText = original; }, 2000);
         }
       }).catch(() => {
-        // Fallback se permissao do clipboard falhar
         const textarea = document.createElement('textarea');
         textarea.value = content;
         document.body.appendChild(textarea);
