@@ -1,10 +1,10 @@
 basics:
   name: Augusto Leonardo Farias Heiss
-  label: Software Engineer & Backend Developer | Python, Enterprise AI (RAG) & Microservices
+  label: Software Engineer & Backend Solutions Architect | Python, Enterprise AI (RAG) & Hybrid Cloud
   email: augustoheiss@gmail.com
   phone: "+55 11 98135-5495"
   url: https://www.linkedin.com/in/augustoheiss
-  summary: Software Engineer with a solid analytical background in Mathematics, specializing in resilient backend services, asynchronous FastAPI microservices, and enterprise AI orchestration (RAG). Combines analytical rigor honed over 7 years of mathematics instruction with contemporary software engineering practices to deliver clean code, technical governance, and high operational throughput. Operating within the IBM development ecosystem in Hybrid Cloud and Enterprise AI, applying concurrent async architectures, robust robotic process automations (RPA with Playwright), and strict LLM hallucination mitigation via structured guardrails and Local-First systems.
+  summary: Software Engineer with a solid foundation in Mathematics, specializing in high-throughput asynchronous microservices (FastAPI), enterprise Generative AI pipelines (RAG), and resilient robotic browser automations (Playwright). Operating within the IBM Hybrid Cloud and Enterprise AI ecosystem, engineering secure enterprise integrations under rigorous governance frameworks, compliance standards, and IBM Growth Behaviors. Combines 7 years of analytical rigor and complex problem decomposition in mathematics instruction with contemporary Local-First architecture patterns, ensuring clean code, data sovereignty, and strict LLM hallucination mitigation.
   location:
     city: Ferraz de Vasconcelos
     region: São Paulo
@@ -23,46 +23,46 @@ basics:
 
 work:
   - name: IBM
-    position: Software Engineering Intern
+    position: Software Engineering Intern — Hybrid Cloud & Enterprise AI
     url: https://www.ibm.com
     startDate: '2026-07-06'
     endDate: null
-    summary: Technical contributor within IBM's global Software Engineering ecosystem, building and integrating enterprise Hybrid Cloud and AI solutions under rigorous governance, compliance, and agile frameworks.
+    summary: Technical contributor within IBM's global Software Engineering ecosystem, architecting Hybrid Cloud and Artificial Intelligence integrations for the Energy, Environment & Utilities sector under rigorous governance and information security frameworks.
     highlights:
-      - Architected and validated integrations with Python and enterprise APIs, enforcing strict information security and governance policies across Hybrid Cloud environments.
-      - Automated complex data structuring and consumption pipelines, accelerating engineering workflows by eliminating manual bottlenecks.
-      - Applied enterprise competencies (IBM Growth Behaviors) to align Energy, Environment & Utilities sector technical requirements with scalable engineering standards.
+      - Architected and validated enterprise integrations using Python and RESTful APIs, enforcing compliance with information security policies across Hybrid Cloud environments.
+      - Automated complex analytical data consumption and ingestion pipelines, eliminating manual intervention and accelerating engineering workflows.
+      - Applied enterprise agile practices and IBM Growth Behaviors to translate multifaceted technical requirements into scalable, production-grade software architectures.
 
   - name: Freelance / Heiss-Lab
-    position: Backend Software Engineer & AI Solutions Architect
+    position: Backend Software Architect & AI Solutions Engineer
     url: https://www.heisslab.com.br/
     startDate: '2026-02-01'
     endDate: null
-    summary: End-to-end technical leadership and architecture of scalable APIs, intelligent RAG automation platforms, and high-impact analytical dashboards for independent businesses.
+    summary: Technical leadership in the design, architecture, and deployment of low-latency microservices, autonomous RAG engines, and high-availability predictive dashboards.
     highlights:
-      - Built high-performance asynchronous APIs with FastAPI and Python, slashing end-to-end latency by decoupling structured data payloads from the presentation layer.
-      - Implemented end-to-end process automation with LLM guardrails and RPA (Playwright), eliminating operational errors and ensuring data integrity via Human-in-the-Loop design.
-      - Managed continuous deployment pipelines across stateless cloud platforms (Render, Vercel), maintaining 99.9% uptime for core client applications.
+      - Engineered high-performance APIs with FastAPI and concurrent asynchronous processing (asyncio), slashing end-to-end latency by decoupling structured payloads from visual rendering layers.
+      - Implemented end-to-end process automation systems with LLM guardrails and RPA (Playwright), eliminating operational errors under audit-ready Human-in-the-Loop governance.
+      - Orchestrated continuous deployment pipelines across stateless cloud platforms (Render, Vercel), maintaining 99.9% operational uptime.
 
   - name: São Paulo Municipal Department of Education
-    position: Pedagogical Lead & Mathematical Logic Specialist
+    position: Mathematics Instruction & Logical Reasoning Leadership
     url: ''
     startDate: '2019-08-01'
     endDate: '2026-07-01'
-    summary: Analytical management and instructional leadership across 20+ classes annually, cultivating algorithmic thinking, structured problem decomposition, and clear technical communication under high-demand environments.
+    summary: Instructional leadership and analytical management across 20+ annual student cohorts, cultivating algorithmic thinking, logical modularization, and clear technical communication under high-demand environments.
     highlights:
-      - Designed active problem-solving methodologies and quantitative reasoning tracks, elevating analytical velocity for hundreds of students annually.
-      - Decomposed abstract mathematical theorems and complex systems into digestible logical modules—a core skill directly transferred to software modularization and clean architecture.
-      - Led educational governance and performance indicator reviews, translating multifaceted challenges into actionable operational plans.
+      - Structured active problem-solving methodologies and quantitative reasoning tracks, accelerating analytical proficiency for hundreds of students annually.
+      - Decomposed abstract systems and complex theorems into clear, modular logical units—a foundational discipline directly transferred to clean, modular software architecture.
+      - Led pedagogical governance and performance indicators, translating multifaceted challenges into actionable, measurable operational execution plans.
 
   - name: Diverse Previous Companies
-    position: Operations & Customer Support Specialist
+    position: Operations & Critical Incident Resolution Specialist
     url: ''
     startDate: '2009-01-01'
     endDate: '2018-12-31'
-    summary: Operational execution and critical problem resolution in fast-paced, high-pressure service environments.
+    summary: Critical operations execution and stakeholder support in fast-paced, high-pressure environments.
     highlights:
-      - Neutralized critical operational incidents and mapped complex user requirements under pressure, boosting resolution rates and customer satisfaction metrics.
+      - Neutralized critical operational incidents and mapped complex user requirements under pressure, consistently boosting resolution rates and customer satisfaction metrics.
 
 education:
   - institution: Universidade Nove de Julho (UNINOVE)
@@ -112,37 +112,35 @@ projects:
     description: Enterprise dynamic structured document generation API powered by FastAPI, RAG architecture, and generative LLMs.
     highlights:
       - Optimized system throughput by eliminating Gemini 3.7 Flash (High Thinking) API rate-limit bottlenecks through concurrent asynchronous execution via asyncio.gather in a single event loop.
-      - Drastically reduced response latency by decoupling standardized YAML schemas from the visual presentation layer.
+      - Drastically reduced response latency by decoupling standardized YAML schemas from the visual standalone rendering layer.
     keywords:
       - Python
       - FastAPI
       - Asyncio
       - Gemini 3.7 Flash
       - RAG
-      - Backend Architecture
       - Render
     url: https://heisslab.com.br/laboratorio/cv-maker
 
   - name: Assistente Escola Modelo (Enterprise RAG & RPA)
     description: Intelligent automation suite for administrative and pedagogical workflows leveraging generative AI and browser orchestration.
     highlights:
-      - Implemented RAG pipeline with strict prompt guardrails, scoping context to official regulatory sources and suppressing LLM hallucinations to enterprise thresholds.
-      - Automated legacy system data ingestion using Playwright (RPA) under Human-in-the-Loop governance, guaranteeing auditability and compliance.
+      - Implemented RAG pipeline with strict prompt guardrails, suppressing LLM hallucinations to enterprise compliance thresholds.
+      - Automated legacy system workflows via Playwright (RPA) under auditable Human-in-the-Loop governance.
     keywords:
       - Python
       - RAG
       - Playwright
       - RPA
       - Streamlit
-      - Prompt Engineering
       - AI Governance
     url: https://assistente-escola-modelo.streamlit.app/
 
   - name: Assistente-Moeda (Local-First Financial Dashboard)
-    description: Predictive financial analytics engine based on stateless architecture and distributed client-side persistence.
+    description: Predictive financial analytics engine based on stateless architecture and Local-First persistence with SQLite/Turso.
     highlights:
-      - Engineered deterministic simulation algorithms for multi-year government bond projections and hybrid vehicle operational cost balancing.
-      - Architected Local-First pipeline with Turso SQLite and Pandas, ensuring data sovereignty, sub-millisecond retrieval, and zero-waste API consumption.
+      - Engineered deterministic simulation algorithms for multi-year government bond projections and yield forecasting.
+      - Architected Local-First pipeline with Turso DB and Pandas, guaranteeing user data sovereignty and zero API token waste.
     keywords:
       - Python
       - REST APIs
@@ -153,9 +151,9 @@ projects:
     url: https://www.heisslab.com.br/laboratorio/assistente-moeda
 
   - name: WebGL Interactive Logic Engines
-    description: High-performance interactive browser engines executing algorithmic challenges and vector logic under low-latency constraints.
+    description: High-performance browser engines executing algorithmic logic and vector mathematics under real-time constraints.
     highlights:
-      - Developed interactive computational mechanics in Godot Engine and WebGL, enforcing rigorous state management and applied vector mathematics.
+      - Developed interactive computational mechanics in Godot Engine and WebGL, enforcing rigorous state management and applied vector physics.
     keywords:
       - Godot Engine
       - WebGL
@@ -168,17 +166,17 @@ publications:
     publisher: LinkedIn Pulse
     releaseDate: '2026-08-10'
     url: https://www.linkedin.com/in/augustoheiss
-    summary: Technical analysis on pragmatic software engineering, agile methodologies, and architectural adaptability in the age of AI-driven systems.
+    summary: Technical analysis on pragmatic software engineering, agile methodologies, and architectural adaptability in the age of AI.
   - name: 'Your Money, Your Data: The Silent Local-First Revolution'
     publisher: LinkedIn Pulse
     releaseDate: '2026-05-31'
     url: https://www.linkedin.com/in/augustoheiss
-    summary: Architectural study on user data sovereignty, in-memory stateless patterns, and resilience in modern financial applications.
+    summary: Architectural study on user data sovereignty, stateless patterns, and resilience in modern financial applications.
   - name: 'The End of Interface Monopoly: How AI Agents are Redefining Software'
     publisher: LinkedIn Pulse
     releaseDate: '2026-05-12'
     url: https://www.linkedin.com/in/augustoheiss
-    summary: Strategic exploration on the evolution of graphical user interfaces and the rise of autonomous agents interacting via zero-UI programmatic APIs.
+    summary: Strategic exploration on the evolution of graphical user interfaces toward autonomous agents interacting via zero-UI programmatic APIs.
 
 skills:
   - name: Backend Architecture & APIs
@@ -189,8 +187,7 @@ skills:
       - RESTful APIs
       - Asyncio & Concurrency
       - Stateless Architecture
-      - Object-Oriented Programming (OOP)
-      - Design Patterns
+      - OOP & Design Patterns
   - name: AI Engineering & Automation
     level: Advanced
     keywords:
