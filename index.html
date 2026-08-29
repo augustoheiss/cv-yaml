@@ -185,6 +185,105 @@
                 color: #334155 !important;
                 border: 1px solid #cbd5e1 !important;
             }
+        /* ======== TEMA TERMINAL (PADRÃO) ======== */
+
+        html.tema-terminal,
+        body.tema-terminal {
+            font-family: 'Courier Prime', 'Fira Code', monospace, 'Inter', sans-serif !important;
+        }
+
+        /* Print Terminal */
+        @media print {
+            body.tema-terminal,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) {
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+                font-family: 'Courier Prime', 'Fira Code', monospace, 'Inter', sans-serif !important;
+            }
+            body.tema-terminal .bg-slate-800,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .bg-slate-800 {
+                background-color: #ffffff !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            body.tema-terminal h1,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) h1 {
+                color: #000000 !important;
+                font-weight: 800 !important;
+                font-family: 'Courier Prime', monospace !important;
+            }
+            body.tema-terminal #label,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) #label,
+            body.tema-terminal .text-emerald-400,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .text-emerald-400 {
+                color: #059669 !important;
+                font-weight: 700 !important;
+                font-family: 'Courier Prime', monospace !important;
+            }
+            body.tema-terminal h2,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) h2 {
+                color: #059669 !important;
+                border-bottom: 1.5px solid #10b981 !important;
+                font-family: 'Courier Prime', monospace !important;
+            }
+            body.tema-terminal h3,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) h3 {
+                color: #000000 !important;
+                font-family: 'Courier Prime', monospace !important;
+            }
+            body.tema-terminal .text-white,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .text-white {
+                color: #0f172a !important;
+            }
+            body.tema-terminal .text-slate-300,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .text-slate-300 {
+                color: #334155 !important;
+            }
+            body.tema-terminal .text-slate-400,
+            body.tema-terminal .text-slate-500,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .text-slate-400,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .text-slate-500 {
+                color: #475569 !important;
+            }
+            body.tema-terminal header.border-b-2,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) header.border-b-2 {
+                border-bottom: 2.5px solid #10b981 !important;
+            }
+            body.tema-terminal .border-slate-700,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .border-slate-700 {
+                border-color: #cbd5e1 !important;
+            }
+            body.tema-terminal .bg-slate-800\/50,
+            body.tema-terminal .cv-card-item,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .bg-slate-800\/50,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .cv-card-item {
+                background-color: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                border-left: 3px solid #10b981 !important;
+                border-radius: 4px !important;
+            }
+            body.tema-terminal .bg-slate-700,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .bg-slate-700 {
+                background-color: #f1f5f9 !important;
+                color: #0f172a !important;
+                border: 1px solid #94a3b8 !important;
+                border-radius: 3px !important;
+                font-family: 'Courier Prime', monospace !important;
+            }
+            body.tema-terminal .bg-emerald-500\/10,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) .bg-emerald-500\/10 {
+                background-color: #ecfdf5 !important;
+                color: #047857 !important;
+                border: 1px solid #a7f3d0 !important;
+                border-radius: 3px !important;
+            }
+            body.tema-terminal a,
+            body.tema-terminal a.text-emerald-500,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) a,
+            body:not(.tema-white):not(.tema-executivo):not(.tema-criativo):not(.tema-minimalista) a.text-emerald-500 {
+                color: #059669 !important;
+                text-decoration: none !important;
+            }
         }
 
         /* ======================================== */
@@ -761,7 +860,7 @@
         }
 
         // 3. Controla os botões de trocar tema
-        const temas = ['tema-white', 'tema-executivo', 'tema-criativo', 'tema-minimalista'];
+        const temas = ['tema-white', 'tema-executivo', 'tema-criativo', 'tema-minimalista', 'tema-terminal'];
         function mudarTema(temaSelecionado) {
             const html = document.documentElement;
             const body = document.body;
@@ -771,11 +870,17 @@
                 body.classList.remove(tema);
             });
 
-            if (temaSelecionado !== 'padrao') {
+            if (temaSelecionado === 'padrao' || temaSelecionado === 'tema-terminal') {
+                html.classList.add('tema-terminal');
+                body.classList.add('tema-terminal');
+            } else {
                 html.classList.add(temaSelecionado);
                 body.classList.add(temaSelecionado);
             }
         }
+
+        // Inicializa com o tema terminal ativo
+        mudarTema('padrao');
     </script>
 </body>
 
