@@ -93,6 +93,17 @@
                 margin-top: 0.65rem !important;
                 padding-top: 0.65rem !important;
             }
+
+            #avatar-container {
+                box-shadow: none !important;
+                border-width: 2px !important;
+            }
+            #avatar-container:not(.has-photo) {
+                display: none !important;
+            }
+            #avatar-placeholder {
+                display: none !important;
+            }
         }
 
         /* ======== TEMA WHITE ======== */
@@ -395,6 +406,12 @@
                     class="btn-tema bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1.5 rounded text-sm transition font-sans tracking-tight font-bold">
                     🔹 Minimal
                 </button>
+
+                <button onclick="abrirModalFoto()"
+                    class="btn-tema bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 px-3 py-1.5 rounded text-sm transition font-sans font-semibold flex items-center gap-1.5"
+                    title="Adicionar ou alterar foto">
+                    📷 Foto
+                </button>
             </div>
 
             <button onclick="window.print()"
@@ -426,11 +443,17 @@
                         <header class="border-b-2 border-emerald-500 pb-6 mb-8 evitar-quebra">
                             <div
                                 class="flex flex-col md:flex-row print:flex-row justify-between items-start md:items-center print:items-center gap-4">
-                                <div>
-                                    <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_
-                                        Carregando...</h1>
-                                    <div class="flex items-center gap-3">
-                                        <p id="label" class="text-emerald-400 font-mono text-sm font-semibold"></p>
+                                <div class="flex items-center gap-4">
+                                    <div id="avatar-container" onclick="abrirModalFoto()" title="Clique para alterar a foto de perfil"
+                                        class="w-20 h-20 rounded-full border-2 border-emerald-500 overflow-hidden flex items-center justify-center bg-slate-800 cursor-pointer shadow-md flex-shrink-0 transition-transform hover:scale-105">
+                                        <img id="avatar-img" class="w-full h-full object-cover hidden" alt="Avatar" />
+                                        <span id="avatar-placeholder" class="text-2xl text-slate-400">👤</span>
+                                    </div>
+                                    <div>
+                                        <h1 id="nome" class="text-4xl font-extrabold text-white tracking-tight mb-2">>_ Carregando...</h1>
+                                        <div class="flex items-center gap-3">
+                                            <p id="label" class="text-emerald-400 font-mono text-sm font-semibold"></p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="text-left md:text-right print:text-right text-sm font-mono space-y-1">
@@ -531,6 +554,53 @@
                 Termos de Uso e Privacidade (LGPD)
             </button>
         </footer>
+    </div>
+
+    <!-- Modal Foto / Avatar -->
+    <div id="modal-foto-cv" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 print:hidden" onclick="fecharModalFoto(event)">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl text-slate-300" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center pb-3 border-b border-slate-800 mb-4">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <span class="text-emerald-400">📷</span> Foto / Avatar Profissional
+                </h3>
+                <button onclick="document.getElementById('modal-foto-cv').classList.add('hidden')" class="text-slate-400 hover:text-white text-2xl font-bold leading-none">&times;</button>
+            </div>
+            
+            <p class="text-xs text-slate-400 mb-4">
+                Carregue sua foto de perfil ou insira o link direto de uma imagem (LinkedIn, GitHub ou CDN). A imagem será aplicada imediatamente na visualização e na impressão PDF.
+            </p>
+
+            <div class="flex items-center justify-center gap-6 p-4 bg-slate-950/60 rounded-xl mb-4 border border-slate-800">
+                <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 flex items-center justify-center bg-slate-800 flex-shrink-0 shadow-inner">
+                    <img id="modal-foto-preview" src="" alt="Preview" class="w-full h-full object-cover hidden" onerror="onFotoPreviewError()" />
+                    <span id="modal-foto-placeholder" class="text-3xl text-slate-400">👤</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 px-3 py-1.5 rounded-lg text-xs font-semibold text-center transition">
+                        📁 Escolher do Computador
+                        <input type="file" accept="image/*" onchange="handleUploadFotoLocal(event)" class="hidden" />
+                    </label>
+                    <button id="btn-remover-foto-modal" onclick="limparFotoModal()" class="hidden bg-slate-800/80 hover:bg-red-950/40 text-red-400 border border-red-900/50 px-3 py-1 rounded-lg text-xs font-semibold transition">
+                        🗑️ Remover Foto
+                    </button>
+                </div>
+            </div>
+
+            <div class="space-y-1 mb-6">
+                <label class="text-xs font-semibold text-slate-300">Ou cole o link direto da imagem:</label>
+                <input id="input-url-foto" type="url" placeholder="https://exemplo.com/minha-foto.jpg" oninput="handleUrlFotoInput(this.value)"
+                    class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
+            </div>
+
+            <div class="flex justify-end gap-3 pt-3 border-t border-slate-800">
+                <button onclick="salvarSemFoto()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg transition">
+                    Deixar sem Foto
+                </button>
+                <button onclick="salvarFotoModal()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg shadow-md transition">
+                    Salvar e Aplicar
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- Modal Legal CV-YAML -->
@@ -689,6 +759,11 @@
                     }
 
                     document.getElementById('resumo').innerText = basics.summary || '';
+
+                    // Avatar / Foto
+                    const fotoSalva = localStorage.getItem('cv_user_photo');
+                    const fotoUrl = fotoSalva || basics.image || '';
+                    aplicarFotoCV(fotoUrl);
 
                     // 1. Experiência
                     const expContainer = document.getElementById('experiencia-container');
@@ -881,6 +956,119 @@
 
         // Inicializa com o tema terminal ativo
         mudarTema('padrao');
+
+        /* ── Manipulação de Foto e Avatar ── */
+        let fotoAtual = '';
+
+        function abrirModalFoto() {
+            const modal = document.getElementById('modal-foto-cv');
+            const urlInput = document.getElementById('input-url-foto');
+            const previewImg = document.getElementById('modal-foto-preview');
+            const previewPh = document.getElementById('modal-foto-placeholder');
+            const removeBtn = document.getElementById('btn-remover-foto-modal');
+
+            if (urlInput) urlInput.value = (fotoAtual && !fotoAtual.startsWith('data:')) ? fotoAtual : '';
+            if (fotoAtual) {
+                if (previewImg) { previewImg.src = fotoAtual; previewImg.classList.remove('hidden'); }
+                if (previewPh) previewPh.classList.add('hidden');
+                if (removeBtn) removeBtn.classList.remove('hidden');
+            } else {
+                if (previewImg) { previewImg.src = ''; previewImg.classList.add('hidden'); }
+                if (previewPh) previewPh.classList.remove('hidden');
+                if (removeBtn) removeBtn.classList.add('hidden');
+            }
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function fecharModalFoto(e) {
+            if (e && e.target && e.target.id !== 'modal-foto-cv') return;
+            const modal = document.getElementById('modal-foto-cv');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function handleUploadFotoLocal(e) {
+            const file = e.target.files && e.target.files[0];
+            if (!file) return;
+            if (!file.type.startsWith('image/')) {
+                alert('Por favor, selecione um arquivo de imagem válido (JPG, PNG, WebP).');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                atualizarPreviewModal(evt.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleUrlFotoInput(val) {
+            atualizarPreviewModal(val.trim());
+        }
+
+        function atualizarPreviewModal(src) {
+            const previewImg = document.getElementById('modal-foto-preview');
+            const previewPh = document.getElementById('modal-foto-placeholder');
+            const removeBtn = document.getElementById('btn-remover-foto-modal');
+            if (src) {
+                if (previewImg) { previewImg.src = src; previewImg.classList.remove('hidden'); }
+                if (previewPh) previewPh.classList.add('hidden');
+                if (removeBtn) removeBtn.classList.remove('hidden');
+            } else {
+                if (previewImg) { previewImg.src = ''; previewImg.classList.add('hidden'); }
+                if (previewPh) previewPh.classList.remove('hidden');
+                if (removeBtn) removeBtn.classList.add('hidden');
+            }
+        }
+
+        function onFotoPreviewError() {
+            const previewImg = document.getElementById('modal-foto-preview');
+            const previewPh = document.getElementById('modal-foto-placeholder');
+            if (previewImg) previewImg.classList.add('hidden');
+            if (previewPh) previewPh.classList.remove('hidden');
+        }
+
+        function limparFotoModal() {
+            const urlInput = document.getElementById('input-url-foto');
+            if (urlInput) urlInput.value = '';
+            atualizarPreviewModal('');
+        }
+
+        function salvarSemFoto() {
+            fotoAtual = '';
+            localStorage.removeItem('cv_user_photo');
+            aplicarFotoCV('');
+            document.getElementById('modal-foto-cv').classList.add('hidden');
+        }
+
+        function salvarFotoModal() {
+            const previewImg = document.getElementById('modal-foto-preview');
+            const src = (previewImg && !previewImg.classList.contains('hidden')) ? previewImg.src : '';
+            fotoAtual = src;
+            if (src) {
+                localStorage.setItem('cv_user_photo', src);
+            } else {
+                localStorage.removeItem('cv_user_photo');
+            }
+            aplicarFotoCV(src);
+            document.getElementById('modal-foto-cv').classList.add('hidden');
+        }
+
+        function aplicarFotoCV(src) {
+            const container = document.getElementById('avatar-container');
+            const img = document.getElementById('avatar-img');
+            const ph = document.getElementById('avatar-placeholder');
+            if (!container) return;
+
+            fotoAtual = src;
+            if (src) {
+                container.classList.add('has-photo');
+                if (img) { img.src = src; img.classList.remove('hidden'); }
+                if (ph) ph.classList.add('hidden');
+            } else {
+                container.classList.remove('has-photo');
+                if (img) { img.src = ''; img.classList.add('hidden'); }
+                if (ph) ph.classList.remove('hidden');
+            }
+        }
     </script>
 </body>
 
