@@ -1,0 +1,22 @@
+{
+  "pt_tokens": 49466,
+  "en_tokens": 39458,
+  "total_tokens": 88924,
+  "model": "gemini-3.7-flash",
+  "pt_keys": [
+    "professional",
+    "architect",
+    "historian",
+    "didactic",
+    "alien",
+    "editor"
+  ],
+  "en_keys": [
+    "professional",
+    "architect",
+    "historian",
+    "didactic",
+    "alien",
+    "editor"
+  ]
+}
