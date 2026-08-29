@@ -4,7 +4,7 @@ basics:
   email: augustoheiss@gmail.com
   phone: "+55 11 98135-5495"
   url: https://www.linkedin.com/in/augustoheiss
-  summary: Engenheiro de Software com sólida formação em Matemática e atuação especializada na construção de microsserviços assíncronos de alto throughput (FastAPI), pipelines de IA Corporativa (RAG) e automações robóticas resilientes (Playwright). No ecossistema IBM de Nuvem Híbrida e IA, desenvolve integrações corporativas seguras sob frameworks de governança enterprise (IBM Growth Behaviors). Combina 7 anos de rigor analítico e decomposição de problemas em docência matemática com padrões contemporâneos de arquitetura Local-First, garantindo código limpo, soberania de dados e mitigação estrita de alucinações em LLMs.
+  summary: Engenheiro de Software com sólida fundamentação em Matemática e especialização na construção de microsserviços assíncronos de alto throughput (FastAPI), pipelines enterprise de IA Generativa (RAG) e automações robóticas resilientes (Playwright). No ecossistema IBM de Nuvem Híbrida e IA para negócios, desenvolve integrações corporativas sob rigorosos frameworks de governança, conformidade e IBM Growth Behaviors. Combina 7 anos de rigor analítico e decomposição de problemas em docência matemática com padrões contemporâneos de arquitetura Local-First, assegurando código limpo, soberania de dados e mitigação estrita de alucinações em LLMs.
   location:
     city: Ferraz de Vasconcelos
     region: São Paulo
@@ -20,28 +20,27 @@ basics:
     - network: Portfolio
       username: Heiss-Lab
       url: https://www.heisslab.com.br/
-
 work:
   - name: IBM
     position: Software Engineering Intern — Hybrid Cloud & Enterprise AI
     url: https://www.ibm.com
     startDate: '2026-07-06'
+    endDate: null
     summary: Atuação técnica no ecossistema global da IBM, arquitetando integrações em Nuvem Híbrida e Inteligência Artificial para o setor de Energy, Environment & Utilities sob rigorosos frameworks de governança e segurança da informação.
     highlights:
       - Projetou e validou integrações corporativas em Python e APIs RESTful, assegurando conformidade com políticas de segurança da informação em ambientes de Nuvem Híbrida.
       - Automatizou rotinas de consumo e estruturação de dados analíticos, eliminando intervenções manuais e acelerando pipelines de engenharia.
       - Aplicou práticas ágeis enterprise e comportamentos de crescimento da IBM (Growth Behaviors) na tradução de requisitos complexos em arquiteturas de software escaláveis.
-
   - name: Freelance / Heiss-Lab
     position: Arquiteto de Software Backend & Soluções de IA
     url: https://www.heisslab.com.br/
     startDate: '2026-02-01'
+    endDate: null
     summary: Liderança técnica na concepção e deploy de microsserviços de baixa latência, motores de RAG autônomos e dashboards preditivos de alta disponibilidade.
     highlights:
       - Desenvolveu APIs de alta performance com FastAPI e processamento assíncrono concorrente (asyncio), reduzindo a latência ponta a ponta ao desacoplar payloads da renderização.
       - Implementou sistemas de automação de processos ponta a ponta com guardrails de LLMs e RPA (Playwright), eliminando erros operacionais sob governança Human-in-the-Loop.
       - Orquestrou pipelines de deploy contínuo em nuvem stateless (Render, Vercel), assegurando 99.9% de disponibilidade operacional.
-
   - name: Secretaria Municipal de Educação de São Paulo
     position: Docência em Matemática & Liderança em Raciocínio Lógico
     url: ''
@@ -52,7 +51,6 @@ work:
       - Estruturou metodologias ativas de resolução de problemas algorítmicos e raciocínio quantitativo, acelerando a capacidade analítica de centenas de estudantes anualmente.
       - Decompôs estruturas abstratas e teoremas complexos em módulos lógicos claros — competência fundamental transferida diretamente para a arquitetura de software limpo e modular.
       - Liderou indicadores de governança pedagógica, traduzindo desafios multidimensionais em planos de ação executáveis e mensuráveis.
-
   - name: Experiências Profissionais Anteriores
     position: Especialista em Operações & Resolução de Incidentes
     url: ''
@@ -61,7 +59,6 @@ work:
     summary: Execução de operações críticas e atendimento em cenários de alta pressão.
     highlights:
       - Neutralizou incidentes operacionais críticos e mapeou necessidades de usuários sob pressão, elevando os índices de satisfação e resolução.
-
 education:
   - institution: Universidade Nove de Julho (UNINOVE)
     area: Inteligência Artificial
@@ -78,7 +75,6 @@ education:
     studyType: Aprendizagem Industrial / Técnico
     startDate: '2010-01-01'
     endDate: '2011-12-31'
-
 certificates:
   - name: Claude Certified Associate - Foundations
     issuer: Anthropic
@@ -104,7 +100,6 @@ certificates:
     issuer: Alura
     date: '2024-03'
     url: https://www.linkedin.com/in/augustoheiss
-
 projects:
   - name: LogicDefense CV RAG Engine
     description: API corporativa de geração e compilação dinâmica de documentos estruturados baseada em FastAPI, RAG e modelos generativos.
@@ -119,7 +114,6 @@ projects:
       - RAG
       - Render
     url: https://heisslab.com.br/laboratorio/cv-maker
-
   - name: Assistente Escola Modelo (Enterprise RAG & RPA)
     description: Suíte de automação inteligente para processos administrativos e pedagógicos com IA generativa e orquestração de browsers.
     highlights:
@@ -133,7 +127,6 @@ projects:
       - Streamlit
       - Governança de IA
     url: https://assistente-escola-modelo.streamlit.app/
-
   - name: Assistente-Moeda (Dashboard Financeiro Local-First)
     description: Motor analítico e preditivo financeiro baseado em arquitetura stateless e persistência Local-First com SQLite/Turso.
     highlights:
@@ -147,7 +140,6 @@ projects:
       - Local-First
       - Finanças
     url: https://www.heisslab.com.br/laboratorio/assistente-moeda
-
   - name: WebGL Interactive Logic Engines
     description: Motores web de alta performance para execução de lógica algorítmica e matemática vetorial sob restrições de tempo real.
     highlights:
@@ -158,7 +150,6 @@ projects:
       - Matemática Vetorial
       - Performance
     url: https://www.heisslab.com.br/jogos
-
 publications:
   - name: 'O Foguete e as Penas: O Manifesto da Garagem'
     publisher: LinkedIn Pulse
@@ -175,7 +166,6 @@ publications:
     releaseDate: '2026-05-12'
     url: https://www.linkedin.com/in/augustoheiss
     summary: Discussão sobre a transição de interfaces gráficas para APIs consumidas diretamente por agentes autônomos.
-
 skills:
   - name: Arquitetura Backend & APIs
     level: Avançado
@@ -216,7 +206,6 @@ skills:
       - Metodologias Ágeis
       - IBM Growth Behaviors
       - Clean Code
-
 languages:
   - language: Inglês
     fluency: C1 Advanced (EF SET 61/100 — Fluência Executiva & Comunicação Técnica)
@@ -224,7 +213,6 @@ languages:
     fluency: Intermediário
   - language: Português
     fluency: Nativo
-
 interests:
   - name: Engenharia de Software Corporativa
     keywords:

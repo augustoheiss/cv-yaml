@@ -20,7 +20,6 @@ basics:
     - network: Portfolio
       username: Heiss-Lab
       url: https://www.heisslab.com.br/
-
 work:
   - name: IBM
     position: Software Engineering Intern — Hybrid Cloud & Enterprise AI
@@ -32,7 +31,6 @@ work:
       - Architected and validated enterprise integrations using Python and RESTful APIs, enforcing compliance with information security policies across Hybrid Cloud environments.
       - Automated complex analytical data consumption and ingestion pipelines, eliminating manual intervention and accelerating engineering workflows.
       - Applied enterprise agile practices and IBM Growth Behaviors to translate multifaceted technical requirements into scalable, production-grade software architectures.
-
   - name: Freelance / Heiss-Lab
     position: Backend Software Architect & AI Solutions Engineer
     url: https://www.heisslab.com.br/
@@ -43,7 +41,6 @@ work:
       - Engineered high-performance APIs with FastAPI and concurrent asynchronous processing (asyncio), slashing end-to-end latency by decoupling structured payloads from visual rendering layers.
       - Implemented end-to-end process automation systems with LLM guardrails and RPA (Playwright), eliminating operational errors under audit-ready Human-in-the-Loop governance.
       - Orchestrated continuous deployment pipelines across stateless cloud platforms (Render, Vercel), maintaining 99.9% operational uptime.
-
   - name: São Paulo Municipal Department of Education
     position: Mathematics Instruction & Logical Reasoning Leadership
     url: ''
@@ -54,7 +51,6 @@ work:
       - Structured active problem-solving methodologies and quantitative reasoning tracks, accelerating analytical proficiency for hundreds of students annually.
       - Decomposed abstract systems and complex theorems into clear, modular logical units—a foundational discipline directly transferred to clean, modular software architecture.
       - Led pedagogical governance and performance indicators, translating multifaceted challenges into actionable, measurable operational execution plans.
-
   - name: Diverse Previous Companies
     position: Operations & Critical Incident Resolution Specialist
     url: ''
@@ -63,7 +59,6 @@ work:
     summary: Critical operations execution and stakeholder support in fast-paced, high-pressure environments.
     highlights:
       - Neutralized critical operational incidents and mapped complex user requirements under pressure, consistently boosting resolution rates and customer satisfaction metrics.
-
 education:
   - institution: Universidade Nove de Julho (UNINOVE)
     area: Artificial Intelligence
@@ -80,7 +75,6 @@ education:
     studyType: Vocational & Technical Apprenticeship
     startDate: '2010-01-01'
     endDate: '2011-12-31'
-
 certificates:
   - name: Claude Certified Associate - Foundations
     issuer: Anthropic
@@ -106,7 +100,6 @@ certificates:
     issuer: Alura
     date: '2024-03'
     url: https://www.linkedin.com/in/augustoheiss
-
 projects:
   - name: LogicDefense CV RAG Engine
     description: Enterprise dynamic structured document generation API powered by FastAPI, RAG architecture, and generative LLMs.
@@ -121,7 +114,6 @@ projects:
       - RAG
       - Render
     url: https://heisslab.com.br/laboratorio/cv-maker
-
   - name: Assistente Escola Modelo (Enterprise RAG & RPA)
     description: Intelligent automation suite for administrative and pedagogical workflows leveraging generative AI and browser orchestration.
     highlights:
@@ -135,7 +127,6 @@ projects:
       - Streamlit
       - AI Governance
     url: https://assistente-escola-modelo.streamlit.app/
-
   - name: Assistente-Moeda (Local-First Financial Dashboard)
     description: Predictive financial analytics engine based on stateless architecture and Local-First persistence with SQLite/Turso.
     highlights:
@@ -149,7 +140,6 @@ projects:
       - Local-First
       - Financial Modeling
     url: https://www.heisslab.com.br/laboratorio/assistente-moeda
-
   - name: WebGL Interactive Logic Engines
     description: High-performance browser engines executing algorithmic logic and vector mathematics under real-time constraints.
     highlights:
@@ -160,7 +150,6 @@ projects:
       - Vector Math
       - Performance Optimization
     url: https://www.heisslab.com.br/jogos
-
 publications:
   - name: 'The Rocket and the Feathers: The Garage Manifesto'
     publisher: LinkedIn Pulse
@@ -177,7 +166,6 @@ publications:
     releaseDate: '2026-05-12'
     url: https://www.linkedin.com/in/augustoheiss
     summary: Strategic exploration on the evolution of graphical user interfaces toward autonomous agents interacting via zero-UI programmatic APIs.
-
 skills:
   - name: Backend Architecture & APIs
     level: Advanced
@@ -218,7 +206,6 @@ skills:
       - Agile Methodologies
       - IBM Growth Behaviors
       - Clean Code
-
 languages:
   - language: English
     fluency: C1 Advanced (EF SET 61/100 — Executive Fluency & Technical Communication)
@@ -226,7 +213,6 @@ languages:
     fluency: Intermediate
   - language: Portuguese
     fluency: Native
-
 interests:
   - name: Enterprise Software Engineering
     keywords:
