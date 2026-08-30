@@ -734,7 +734,7 @@
     </div>
 
     <button onclick="openPhotoModal()" class="btn-sec" title="📷 Foto / Avatar">📷 Foto / Avatar</button>
-    <button onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
+    <button onclick="printCV()">🖨️ Imprimir / Salvar PDF</button>
     <button onclick="downloadActiveYaml()" class="btn-sec">📥 Baixar YAML</button>
     <button onclick="downloadAllZip()" class="btn-accent">📦 Baixar 5 Versões (ZIP)</button>
     <button id="copy-btn" onclick="copyActiveYaml()" class="btn-sec">📋 Copiar YAML</button>
@@ -3459,6 +3459,24 @@ interests:
         'alien': 'curriculo_alien.yaml'
     };
 
+    function updateDocTitle() {
+      const activePanel = document.querySelector('.cv-persona-panel.active') || document.getElementById('cv-persona-' + currentPersona);
+      if (activePanel) {
+        const nameEl = activePanel.querySelector('.name');
+        const labelEl = activePanel.querySelector('.label');
+        if (nameEl && nameEl.innerText.trim()) {
+          const name = nameEl.innerText.trim();
+          const label = labelEl && labelEl.innerText.trim() ? ' - ' + labelEl.innerText.trim() : '';
+          document.title = name + label;
+        }
+      }
+    }
+
+    function printCV() {
+      updateDocTitle();
+      window.print();
+    }
+
     function switchPersona(newPersona) {
       const panels = document.querySelectorAll('.cv-persona-panel');
       panels.forEach(p => {
@@ -3471,6 +3489,7 @@ interests:
         target.style.display = 'block';
         target.classList.add('active');
         currentPersona = newPersona;
+        updateDocTitle();
       }
       localStorage.setItem('cv_active_persona', newPersona);
     }
@@ -3691,6 +3710,8 @@ interests:
         currentPhoto = savedPhoto;
         applyPhotoToAll(savedPhoto);
       }
+
+      updateDocTitle();
     })();
   </script>
 </body>

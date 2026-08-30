@@ -798,6 +798,11 @@
 
                     document.getElementById('nome').innerText = basics.name || '';
                     document.getElementById('label').innerText = basics.label || '';
+                    if (basics.name) {
+                        const nome = basics.name.trim();
+                        const cargo = basics.label ? ` - ${basics.label.trim()}` : '';
+                        document.title = `${nome}${cargo}`;
+                    }
                     document.getElementById('email').innerText = basics.email ? `✉ ${basics.email}` : '';
                     document.getElementById('telefone').innerText = basics.phone ? `📞 ${basics.phone}` : '';
 
