@@ -347,25 +347,71 @@
 
     .bullets li { margin-bottom: 0.2rem; }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-
-    .project-card {
-      padding: 0.75rem;
-      border-radius: 6px;
-    }
-
+    /* ── Dynamic Grid System (Smart Responsive & Print Flow) ── */
+    .projects-grid,
     .skills-grid,
     .education-grid,
     .certs-grid,
     .interests-grid,
     .languages-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 0.65rem;
+    }
+
+    .cv-grid-1,
+    .projects-grid:has(> :only-child),
+    .skills-grid:has(> :only-child),
+    .education-grid:has(> :only-child),
+    .certs-grid:has(> :only-child),
+    .interests-grid:has(> :only-child),
+    .languages-grid:has(> :only-child) {
+      grid-template-columns: 1fr !important;
+    }
+
+    .cv-grid-2,
+    .projects-grid:has(> :nth-child(2):last-child),
+    .skills-grid:has(> :nth-child(2):last-child) {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .cv-grid-3,
+    .projects-grid:has(> :nth-child(3):last-child),
+    .skills-grid:has(> :nth-child(3):last-child) {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .cv-grid-4,
+    .projects-grid:has(> :nth-child(4):last-child),
+    .skills-grid:has(> :nth-child(4):last-child) {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .cv-grid-5,
+    .cv-grid-split-3-2 {
+      display: grid !important;
+      grid-template-columns: repeat(6, 1fr) !important;
+    }
+    .cv-grid-5 > *:nth-child(1),
+    .cv-grid-5 > *:nth-child(2),
+    .cv-grid-5 > *:nth-child(3) {
+      grid-column: span 2 !important;
+    }
+    .cv-grid-5 > *:nth-child(4),
+    .cv-grid-5 > *:nth-child(5) {
+      grid-column: span 3 !important;
+    }
+
+    .cv-grid-split-3-2 > * {
+      grid-column: span 2 !important;
+    }
+    .cv-grid-split-3-2 > *:nth-last-child(1),
+    .cv-grid-split-3-2 > *:nth-last-child(2) {
+      grid-column: span 3 !important;
+    }
+
+    .project-card {
+      padding: 0.75rem;
+      border-radius: 6px;
     }
 
     .skill-group,
@@ -768,7 +814,7 @@
         </div>
         </section>
 
-    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid">
+    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid cv-grid-4">
         <div class="project-card avoid-break">
             <div class="item-header">
                 <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
@@ -806,7 +852,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid">
+    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid cv-grid-4">
         <div class="skill-group avoid-break">
             <div class="skill-title">⚡ Arquitetura Backend &amp; APIs</div>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI</span><span class='badge'>APIs RESTful</span><span class='badge'>Asyncio &amp; Concorrência</span><span class='badge'>Arquitetura Stateless</span><span class='badge'>OOP &amp; Design Patterns</span><span class='badge'>Clean Code</span></div>
@@ -828,7 +874,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid">
+    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Inteligência Artificial</div>
@@ -851,7 +897,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid">
+    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-08</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate - Foundations ↗</a></div>
@@ -918,7 +964,7 @@
         </div>
         </section>
 
-    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid">
+    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid cv-grid-3">
         <div class="lang-card avoid-break">
             <span style="font-weight: 600;">Português</span>
             <span class="badge">Nativo</span>
@@ -935,7 +981,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid">
+    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid cv-grid-2">
         <div class="interest-card avoid-break">
             <div style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem;">◈ Engenharia de Software Corporativa</div>
             <div class="tags"><span class='badge'>Arquitetura de Microsserviços</span><span class='badge'>Sistemas Concorrentes de Alta Vazão</span><span class='badge'>Clean Architecture &amp; Refatoração</span></div>
@@ -1020,7 +1066,7 @@
         </div>
         </section>
 
-    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid">
+    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid cv-grid-4">
         <div class="project-card avoid-break">
             <div class="item-header">
                 <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
@@ -1058,7 +1104,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid">
+    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid cv-grid-4">
         <div class="skill-group avoid-break">
             <div class="skill-title">⚡ Arquitetura Backend &amp; APIs</div>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI</span><span class='badge'>APIs RESTful</span><span class='badge'>Asyncio &amp; Concorrência</span><span class='badge'>Microsserviços Stateless</span><span class='badge'>Clean Architecture</span><span class='badge'>Design Patterns</span></div>
@@ -1080,7 +1126,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid">
+    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Inteligência Artificial</div>
@@ -1103,7 +1149,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid">
+    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-08</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate - Foundations ↗</a></div>
@@ -1170,7 +1216,7 @@
         </div>
         </section>
 
-    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid">
+    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid cv-grid-3">
         <div class="lang-card avoid-break">
             <span style="font-weight: 600;">Português</span>
             <span class="badge">Nativo</span>
@@ -1187,7 +1233,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid">
+    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid cv-grid-2">
         <div class="interest-card avoid-break">
             <div style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem;">◈ Engenharia de Software Corporativa</div>
             <div class="tags"><span class='badge'>Arquitetura de Microsserviços</span><span class='badge'>Sistemas Concorrentes de Alta Vazão</span><span class='badge'>Clean Code &amp; Refatoração</span></div>
@@ -1272,7 +1318,7 @@
         </div>
         </section>
 
-    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid">
+    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid cv-grid-4">
         <div class="project-card avoid-break">
             <div class="item-header">
                 <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
@@ -1310,7 +1356,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid">
+    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid cv-grid-4">
         <div class="skill-group avoid-break">
             <div class="skill-title">⚡ Arquitetura Backend &amp; APIs</div>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI</span><span class='badge'>APIs RESTful</span><span class='badge'>Asyncio &amp; Concorrência</span><span class='badge'>Arquitetura Stateless</span><span class='badge'>OOP &amp; Design Patterns</span></div>
@@ -1332,7 +1378,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid">
+    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Inteligência Artificial</div>
@@ -1355,7 +1401,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid">
+    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-08</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate - Foundations ↗</a></div>
@@ -1422,7 +1468,7 @@
         </div>
         </section>
 
-    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid">
+    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid cv-grid-3">
         <div class="lang-card avoid-break">
             <span style="font-weight: 600;">Inglês</span>
             <span class="badge">C1 Advanced (EF SET 61/100 — Fluência Executiva &amp; Comunicação Técnica)</span>
@@ -1439,7 +1485,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid">
+    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid cv-grid-2">
         <div class="interest-card avoid-break">
             <div style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem;">◈ Engenharia de Software Corporativa</div>
             <div class="tags"><span class='badge'>Arquitetura de Microsserviços</span><span class='badge'>Sistemas Concorrentes de Alta Vazão</span><span class='badge'>Clean Code &amp; Refatoração</span></div>
@@ -1524,7 +1570,7 @@
         </div>
         </section>
 
-    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid">
+    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid cv-grid-4">
         <div class="project-card avoid-break">
             <div class="item-header">
                 <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
@@ -1562,7 +1608,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid">
+    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid cv-grid-4">
         <div class="skill-group avoid-break">
             <div class="skill-title">⚡ Arquitetura Backend &amp; APIs</div>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI</span><span class='badge'>APIs RESTful</span><span class='badge'>Asyncio &amp; Concorrência</span><span class='badge'>Arquitetura Stateless</span><span class='badge'>OOP &amp; Design Patterns</span><span class='badge'>Clean Code</span></div>
@@ -1584,7 +1630,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid">
+    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Inteligência Artificial</div>
@@ -1607,7 +1653,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid">
+    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-08</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate - Foundations ↗</a></div>
@@ -1674,7 +1720,7 @@
         </div>
         </section>
 
-    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid">
+    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid cv-grid-3">
         <div class="lang-card avoid-break">
             <span style="font-weight: 600;">Inglês</span>
             <span class="badge">C1 Advanced (EF SET 61/100 — Fluência Executiva &amp; Comunicação Técnica)</span>
@@ -1691,7 +1737,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid">
+    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid cv-grid-2">
         <div class="interest-card avoid-break">
             <div style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem;">◈ Engenharia de Software &amp; Aprendizado Acelerado</div>
             <div class="tags"><span class='badge'>Arquitetura de Microsserviços</span><span class='badge'>Sistemas Concorrentes de Alta Vazão</span><span class='badge'>Clean Code &amp; Refatoração Didática</span></div>
@@ -1776,7 +1822,7 @@
         </div>
         </section>
 
-    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid">
+    <section><h2 class="section-title">🚀 Projetos em Destaque</h2><div class="projects-grid cv-grid-4">
         <div class="project-card avoid-break">
             <div class="item-header">
                 <span class="item-title"><a href="https://heisslab.com.br/laboratorio/cv-maker" target="_blank">LogicDefense CV RAG Engine ↗</a></span>
@@ -1814,7 +1860,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid">
+    <section class="avoid-break"><h2 class="section-title">⚡ Competências & Habilidades Técnicas</h2><div class="skills-grid cv-grid-4">
         <div class="skill-group avoid-break">
             <div class="skill-title">⚡ Ferramentas de Manipulação de Elétrons &amp; Backend</div>
             <div class="tags"><span class='badge'>Python</span><span class='badge'>FastAPI</span><span class='badge'>APIs RESTful</span><span class='badge'>Asyncio &amp; Concorrência</span><span class='badge'>Arquitetura Stateless</span><span class='badge'>OOP &amp; Design Patterns</span></div>
@@ -1836,7 +1882,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid">
+    <section class="avoid-break"><h2 class="section-title">🎓 Formação Acadêmica</h2><div class="education-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎓</span><span class="item-date">2025-01-01 — 2027-12-31</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;">Inteligência Artificial &amp; Consciência Sintética</div>
@@ -1859,7 +1905,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid">
+    <section class="avoid-break"><h2 class="section-title">📜 Licenças & Certificações</h2><div class="certs-grid cv-grid-3">
         <div class="geo-card avoid-break">
             <div class="card-top"><span class="geo-icon">🎖️</span><span class="item-date">2026-08</span></div>
             <div class="item-title" style="font-weight: 700; font-size: 0.85rem;"><a href="https://www.linkedin.com/in/augustoheiss" target="_blank">Claude Certified Associate - Foundations ↗</a></div>
@@ -1926,7 +1972,7 @@
         </div>
         </section>
 
-    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid">
+    <section class="avoid-break"><h2 class="section-title">🌐 Idiomas</h2><div class="languages-grid cv-grid-3">
         <div class="lang-card avoid-break">
             <span style="font-weight: 600;">Inglês</span>
             <span class="badge">C1 Advanced (Fluência Interplanetária &amp; Comunicação Técnica Avançada)</span>
@@ -1943,7 +1989,7 @@
         </div>
         </div></section>
 
-    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid">
+    <section class="avoid-break"><h2 class="section-title">🎯 Interesses & Pesquisa</h2><div class="interests-grid cv-grid-2">
         <div class="interest-card avoid-break">
             <div style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem;">◈ Engenharia de Software Corporativa</div>
             <div class="tags"><span class='badge'>Arquitetura de Microsserviços</span><span class='badge'>Sistemas Concorrentes de Alta Vazão</span><span class='badge'>Clean Code &amp; Refatoração</span></div>
