@@ -10,3 +10,9 @@ master-plan
 CHAVES_PRO_CV_MAKER_E_MOEDA.md
 others-cvs/* 
 others-cvs
+
+# Environment Variables & Secrets
+.env
+*.env
+.env.*
+!.env.example
