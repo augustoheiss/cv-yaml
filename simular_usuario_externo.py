@@ -1,8 +1,10 @@
 """
-Simulacao Oficial: Usuario Externo Consumindo a API do CV Maker
+Simulação Oficial: Usuário / Agente Externo Consumindo a API do CV Maker 2.0
 =============================================================================
-Este script simula exatamente o que uma pessoa externa (ou agente de IA)
-faz tendo apenas a URL da API e a Chave de API, sem nenhum codigo local de design.
+Demonstração do fluxo Agent-Native & YAML-First:
+1. Auto-provisionamento de Chave Efêmera via API
+2. Envio de dados estruturados com autenticação Authorization: Bearer <token>
+3. Obtenção de YAML validado e dados estruturados da API
 """
 
 import os
@@ -13,50 +15,58 @@ import requests
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-# ── 1. As UNICAS informacoes que o usuario externo precisa: ──
-API_URL = "https://ocorrencias-pdf-writer.onrender.com"
+# ── Configurações de Conexão ─────────────────────────────────────────────────
+API_URL = os.getenv("CV_API_URL", "http://127.0.0.1:8000")
 
-# Se o usuário não tiver chave, o script pode auto-provisionar uma na hora:
+
 def obter_chave():
-    print("[1/3] Solicitando Chave Temporaria via API...")
-    res = requests.post(f"{API_URL}/api/v1/api-keys/generate", json={"ttlDays": 1})
-    if res.status_code == 200:
-        key = res.json().get("apiKey")
-        print(f"      Chave provisionada com sucesso: {key[:14]}...{key[-6:]}")
-        return key
+    print("[1/3] Solicitando Chave Temporária via API...")
+    try:
+        res = requests.post(f"{API_URL}/api/v1/api-keys/generate", json={"ttlDays": 1}, timeout=10)
+        if res.status_code == 200:
+            key = res.json().get("apiKey")
+            print(f"      Chave provisionada com sucesso: {key[:14]}...{key[-6:]}")
+            return key
+    except Exception as e:
+        print(f"      Aviso: Falha ao conectar em {API_URL}: {e}")
     return "am_sheet_live_fallback_chave"
+
 
 API_KEY = obter_chave()
 
 HEADERS = {
     "Content-Type": "application/json",
-    "X-API-Key": API_KEY,          # Header Universal
-    "X-Spreadsheet-Key": API_KEY   # Compativel com Assistente Moeda
+    "Authorization": f"Bearer {API_KEY}",  # Padrão Primário Unificado
 }
 
 YAML_FILE = os.path.join(os.path.dirname(__file__), "cv-ptbr.yaml")
-OUTPUT_HTML = os.path.join(os.path.dirname(__file__), "meu_curriculo_via_api.html")
+OUTPUT_YAML = os.path.join(os.path.dirname(__file__), "meu_curriculo_via_api.yaml")
+
 
 def main():
     print("=" * 65)
-    print("SIMULACAO DO CLIENTE EXTERNO - CV MAKER API")
+    print("SIMULACAO DO CLIENTE EXTERNO - CV MAKER 2.0 (YAML-FIRST)")
     print("=" * 65)
-    print(f"Conectando ao Servidor Remoto: {API_URL}")
-    print(f"Chave de Autenticacao: {API_KEY[:16]}...{API_KEY[-8:]}\n")
+    print(f"Servidor: {API_URL}")
+    print(f"Header de Autenticação: Authorization: Bearer {API_KEY[:14]}...\n")
 
-    # 1. Carrega o YAML local do usuário
-    with open(YAML_FILE, "r", encoding="utf-8") as f:
-        yaml_content = f.read()
+    # 1. Carrega o YAML local
+    if os.path.exists(YAML_FILE):
+        with open(YAML_FILE, "r", encoding="utf-8") as f:
+            yaml_content = f.read()
+    else:
+        yaml_content = "basics:\n  name: Demo\n  label: AI Engineer\n"
 
-    print(f"[2/3] Enviando {len(yaml_content)} caracteres de YAML para renderizacao remota...")
+    print(f"[2/3] Enviando {len(yaml_content)} caracteres de YAML para validação e compilação...")
 
-    # 2. Faz a chamada HTTP pura para a rota /render da API
+    # 2. Chamada HTTP com format="yaml"
     response = requests.post(
         f"{API_URL}/api/v1/cv/render",
         headers=HEADERS,
         json={
             "raw_text": yaml_content,
-            "theme": "executive"  # Opcoes: executive, creative, minimalist, white, terminal
+            "theme": "executive",
+            "format": "yaml"
         },
         timeout=30
     )
@@ -65,22 +75,22 @@ def main():
         print(f"Erro na API ({response.status_code}): {response.text}")
         return
 
-    # 3. O servidor devolve o HTML completo ja desenhado e estilizado!
-    html_recebido = response.text
-    print(f"      Sucesso! O servidor devolveu {len(html_recebido)} bytes de HTML estilizado.")
+    yaml_recebido = response.text
+    print(f"      Sucesso! O servidor retornou {len(yaml_recebido)} bytes de YAML estruturado.")
 
-    # 4. O usuário externo apenas salva o arquivo no seu computador
-    print(f"[3/3] Salvando arquivo HTML standalone em disco...")
-    with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-        f.write(html_recebido)
+    # 3. Salva o YAML retornado em disco
+    print(f"[3/3] Salvando arquivo YAML em disco...")
+    with open(OUTPUT_YAML, "w", encoding="utf-8") as f:
+        f.write(yaml_recebido)
 
-    print(f"      Arquivo salvo com sucesso em: {OUTPUT_HTML}")
+    print(f"      Arquivo salvo com sucesso em: {OUTPUT_YAML}")
     print("\n" + "=" * 65)
     print("RESUMO DO PROCESSO:")
-    print("1. O usuario enviou apenas o YAML bruto para a API.")
-    print("2. O servidor cuidou de TODO o CSS, fontes e regras de impressao A4.")
-    print("3. O arquivo HTML recebido ja contem o botao de download / impressao em PDF!")
+    print("1. O agente/usuário enviou dados autenticados via Bearer token.")
+    print("2. A API validou e processou os dados de forma pura (YAML-Only).")
+    print("3. A renderização visual para visualização/PDF é compilada no frontend.")
     print("=" * 65)
+
 
 if __name__ == "__main__":
     main()
